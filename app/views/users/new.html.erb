@@ -1,0 +1,38 @@
+<h2>hippolyta</h2>
+
+Registration
+<br>
+New to Hippolyta.com? Register Below.
+<br>
+<br>
+
+<form class="create-user" action="<%= users_url %>" method="post">
+  <%= authenticity_token %>
+
+  <label>
+    My name is:
+    <input type="text" name="user[name]" value="<%= @user.name %>">
+  </label>
+  <br>
+
+  <label>
+    My e-mail address is:
+    <input type="text" name="user[email]" value="<%= @user.email %>">
+  </label>
+  <br>
+
+  <label>
+    My mobile phone number is:
+    <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
+    (optional)
+  </label>
+  <br>
+
+  <label>
+    Enter a new password:
+    <input type="password" name="user[password]" value="">
+  </label>
+  <br>
+
+  <button>Create account</button>
+</form>
