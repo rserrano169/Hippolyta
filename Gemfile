@@ -47,6 +47,8 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_12factor', group: :production
+
 gem 'backbone-on-rails'
 
 group :development, :test do
