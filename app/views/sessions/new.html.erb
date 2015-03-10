@@ -1,4 +1,8 @@
 <h2>hippolyta</h2>
+New customer?<a href="<%= new_user_url %>"> Start here.</a>
+<br>
+<br>
+<br>
 
 <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
 
@@ -11,7 +15,6 @@
 
   What is your e-mail address?
   <br>
-  <br>
 
   <label>
     My e-mail address is:
@@ -21,7 +24,6 @@
   <br>
 
   Do you have an Amazon.com password?
-  <br>
   <br>
 
   <label>

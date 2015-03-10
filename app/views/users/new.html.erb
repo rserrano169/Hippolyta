@@ -1,8 +1,12 @@
 <h2>hippolyta</h2>
-
+<a href="<%= new_session_url %>">Your account</a>
+<br>
+<br>
+<br>
 <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
 
 <strong>Registration</strong>
+<br>
 <br>
 New to Hippolyta.com? Register Below.
 <br>
@@ -35,6 +39,7 @@ New to Hippolyta.com? Register Below.
     <input type="password" name="user[password]" value="">
   </label>
   <br>
-
+  <br>
+  
   <button>Create account</button>
 </form>
