@@ -1,6 +1,8 @@
 <h2>hippolyta</h2>
 
-Sign In
+<%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
+
+<strong>Sign In</strong>
 <br>
 <br>
 
@@ -13,7 +15,7 @@ Sign In
 
   <label>
     My e-mail address is:
-    <input type="text" name="user[email]" value="">
+    <input type="text" name="[email]" value="<%= params[:email] %>">
   </label>
   <br>
   <br>
@@ -27,7 +29,7 @@ Sign In
     <br>
 
     <input type="radio" name="password?" value="" checked>Yes, I have a password:
-    <input type="password" name="user[password]" value="">
+    <input type="password" name="[password]" value="">
   </label>
   <br>
   <br>
