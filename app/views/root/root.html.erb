@@ -1,0 +1,28 @@
+<h2><a href="/">hippolyta</a></h2>
+
+<% if !signed_in? %>
+  <a href="<%= new_session_url %>">Your Amazon.com</a>
+<% else %>
+  <a href="#users/<%= current_user.id %>" style="padding-right: 20px;"><%= current_user.name %>'s Hippolyta.com</a>
+  <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
+<% end %>
+
+<br>
+<br>
+
+<form>
+  <label for="">
+    Search
+    <input type="text" name="search[keywords]" value="">
+  </label>
+
+  <button>Go</button>
+</form>
+
+
+<div id="content"></div>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(Hippolyta.initialize);
+</script>

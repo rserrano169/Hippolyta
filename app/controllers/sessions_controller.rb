@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      render plain: "Success =)"
+      redirect_to root_url
     else
       flash.now[:errors] =
         ["There was an error with your E-Mail/Password combination. Please try again."]
@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    redirect_to new_session_url
   end
 
 end

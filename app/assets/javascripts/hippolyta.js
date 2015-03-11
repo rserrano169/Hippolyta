@@ -4,10 +4,14 @@ window.Hippolyta = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+    new Hippolyta.Routers.Router({
+      $rootEl: $("#content"),
+    });
+
+    Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  Hippolyta.initialize();
-});
+// $(document).ready(function(){
+//   Hippolyta.initialize();
+// });

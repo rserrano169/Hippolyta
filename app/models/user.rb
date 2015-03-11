@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token!
 
+  has_many(
+    :products,
+    class_name: "Product",
+    foreign_key: :seller_id,
+    primary_key: :id,
+  )
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
 
