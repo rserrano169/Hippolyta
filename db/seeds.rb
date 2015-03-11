@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 u1 = User.create({
-  name: "hippolyta.com",
+  name: "Hippolyta",
   email: "contact@hippolyta.com",
   password: "hippolyta",
   logo_image_url: "/assets/images/user_logos/hippolyta_logo.png"

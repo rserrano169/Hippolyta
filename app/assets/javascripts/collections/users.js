@@ -1,6 +1,6 @@
 Hippolyta.Collections.Users = Backbone.Collection.extend({
   url: "/api/users",
-
+  comparator: "name",
   model: Hippolyta.Models.User,
 
   getOrFetch: function (id) {
