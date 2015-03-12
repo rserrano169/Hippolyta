@@ -1,6 +1,6 @@
 Hippolyta.Collections.Products = Backbone.Collection.extend({
-  url: "/api/users/:user_id/products",
-
+  url: "/api/products",
+  
   model: Hippolyta.Models.Product,
 
   getOrFetch: function (id) {

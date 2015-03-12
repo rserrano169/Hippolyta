@@ -6,8 +6,8 @@ json.products @user.products do |product|
     :name,
     :id,
     :seller_id,
-    :sale_price,
     :original_price,
+    :sale_price,
     :quantity,
     :image_url
   )

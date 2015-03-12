@@ -1,0 +1,9 @@
+json.array!(
+  @products,
+  :id,
+  :seller_id,
+  :original_price,
+  :sale_price,
+  :quantity,
+  :image_url,
+)

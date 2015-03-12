@@ -14,5 +14,7 @@ Hippolyta.Models.User = Backbone.Model.extend({
       this.products().set(response.products, { parse: true });
       delete response.products
     }
+
+    return response;
   },
 });

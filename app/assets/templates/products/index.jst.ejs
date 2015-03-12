@@ -1,0 +1,33 @@
+<ul>
+  <% products.each( function (product) { %>
+
+    <li>
+      <img src="<%= product.escape("image_url") %>" alt="product image" />
+      <br>
+
+      <%= product.escape("name") %>
+      <br>
+
+      Sale price: $<%= product.escape("sale_price") %>
+      <br>
+
+      <% if (product.escape("original_price")) { %>
+        Original Price: $<%= product.escape("original_price") %>
+        <br>
+      <% } %>
+
+      Quantity: <%= product.escape("quantity") %>
+      <br>
+
+      <button>Edit Product</button>
+    </li>
+    <br>
+    <br>
+
+
+  <% }) %>
+</ul>
+
+<p>
+  <button>Add Product</button>
+</p>
