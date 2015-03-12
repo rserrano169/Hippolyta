@@ -1,3 +1,3 @@
 Hippolyta.Models.Product = Backbone.Model.extend({
-  urlRoot: "/api/products"
+  urlRoot: "/:user_id/products"
 });

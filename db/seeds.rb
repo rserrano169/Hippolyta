@@ -10,7 +10,7 @@ u1 = User.create({
   name: "Hippolyta",
   email: "contact@hippolyta.com",
   password: "hippolyta",
-  logo_image_url: "/assets/images/user_logos/hippolyta_logo.png"
+  logo_image_url: "/users_logos/hippolyta_logo.png"
 })
 
 p1 = Product.create({
@@ -18,7 +18,7 @@ p1 = Product.create({
   seller_id: u1.id,
   sale_price: 30.69,
   quantity: 100,
-  image_url: "/assets/images/user_logos/hungry_hippos_small.jpg"
+  image_url: "/user_logos/hungry_hippos_small.jpg"
 })
 
 p2 = Product.create({
@@ -26,7 +26,7 @@ p2 = Product.create({
   seller_id: u1.id,
   sale_price: 26.69,
   quantity: 100,
-  image_url: "/assets/images/user_logos/hiphoppopotamus_small.jpg"
+  image_url: "/user_logos/hiphoppopotamus_small.jpg"
 })
 
 p3 = Product.create({
@@ -34,7 +34,7 @@ p3 = Product.create({
   seller_id: u1.id,
   sale_price: 18.53,
   quantity: 100,
-  image_url: "/assets/images/user_logos/fotc_small.jpg"
+  image_url: "/user_logos/fotc_small.jpg"
 })
 
 p4 = Product.create({
@@ -42,5 +42,5 @@ p4 = Product.create({
   seller_id: u1.id,
   sale_price: 19.19,
   quantity: 100,
-  image_url: "/assets/images/user_logos/keep_calm_thermos_small.jpg"
+  image_url: "/user_logos/keep_calm_thermos_small.jpg"
 })
