@@ -50,6 +50,10 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 # gem 'debugger', group: [:development, :test]
 
 gem 'backbone-on-rails'
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 4.2.1'
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro', '~> 1.1.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.2.1'

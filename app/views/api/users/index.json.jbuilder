@@ -4,6 +4,6 @@ json.array!(
   :name,
   :email,
   :phone_number,
-  :logo_image_url,
+  :image_url,
   :created_at
 )

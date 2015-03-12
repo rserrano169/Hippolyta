@@ -1,4 +1,4 @@
-json.(@user, :id, :name, :email, :phone_number, :logo_image_url, :created_at)
+json.(@user, :id, :name, :email, :phone_number, :image_url, :created_at)
 
 json.products @user.products do |product|
   json.extract!(

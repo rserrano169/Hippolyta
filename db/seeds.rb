@@ -10,7 +10,7 @@ u1 = User.create({
   name: "Hippolyta",
   email: "contact@hippolyta.com",
   password: "hippolyta",
-  logo_image_url: "/users_logos/hippolyta_logo.png"
+  image_url: "/users_logos/hippolyta_logo.png"
 })
 
 p1 = Product.create({
