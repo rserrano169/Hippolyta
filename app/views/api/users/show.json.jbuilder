@@ -9,6 +9,7 @@ json.products @user.products do |product|
     :original_price,
     :sale_price,
     :quantity,
+    :description,
     :image_url
   )
 end

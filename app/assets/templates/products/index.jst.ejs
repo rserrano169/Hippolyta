@@ -5,7 +5,7 @@
       <img src="<%= product.escape("image_url") %>" alt="product image" />
       <br>
 
-      <%= product.escape("name") %>
+      Name: <%= product.escape("name") %>
       <br>
 
       Sale price: $<%= product.escape("sale_price") %>
@@ -18,6 +18,11 @@
 
       Quantity: <%= product.escape("quantity") %>
       <br>
+
+      <% if (product.escape("description")) { %>
+        Description: <%= product.escape("description") %>
+        <br>
+      <% } %>
 
       <button>Edit Product</button>
     </li>

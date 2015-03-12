@@ -2,8 +2,9 @@ Hippolyta.Views.ProductsIndex = Backbone.View.extend({
 
   template: JST["products/index"],
 
-  initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+  initialize: function (options) {
+    this.user = options.user
+    this.listenTo(this.user, "sync", this.render);
   },
 
   render: function () {

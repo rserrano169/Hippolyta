@@ -5,5 +5,6 @@ json.array!(
   :original_price,
   :sale_price,
   :quantity,
+  :description,
   :image_url,
 )
