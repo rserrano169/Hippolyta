@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, length: { minimum: 8, allow_nil: true }
 
+  has_attached_file :picture, default_url: "user_images/hippolyta_default_picture.png"
+
+  # validates_attachment_content_type :picture, content_type: /\Aimage\/.*Z/
+
   attr_reader :password
 
   after_initialize :ensure_session_token!

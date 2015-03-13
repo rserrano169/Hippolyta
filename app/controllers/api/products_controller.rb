@@ -5,4 +5,13 @@ class Api::ProductsController < ApplicationController
     render :index
   end
 
+  def new
+    @product = Product.new
+    render :new
+  end
+
+  def create
+    
+  end
+
 end

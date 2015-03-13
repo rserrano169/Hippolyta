@@ -1,5 +1,5 @@
-json.array!(
-  @products,
+json.(
+  @product,
   :name,
   :id,
   :seller_id,
