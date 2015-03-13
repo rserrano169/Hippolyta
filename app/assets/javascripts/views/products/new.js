@@ -15,12 +15,38 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
     return this;
   },
 
-  submit: function () {
-    console.log("Submit!");
+  submit: function (event) {
+    event.preventDefault();
+
+    var attr = this.$el.serializeJSON(),
+      that = this;
+
+    this.model.save(attr,{
+      success: function () {
+        console.log(that.model);
+        // that.collection.add(that.model);
+        Backbone.history.navigate(
+          "users/" + that.model.seller_id + "/products",
+          { trigger: true }
+        );
+      },
+    });
   },
 
   changePicture: function () {
+    var file = event.currentTarget.files[0],
+      fileReader = newFileReader(),
+      that = this;
 
+    fileReader.onloadend = function () {
+      that.model.set("picture", fileReader.result);
+      that.previewPic(fileReader.results);
+    };
+
+    fileReader.readAsDataURL(file);
   },
 
+  previewPic: function (src) {
+    this.$("#picture-preview").attr("src", src);
+  },
 });

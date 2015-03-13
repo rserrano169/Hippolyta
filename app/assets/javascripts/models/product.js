@@ -1,9 +1,9 @@
 Hippolyta.Models.Product = Backbone.Model.extend({
-  urlRoot: "/api/product/:id",
+  urlRoot: "/api/products",
 
   toJSON: function () {
     return {
-      user: _.clone(this.attributes),
+      product: _.clone(this.attributes),
     };
   },
 });
