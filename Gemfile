@@ -55,7 +55,8 @@ gem 'paperclip', '~> 4.2.1'
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem 'figaro', '~> 1.1.0'
 # The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
-gem 'aws-sdk', '~> 2.0.30'
+gem 'aws-sdk', '< 2.0'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.2.1'

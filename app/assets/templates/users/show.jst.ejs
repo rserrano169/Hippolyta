@@ -1,6 +1,6 @@
 <h2><%= user.escape("name") %>'s Hippolyta</h2>
 
-<img src="<%= user.escape("image_url") %>" alt="hippolyta logo" />
+<img src="<%= user.escape("picture_url") %>" alt="<%= user.escape("name") %>'s picture/logo" />
 
 <p>
 Customer since <%= new Date(user.escape("created_at")) %>
