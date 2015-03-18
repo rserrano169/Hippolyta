@@ -39,8 +39,12 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   userEdit: function (id) {
+    var collection = Hippolyta.Collections.users
     var model = Hippolyta.Collections.users.getOrFetch(id);
-    var editView = new Hippolyta.Views.UserEdit({ model: model });
+    var editView = new Hippolyta.Views.UserEdit({
+      model: model,
+      collection: collection
+    });
     this._swapView(editView);
   },
 
