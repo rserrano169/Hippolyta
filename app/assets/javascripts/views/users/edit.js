@@ -28,8 +28,7 @@ Hippolyta.Views.UserEdit = Backbone.View.extend({
     this.model.save(attr, {
       success: function () {
         that.collection.add(that.model, { merge: true });
-        var $confirmation = $("<p>Your picture has been saved</p>");
-        that.$("#upload-form").append($confirmation);
+        // that.$el.append("<p>Your picture has been saved</p>");
       },
     });
   },
