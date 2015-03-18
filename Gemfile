@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-#Run Rails the 12factor way
-gem 'rails_12factor', '~> 0.0.3'
 # Combine 'pry' with 'byebug'. Adds 'step', 'next', 'finish', 'continue' and 'break' commands to control execution.
 gem 'pry-byebug'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -69,4 +67,9 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+end
+
+group :production do
+  #Run Rails the 12factor way
+  gem 'rails_12factor', '~> 0.0.3'
 end

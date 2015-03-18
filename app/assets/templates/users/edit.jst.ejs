@@ -1,8 +1,15 @@
-<img src="<%= user.get("large_picture_url") %>"
+<img id="profile-pic"
+     style="max-width: 300px; max-height: auto;"
+     src="<%= user.escape("large_picture_url") %>"
      alt="my current profile picture / logo" />
 
 <br>
 
 <form id="upload-form">
-  <input type="file" id="upload-button">
+  <input id="upload-button" type="file" name="picture">
+  <p id="reset-picture" style="cursor: pointer;">
+    Reset to original picture
+  </p>
+  <br>
+  <button>Upload</button>
 </form>
