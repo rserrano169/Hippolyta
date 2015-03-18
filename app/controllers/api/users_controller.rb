@@ -10,4 +10,8 @@ class Api::UsersController < ApplicationController
     render :show
   end
 
+  def update
+    
+  end
+
 end

@@ -3,7 +3,14 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, length: { minimum: 8, allow_nil: true }
 
-  has_attached_file :picture, styles: { :medium => "300x300", :thumb => "100x100" }, default_url: "hippolyta_default_picture.png"
+  has_attached_file :picture,
+                    styles: {
+                      thumb: "70x70>",
+                      small: "100x100>",
+                      medium: "200x200>",
+                      large: "300x300>"
+                    },
+                    default_url: "hippolyta_default_picture.png"
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 

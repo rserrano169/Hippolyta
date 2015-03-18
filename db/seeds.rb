@@ -10,8 +10,10 @@ u1 = User.create({
   name: "Hippolyta",
   email: "contact@hippolyta.com",
   password: "hippolyta",
-  image_url: "/users_images/hippolyta_logo.png"
 })
+
+u1.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/hippolyta_logo.png"))
+u1.save!
 
 p1 = Product.create({
   name: "Hungry Hungry Hippos",

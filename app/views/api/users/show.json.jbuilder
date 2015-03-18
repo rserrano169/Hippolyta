@@ -1,6 +1,10 @@
-json.(@user, :id, :name, :email, :phone_number, :image_url, :created_at)
+json.(@user, :id, :name, :email, :phone_number, :created_at)
 
-json.picture_url image_url(@user.picture.url)
+json.original_picture_url image_url(@user.picture.url)
+json.thumb_picture_url image_url(@user.picture.url(:thumb))
+json.small_picture_url image_url(@user.picture.url(:small))
+json.medium_picture_url image_url(@user.picture.url(:medium))
+json.large_picture_url image_url(@user.picture.url(:large))
 
 json.products @user.products do |product|
   json.extract!(
@@ -11,7 +15,6 @@ json.products @user.products do |product|
     :sale_price,
     :original_price,
     :quantity,
-    :description,
-    :image_url
+    :description
   )
 end

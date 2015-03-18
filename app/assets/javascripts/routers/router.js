@@ -6,12 +6,13 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "users/:id": "usersShow",
+    "users/:id": "userShow",
     "users/:user_id/products": "productsIndex",
     "products/new": "productsNew",
+    "users/:id/edit": "userEdit",
   },
 
-  usersShow: function (id) {
+  userShow: function (id) {
     var model = Hippolyta.Collections.users.getOrFetch(id);
     var showView = new Hippolyta.Views.UserShow({ model: model });
     this._swapView(showView);
@@ -35,6 +36,12 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(newView);
+  },
+
+  userEdit: function (id) {
+    var model = Hippolyta.Collections.users.getOrFetch(id);
+    var editView = new Hippolyta.Views.UserEdit({ model: model });
+    this._swapView(editView);
   },
 
   _swapView: function (view) {
