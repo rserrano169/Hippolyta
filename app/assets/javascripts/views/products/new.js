@@ -6,7 +6,7 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
 
   events: {
     "submit": "submit",
-    "change #input-picture-file": "changePicture",
+    "change #input-picture-file": "choosePicture",
   },
 
   render: function () {
@@ -23,17 +23,15 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
 
     this.model.save(attr,{
       success: function () {
-        console.log(that.model);
-        // that.collection.add(that.model);
         Backbone.history.navigate(
-          "users/" + that.model.seller_id + "/products",
+          "users/" + that.model.get("seller_id") + "/products",
           { trigger: true }
         );
       },
     });
   },
 
-  changePicture: function () {
+  choosePicture: function () {
     var file = event.currentTarget.files[0],
       fileReader = newFileReader(),
       that = this;

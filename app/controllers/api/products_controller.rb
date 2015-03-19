@@ -14,7 +14,7 @@ class Api::ProductsController < ApplicationController
     @product = current_user.products.new(product_params)
 
     if @product.save
-      render :index
+      render :new
     end
   end
 
