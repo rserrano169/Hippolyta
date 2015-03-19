@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
                       medium: "200x200>",
                       large: "300x300>"
                     },
-                    default_url: "hippolyta_default_picture.png"
+                    default_url: "hippolyta_default_picture_small.png"
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
