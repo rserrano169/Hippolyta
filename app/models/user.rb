@@ -5,12 +5,12 @@ class User < ActiveRecord::Base
 
   has_attached_file :picture,
                     styles: {
-                      thumb: "70x70>",
+                      thumb: "65x65>",
                       small: "100x100>",
                       medium: "200x200>",
                       large: "300x300>"
                     },
-                    default_url: "hippolyta_default_picture_small.png"
+                    default_url: "user_default_picture_small.png"
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 

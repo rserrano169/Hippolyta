@@ -31,14 +31,15 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
     });
   },
 
-  choosePicture: function () {
+  choosePicture: function (event) {
+    console.log(event.currentTarget);
     var file = event.currentTarget.files[0],
-      fileReader = newFileReader(),
+      fileReader = new FileReader(),
       that = this;
 
     fileReader.onloadend = function () {
       that.model.set("picture", fileReader.result);
-      that.previewPic(fileReader.results);
+      that.previewPic(fileReader.result);
     };
 
     fileReader.readAsDataURL(file);

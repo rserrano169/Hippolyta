@@ -2,7 +2,7 @@
   <% products.each( function (product) { %>
 
     <li>
-      <img src="<%= product.escape("image_url") %>" alt="product image" />
+      <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
       <br>
 
       Name: <%= product.escape("name") %>
