@@ -1,0 +1,58 @@
+/* --- HEADER --- */
+
+.auth-header {
+  width: 540px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-family: Verdana;
+  padding-bottom: 20px;
+}
+
+.auth-header-logo {
+  display: block;
+  float: left;
+  width: 135px;
+  height: auto;
+  padding-top: 15px;
+  padding-left: 8px;
+}
+
+.auth-header-links {
+  display: block;
+  float: right;
+  text-align: right;
+  color: #004D7F;
+  margin-top: 15px;
+  margin-right: 3px;
+}
+
+.auth-header-links li {
+
+}
+
+.auth-header-links a {
+  text-decoration: underline;
+}
+
+.auth-header-links > .sign-up-link {
+  font-size: 11px;
+}
+
+/* --- BODY --- */
+
+.auth-main {
+  display: block;
+  width: 540px;
+  height: auto;
+  padding: 15px;
+  margin: 0 auto;
+  border: 1px solid #CEE5F4;
+  border-radius: 1%;
+}
+
+.form-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #DB7914;
+  margin: 0 0 5px 0;
+}

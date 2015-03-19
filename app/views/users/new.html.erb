@@ -1,52 +1,68 @@
-<h2><a href="/">hippolyta</a></h2>
-<a href="<%= new_session_url %>">Your account</a>
-<br>
-<br>
-<br>
-<%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
+<header class="auth-header group">
+  <ul>
+    <li>
+      <a href="">
+        <img class="auth-header-logo"
+             src="<%= image_url("seed/hippolyta_logo.png") %>"
+             alt="hippolyta logo" />
+      </a>
+    </li>
 
-<strong>Registration</strong>
-<br>
-<br>
-New to Hippolyta.com? Register Below.
-<br>
-<br>
+    <li>
+      <a class="auth-header-links" href="<%= new_session_url %>">Your Account</a>
+    </li>
+  </ul>
+</header>
 
-<form class="create-user" action="<%= users_url %>" method="post" enctype="multipart/form-data">
-  <%= authenticity_token %>
+<main class="auth-main">
+  <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
 
-  <label>
-    My name is:
-    <input type="text" name="user[name]" value="<%= @user.name %>">
-  </label>
-  <br>
+  <h2 class="form-header">Registration<h2>
 
-  <label>
-    My e-mail address is:
-    <input type="text" name="user[email]" value="<%= @user.email %>">
-  </label>
-  <br>
 
-  <label>
-    My mobile phone number is (optional):
-    <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
-  </label>
-  <br>
-
-  <label>
-    Enter a new password:
-    <input type="password" name="user[password]" value="">
-  </label>
-  <br>
-
-  <label>
-    Add profile picture or company logo (optional):
-    <input type="file" name="user[picture]">
-  </label>
+  New to Hippolyta.com? Register Below.
   <br>
   <br>
 
-  
+  <form class="create-user"
+        action="<%= users_url %>"
+        method="post">
+        <!-- enctype="multipart/form-data" -->
+    <%= authenticity_token %>
 
-  <button>Create account</button>
-</form>
+    <label>
+      My name is:
+      <input type="text" name="user[name]" value="<%= @user.name %>">
+    </label>
+    <br>
+
+    <label>
+      My e-mail address is:
+      <input type="text" name="user[email]" value="<%= @user.email %>">
+    </label>
+    <br>
+
+    <label>
+      My mobile phone number is (optional):
+      <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
+    </label>
+    <br>
+
+    <label>
+      Enter a new password:
+      <input type="password" name="user[password]" value="">
+    </label>
+    <br>
+  <!--
+    <label>
+      Add profile picture or company logo (optional):
+      <input type="file" name="user[picture]">
+    </label>
+    <br> -->
+    <br>
+
+
+
+    <button>Create account</button>
+  </form>
+</main>

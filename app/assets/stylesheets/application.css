@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ /* --- RESET --- */
+
+html, head, header, title, body, ul, li,
+a, form, label, input, button, h2,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+/* --- ELEMENTS --- */
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+input, button, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* --- CLEARFIX --- */
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}

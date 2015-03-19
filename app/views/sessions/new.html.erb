@@ -1,40 +1,56 @@
-<h2><a href="/">hippolyta</a></h2>
-New customer?<a href="<%= new_user_url %>"> Start here.</a>
-<br>
-<br>
-<br>
+<header class="auth-header group">
+  <ul>
+    <li>
+      <a href="">
+        <img class="auth-header-logo"
+             src="<%= image_url("seed/hippolyta_logo.png") %>"
+             alt="hippolyta logo" />
+      </a>
+    </li>
 
-<%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
+    <section class="auth-header-links">
+      <li><a href="<%= new_session_url %>">Your Account</a></li>
+      <li class="sign-up-link">New customer?<a href="<%= new_user_url %>"> Start here.</a></li>
+    </section>
 
-<strong>Sign In</strong>
-<br>
-<br>
+  </ul>
+</header>
 
-<form class="create-session" action="<%= session_url %>" method="post">
-  <%= authenticity_token %>
 
-  What is your e-mail address?
+<main class="auth-main">
+
+  <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
+
+  <h2 class="form-header">Sign In</h2>
+  <br>
   <br>
 
-  <label>
-    My e-mail address is:
-    <input type="text" name="[email]" value="<%= params[:email] %>">
-  </label>
-  <br>
-  <br>
+  <form class="create-session" action="<%= session_url %>" method="post">
+    <%= authenticity_token %>
 
-  Do you have an Hippolyta.com password?
-  <br>
-
-  <label>
-    <input type="radio" name="password?" value="">No, I am a new customer.
+    What is your e-mail address?
     <br>
 
-    <input type="radio" name="password?" value="" checked>Yes, I have a password:
-    <input type="password" name="[password]" value="">
-  </label>
-  <br>
-  <br>
+    <label>
+      My e-mail address is:
+      <input type="text" name="[email]" value="<%= params[:email] %>">
+    </label>
+    <br>
+    <br>
 
-  <button>Sign in using our secure server</button>
-</form>
+    Do you have an Hippolyta.com password?
+    <br>
+
+    <label>
+      <input type="radio" name="password?" value="">No, I am a new customer.
+      <br>
+
+      <input type="radio" name="password?" value="" checked>Yes, I have a password:
+      <input type="password" name="[password]" value="">
+    </label>
+    <br>
+    <br>
+
+    <button>Sign in using our secure server</button>
+  </form>
+</main>
