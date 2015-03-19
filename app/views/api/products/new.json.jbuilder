@@ -7,6 +7,5 @@ json.(
   :original_price,
   :quantity,
   :description,
-  :image_url,
   :picture
 )

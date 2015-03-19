@@ -15,7 +15,6 @@ json.products @user.products do |product|
     :original_price,
     :quantity,
     :description,
-    :image_url
   )
 
   json.thumb_picture_url image_url(product.picture.url(:thumb))

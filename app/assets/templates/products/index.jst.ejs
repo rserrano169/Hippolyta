@@ -1,4 +1,11 @@
+<% if (products.length < 1) { %>
+  You're not selling any products yet. Would you like to <a href="#products/new">sell something?</a>
+<% } %>
+<br>
+<br>
+
 <ul>
+
   <% products.each( function (product) { %>
 
     <li>
@@ -34,5 +41,5 @@
 </ul>
 
 <p>
-  <a href="#products/new">Add Product</a>
+  <a href="#products/new">Add a product</a>
 </p>
