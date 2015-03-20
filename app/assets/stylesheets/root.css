@@ -18,6 +18,10 @@
   color: #005FC9;
 }
 
+.root-header .links .sign-out {
+  float: right;
+}
+
 .search-button {
 
 }
@@ -26,10 +30,26 @@
   display: block;
   width: 445px;
   height: auto;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .search-form input {
   width: 350px;
   padding: 5px;
+}
+
+/*--- MAIN ---*/
+
+.large-ad {
+  display: block;
+  width: auto;
+  height: auto;
+  background: #00200C;
+}
+
+.large-ad img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
 }

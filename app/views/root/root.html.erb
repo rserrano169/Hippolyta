@@ -1,7 +1,7 @@
 <header class="root-header group">
   <ul>
     <li>
-      <a href="">
+      <a href="/">
         <img class="logo"
              src="<%= image_url("seed/hippolyta_logo.png") %>"
              alt="hippolyta logo" />
@@ -10,14 +10,12 @@
   </ul>
 
   <ul class="links">
-    <li>
-      <% if !signed_in? %>
-        <a href="<%= new_session_url %>">Your Hippolyta.com</a>
-      <% else %>
-        <a href="#users/<%= current_user.id %>" style="padding-right: 20px;"><%= current_user.name %>'s Hippolyta.com</a>
-        <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
-      <% end %>
-    </li>
+    <% if !signed_in? %>
+      <li><a href="<%= new_session_url %>">Your Hippolyta.com</a></li>
+    <% else %>
+      <li><a href="#users/<%= current_user.id %>"><%= current_user.name %>'s Hippolyta.com</a></li>
+      <li class="sign-out"><%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %></li>
+    <% end %>
   </ul>
 </header>
 
@@ -28,7 +26,16 @@
   <button class="search-button">Go</button>
 </form>
 
-<div id="content"></div>
+<main>
+  <div id="content">
+
+    <section class="large-ad group">
+      <img src="<%= image_url("seed/root_page/Baby-Hippopotamus-Gregor-Berlin-Zoo.jpg") %>"
+           alt="picture"/>
+    </section>
+
+  </div>
+</main>
 
 <script type="text/javascript" charset="utf-8">
   $(Hippolyta.initialize);
