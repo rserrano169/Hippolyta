@@ -52,8 +52,8 @@ button:hover {
 }
 
 input, button, textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  /*-webkit-appearance: none;
+  -moz-appearance: none;*/
 }
 
 input {
