@@ -3,7 +3,7 @@
 .auth-header {
   width: 540px;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 13px;
   font-family: Verdana;
   padding-bottom: 20px;
 }
@@ -50,9 +50,38 @@
   border-radius: 1%;
 }
 
-.form-header {
-  font-size: 18px;
+.auth-h2 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #DB7914;
+  margin: 0 0 10px 0;
+}
+
+.auth-h3 {
+  font-size: 15px;
   font-weight: bold;
   color: #DB7914;
   margin: 0 0 5px 0;
+}
+
+.auth-input {
+  padding: 0 0 30px 0;
+}
+
+.auth-input ul {
+  width: 460px;
+  margin: 0 auto;
+}
+
+.auth-input label {
+  font-weight: bold;
+}
+
+.auth-input ul > li {
+  display: block;
+  padding: 5px 0;
+}
+
+.auth-input input {
+  border: 1px solid #CCC;
 }

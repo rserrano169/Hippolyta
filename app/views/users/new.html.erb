@@ -8,61 +8,71 @@
       </a>
     </li>
 
-    <li>
-      <a class="auth-header-links" href="<%= new_session_url %>">Your Account</a>
-    </li>
+    <section class="auth-header-links">
+        <li><a href="<%= new_session_url %>">Your Account</a></li>
+    </section>
+
   </ul>
 </header>
 
 <main class="auth-main">
   <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
 
-  <h2 class="form-header">Registration<h2>
+  <h2 class="auth-h2">Registration<h2>
 
+    <form class="create-user group"
+          action="<%= users_url %>"
+          method="post">
+          <!-- enctype="multipart/form-data" -->
+      <%= authenticity_token %>
 
-  New to Hippolyta.com? Register Below.
-  <br>
-  <br>
+      <fieldset>
+        <div class="auth-input group">
+          <h3 class="auth-h3">New to Hippolyta.com? Register Below.</h3>
+          <ul>
+            <li>
+              <label>
+                My name is:
+                <input type="text" name="user[name]" value="<%= @user.name %>">
+              </label>
+            </li>
 
-  <form class="create-user"
-        action="<%= users_url %>"
-        method="post">
-        <!-- enctype="multipart/form-data" -->
-    <%= authenticity_token %>
+            <li>
+              <label>
+                My e-mail address is:
+                <input type="text" name="user[email]" value="<%= @user.email %>">
+              </label>
+            </li>
 
-    <label>
-      My name is:
-      <input type="text" name="user[name]" value="<%= @user.name %>">
-    </label>
-    <br>
+            <li>
+              <label>
+                My mobile phone number is (optional):
+                <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
+              </label>
+            </li>
+          </ul>
+        </div>
 
-    <label>
-      My e-mail address is:
-      <input type="text" name="user[email]" value="<%= @user.email %>">
-    </label>
-    <br>
+        <div class="auth-input group">
+          <h3 class="auth-h3">Protect your information with a password</h3>
+          <ul>
+            <li>
+              <label>
+                Enter a new password:
+                <input type="password" name="user[password]" value="">
+              </label>
+            </li>
 
-    <label>
-      My mobile phone number is (optional):
-      <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
-    </label>
-    <br>
+            <!-- <li>
+              <label>
+                Add profile picture or company logo (optional):
+                <input type="file" name="user[picture]">
+              </label>
+            </li> -->
+          </ul>
+        </div>
 
-    <label>
-      Enter a new password:
-      <input type="password" name="user[password]" value="">
-    </label>
-    <br>
-  <!--
-    <label>
-      Add profile picture or company logo (optional):
-      <input type="file" name="user[picture]">
-    </label>
-    <br> -->
-    <br>
-
-
-
-    <button>Create account</button>
-  </form>
+        <button>Create account</button>
+      </fieldset>
+    </form>
 </main>
