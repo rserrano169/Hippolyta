@@ -1,25 +1,32 @@
-<h2><a href="">hippolyta</a></h2>
+<header class="root-header group">
+  <ul>
+    <li>
+      <a href="">
+        <img class="logo"
+             src="<%= image_url("seed/hippolyta_logo.png") %>"
+             alt="hippolyta logo" />
+      </a>
+    </li>
+  </ul>
 
-<% if !signed_in? %>
-  <a href="<%= new_session_url %>">Your Hippolyta.com</a>
-<% else %>
-  <a href="#users/<%= current_user.id %>" style="padding-right: 20px;"><%= current_user.name %>'s Hippolyta.com</a>
-  <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
-<% end %>
+  <ul class="links">
+    <li>
+      <% if !signed_in? %>
+        <a href="<%= new_session_url %>">Your Hippolyta.com</a>
+      <% else %>
+        <a href="#users/<%= current_user.id %>" style="padding-right: 20px;"><%= current_user.name %>'s Hippolyta.com</a>
+        <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
+      <% end %>
+    </li>
+  </ul>
+</header>
 
-<br>
-<br>
+<form class="search-form group">
+  <label>Search</label>
+  <input type="text" name="search[keywords]" value="">
 
-<form>
-  <label for="">
-    Search
-    <input type="text" name="search[keywords]" value="">
-  </label>
-
-  <button>Go</button>
+  <button class="search-button">Go</button>
 </form>
-<br>
-<br>
 
 <div id="content"></div>
 

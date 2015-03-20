@@ -1,14 +1,14 @@
 <header class="auth-header group">
   <ul>
     <li>
-      <a href="">
-        <img class="auth-header-logo"
+      <a href="/">
+        <img class="logo"
              src="<%= image_url("seed/hippolyta_logo.png") %>"
              alt="hippolyta logo" />
       </a>
     </li>
 
-    <section class="auth-header-links">
+    <section class="links">
       <li><a href="<%= new_session_url %>">Your Account</a></li>
       <li class="sign-up-link">New customer?<a href="<%= new_user_url %>"> Start here.</a></li>
     </section>
@@ -31,25 +31,32 @@
       <fieldset>
         <div class="auth-input group">
           <h3 class="auth-h3">What is your e-mail address?</h3>
-
-          <label>
-            My e-mail address is:
-            <input type="text" name="[email]" value="<%= params[:email] %>">
-          </label>
+          <ul>
+            <li>
+              <label>My e-mail address is:</label>
+              <input type="text" name="[email]" value="<%= params[:email] %>">
+            </li>
+          </ul>
         </div>
 
         <div class="auth-input group">
           <h3 class="auth-h3">Do you have an Hippolyta.com password?</h3>
+          <ul>
+            <li>
+              <input type="radio" name="password?" value="">
+              <label>No, I am a new customer.</label>
+            </li>
 
-          <label>
-            <input type="radio" name="password?" value="">No, I am a new customer.
+            <li>
+              <input type="radio" name="password?" value="" checked>
+              <label>Yes, I have a password:</label>
 
-            <input type="radio" name="password?" value="" checked>Yes, I have a password:
-            <input type="password" name="[password]" value="">
-          </label>
+              <input type="password" name="[password]" value="">
+            </li>
+          </ul>
         </div>
 
-        <button>Sign in using our secure server</button>
+        <button class="sing-in">Sign in using our secure server</button>
       </fieldset>
     </form>
 </main>

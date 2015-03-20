@@ -43,14 +43,33 @@ ul {
   list-style: none;
 }
 
-li {
-  list-style: none;
+a:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 input, button, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+input {
+  border: 1px solid #ccc;
+  padding: 3px 1px 1px 1px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.logo {
+  width: 135px;
+  height: auto;
+}
+
 
 /* --- CLEARFIX --- */
 

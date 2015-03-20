@@ -8,16 +8,14 @@
   padding-bottom: 20px;
 }
 
-.auth-header-logo {
+.auth-header .logo {
   display: block;
   float: left;
-  width: 135px;
-  height: auto;
   padding-top: 15px;
   padding-left: 8px;
 }
 
-.auth-header-links {
+.auth-header .links {
   display: block;
   float: right;
   text-align: right;
@@ -26,15 +24,15 @@
   margin-right: 3px;
 }
 
-.auth-header-links li {
+.auth-header .links li {
 
 }
 
-.auth-header-links a {
+.auth-header .links a {
   text-decoration: underline;
 }
 
-.auth-header-links > .sign-up-link {
+.auth-header .links > .sign-up-link {
   font-size: 11px;
 }
 
@@ -42,7 +40,7 @@
 
 .auth-main {
   display: block;
-  width: 540px;
+  width: 510px;
   height: auto;
   padding: 15px;
   margin: 0 auto;
@@ -50,15 +48,31 @@
   border-radius: 1%;
 }
 
+.auth-main input {
+}
+
+.auth-main button {
+  display: block;
+  padding: 7px;
+  font-size: 13px;
+  color: #004D7F;
+  background: #EEBF32;
+  border: 1px solid #004D7F;
+  border-radius: 6px;
+}
+
+.auth-main button:hover {
+  background: #F0D06F;
+}
+
 .auth-h2 {
   font-size: 17px;
   font-weight: bold;
   color: #DB7914;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
 }
 
 .auth-h3 {
-  font-size: 15px;
   font-weight: bold;
   color: #DB7914;
   margin: 0 0 5px 0;
@@ -73,15 +87,7 @@
   margin: 0 auto;
 }
 
-.auth-input label {
-  font-weight: bold;
-}
-
 .auth-input ul > li {
   display: block;
   padding: 5px 0;
-}
-
-.auth-input input {
-  border: 1px solid #CCC;
 }

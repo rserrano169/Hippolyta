@@ -1,14 +1,14 @@
 <header class="auth-header group">
   <ul>
     <li>
-      <a href="">
-        <img class="auth-header-logo"
+      <a href="/">
+        <img class="logo"
              src="<%= image_url("seed/hippolyta_logo.png") %>"
              alt="hippolyta logo" />
       </a>
     </li>
 
-    <section class="auth-header-links">
+    <section class="links">
         <li><a href="<%= new_session_url %>">Your Account</a></li>
     </section>
 
@@ -31,24 +31,18 @@
           <h3 class="auth-h3">New to Hippolyta.com? Register Below.</h3>
           <ul>
             <li>
-              <label>
-                My name is:
-                <input type="text" name="user[name]" value="<%= @user.name %>">
-              </label>
+              <label>My name is:</label>
+              <input type="text" name="user[name]" value="<%= @user.name %>">
             </li>
 
             <li>
-              <label>
-                My e-mail address is:
-                <input type="text" name="user[email]" value="<%= @user.email %>">
-              </label>
+              <label>My e-mail address is:</label>
+              <input type="text" name="user[email]" value="<%= @user.email %>">
             </li>
 
             <li>
-              <label>
-                My mobile phone number is (optional):
-                <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
-              </label>
+              <label>My mobile phone number is (optional):</label>
+              <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
             </li>
           </ul>
         </div>
@@ -57,22 +51,18 @@
           <h3 class="auth-h3">Protect your information with a password</h3>
           <ul>
             <li>
-              <label>
-                Enter a new password:
-                <input type="password" name="user[password]" value="">
-              </label>
+              <label>Enter a new password:</label>
+              <input type="password" name="user[password]" value="">
             </li>
 
             <!-- <li>
-              <label>
-                Add profile picture or company logo (optional):
-                <input type="file" name="user[picture]">
-              </label>
+              <label>Add profile picture or company logo (optional):</label>
+              <input type="file" name="user[picture]">
             </li> -->
           </ul>
         </div>
 
-        <button>Create account</button>
+        <button class="sign-up">Create account</button>
       </fieldset>
     </form>
 </main>

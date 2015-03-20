@@ -1,0 +1,35 @@
+/* --- HEADER --- */
+
+.root-header {
+  width: auto;
+}
+
+.root-header li {
+  float: left;
+}
+
+.root-header .logo {
+  padding: 10px 0 0 20px;;
+}
+
+.root-header .links li {
+  margin: 23px 20px 10px 40px;
+  font-size: 12px;
+  color: #005FC9;
+}
+
+.search-button {
+
+}
+
+.search-form {
+  display: block;
+  width: 445px;
+  height: auto;
+  margin: 20px;
+}
+
+.search-form input {
+  width: 350px;
+  padding: 5px;
+}
