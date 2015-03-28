@@ -8,7 +8,7 @@
 
 u1 = User.create({
   name: "Hippolyta",
-  email: "contact@hippolyta.com",
+  email: "hippo@hippolyta.com",
   password: "hippolyta",
 })
 
