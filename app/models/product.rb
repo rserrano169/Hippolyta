@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  include PgSearch
+
   validates :name, :seller_id, :sale_price, :quantity, presence: true
 
   has_attached_file :picture,
