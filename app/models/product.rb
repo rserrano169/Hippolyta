@@ -1,5 +1,18 @@
 class Product < ActiveRecord::Base
   include PgSearch
+  pg_search_scope :search,
+                  against: { name: 'A', description: 'B' },
+                  ignoring: :accents,
+                  using: {
+                    tsearch: {
+                      dictionary: "english",
+                      anyword: true,
+                      prefix: true
+                    },
+                    trigram: {},
+                    dmetaphone: { anyword: true }
+                  }
+
 
   validates :name, :seller_id, :sale_price, :quantity, presence: true
 
