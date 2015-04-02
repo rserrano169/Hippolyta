@@ -6,6 +6,12 @@ class Api::RootController < ApplicationController
     render :search
   end
 
+  def results
+    @search_results
+
+    render :search
+  end
+
   private
 
   def search_params

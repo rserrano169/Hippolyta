@@ -1,4 +1,4 @@
-json.results @search_results do |result|
+json.array! @search_results do |result|
   json.extract!(
     result,
     :name,
