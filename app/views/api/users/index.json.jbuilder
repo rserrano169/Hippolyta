@@ -1,5 +1,5 @@
 json.array!(
-  @user,
+  @users,
   :id,
   :name,
   :email,

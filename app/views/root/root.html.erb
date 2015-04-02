@@ -19,9 +19,9 @@
   </ul>
 </header>
 
-<form class="search-form group">
+<form class="search-form group" action="<%= api_create_search_url %>" method="post">
   <label>Search</label>
-  <input type="text" name="search[keywords]" value="">
+  <input id="query" type="text" name="search[keywords]" value="">
 
   <button class="search-button">Go</button>
 </form>

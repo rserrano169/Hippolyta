@@ -23,6 +23,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # PgSearch builds Active Record named scopes that take advantage of PostgreSQL's full text search
 gem 'pg_search'
+# Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 3+
+gem 'kaminari'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

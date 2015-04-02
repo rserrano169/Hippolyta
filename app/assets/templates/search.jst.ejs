@@ -1,0 +1,22 @@
+<ul>
+  <% results.each ( function(result) { %>
+    <li>
+      <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
+
+      <%= result.escape("name") %>
+
+      Price: <%= result.escape("sale_price") %>
+
+      <% if (result.escape("original_price")) { %>
+        Original Price: <%= result.escape("original_price") %>
+      <% } %>
+
+      Qty: <%= result.escape("quantity") %>
+
+      <% if (result.escape("description")) { %>
+        Description: <%= result.escape("description") %>
+      <% } %>
+
+    </li>
+  <% }) %>
+</ul>

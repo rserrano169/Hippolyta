@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     end
 
     resources :products, except: [:index]
+
+    post "/create_search", to: "root#create_search"
+    get "/search_results", to: "root#search_results"
   end
 end
