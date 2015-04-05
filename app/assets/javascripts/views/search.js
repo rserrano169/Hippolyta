@@ -1,19 +1,14 @@
 Hippolyta.Views.SearchResults = Backbone.View.extend ({
 
-  template: JST["/search"],
+  template: JST["search"],
 
   initialize: function () {
-    this.searchResults = new Hippolyta.Collections.SearchResults();
-    this.listenTo(this.searchResults, "sync", this.render);
-  },
-
-  events: {
-    "submit .search-form": "search",
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function () {
-    var content = this.template ({
-      results: this.searchResults,
+    var content = this.template({
+      results: this.collection,
     });
 
     this.$el.html(content)

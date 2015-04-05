@@ -1,6 +1,6 @@
 Hippolyta.Collections.SearchResults = Backbone.Collection.extend ({
 
-  url: "/api/root",
+  url: "/api/search",
 
   parse: function (resp) {
     if (resp.total_count) {
@@ -18,3 +18,5 @@ Hippolyta.Collections.SearchResults = Backbone.Collection.extend ({
   },
 
 });
+
+Hippolyta.Collections.searchresults = new Hippolyta.Collections.SearchResults();

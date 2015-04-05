@@ -32,7 +32,6 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
   },
 
   choosePicture: function (event) {
-    console.log(event.currentTarget);
     var file = event.currentTarget.files[0],
       fileReader = new FileReader(),
       that = this;

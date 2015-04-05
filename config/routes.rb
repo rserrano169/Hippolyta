@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "root#root"
   resources :users, only: [:new, :create, :destroy]
   resource :session, only: [:new, :create, :destroy]
+  resource :search, only: [:new, :create]
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :edit, :update] do
@@ -9,8 +10,6 @@ Rails.application.routes.draw do
     end
 
     resources :products, except: [:index]
-
-    post "/create_search", to: "root#create_search"
-    get "/results", to: "root#results"
+    resources :search, only: [:show]
   end
 end
