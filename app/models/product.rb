@@ -9,8 +9,8 @@ class Product < ActiveRecord::Base
                       anyword: true,
                       prefix: true
                     },
-                    trigram: {}#,
-                    # dmetaphone: { anyword: true }
+                    trigram: {},
+                    dmetaphone: { anyword: true }
                   }
 
 

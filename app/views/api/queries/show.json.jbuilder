@@ -1,11 +1,11 @@
 json.array! @search_results do |result|
   json.extract!(
-    result,
-    :name,
-    :sale_price,
-    :original_price,
-    :quantity,
-    :description
+  result,
+  :name,
+  :sale_price,
+  :original_price,
+  :quantity,
+  :description
   )
 
   json.thumb_picture_url image_url(result.picture.url(:thumb))

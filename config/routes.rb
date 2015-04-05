@@ -2,14 +2,13 @@ Rails.application.routes.draw do
   root to: "root#root"
   resources :users, only: [:new, :create, :destroy]
   resource :session, only: [:new, :create, :destroy]
-  resource :search, only: [:new, :create]
+  resources :queries, only: [:create]
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :edit, :update] do
       resources :products, only: [:index]
     end
 
-    resources :products, except: [:index]
-    resources :search, only: [:show]
+    resources :queries, only: [:show]
   end
 end
