@@ -1,6 +1,8 @@
-Hippolyta.Collections.SearchResults = Backbone.Collection.extend ({
+Hippolyta.Collections.SearchResults = Backbone.Collection.extend({
 
-  url: "/api/search",
+  url: "/api/queries",
+
+  model: Hippolyta.Models.Product,
 
   parse: function (resp) {
     if (resp.total_count) {
@@ -8,13 +10,6 @@ Hippolyta.Collections.SearchResults = Backbone.Collection.extend ({
     };
 
     return resp.results;
-  },
-
-  model: function (attrs) {
-    var type = attrs._type;
-    delete attrs._type;
-
-    return new Hippolyta.Models[type](attrs);
   },
 
 });

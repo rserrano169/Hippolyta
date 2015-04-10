@@ -1,11 +1,11 @@
-class Api::QueriesController < ApplicationController.rb
+class Api::QueriesController < ApplicationController
 
-  def show
+  def index
     current_user.nil? ? @query = Query.last : @query = current_user.queries.last
 
     @search_results = Product.search(@query.keywords)
 
-    render :show
+    render :index
   end
 
 end

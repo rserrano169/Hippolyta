@@ -50,13 +50,10 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
 
   searchResults: function () {
     var collection = Hippolyta.Collections.searchresults.fetch();
-
-    console.log(collection);
-
     var searchView = new Hippolyta.Views.SearchResults({
       collection: collection,
     });
-
+    console.log("here");
     this._swapView(searchView);
   },
 

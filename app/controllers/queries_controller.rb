@@ -5,14 +5,18 @@ class QueriesController < ApplicationController
 
     @query = Query.create!({
       querier_id: @querier_id,
-      keywords: query_params[keywords]
+      keywords: query_params["keywords"]
     })
 
     if current_user
       current_user.queries.first.delete if current_user.queries > 10
     end
 
-    redirect_to "/#search_results"
+    if @query
+      redirect_to "/#search_results"
+    else
+      redirect_to root_url
+    end
   end
 
   private
