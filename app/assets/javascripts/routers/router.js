@@ -49,11 +49,12 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   searchResults: function () {
-    var collection = Hippolyta.Collections.searchresults.fetch();
+    Hippolyta.Collections.searchresults.fetch();
+    var collection = Hippolyta.Collections.searchresults;
     var searchView = new Hippolyta.Views.SearchResults({
       collection: collection,
     });
-    console.log("here");
+
     this._swapView(searchView);
   },
 

@@ -4,13 +4,13 @@ Hippolyta.Collections.SearchResults = Backbone.Collection.extend({
 
   model: Hippolyta.Models.Product,
 
-  parse: function (resp) {
-    if (resp.total_count) {
-      this.total_count = resp.total_count;
-    };
-
-    return resp.results;
-  },
+  // parse: function (response) {
+  //   if (response.total_count) {
+  //     this.total_count = response.total_count;
+  //   };
+  //   console.log("resp", resp);
+  //   return resp;
+  // },
 
 });
 
