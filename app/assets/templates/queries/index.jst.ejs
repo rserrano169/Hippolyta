@@ -2,21 +2,30 @@
   <% results.each( function(result) { %>
     <li>
       <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
+    </li>
 
+    <li>
       <%= result.escape("name") %>
+    </li>
 
+    <li>
       Price: <%= result.escape("sale_price") %>
+    </li>
 
+    <li>
       <% if (result.escape("original_price")) { %>
         Original Price: <%= result.escape("original_price") %>
       <% } %>
+    </li>
 
+    <li>
       Qty: <%= result.escape("quantity") %>
+    </li>
 
+    <li>
       <% if (result.escape("description")) { %>
         Description: <%= result.escape("description") %>
       <% } %>
-
     </li>
   <% }) %>
 </ul>

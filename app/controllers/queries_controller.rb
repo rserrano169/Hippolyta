@@ -10,7 +10,7 @@ class QueriesController < ApplicationController
 
     if @query.save
       if current_user
-        current_user.queries.first.delete if current_user.queries > 10
+        current_user.queries.first.delete if current_user.queries.length > 10
       end
 
       redirect_to "/#search_results"

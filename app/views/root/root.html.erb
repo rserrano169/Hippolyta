@@ -20,6 +20,8 @@
 </header>
 
 <form class="search-form group" action="<%= queries_url %>" method="post">
+  <%= authenticity_token %>
+
   <label>Search</label>
   <input id="query" type="text" name="query[keywords]" value="">
 
