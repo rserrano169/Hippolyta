@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    return nil unless session[:token]
-    @current_user ||= User.find_by(session_token: session[:token])
+    return nil unless session[:user_token]
+    @current_user ||= User.find_by(session_token: session[:user_token])
   end
 
   def signed_in?
@@ -21,12 +21,12 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_in(user)
-    session[:token] = user.reset_session_token!
+    session[:user_token] = user.reset_session_token!
   end
 
   def sign_out
     current_user.reset_session_token!
-    session[:token] = SecureRandom.urlsafe_base64(16)
+    session[:user_token] = SecureRandom.urlsafe_base64(16)
   end
 
 end

@@ -3,6 +3,11 @@ class QueriesController < ApplicationController
   def create
     current_user ? @querier_id = current_user.id : @querier_id = nil
 
+    p "session token"
+    p session[:user_token]
+    p "guest token"
+    p session[:guest_token]
+
     @query = Query.new({
       querier_id: @querier_id,
       keywords: query_params["keywords"]
@@ -15,7 +20,7 @@ class QueriesController < ApplicationController
 
       redirect_to "/#search_results"
     else
-      redirect_to root_url(@root)
+      redirect_to root_url
     end
   end
 
