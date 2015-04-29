@@ -21,7 +21,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   productsIndex: function (seller_id) {
-    var user = Hippolyta.Collections.users.getOrFetch(user_id);
+    var user = Hippolyta.Collections.users.getOrFetch(seller_id);
     var indexView = new Hippolyta.Views.ProductsIndex({
       user: user,
       collection: user.products(),
