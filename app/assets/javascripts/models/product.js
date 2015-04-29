@@ -1,5 +1,5 @@
 Hippolyta.Models.Product = Backbone.Model.extend({
-  urlRoot: "/api/products",
+  urlRoot: "/api/users/:user_id/products",
 
   toJSON: function () {
     return {

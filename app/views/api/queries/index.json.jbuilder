@@ -5,7 +5,9 @@ json.array! @search_results.each do |result|
     :sale_price,
     :original_price,
     :quantity,
-    :description
+    :description,
+    :seller_id,
+    :id
   )
 
   json.thumb_picture_url image_url(result.picture.url(:thumb))

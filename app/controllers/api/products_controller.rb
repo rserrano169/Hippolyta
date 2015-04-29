@@ -1,8 +1,8 @@
 class Api::ProductsController < ApplicationController
 
-  def index
-    @products = current_user.products
-    render :index
+  def show
+    @product = Product.find(params[:id])
+    render :show
   end
 
   def new
@@ -16,6 +16,11 @@ class Api::ProductsController < ApplicationController
     if @product.save
       render :new
     end
+  end
+
+  def index
+    @products = current_user.products
+    render :index
   end
 
   private

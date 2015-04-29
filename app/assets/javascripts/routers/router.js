@@ -8,9 +8,10 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   routes: {
     "users/:id": "userShow",
     "users/:id/edit": "userEdit",
-    "users/:user_id/products": "productsIndex",
+    "users/:seller_id/products": "productsIndex",
     "products/new": "productsNew",
     "search_results": "searchResults",
+    "users/:seller_id/products/:id": "productShow",
   },
 
   userShow: function (id) {
@@ -19,7 +20,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(showView);
   },
 
-  productsIndex: function (user_id) {
+  productsIndex: function (seller_id) {
     var user = Hippolyta.Collections.users.getOrFetch(user_id);
     var indexView = new Hippolyta.Views.ProductsIndex({
       user: user,
@@ -56,6 +57,18 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(searchView);
+  },
+
+  productShow: function (seller_id, id) {
+    var user = Hippolyta.Collections.users.getOrFetch(seller_id);
+    var collection = user.products();
+    var product = collection.getOrFetch(id)
+    var productShowView = new Hippolyta.Views.ProductShow({
+      product: product,
+      collection: collection
+    });
+
+    this._swapView(productShowView);
   },
 
   _swapView: function (view) {
