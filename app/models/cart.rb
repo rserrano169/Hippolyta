@@ -4,7 +4,7 @@ class Cart < ActiveRecord::Base
 
   belongs_to(
     :buyer,
-    classname: "User",
+    class_name: "User",
     foreign_key: :buyer_id,
     primary_key: :id,
     dependent: :destroy
@@ -12,7 +12,7 @@ class Cart < ActiveRecord::Base
 
   has_many(
     :items,
-    classname: "Product",
+    class_name: "Product",
     foreign_key: :cart_id,
     primary_key: :id
   )
