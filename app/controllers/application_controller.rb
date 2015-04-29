@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def sign_out
     current_user.reset_session_token!
-    session[:user_token] = SecureRandom.urlsafe_base64(16)
+    session[:user_token] = nil
   end
 
 end
