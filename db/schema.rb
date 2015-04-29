@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429014415) do
+ActiveRecord::Schema.define(version: 20150429185737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
   enable_extension "fuzzystrmatch"
   enable_extension "unaccent"
+
+  create_table "carts", force: true do |t|
+    t.integer  "buyer_id"
+    t.string   "session_token", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "carts", ["buyer_id"], name: "index_carts_on_buyer_id", unique: true, using: :btree
+  add_index "carts", ["session_token"], name: "index_carts_on_session_token", unique: true, using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name",                 null: false
@@ -32,9 +42,13 @@ ActiveRecord::Schema.define(version: 20150429014415) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.integer  "seller_id",            null: false
+    t.integer  "cart_id"
   end
 
+  add_index "products", ["cart_id"], name: "index_products_on_cart_id", using: :btree
+  add_index "products", ["description"], name: "index_products_on_description", using: :btree
   add_index "products", ["name"], name: "index_products_on_name", using: :btree
+  add_index "products", ["seller_id"], name: "index_products_on_seller_id", using: :btree
 
   create_table "queries", force: true do |t|
     t.integer  "querier_id"
@@ -44,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150429014415) do
     t.string   "session_token"
   end
 
+  add_index "queries", ["querier_id"], name: "index_queries_on_querier_id", using: :btree
   add_index "queries", ["session_token"], name: "index_queries_on_session_token", using: :btree
 
   create_table "users", force: true do |t|
