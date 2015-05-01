@@ -5,7 +5,7 @@ class Api::CartsController < ApplicationController
     p session[:guest_token]
     p "user_token"
     p session[:user_token]
-    
+
     redirect_to root_url
   end
 

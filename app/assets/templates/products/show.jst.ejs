@@ -1,0 +1,34 @@
+<ul>
+  <li>
+    <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
+  </li>
+
+  <li>
+    <%= product.escape("name") %>
+  </li>
+
+  <li>
+    Price: <%= product.escape("sale_price") %>
+  </li>
+
+  <li>
+    <% if (product.escape("original_price")) { %>
+      <% } %>
+    Original Price: <%= product.escape("original_price") %>
+  </li>
+
+  <li>
+    Qty: <%= product.escape("quantity") %>
+  </li>
+
+  <li>
+    <% if (product.escape("description")) { %>
+      Description: <%= product.escape("description") %>
+    <% } %>
+  </li>
+
+  <form action="/api/carts" method="post">
+    <button name="product_id" value="<%= product.id %>">Add to Cart</button>
+  </form>
+
+</ul>
