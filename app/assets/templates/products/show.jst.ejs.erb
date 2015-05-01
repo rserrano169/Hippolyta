@@ -26,7 +26,8 @@
       Description: <%%= product.escape("description") %>
     <%% } %>
   </li>
-
-  <button name="item_id" value="<%%= product.id %>">Add to Cart</button>
+  <form id="form-id" action="/api/carts" method="post">
+    <button name="product_id" value="<%%= product.id %>">Add to Cart</button>
+  </form>
 
 </ul>
