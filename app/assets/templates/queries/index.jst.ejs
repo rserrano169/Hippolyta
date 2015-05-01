@@ -7,7 +7,7 @@
 <ul>
   <% results.each( function(result) { %>
     <li>
-      <a href='#users/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
         <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
       </a>
     </li>

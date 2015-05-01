@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :current_cart
 
   private
 
@@ -14,6 +14,14 @@ class ApplicationController < ActionController::Base
   def current_user
     return nil unless session[:user_token]
     @current_user ||= User.find_by(session_token: session[:user_token])
+  end
+
+  def current_cart
+    if current_user
+      Cart.find_by(buyer_id: current_user.id)
+    else
+      Cart.find_by(session_token: session[:guest_token])
+    end
   end
 
   def signed_in?

@@ -11,7 +11,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "users/:seller_id/products": "productsIndex",
     "products/new": "productsNew",
     "search_results": "searchResults",
-    "users/:seller_id/products/:id": "productShow",
+    "sellers/:seller_id/products/:id": "productShow",
   },
 
   userShow: function (id) {
@@ -21,10 +21,10 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   productsIndex: function (seller_id) {
-    var user = Hippolyta.Collections.users.getOrFetch(seller_id);
+    var seller = Hippolyta.Collections.users.getOrFetch(seller_id);
     var indexView = new Hippolyta.Views.ProductsIndex({
-      user: user,
-      collection: user.products(),
+      user: seller,
+      collection: seller.products(),
     });
 
     this._swapView(indexView);
@@ -60,12 +60,11 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   productShow: function (seller_id, id) {
-    var user = Hippolyta.Collections.users.getOrFetch(seller_id);
-    var collection = user.products();
+    var seller = Hippolyta.Collections.users.getOrFetch(seller_id);
+    var collection = seller.products();
     var product = collection.getOrFetch(id)
     var productShowView = new Hippolyta.Views.ProductShow({
-      product: product,
-      collection: collection
+      product: product
     });
 
     this._swapView(productShowView);

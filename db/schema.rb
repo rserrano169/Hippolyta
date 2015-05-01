@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501193147) do
+ActiveRecord::Schema.define(version: 20150501215900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(version: 20150501193147) do
   add_index "carts", ["session_token"], name: "index_carts_on_session_token", unique: true, using: :btree
 
   create_table "carts_products", id: false, force: true do |t|
-    t.integer  "carts_id"
-    t.integer  "products_id"
+    t.integer  "cart_id"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "carts_products", ["carts_id"], name: "index_carts_products_on_carts_id", using: :btree
-  add_index "carts_products", ["products_id"], name: "index_carts_products_on_products_id", using: :btree
+  add_index "carts_products", ["cart_id"], name: "index_carts_products_on_cart_id", using: :btree
+  add_index "carts_products", ["product_id"], name: "index_carts_products_on_product_id", using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name",                 null: false
