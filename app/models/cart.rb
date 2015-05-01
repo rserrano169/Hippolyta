@@ -10,10 +10,5 @@ class Cart < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_many(
-    :items,
-    class_name: "Product",
-    foreign_key: :cart_id,
-    primary_key: :id
-  )
+  has_and_belongs_to_many :products
 end

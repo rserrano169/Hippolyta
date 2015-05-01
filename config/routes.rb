@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     end
 
     resources :queries, only: [:index]
+    resources :carts, only: [:index, :edit, :update]
   end
 end

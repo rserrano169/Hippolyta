@@ -4,7 +4,6 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.product = options.product;
-    console.log(this.product);
     this.listenTo(this.product, "sync", this.render);
   },
 

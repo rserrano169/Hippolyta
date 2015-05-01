@@ -35,12 +35,7 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
-  belongs_to(
-    :cart,
-    class_name: "Cart",
-    foreign_key: :cart_id,
-    primary_key: :id
-  )
+  has_and_belongs_to_many :carts
 
-  has_many :buyers, through: :cart, source: :buyer
+  has_many :buyers, through: :carts, source: :buyer
 end
