@@ -27,6 +27,8 @@ gem 'pg_search'
 gem 'kaminari'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+# Compile and evaluate EJS (Embedded JavaScript) templates from Ruby.
+gem 'ejs', '~> 1.1.1'
 
 group :development do
   gem 'better_errors'
