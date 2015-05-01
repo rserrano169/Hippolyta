@@ -1,3 +1,7 @@
+<% if (results.length < 1) { %>
+  <%= "Your search did not match any products." %>
+<% }; %>
+
 <ul>
   <% results.each( function(result) { %>
     <li>
