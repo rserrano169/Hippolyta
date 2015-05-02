@@ -1,6 +1,5 @@
 class Cart < ActiveRecord::Base
-  validates :buyer_id, :session_token, uniqueness: true
-  validates :session_token, presence: true
+  validates :session_token, presence: true, uniqueness: true
 
   belongs_to(
     :buyer,
