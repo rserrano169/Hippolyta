@@ -27,7 +27,8 @@
     <% } %>
   </li>
 
-  <form action="/api/carts" method="post">
+  <form action="/api/users/<%= seller.id %>/products/<%= product.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
     <button name="product_id" value="<%= product.id %>">Add to Cart</button>
   </form>
 

@@ -13,26 +13,36 @@
     </li>
 
     <li>
-      <%= result.escape("name") %>
+      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+        <%= result.escape("name") %>
+      </a>
     </li>
 
     <li>
-      Price: <%= result.escape("sale_price") %>
+      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+        Price: <%= result.escape("sale_price") %>
+      </a>
     </li>
 
     <li>
       <% if (result.escape("original_price")) { %>
-        Original Price: <%= result.escape("original_price") %>
+        <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+          Original Price: <%= result.escape("original_price") %>
+        </a>
       <% } %>
     </li>
 
     <li>
-      Qty: <%= result.escape("quantity") %>
+      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+        Qty: <%= result.escape("quantity") %>
+      </a>
     </li>
 
     <li>
       <% if (result.escape("description")) { %>
-        Description: <%= result.escape("description") %>
+        <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+          Description: <%= result.escape("description") %>
+        </a>
       <% } %>
     </li>
   <% }) %>

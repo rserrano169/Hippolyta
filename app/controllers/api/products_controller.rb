@@ -1,10 +1,5 @@
 class Api::ProductsController < ApplicationController
 
-  def show
-    @product = Product.find(params[:id])
-    render :show
-  end
-
   def new
     @product = Product.new
     render :new
@@ -18,9 +13,27 @@ class Api::ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+    render :show
+  end
+
   def index
     @products = current_user.products
     render :index
+  end
+
+  def update
+    @product = Product.find(params[:product_id])
+    @cart = current_cart
+    @cart.products << @product unless @cart.products.include?(@product)
+    @cart.update_attributes({quantity: @cart.products.length})
+
+    redirect_to root_url
+  end
+
+  def edit
+
   end
 
   private

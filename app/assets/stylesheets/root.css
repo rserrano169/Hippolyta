@@ -19,8 +19,16 @@
   color: #005FC9;
 }
 
-.root-header .links .sign-out {
+.root-header .links-right {
   float: right;
+}
+
+.root-header .links .sign-out {
+
+}
+
+.root-header .links .cart {
+  
 }
 
 .search-button {

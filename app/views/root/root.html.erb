@@ -9,14 +9,38 @@
     </li>
   </ul>
 
-  <ul class="links">
+  <section class="links">
     <% if !signed_in? %>
-      <li><a href="<%= new_session_url %>">Your Hippolyta.com</a></li>
+      <ul class="links-left">
+        <li>
+          <a href="<%= new_session_url %>">Your Hippolyta.com</a>
+        </li>
+      </ul>
+
+      <ul class="links-right">
+        <li class="cart">
+          <a href="#">Cart: <%= current_cart.quantity %></a>
+        </li>
+      </ul>
     <% else %>
-      <li><a href="#users/<%= current_user.id %>"><%= current_user.name %>'s Hippolyta.com</a></li>
-      <li class="sign-out"><%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %></li>
+      <ul class="links-left">
+        <li>
+          <a href="#users/<%= current_user.id %>">
+            <%= current_user.name %>'s Hippolyta.com
+          </a>
+        </li>
+      </ul>
+
+      <ul class="links-right">
+        <li class="sign-out">
+          <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
+        </li>
+        <li class="cart">
+          Cart: <%= current_cart.quantity %>
+        </li>
+      </ul>
     <% end %>
-  </ul>
+  </section>
 </header>
 
 <form class="search-form group" action="<%= queries_url %>" method="post">
