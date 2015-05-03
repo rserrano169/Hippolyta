@@ -9,7 +9,8 @@ class Api::CartsController < ApplicationController
   def update
     @cart = Cart.find(params[:id])
     @cart.products.find(params[:product_id]).delete
-
+    @cart.update_attributes({quantity: @cart.products.length})
+    
     redirect_to "#carts/#{@cart.id}"
   end
 
