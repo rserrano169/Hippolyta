@@ -1,13 +1,26 @@
 <header class="root-header group">
-  <ul>
-    <li>
-      <a href="/">
-        <img class="logo"
-             src="<%= image_url("hippolyta_logo_white.png") %>"
-             alt="hippolyta logo" />
-      </a>
-    </li>
-  </ul>
+  <section class="top group">
+    <ul>
+      <li class="logo-block">
+        <a href="/">
+          <img class="logo"
+               src="<%= image_url("hippolyta_logo_white.png") %>"
+               alt="hippolyta logo" />
+        </a>
+      </li>
+
+      <li class="form-block">
+        <form class="search-form group" action="<%= queries_url %>" method="post">
+          <%= authenticity_token %>
+
+          <label>Search</label>
+          <input id="query" type="text" name="query[keywords]" value="">
+
+          <button class="search-button">Go</button>
+        </form>
+      </li>
+    </ul>
+  </section>
 
   <section class="links">
     <% if !signed_in? %>
@@ -46,15 +59,6 @@
     <% end %>
   </section>
 </header>
-
-<form class="search-form group" action="<%= queries_url %>" method="post">
-  <%= authenticity_token %>
-
-  <label>Search</label>
-  <input id="query" type="text" name="query[keywords]" value="">
-
-  <button class="search-button">Go</button>
-</form>
 
 <main>
   <div id="content">

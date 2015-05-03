@@ -2,15 +2,47 @@
 
 .root-header {
   width: auto;
+  height: auto;
   background: #232f3e;
+}
+
+.top {
+  display: block;
+  background: red;
+}
+
+.top > ul {
+  white-space: nowrap;
+}
+
+.top > li {
+  
+}
+
+.root-header .logo {
+  /*float: left;*/
+  display: block;
+  padding: 10px 0 0 20px;;
+}
+
+.search-form {
+  display: block;
+  width: 445px;
+  height: auto;
+  margin: auto;
+}
+
+.search-button {
+
+}
+
+.search-form input {
+  width: 350px;
+  padding: 5px;
 }
 
 .root-header li {
   float: left;
-}
-
-.root-header .logo {
-  padding: 10px 0 0 20px;;
 }
 
 .root-header .links li {
@@ -28,23 +60,7 @@
 }
 
 .root-header .links .cart {
-  
-}
 
-.search-button {
-
-}
-
-.search-form {
-  display: block;
-  width: 445px;
-  height: auto;
-  margin: 20px auto;
-}
-
-.search-form input {
-  width: 350px;
-  padding: 5px;
 }
 
 /*--- MAIN ---*/
