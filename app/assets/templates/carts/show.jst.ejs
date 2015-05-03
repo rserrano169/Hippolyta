@@ -1,19 +1,29 @@
 <% if (products.length < 1) { %>
   <div id="empty-cart">
     <header>
-      <%= "Your Shopping Cart is empty." %>
+      Your Shopping Cart is empty.
     </header>
 
     <body>
-      Your Shopping Cart lives to serve.
-      Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.
-      If you already have an account,
-        <a href="/session/new">
-          Sign In
-        </a>
-      to see your Cart.
-      <br>
-      Continue shopping on the<a href="/"> Hippolyta.com</a> homepage.
+      <ul>
+        <li>
+          Your Shopping Cart lives to serve.
+          Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.
+          If you already have an account,
+            <a href="/session/new">
+              Sign In
+            </a>
+          to see your Cart.
+        </li>
+        <li>
+          Continue shopping on the<a href="/"> Hippolyta.com</a> homepage.
+        </li>
+        <li>
+          The price and availability of items at Amazon.com are subject to change.
+          The Cart is a temporary place to store a list of your items and reflects
+          each item's most recent price.
+        </li>
+      </ul>
     </body>
   </div>
 <% }; %>
