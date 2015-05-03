@@ -29,7 +29,7 @@ class Api::ProductsController < ApplicationController
     @cart.products << @product unless @cart.products.include?(@product)
     @cart.update_attributes({quantity: @cart.products.length})
 
-    redirect_to root_url
+    redirect_to "#carts/#{@cart.id}"
   end
 
   def edit
