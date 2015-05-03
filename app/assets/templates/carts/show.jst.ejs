@@ -1,0 +1,72 @@
+<% if (products.length < 1) { %>
+  <div id="empty-cart">
+    <header>
+      <%= "Your Shopping Cart is empty." %>
+    </header>
+
+    <body>
+      Your Shopping Cart lives to serve.
+      Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.
+      If you already have an account,
+        <a href="/session/new">
+          Sign In
+        </a>
+      to see your Cart.
+      <br>
+      Continue shopping on the<a href="/"> Hippolyta.com</a> homepage.
+    </body>
+  </div>
+<% }; %>
+
+<ul>
+  <% products.each( function(product) { %>
+    <li>
+      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+        <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
+      </a>
+    </li>
+
+    <li>
+      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+        <%= product.escape("name") %>
+      </a>
+    </li>
+
+    <li>
+      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+        Price: <%= product.escape("sale_price") %>
+      </a>
+    </li>
+
+    <li>
+      <% if (product.escape("original_price")) { %>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          Original Price: <%= product.escape("original_price") %>
+        </a>
+      <% } %>
+    </li>
+
+    <li>
+      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+        Qty: <%= product.escape("quantity") %>
+      </a>
+    </li>
+
+    <li>
+      <% if (product.escape("description")) { %>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          Description: <%= product.escape("description") %>
+        </a>
+      <% } %>
+    </li>
+
+    <li>
+      <form action="/api/carts/<%= cart.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <button name="product_id" value="<%= product.id %>">
+          Delete from Cart
+        </button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

@@ -6,15 +6,16 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "users/:id": "userShow",
-    "users/:id/edit": "userEdit",
+    "users/:user_id": "userShow",
+    "users/:user_id/edit": "userEdit",
     "users/:seller_id/products": "productsIndex",
     "products/new": "productsNew",
     "search_results": "searchResults",
     "sellers/:seller_id/products/:id": "productShow",
+    "carts/:cart_id": "cartShow",
   },
 
-  userShow: function (id) {
+  userShow: function (user_id) {
     var model = Hippolyta.Collections.users.getOrFetch(id);
     var showView = new Hippolyta.Views.UserShow({ model: model });
     this._swapView(showView);
@@ -39,7 +40,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(newView);
   },
 
-  userEdit: function (id) {
+  userEdit: function (user_id) {
     var collection = Hippolyta.Collections.users
     var model = Hippolyta.Collections.users.getOrFetch(id);
     var editView = new Hippolyta.Views.UserEdit({
@@ -69,6 +70,17 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(productShowView);
+  },
+
+  cartShow: function (cart_id) {
+    var cart = new Hippolyta.Models.Cart({ id: cart_id });
+    cart.fetch();
+    var products = cart.products();
+    var cartItemsView = new Hippolyta.Views.CartItems({
+      cart: cart,
+      collection: products
+    });
+    this._swapView(cartItemsView);
   },
 
   _swapView: function (view) {

@@ -19,7 +19,9 @@
 
       <ul class="links-right">
         <li class="cart">
-          <a href="#">Cart: <%= current_cart.quantity %></a>
+          <a href="#carts/<%= current_cart.id %>">
+            Cart: <%= current_cart.quantity %>
+          </a>
         </li>
       </ul>
     <% else %>
@@ -36,7 +38,9 @@
           <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
         </li>
         <li class="cart">
-          <a href="#">Cart: <%= current_cart.quantity %></a>
+          <a href="#carts/<%= current_cart.id %>">
+            Cart: <%= current_cart.quantity %>
+          </a>
         </li>
       </ul>
     <% end %>
