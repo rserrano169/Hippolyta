@@ -1,48 +1,43 @@
 /* --- HEADER --- */
 
 .root-header {
-  width: auto;
+  min-width: 807px;
+  max-width: 100%;
   height: auto;
   background: #232f3e;
 }
 
 .top {
   display: block;
-  background: red;
+  width: 100%;
+  background: purple;
 }
 
-.top > ul {
+.top li {
+  display: inline-block;
   white-space: nowrap;
 }
 
-.top > li {
-  
-}
-
-.root-header .logo {
-  /*float: left;*/
-  display: block;
-  padding: 10px 0 0 20px;;
-}
-
-.search-form {
-  display: block;
-  width: 445px;
-  height: auto;
-  margin: auto;
-}
-
-.search-button {
-
-}
-
-.search-form input {
-  width: 350px;
-  padding: 5px;
-}
-
-.root-header li {
+.top .logo-block {
   float: left;
+  padding: 10px 50px 0px 20px;
+  background: red;
+}
+
+.top .form-block {
+  width: 50%;
+  padding: 10px 50px 0px 20px;
+  background: green;
+}
+
+.top .spacer {
+  width: 400px;
+  background: gold;
+}
+
+.top input {
+  padding: 5px;
+  width: 80%;
 }
 
 .root-header .links li {
@@ -55,13 +50,6 @@
   float: right;
 }
 
-.root-header .links .sign-out {
-
-}
-
-.root-header .links .cart {
-
-}
 
 /*--- MAIN ---*/
 
