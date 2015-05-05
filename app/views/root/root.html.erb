@@ -88,14 +88,26 @@
           <li>
             <ul id="drop-down-ul">
               <li>
-                <a id="acount" href="<%= session_url %>" data-method="delete">
+                <a id="account" href="<%= session_url %>" data-method="delete">
                   <span id="hello">Hello <%= current_user.name %></span>
                   <br>
                   <span>Sign Out?</span>
                 </a>
               </li>
               <div id="account-drop-down" class="group">
-              
+                <li>
+                  <button>
+                    <a href="<%= session_url %>" data-method="delete">
+                      Sign Out
+                    </a>
+                  </button>
+                </li>
+                <li id="new-user">
+                  Want to view
+                  <a id="hippolyta" href="#users/<%= current_user.id %>">
+                    your account?
+                  </a>
+                </li>
               </div>
             </ul>
           </li>
