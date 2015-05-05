@@ -8,36 +8,35 @@
 }
 
 .top {
-  display: block;
+  display: table;
   width: 100%;
-  background: purple;
 }
 
-.top li {
-  display: inline-block;
+#logo-block, #search-block, #space-block {
+  display: table-cell;
+  vertical-align: middle;
   white-space: nowrap;
 }
 
-.top .logo-block {
-  float: left;
+.top #logo-block {
+  width: 135px;
   padding: 10px 50px 0px 20px;
-  background: red;
 }
 
-.top .form-block {
-  width: 50%;
-  padding: 10px 50px 0px 20px;
-  background: green;
+.top #search-block {
+  min-width: 350px;
+  width: 100%;
+  color: white;
+  padding: 5px 0px 0px 0px;
 }
 
-.top .spacer {
-  width: 400px;
-  background: gold;
-}
-
-.top input {
+.top #search-block input {
+  width: 100%;
   padding: 5px;
-  width: 80%;
+}
+
+.top #space-block {
+  padding: 0px 0px 0px 350px;
 }
 
 .root-header .links li {

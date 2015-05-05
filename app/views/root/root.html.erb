@@ -1,15 +1,14 @@
 <header class="root-header group">
   <section class="top group">
-    <ul class="top-left group">
-      <li class="logo-block">
+      <div id="logo-block">
         <a href="/">
           <img class="logo"
                src="<%= image_url("hippolyta_logo_white.png") %>"
                alt="hippolyta logo" />
         </a>
-      </li>
+      </div>
 
-      <li class="form-block">
+      <div id="search-block">
         <form class="search-form group" action="<%= queries_url %>" method="post">
           <%= authenticity_token %>
 
@@ -18,25 +17,22 @@
 
           <button class="search-button">Go</button>
         </form>
-      </li>
-    </ul>
+      </div>
 
-    <ul class="top-right group">
-      <li class="spacer">
-        Spacer
-      </li>
-    </ul>
+      <div id="space-block">
+
+      </div>
   </section>
 
-  <section class="links">
+  <section class="links group">
     <% if !signed_in? %>
-      <ul class="links-left">
+      <ul class="links-left group">
         <li>
           <a href="<%= new_session_url %>">Your Hippolyta.com</a>
         </li>
       </ul>
 
-      <ul class="links-right">
+      <ul class="links-right group">
         <li class="cart">
           <a href="#carts/<%= current_cart.id %>">
             Cart: <%= current_cart.quantity %>
@@ -44,7 +40,7 @@
         </li>
       </ul>
     <% else %>
-      <ul class="links-left">
+      <ul class="links-left group">
         <li>
           <a href="#users/<%= current_user.id %>">
             <%= current_user.name %>'s Hippolyta.com
@@ -52,7 +48,7 @@
         </li>
       </ul>
 
-      <ul class="links-right">
+      <ul class="links-right group">
         <li class="sign-out">
           <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
         </li>
