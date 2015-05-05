@@ -86,11 +86,18 @@
       <div id="right">
         <ul>
           <li>
-            <a id="acount" href="<%= session_url %>" data-method="delete">
-              <span id="hello">Hello <%= current_user.name %></span>
-              <br>
-              <span>Sign Out?</span>
-            </a>
+            <ul id="drop-down-ul">
+              <li>
+                <a id="acount" href="<%= session_url %>" data-method="delete">
+                  <span id="hello">Hello <%= current_user.name %></span>
+                  <br>
+                  <span>Sign Out?</span>
+                </a>
+              </li>
+              <div id="account-drop-down" class="group">
+              
+              </div>
+            </ul>
           </li>
           <li>
             <a id="cart" href="#carts/<%= current_cart.id %>">

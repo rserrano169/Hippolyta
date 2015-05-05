@@ -16,7 +16,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (user_id) {
-    var model = Hippolyta.Collections.users.getOrFetch(id);
+    var model = Hippolyta.Collections.users.getOrFetch(user_id);
     var showView = new Hippolyta.Views.UserShow({ model: model });
     this._swapView(showView);
   },
@@ -42,7 +42,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
 
   userEdit: function (user_id) {
     var collection = Hippolyta.Collections.users
-    var model = Hippolyta.Collections.users.getOrFetch(id);
+    var model = Hippolyta.Collections.users.getOrFetch(user_id);
     var editView = new Hippolyta.Views.UserEdit({
       model: model,
       collection: collection
