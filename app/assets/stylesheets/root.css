@@ -51,9 +51,9 @@
 
 .large-ad {
   display: block;
-  width: auto;
+  min-width: 807px;
   height: auto;
-  background: #00200C;
+  background: #11120d;
 }
 
 .large-ad img {
