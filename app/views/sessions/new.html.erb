@@ -10,7 +10,10 @@
 
     <section class="links">
       <li><a href="<%= new_session_url %>">Your Account</a></li>
-      <li class="sign-up-link">New customer?<a href="<%= new_user_url %>"> Start here.</a></li>
+      <li class="sign-up-link">
+        New customer?
+        <a href="<%= new_user_url %>"> Start here.</a>
+      </li>
     </section>
 
   </ul>
@@ -34,7 +37,10 @@
           <ul>
             <li>
               <label>My e-mail address is:</label>
-              <input type="text" name="[email]" value="<%= params[:email] %>">
+              <input id="new-session-email-input"
+                     type="text"
+                     name="[email]"
+                     value="<%= params[:email] %>">
             </li>
           </ul>
         </div>
