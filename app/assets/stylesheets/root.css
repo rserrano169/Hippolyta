@@ -59,7 +59,7 @@
 }
 
 .bottom #middle {
-  min-width: 425px;
+  min-width: 420px;
 }
 
 .bottom #middle a:hover {
@@ -67,7 +67,8 @@
 }
 
 .bottom #right {
-  width: 325px;
+  width: 330px;
+  font-size: 14px;
 }
 
 .bottom #right li {
@@ -78,8 +79,34 @@
   display: block;
 }
 
-.bottom #right #account {
-  padding: 5px 20px 10px 20px;
+.bottom #right #sign-in {
+  padding: 5px 25px 10px 25px;
+}
+
+.bottom #right #sign-in:hover {
+  padding: 4px 24px 8px 24px;
+  border-top: 1px solid #90969e;
+  border-right: 1px solid #90969e;
+  border-bottom: 2px solid #90969e;
+  border-left: 1px solid #90969e;
+  border-radius: 3px;
+}
+
+.bottom #right #hello {
+  font-size: 12px;
+}
+
+.bottom #right #cart {
+  padding: 21px 45px 10px 40px;
+}
+
+.bottom #right #cart:hover {
+  padding: 20px 44px 8px 39px;
+  border-top: 1px solid #90969e;
+  border-right: 1px solid #90969e;
+  border-bottom: 2px solid #90969e;
+  border-left: 1px solid #90969e;
+  border-radius: 3px;
 }
 
 /*--- MAIN ---*/

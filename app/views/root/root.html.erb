@@ -26,7 +26,7 @@
     </div>
     <% if !signed_in? %>
       <div id="middle">
-          <a class="hippolyta" href="<%= new_session_url %>">
+          <a id="hippolyta" href="<%= new_session_url %>">
             Your Hippolyta.com
           </a>
       </div>
@@ -34,9 +34,10 @@
       <div id="right">
         <ul>
           <li>
-            <a id="account" href="<%= new_session_url %>">
-              Hello. Sign in<br>
-              Your Account
+            <a id="sign-in" href="<%= new_session_url %>">
+              <span id="hello">Hello. Sign in</span>
+              <br>
+              <span id="account">Your Account</span>
             </a>
           </li>
           <li>
@@ -48,17 +49,17 @@
       </div>
     <% else %>
       <div id="middle">
-        <a class="hippolyta" href="#users/<%= current_user.id %>">
+        <a id="hippolyta" href="#users/<%= current_user.id %>">
           <%= current_user.name %>'s Hippolyta.com
         </a>
       </div>
 
       <div id="right" class="group">
-        <a class="sign-out" href="<%= session_url %>" data-method="delete">
+        <a id="sign-out" href="<%= session_url %>" data-method="delete">
           Not <%= "#{current_user.name}" %>? Sign Out
         </a>
 
-        <a class="cart" href="#carts/<%= current_cart.id %>">
+        <a id="cart" href="#carts/<%= current_cart.id %>">
           Cart: <%= current_cart.quantity %>
         </a>
       </div>
