@@ -46,13 +46,13 @@
           <li>
             <ul id="drop-down-ul">
               <li>
-                <a id="sign" href="<%= new_session_url %>">
+                <a id="account" href="<%= new_session_url %>">
                   <span id="hello">Hello. Sign in</span>
                   <br>
-                  <span id="account">Your Account</span>
+                  <span>Your Account</span>
                 </a>
               </li>
-              <div id="sign-drop-down" class="group">
+              <div id="account-drop-down" class="group">
                 <li>
                   <button>
                     <a href="<%= new_session_url %>">
@@ -60,7 +60,7 @@
                     </a>
                   </button>
                 </li>
-                <li>
+                <li id="new-user">
                   New customer?
                   <a href="<%= new_user_url %>">
                     Start here.
@@ -86,10 +86,10 @@
       <div id="right">
         <ul>
           <li>
-            <a id="sign" href="<%= session_url %>" data-method="delete">
+            <a id="acount" href="<%= session_url %>" data-method="delete">
               <span id="hello">Hello <%= current_user.name %></span>
               <br>
-              <span id="account">Sign Out?</span>
+              <span>Sign Out?</span>
             </a>
           </li>
           <li>

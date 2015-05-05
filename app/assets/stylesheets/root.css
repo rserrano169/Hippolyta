@@ -113,11 +113,11 @@
   display: block;
 }
 
-.bottom #right #sign {
+.bottom #right #account {
   padding: 5px 25px 9px 25px;
 }
 
-.bottom #right #sign:hover {
+.bottom #right #account:hover {
   padding: 4px 24px 8px 24px;
   border-top: 1px solid #4f5965;
   border-right: 1px solid #4f5965;
@@ -146,31 +146,28 @@
   box-shadow: 0px 1px 0px 0px #90969e;
 }
 
-.bottom #right #drop-down-ul:hover #sign-drop-down {
+.bottom #right #drop-down-ul:hover #account-drop-down {
   display: block;
 }
 
-.bottom #right #sign-drop-down {
+.bottom #right #account-drop-down {
   display: none;
   position: absolute;
   width: 220px;
   padding: 15px;
+  font-weight: normal;
   background: white;
   border: 1px solid #bbbbbb;
   border-radius: 5px;
 }
 
-.bottom #right #sign-drop-down li{
+.bottom #right #account-drop-down li{
   display: block;
   color: black;
   text-align
 }
 
-.bottom #right #sign-drop-down li:first-child {
-  padding: 0px 0px 10px 0px;
-}
-
-.bottom #right #sign-drop-down button {
+.bottom #right #account-drop-down button {
   display: block;
   width: 185px;
   height: 30px;
@@ -182,9 +179,28 @@
   border-radius: 3px;
 }
 
-.bottom #right #sign-drop-down button:hover {
+.bottom #right #account-drop-down button:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
+
+.bottom #right #account-drop-down #new-user {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0px 0px 0px;
+}
+
+.bottom #right #account-drop-down #new-user a {
+  display: inline;
+  width: 60px;
+  color: #0b5cad;
+}
+
+.bottom #right #account-drop-down #new-user a:hover {
+  color: #e47911;
+  text-decoration: underline;
+}
+
 /*--- MAIN ---*/
 
 .large-ad {
