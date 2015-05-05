@@ -44,11 +44,28 @@
       <div id="right">
         <ul>
           <li>
-            <a id="sign" href="<%= new_session_url %>">
-              <span id="hello">Hello. Sign in</span>
-              <br>
-              <span id="account">Your Account</span>
-            </a>
+            <ul>
+              <li>
+                <a id="sign" href="<%= new_session_url %>">
+                  <span id="hello">Hello. Sign in</span>
+                  <br>
+                  <span id="account">Your Account</span>
+                </a>
+              </li>
+              <div id="account-drop-down" class="group">
+                <li>
+                  <a id="drop-down-sign-in" href="<%= new_session_url %>">
+                    Sign in
+                  </a>
+                </li>
+                <li>
+                  New customer?
+                  <a href="<%= new_user_url %>">
+                    Start here.
+                  </a>
+                </li>
+              </div>
+            </ul>
           </li>
           <li>
             <a id="cart" href="#carts/<%= current_cart.id %>">

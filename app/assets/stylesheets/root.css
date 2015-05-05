@@ -146,6 +146,22 @@
   box-shadow: 0px 1px 0px 0px #90969e;
 }
 
+.bottom #right #account-drop-down {
+  position: absolute;
+  width: 250px;
+  border: 1px solid #bbbbbb;
+}
+
+.bottom #right #account-drop-down li{
+  display: block;
+  color: black;
+  background: white;
+}
+
+.bottom #right #account-drop-down {
+  
+}
+
 /*--- MAIN ---*/
 
 .large-ad {
