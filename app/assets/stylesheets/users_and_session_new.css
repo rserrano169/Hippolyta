@@ -83,20 +83,34 @@
   padding: 5px 0;
 }
 
-.auth-main button {
+.auth-main #new-session-submit {
   display: block;
   padding: 5px 10px 5px 10px;
   font-size: 12px;
-  color: #004D7F;
+  color: #000066;
   margin: 0px 0px 10px 25px;
-  background: #EEBF32;
+  background: linear-gradient(to bottom, #ffc741, #ffc741 50%, #be9228);
   border: 1px solid #004D7F;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  box-shadow: inset 0px 7px 4px 0px #ffdf8f;
 }
 
-.auth-main button:hover {
-  background: #F0D06F;
+.auth-main #new-user-submit {
+  display: block;
+  padding: 5px 10px 5px 10px;
+  font-size: 12px;
+  color: #000066;
+  margin: 0px 0px 10px 25px;
+  background: linear-gradient(to bottom, #ffc741, #ffc741 50%, #be9228);
+  border: 1px solid #004D7F;
+  border-radius: 5px;
+  box-shadow: inset 0px 7px 4px 0px #ffdf8f;
+}
+
+.auth-main #new-user-submit:hover,
+.auth-main #new-session-submit:hover {
+  background: #ffd86b;
 }
