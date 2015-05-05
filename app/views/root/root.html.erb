@@ -1,5 +1,5 @@
-<header class="root-header group">
-  <section class="top group">
+<header class="root-header">
+  <section class="top">
       <div id="logo-block">
         <a href="/">
           <img class="logo"
@@ -9,18 +9,28 @@
       </div>
 
       <div id="search-block">
-        <form class="search-form group" action="<%= queries_url %>" method="post">
+        <form action="<%= queries_url %>" method="post">
           <%= authenticity_token %>
-
-          <label>Search</label>
-          <input id="query" type="text" name="query[keywords]" value="">
-
-          <button class="search-button">Go</button>
+          <ul>
+            <li>
+              <label>Search</label>
+            </li>
+            <li>
+              <input id="query" type="text" name="query[keywords]" value="">
+            </li>
+            <li>
+              <button class="search-button">
+                <img id="search-button"
+                     src="<%= image_url("seed/root_page/search-button.png") %>"
+                     alt="Go" />
+              </button>
+            </li>
+          </ul>
         </form>
       </div>
   </section>
 
-  <section class="bottom group">
+  <section class="bottom">
     <div id="left">
 
     </div>
@@ -76,7 +86,7 @@
 
 <main>
   <div id="content">
-    <section class="large-ad group">
+    <section class="large-ad">
       <img src="<%= image_url("seed/root_page/Baby-Hippopotamus-Gregor-Berlin-Zoo.jpg") %>"
            alt="picture"/>
     </section>
