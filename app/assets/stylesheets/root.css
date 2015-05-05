@@ -164,7 +164,7 @@
 .bottom #right #account-drop-down li{
   display: block;
   color: black;
-  text-align
+  text-align: center;
 }
 
 .bottom #right #account-drop-down button {
@@ -172,8 +172,6 @@
   width: 185px;
   height: 30px;
   margin: 0px auto;
-  text-align: center;
-  vertical-text-align: middle;
   background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
   border: 1px solid #c89411;
   border-radius: 3px;
@@ -186,13 +184,11 @@
 .bottom #right #account-drop-down #new-user {
   display: block;
   font-size: 12px;
-  text-align: center;
   padding: 10px 0px 0px 0px;
 }
 
 .bottom #right #account-drop-down #new-user a {
   display: inline;
-  width: 60px;
   color: #0b5cad;
 }
 
