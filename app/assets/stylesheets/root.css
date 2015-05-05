@@ -68,7 +68,9 @@
 
 .bottom #right {
   width: 330px;
+  height: 48px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .bottom #right li {
@@ -80,33 +82,36 @@
 }
 
 .bottom #right #sign-in {
-  padding: 5px 25px 10px 25px;
+  padding: 5px 25px 9px 25px;
 }
 
 .bottom #right #sign-in:hover {
   padding: 4px 24px 8px 24px;
-  border-top: 1px solid #90969e;
-  border-right: 1px solid #90969e;
-  border-bottom: 2px solid #90969e;
-  border-left: 1px solid #90969e;
+  border-top: 1px solid #4f5965;
+  border-right: 1px solid #4f5965;
+  border-bottom: 1px solid #4f5965;
+  border-left: 1px solid #4f5965;
   border-radius: 3px;
+  box-shadow: 0px 1px 0px 0px #90969e;
 }
 
 .bottom #right #hello {
+  font-weight: normal;
   font-size: 12px;
 }
 
 .bottom #right #cart {
-  padding: 21px 45px 10px 40px;
+  padding: 21px 45px 9px 40px;
 }
 
 .bottom #right #cart:hover {
   padding: 20px 44px 8px 39px;
-  border-top: 1px solid #90969e;
-  border-right: 1px solid #90969e;
-  border-bottom: 2px solid #90969e;
-  border-left: 1px solid #90969e;
+  border-top: 1px solid #4f5965;
+  border-right: 1px solid #4f5965;
+  border-bottom: 1px solid #4f5965;
+  border-left: 1px solid #4f5965;
   border-radius: 3px;
+  box-shadow: 0px 1px 0px 0px #90969e;
 }
 
 /*--- MAIN ---*/
