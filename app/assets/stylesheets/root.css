@@ -1,7 +1,7 @@
 /* --- HEADER --- */
 
 .root-header {
-  min-width: 807px;
+  min-width: 920px;
   max-width: 100%;
   height: auto;
   background: #232f3e;
@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-#logo-block, #search-block, #space-block {
+#logo-block, #search-block {
   display: table-cell;
   vertical-align: middle;
   white-space: nowrap;
@@ -81,11 +81,11 @@
   display: block;
 }
 
-.bottom #right #sign-in {
+.bottom #right #sign {
   padding: 5px 25px 9px 25px;
 }
 
-.bottom #right #sign-in:hover {
+.bottom #right #sign:hover {
   padding: 4px 24px 8px 24px;
   border-top: 1px solid #4f5965;
   border-right: 1px solid #4f5965;
@@ -118,7 +118,7 @@
 
 .large-ad {
   display: block;
-  min-width: 807px;
+  min-width: 920px;
   height: auto;
   background: #11120d;
 }
