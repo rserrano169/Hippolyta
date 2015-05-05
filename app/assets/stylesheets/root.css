@@ -148,20 +148,38 @@
 
 .bottom #right #account-drop-down {
   position: absolute;
-  width: 250px;
+  width: 220px;
+  padding: 15px;
+  background: white;
   border: 1px solid #bbbbbb;
+  border-radius: 5px;
 }
 
 .bottom #right #account-drop-down li{
   display: block;
   color: black;
-  background: white;
+  text-align
 }
 
-.bottom #right #account-drop-down {
-  
+.bottom #right #account-drop-down li:first-child {
+  padding: 0px 0px 10px 0px;
 }
 
+.bottom #right #account-drop-down button {
+  display: block;
+  width: 185px;
+  height: 30px;
+  margin: 0px auto;
+  text-align: center;
+  vertical-text-align: middle;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+.bottom #right #account-drop-down button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
 /*--- MAIN ---*/
 
 .large-ad {
