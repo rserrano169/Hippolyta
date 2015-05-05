@@ -5,6 +5,7 @@
   max-width: 100%;
   height: auto;
   background: #232f3e;
+  overflow: hidden;
 }
 
 .top {
@@ -27,16 +28,12 @@
   min-width: 350px;
   width: 100%;
   color: white;
-  padding: 5px 0px 0px 0px;
+  padding: 5px 325px 0px 0px;
 }
 
 .top #search-block input {
   width: 100%;
   padding: 5px;
-}
-
-.top #space-block {
-  padding: 0px 0px 0px 350px;
 }
 
 .root-header .links li {
