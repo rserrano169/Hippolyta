@@ -8,6 +8,8 @@
   overflow: hidden;
 }
 
+/* --- TOP --- */
+
 .top {
   display: table;
   width: 100%;
@@ -27,8 +29,8 @@
 .top #search-block {
   min-width: 350px;
   width: 100%;
-  color: white;
-  padding: 5px 325px 0px 0px;
+  color: #005FC9;
+  padding: 5px 400px 0px 0px;
 }
 
 .top #search-block input {
@@ -36,16 +38,49 @@
   padding: 5px;
 }
 
-.root-header .links li {
-  margin: 23px 20px 10px 40px;
-  font-size: 12px;
-  color: #005FC9;
+/* --- BOTTOM --- */
+
+.bottom {
+  display: table;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-size: 13px;
 }
 
-.root-header .links-right {
-  float: right;
+#left, #middle, #right {
+  display: table-cell;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
+.bottom #left {
+  min-width: 205px;
+}
+
+.bottom #middle {
+  min-width: 425px;
+}
+
+.bottom #middle a:hover {
+  text-decoration: underline;
+}
+
+.bottom #right {
+  width: 325px;
+}
+
+.bottom #right li {
+  display: inline-block;
+}
+
+.bottom #right a {
+  display: block;
+}
+
+.bottom #right #account {
+  padding: 5px 20px 10px 20px;
+}
 
 /*--- MAIN ---*/
 

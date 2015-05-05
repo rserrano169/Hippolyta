@@ -20,40 +20,48 @@
       </div>
   </section>
 
-  <section class="links group">
+  <section class="bottom group">
+    <div id="left">
+
+    </div>
     <% if !signed_in? %>
-      <ul class="links-left group">
-        <li>
-          <a href="<%= new_session_url %>">Your Hippolyta.com</a>
-        </li>
-      </ul>
-
-      <ul class="links-right group">
-        <li class="cart">
-          <a href="#carts/<%= current_cart.id %>">
-            Cart: <%= current_cart.quantity %>
+      <div id="middle">
+          <a class="hippolyta" href="<%= new_session_url %>">
+            Your Hippolyta.com
           </a>
-        </li>
-      </ul>
+      </div>
+
+      <div id="right">
+        <ul>
+          <li>
+            <a id="account" href="<%= new_session_url %>">
+              Hello. Sign in<br>
+              Your Account
+            </a>
+          </li>
+          <li>
+            <a id="cart" href="#carts/<%= current_cart.id %>">
+              Cart: <%= current_cart.quantity %>
+            </a>
+          </li>
+        </ul>
+      </div>
     <% else %>
-      <ul class="links-left group">
-        <li>
-          <a href="#users/<%= current_user.id %>">
-            <%= current_user.name %>'s Hippolyta.com
-          </a>
-        </li>
-      </ul>
+      <div id="middle">
+        <a class="hippolyta" href="#users/<%= current_user.id %>">
+          <%= current_user.name %>'s Hippolyta.com
+        </a>
+      </div>
 
-      <ul class="links-right group">
-        <li class="sign-out">
-          <%= link_to "Not #{current_user.name}? Sign Out", session_url, method: :delete %>
-        </li>
-        <li class="cart">
-          <a href="#carts/<%= current_cart.id %>">
-            Cart: <%= current_cart.quantity %>
-          </a>
-        </li>
-      </ul>
+      <div id="right" class="group">
+        <a class="sign-out" href="<%= session_url %>" data-method="delete">
+          Not <%= "#{current_user.name}" %>? Sign Out
+        </a>
+
+        <a class="cart" href="#carts/<%= current_cart.id %>">
+          Cart: <%= current_cart.quantity %>
+        </a>
+      </div>
     <% end %>
   </section>
 </header>
