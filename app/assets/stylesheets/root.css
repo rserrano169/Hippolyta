@@ -152,20 +152,6 @@
   text-align: center;
 }
 
-.bottom #right button {
-  display: block;
-  width: 185px;
-  height: 30px;
-  margin: 0px auto;
-  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
-  border: 1px solid #c89411;
-  border-radius: 3px;
-}
-
-.bottom #right button:hover {
-  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
-}
-
 .bottom #right #account-drop-down #after-button {
   display: block;
   font-size: 12px;
@@ -226,14 +212,33 @@
   border-radius: 5px;
 }
 
+.bottom #right #cart-drop-down-ul:hover #cart-drop-down {
+  display: block;
+}
+
 .bottom #right #cart-drop-down li{
   display: block;
   color: black;
   text-align: center;
 }
 
-.bottom #right #cart-drop-down-ul:hover #cart-drop-down {
-  display: block;
+.bottom #right #cart-drop-down #cart-empty {
+  padding: 0px 0px 10px 0px;
+}
+
+.bottom #right #cart-drop-down .cart-item:first-child {
+  padding: 0px 0px 9px 0px;
+}
+
+.bottom #right #cart-drop-down .cart-item {
+  text-align: left;
+  padding: 10px 0px 9px 0px;
+  border-bottom: 1px solid grey;
+}
+
+.bottom #right #cart-drop-down #cart-total {
+  font-weight: bold;
+  padding: 15px 0px 15px 0px;
 }
 
 .bottom #right #down-arrow {
@@ -243,6 +248,20 @@
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #a7acb2;
+}
+
+.bottom #right button {
+  display: block;
+  width: 185px;
+  height: 30px;
+  margin: 0px auto;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+.bottom #right button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
 /*--- MAIN ---*/

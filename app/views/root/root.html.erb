@@ -91,8 +91,6 @@
                       <ul>
                         <li class="cart-item">
                           <%= product.name %>
-                        </li>
-                        <li class="cart-item">
                           <%= product.sale_price %>
                         </li>
                       </ul>
@@ -168,16 +166,13 @@
                     </li>
                   <% else %>
                     <% current_cart.products.each do |product| %>
-                      <ul>
-                        <li class="cart-item">
-                          <%= product.name %>
-                        </li>
-                        <li class="cart-item">
-                          <%= product.sale_price %>
-                        </li>
-                      </ul>
+                      <li class="cart-item">
+                        <%= product.name %>
+                        <br>
+                        <%= product.sale_price %>
+                      </li>
                     <% end %>
-                    <li>
+                    <li id="cart-total">
                       Total: <%= current_cart.total %>
                     </li>
                   <% end %>
