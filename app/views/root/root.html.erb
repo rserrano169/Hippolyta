@@ -44,15 +44,15 @@
       <div id="right">
         <ul>
           <li>
-            <ul id="drop-down-ul">
+            <ul id="account-drop-down-ul">
               <li>
                 <a id="account" href="<%= new_session_url %>">
-                  <span id="hello">Hello. Sign in</span>
+                  <span id="top-line">Hello. Sign in</span>
                   <br>
                   <span>Your Account <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="account-drop-down" class="group">
+              <div id="account-drop-down">
                 <li>
                   <button>
                     <a href="<%= new_session_url %>">
@@ -70,11 +70,22 @@
             </ul>
           </li>
           <li>
-            <a id="cart" href="#carts/<%= current_cart.id %>">
-              <div id="quantity"><%= current_cart.quantity %></div>
-              <img src="<%= image_url("cart.png") %>" alt="cart" />
-              <span>Cart <div id="down-arrow"></div></span>
-            </a>
+            <ul id="cart-drop-down-ul">
+              <li>
+                <a id="cart" href="#carts/<%= current_cart.id %>">
+                  <div id="quantity"><%= current_cart.quantity %></div>
+                  <img src="<%= image_url("cart.png") %>" alt="cart" />
+                  <span>Cart <div id="down-arrow"></div></span>
+                </a>
+              </li>
+              <div id="cart-drop-down">
+                <% if current_cart.products.empty? %>
+                  <li>
+                    Your Cart is empty.
+                  </li>
+                <% end %>
+              </div>
+            </ul>
           </li>
         </ul>
       </div>
@@ -88,15 +99,15 @@
       <div id="right">
         <ul>
           <li>
-            <ul id="drop-down-ul">
+            <ul id="account-drop-down-ul">
               <li>
                 <a id="account" href="<%= session_url %>" data-method="delete">
-                  <span id="hello">Your Account</span>
+                  <span id="top-line">Your Account</span>
                   <br>
                   <span>Sign Out? <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="account-drop-down" class="group">
+              <div id="account-drop-down">
                 <li>
                   <button>
                     <a href="<%= session_url %>" data-method="delete">

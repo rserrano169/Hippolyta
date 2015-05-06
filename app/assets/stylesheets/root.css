@@ -127,12 +127,12 @@
   box-shadow: 0px 1px 0px 0px #90969e;
 }
 
-.bottom #right #hello {
+.bottom #right #top-line {
   font-weight: normal;
   font-size: 12px;
 }
 
-.bottom #right #drop-down-ul:hover #account-drop-down {
+.bottom #right #account-drop-down-ul:hover #account-drop-down {
   display: block;
 }
 
@@ -209,6 +209,28 @@
 .bottom #right #cart:hover #quantity {
   top: 7px;
   left: 38px;
+}
+
+.bottom #right #cart-drop-down {
+  display: none;
+  position: fixed;
+  width: 220px;
+  padding: 15px;
+  right: 0px;
+  font-weight: normal;
+  background: white;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+}
+
+.bottom #right #cart-drop-down li{
+  display: block;
+  color: black;
+  text-align: center;
+}
+
+.bottom #right #cart-drop-down-ul:hover #cart-drop-down {
+  display: block;
 }
 
 .bottom #right #down-arrow {
