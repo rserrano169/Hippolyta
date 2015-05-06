@@ -83,7 +83,6 @@
 #left, #middle, #right {
   display: table-cell;
   vertical-align: middle;
-  white-space: nowrap;
 }
 
 .bottom #left {
@@ -111,6 +110,7 @@
 
 .bottom #right a {
   display: block;
+  vertical-align: top;
 }
 
 .bottom #right #account {
