@@ -5,7 +5,6 @@
   max-width: 100%;
   height: auto;
   background: #232f3e;
-  overflow: hidden;
 }
 
 /* --- HEADER-TOP --- */
@@ -32,7 +31,7 @@
 
 .top #search-block {
   color: #7a7a7a;
-  padding: 5px 410px 0px 0px;
+  padding: 5px 375px 0px 0px;
 }
 
 .top #search-block form {
@@ -153,7 +152,7 @@
   text-align: center;
 }
 
-.bottom #right #account-drop-down button {
+.bottom #right button {
   display: block;
   width: 185px;
   height: 30px;
@@ -163,22 +162,22 @@
   border-radius: 3px;
 }
 
-.bottom #right #account-drop-down button:hover {
+.bottom #right button:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
-.bottom #right #account-drop-down #new-user {
+.bottom #right #account-drop-down #after-button {
   display: block;
   font-size: 12px;
   padding: 10px 0px 0px 0px;
 }
 
-.bottom #right #account-drop-down #new-user a {
+.bottom #right #account-drop-down #after-button a {
   display: inline;
   color: #0b5cad;
 }
 
-.bottom #right #account-drop-down #new-user a:hover {
+.bottom #right #account-drop-down #after-button a:hover {
   color: #e47911;
   text-decoration: underline;
 }
@@ -211,9 +210,13 @@
   left: 38px;
 }
 
+.bottom #right #cart-drop-down-ul {
+  position: relative;
+}
+
 .bottom #right #cart-drop-down {
   display: none;
-  position: fixed;
+  position: absolute;
   width: 220px;
   padding: 15px;
   right: 0px;

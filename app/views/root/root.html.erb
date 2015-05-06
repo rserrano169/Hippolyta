@@ -52,21 +52,23 @@
                   <span>Your Account <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="account-drop-down">
-                <li>
-                  <button>
-                    <a href="<%= new_session_url %>">
-                      Sign in
+              <li id="account-drop-down">
+                <ul>
+                  <li>
+                    <button>
+                      <a href="<%= new_session_url %>">
+                        Sign in
+                      </a>
+                    </button>
+                  </li>
+                  <li id="after-button">
+                    New customer?
+                    <a href="<%= new_user_url %>">
+                      Start here.
                     </a>
-                  </button>
-                </li>
-                <li id="new-user">
-                  New customer?
-                  <a href="<%= new_user_url %>">
-                    Start here.
-                  </a>
-                </li>
-              </div>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li>
@@ -78,27 +80,36 @@
                   <span>Cart <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="cart-drop-down">
-                <% if current_cart.products.empty? %>
-                  <li>
-                    Your Cart is empty.
-                  </li>
-                <% else %>
-                  <% current_cart.products.each do |product| %>
-                    <ul>
-                      <li>
-                        <%= product.name %>
-                      </li>
-                      <li>
-                        <%= product.sale_price %>
-                      </li>
-                    </ul>
-                  <% end %>
-                    <li>
-                      Total:
+              <li id="cart-drop-down">
+                <ul>
+                  <% if current_cart.products.empty? %>
+                    <li id="cart-empty">
+                      Your Cart is empty.
                     </li>
-                <% end %>
-              </div>
+                  <% else %>
+                    <% current_cart.products.each do |product| %>
+                      <ul>
+                        <li class="cart-item">
+                          <%= product.name %>
+                        </li>
+                        <li class="cart-item">
+                          <%= product.sale_price %>
+                        </li>
+                      </ul>
+                    <% end %>
+                      <li id="cart-total">
+                        Total: <%= current_cart.total %>
+                      </li>
+                  <% end %>
+                  <li>
+                    <button>
+                      <a href="#carts/<%= current_cart.id %>">
+                        View Cart (<%= current_cart.quantity %> items)
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -121,21 +132,23 @@
                   <span>Sign Out? <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="account-drop-down">
-                <li>
-                  <button>
-                    <a href="<%= session_url %>" data-method="delete">
-                      Sign Out
+              <li id="account-drop-down">
+                <ul>
+                  <li>
+                    <button>
+                      <a href="<%= session_url %>" data-method="delete">
+                        Sign Out
+                      </a>
+                    </button>
+                  </li>
+                  <li id="after-button">
+                    Want to view
+                    <a href="#users/<%= current_user.id %>">
+                      your account?
                     </a>
-                  </button>
-                </li>
-                <li id="new-user">
-                  Want to view
-                  <a href="#users/<%= current_user.id %>">
-                    your account?
-                  </a>
-                </li>
-              </div>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li>
@@ -147,24 +160,36 @@
                   <span>Cart <div id="down-arrow"></div></span>
                 </a>
               </li>
-              <div id="cart-drop-down">
-                <% if current_cart.products.empty? %>
-                  <li>
-                    Your Cart is empty.
-                  </li>
-                <% else %>
-                  <% current_cart.products.each do |product| %>
-                    <ul>
-                      <li>
-                        <%= product.name %>
-                      </li>
-                      <li>
-                        <%= product.sale_price %>
-                      </li>
-                    </ul>
+              <li id="cart-drop-down">
+                <ul>
+                  <% if current_cart.products.empty? %>
+                    <li id="cart-empty">
+                      Your Cart is empty.
+                    </li>
+                  <% else %>
+                    <% current_cart.products.each do |product| %>
+                      <ul>
+                        <li class="cart-item">
+                          <%= product.name %>
+                        </li>
+                        <li class="cart-item">
+                          <%= product.sale_price %>
+                        </li>
+                      </ul>
+                    <% end %>
+                    <li>
+                      Total: <%= current_cart.total %>
+                    </li>
                   <% end %>
-                <% end %>
-              </div>
+                  <li>
+                    <button>
+                      <a href="#carts/<%= current_cart.id %>">
+                        View Cart (<%= current_cart.quantity %> items)
+                      </a>
+                    </button>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
