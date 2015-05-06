@@ -71,8 +71,9 @@
           </li>
           <li>
             <a id="cart" href="#carts/<%= current_cart.id %>">
+              <div id="quantity"><%= current_cart.quantity %></div>
               <img src="<%= image_url("cart.png") %>" alt="cart" />
-              Cart: <%= current_cart.quantity %>
+              <span>Cart <div id="down-arrow"></div></span>
             </a>
           </li>
         </ul>
@@ -114,8 +115,9 @@
           </li>
           <li>
             <a id="cart" href="#carts/<%= current_cart.id %>">
+              <div id="quantity"><%= current_cart.quantity %></div>
               <img src="<%= image_url("cart.png") %>" alt="cart" />
-              Cart: <%= current_cart.quantity %>
+              <span>Cart <div id="down-arrow"></div></span>
             </a>
           </li>
         </ul>
