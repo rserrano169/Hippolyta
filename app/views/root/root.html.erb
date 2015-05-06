@@ -49,7 +49,7 @@
                 <a id="account" href="<%= new_session_url %>">
                   <span id="hello">Hello. Sign in</span>
                   <br>
-                  <span>Your Account</span>
+                  <span>Your Account <div id="down-arrow"></div></span>
                 </a>
               </li>
               <div id="account-drop-down" class="group">
@@ -89,9 +89,9 @@
             <ul id="drop-down-ul">
               <li>
                 <a id="account" href="<%= session_url %>" data-method="delete">
-                  <span id="hello">Hello <%= current_user.name %></span>
+                  <span id="hello">Your Account</span>
                   <br>
-                  <span>Sign Out?</span>
+                  <span>Sign Out? <div id="down-arrow"></div></span>
                 </a>
               </li>
               <div id="account-drop-down" class="group">
