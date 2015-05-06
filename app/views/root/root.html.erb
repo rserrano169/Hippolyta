@@ -71,47 +71,6 @@
               </li>
             </ul>
           </li>
-          <li>
-            <ul id="cart-drop-down-ul">
-              <li>
-                <a id="cart" href="#carts/<%= current_cart.id %>">
-                  <div id="quantity"><%= current_cart.quantity %></div>
-                  <img src="<%= image_url("cart.png") %>" alt="cart" />
-                  <span>Cart <div id="down-arrow"></div></span>
-                </a>
-              </li>
-              <li id="cart-drop-down">
-                <ul>
-                  <% if current_cart.products.empty? %>
-                    <li id="cart-empty">
-                      Your Cart is empty.
-                    </li>
-                  <% else %>
-                    <% current_cart.products.each do |product| %>
-                      <ul>
-                        <li class="cart-item">
-                          <%= product.name %>
-                          <%= product.sale_price %>
-                        </li>
-                      </ul>
-                    <% end %>
-                      <li id="cart-total">
-                        Total: <%= current_cart.total %>
-                      </li>
-                  <% end %>
-                  <li>
-                    <button>
-                      <a href="#carts/<%= current_cart.id %>">
-                        View Cart (<%= current_cart.quantity %> items)
-                      </a>
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     <% else %>
       <div id="middle">
         <a id="hippolyta" href="#users/<%= current_user.id %>">
@@ -149,6 +108,7 @@
               </li>
             </ul>
           </li>
+    <% end %>
           <li>
             <ul id="cart-drop-down-ul">
               <li>
@@ -167,9 +127,11 @@
                   <% else %>
                     <% current_cart.products.each do |product| %>
                       <li class="cart-item">
-                        <%= product.name %>
-                        <br>
-                        <%= product.sale_price %>
+                        <a href="#sellers/<%= product.seller_id %>/products/<%= product.id %>">
+                          <%= product.name %>
+                          <br>
+                          <%= product.sale_price %>
+                        </a>
                       </li>
                     <% end %>
                     <li id="cart-total">
@@ -189,7 +151,6 @@
           </li>
         </ul>
       </div>
-    <% end %>
   </section>
 </header>
 
