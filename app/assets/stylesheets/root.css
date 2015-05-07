@@ -236,6 +236,11 @@
   border-bottom: 1px solid grey;
 }
 
+.bottom #right #cart-drop-down .cart-item .product-image{
+  float: left;
+  margin: 0px 5px 0px 0px;
+}
+
 .bottom #right #cart-drop-down #cart-total {
   font-weight: bold;
   padding: 15px 0px 15px 0px;

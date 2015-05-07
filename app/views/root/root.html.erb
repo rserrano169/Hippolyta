@@ -127,15 +127,19 @@
                   <% else %>
                     <% current_cart.products.each do |product| %>
                       <li class="cart-item">
-                        <a href="#sellers/<%= product.seller_id %>/products/<%= product.id %>">
+                        <a class="group"
+                           href="#sellers/<%= product.seller_id %>/products/<%= product.id %>">
+                          <img class="product-image"
+                               src="<%= product.picture.url(:thumb) %>"
+                               alt="product image" />
                           <%= product.name %>
                           <br>
-                          <%= product.sale_price %>
+                          $<%= product.sale_price %>
                         </a>
                       </li>
                     <% end %>
                     <li id="cart-total">
-                      Total: <%= current_cart.total %>
+                      Total: $<%= current_cart.total %>
                     </li>
                   <% end %>
                   <li>
