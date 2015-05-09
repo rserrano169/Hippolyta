@@ -1,38 +1,39 @@
-<ul>
-  <li>
-    <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
-  </li>
+<main id="product-show" class="group">
+  <ul>
+    <li id="picture">
+      <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
+    </li>
 
-  <li>
-    <%= product.escape("name") %>
-  </li>
+    <li>
+      <%= product.escape("name") %>
+    </li>
 
-  <li>
-    Price: <%= product.escape("sale_price") %>
-  </li>
+    <li>
+      Price: <%= product.escape("sale_price") %>
+    </li>
 
-  <li>
-    <% if (product.escape("original_price")) { %>
+    <li>
+      <% if (product.escape("original_price")) { %>
+        <% } %>
+      Original Price: <%= product.escape("original_price") %>
+    </li>
+
+    <li>
+      Qty: <%= product.escape("quantity") %>
+    </li>
+
+    <li>
+      <% if (product.escape("description")) { %>
+        Description: <%= product.escape("description") %>
       <% } %>
-    Original Price: <%= product.escape("original_price") %>
-  </li>
+    </li>
 
-  <li>
-    Qty: <%= product.escape("quantity") %>
-  </li>
-
-  <li>
-    <% if (product.escape("description")) { %>
-      Description: <%= product.escape("description") %>
-    <% } %>
-  </li>
-
-  <form action="/api/users/<%= seller.id %>/products/<%= product.id %>"
-        method="post">
-    <input type="hidden" name="_method" value="patch">
-    <button name="product_id" value="<%= product.id %>">
-      Add to Cart
-    </button>
-  </form>
-
-</ul>
+    <form action="/api/users/<%= seller.id %>/products/<%= product.id %>"
+          method="post">
+      <input type="hidden" name="_method" value="patch">
+      <button name="product_id" value="<%= product.id %>">
+        Add to Cart
+      </button>
+    </form>
+  </ul>
+</main>

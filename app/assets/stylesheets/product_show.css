@@ -1,0 +1,16 @@
+#product-show {
+  width: 920px;
+}
+
+#product-show #picture {
+  float: left;
+}
+
+#product-show li {
+  height: auto;
+  padding: 20px 0px 0px 20px
+}
+
+#product-show form {
+  padding: 20px 0px 0px 20px
+}
