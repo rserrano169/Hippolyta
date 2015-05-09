@@ -38,4 +38,12 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :carts
 
   has_many :buyers, through: :carts, source: :buyer
+
+  def amount_saved
+    if self.original_price
+      (self.original_price - self.sale_price).to_f
+    else
+      0
+    end
+  end
 end

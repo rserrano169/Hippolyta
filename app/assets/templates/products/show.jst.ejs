@@ -12,21 +12,21 @@
       Price: <%= product.escape("sale_price") %>
     </li>
 
-    <li>
-      <% if (product.escape("original_price")) { %>
-        <% } %>
-      Original Price: <%= product.escape("original_price") %>
-    </li>
+    <% if (product.escape("original_price")) { %>
+      <li>
+        Original Price: <%= product.escape("original_price") %>
+      </li>
+    <% } %>
 
     <li>
       Qty: <%= product.escape("quantity") %>
     </li>
 
-    <li>
-      <% if (product.escape("description")) { %>
+    <% if (product.escape("description")) { %>
+      <li>
         Description: <%= product.escape("description") %>
-      <% } %>
-    </li>
+      </li>
+    <% } %>
 
     <form action="/api/users/<%= seller.id %>/products/<%= product.id %>"
           method="post">
