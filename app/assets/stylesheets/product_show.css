@@ -4,13 +4,14 @@
 
 #product-show #picture {
   float: left;
+  margin: 0px 20px 0px 20px;
 }
 
 #product-show li {
   height: auto;
-  padding: 20px 0px 0px 20px
+  margin: 20px 0px 0px 0px;
 }
 
 #product-show form {
-  padding: 20px 0px 0px 20px
+  margin: 20px 0px 0px 20px
 }

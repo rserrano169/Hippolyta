@@ -24,7 +24,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
     @cart = current_cart
     @cart.products << @product unless @cart.products.include?(@product)
     @cart.update_attributes({quantity: @cart.products.length})
@@ -33,7 +33,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def edit
-
+    
   end
 
   private

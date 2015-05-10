@@ -28,12 +28,8 @@
       </li>
     <% } %>
 
-    <form action="/api/users/<%= seller.id %>/products/<%= product.id %>"
-          method="post">
-      <input type="hidden" name="_method" value="patch">
-      <button name="product_id" value="<%= product.id %>">
+    <a href="/api/users/<%= seller.id %>/products/<%= product.id %>" data-method="patch">
         Add to Cart
-      </button>
-    </form>
+    </a>
   </ul>
 </main>
