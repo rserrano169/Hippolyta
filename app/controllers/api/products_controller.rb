@@ -23,7 +23,7 @@ class Api::ProductsController < ApplicationController
     render :index
   end
 
-  def update
+  def add_to_cart
     @product = Product.find(params[:id])
     @cart = current_cart
     @cart.products << @product unless @cart.products.include?(@product)
@@ -33,7 +33,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   private
