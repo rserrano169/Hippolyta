@@ -27,7 +27,6 @@ class Api::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @cart = current_cart
     @cart.products << @product unless @cart.products.include?(@product)
-    @cart.update_attributes({quantity: @cart.products.length})
 
     redirect_to "#carts/#{@cart.id}"
   end
