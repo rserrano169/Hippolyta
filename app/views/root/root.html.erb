@@ -136,6 +136,17 @@
                           <br>
                           $<%= product.sale_price %>
                         </a>
+                        <span id="delete" class="delete-or-save">
+                          <a href="/api/carts/<%= current_cart.id %>/products/<%= product.id %>"
+                            data-method="patch">
+                            Delete
+                          </a>
+                        </span>
+                        <span id="save" class="delete-or-save">
+                          <a href="#">
+                            Save for later
+                          </a>
+                        </span>
                       </li>
                     <% end %>
                     <li id="cart-total">

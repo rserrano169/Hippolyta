@@ -241,6 +241,23 @@
   margin: 0px 5px 0px 0px;
 }
 
+.bottom #right #cart-drop-down .cart-item .delete-or-save {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  color: #0b5cad;
+  margin-top: 5px;
+}
+
+.bottom #right #cart-drop-down .cart-item #save {
+  display: none;
+  padding-left: 55px;
+}
+
+.bottom #right #cart-drop-down .cart-item #delete {
+  padding-left: 180px;
+}
+
 .bottom #right #cart-drop-down #cart-total {
   font-weight: bold;
   padding: 15px 0px 15px 0px;

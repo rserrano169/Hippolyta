@@ -31,10 +31,6 @@ class Api::ProductsController < ApplicationController
     redirect_to "#carts/#{@cart.id}"
   end
 
-  def edit
-
-  end
-
   private
 
   def product_params

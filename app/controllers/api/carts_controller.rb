@@ -6,15 +6,11 @@ class Api::CartsController < ApplicationController
     render :show
   end
 
-  def update
+  def delete_from_cart
     @cart = Cart.find(params[:id])
     @cart.products.delete(Product.find(params[:product_id]))
 
     redirect_to "#carts/#{@cart.id}"
-  end
-
-  def edit
-
   end
 
 end

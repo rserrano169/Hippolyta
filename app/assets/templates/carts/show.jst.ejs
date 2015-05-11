@@ -28,6 +28,10 @@
   </section>
 <% }; %>
 
+<header>
+  Your Shopping Cart
+</header>
+
 <ul>
   <% products.each( function(product) { %>
     <li>
@@ -71,12 +75,10 @@
     </li>
 
     <li>
-      <form action="/api/carts/<%= cart.id %>" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <button name="product_id" value="<%= product.id %>">
-          Delete from Cart
-        </button>
-      </form>
+      <a href="/api/carts/<%= cart.id %>/products/<%= product.id %>"
+         data-method="patch">
+        Delete from Cart
+      </a>
     </li>
   <% }) %>
 </ul>

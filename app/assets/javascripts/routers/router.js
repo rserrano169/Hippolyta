@@ -27,7 +27,6 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
       user: seller,
       collection: seller.products(),
     });
-
     this._swapView(indexView);
   },
 
@@ -36,7 +35,6 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     var newView = new Hippolyta.Views.ProductNewForm({
       model: model,
     });
-
     this._swapView(newView);
   },
 
@@ -56,7 +54,6 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     var searchView = new Hippolyta.Views.SearchResults({
       collection: collection,
     });
-
     this._swapView(searchView);
   },
 
@@ -68,7 +65,6 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
       seller: seller,
       product: product
     });
-
     this._swapView(productShowView);
   },
 

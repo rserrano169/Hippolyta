@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :edit, :update] do
-      resources :products, only: [:index, :show, :edit]
+      resources :products, only: [:index, :show]
     end
 
     resources :queries, only: [:index]
-    resources :carts, only: [:show, :edit, :update]
+    resources :carts, only: [:show]
     patch "/products/:id", to: "products#add_to_cart"
+    patch "/carts/:id/products/:product_id", to: "carts#delete_from_cart"
   end
 end
