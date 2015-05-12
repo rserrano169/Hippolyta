@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511130842) do
+ActiveRecord::Schema.define(version: 20150512203427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
   enable_extension "fuzzystrmatch"
   enable_extension "unaccent"
+
+  create_table "cart_products", force: true do |t|
+    t.integer  "cart_id",                   null: false
+    t.integer  "product_id",                null: false
+    t.integer  "cart_quantity", default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carts", force: true do |t|
     t.integer  "buyer_id"
@@ -28,16 +36,6 @@ ActiveRecord::Schema.define(version: 20150511130842) do
 
   add_index "carts", ["buyer_id"], name: "index_carts_on_buyer_id", unique: true, using: :btree
   add_index "carts", ["session_token"], name: "index_carts_on_session_token", unique: true, using: :btree
-
-  create_table "carts_products", id: false, force: true do |t|
-    t.integer  "cart_id"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "carts_products", ["cart_id"], name: "index_carts_products_on_cart_id", using: :btree
-  add_index "carts_products", ["product_id"], name: "index_carts_products_on_product_id", using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name",                 null: false

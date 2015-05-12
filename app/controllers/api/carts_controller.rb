@@ -12,5 +12,4 @@ class Api::CartsController < ApplicationController
 
     redirect_to "#carts/#{@cart.id}"
   end
-
 end

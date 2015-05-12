@@ -72,7 +72,10 @@
       <li>
         <form action="index.html" method="post">
             Quantity:
-            <input type="number" value="">
+            <input type="number"
+                   min="0"
+                   max="<%= product.escape("quantity") %>"
+                   value="">
             <button>Update</button>
         </form>
       </li>

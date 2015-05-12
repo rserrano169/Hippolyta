@@ -9,7 +9,14 @@ class Cart < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_and_belongs_to_many :products
+  has_many(
+    :cart_products,
+    class_name: "CartProduct",
+    foreign_key: :cart_id,
+    primary_key: :id,
+  )
+
+  has_many :products, through: :cart_products, source: :product
 
   def quantity
     self.products.length

@@ -35,9 +35,30 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_and_belongs_to_many :carts
+  has_many(
+    :cart_products,
+    class_name: "CartProduct",
+    foreign_key: :product_id,
+    primary_key: :id,
+  )
 
-  has_many :buyers, through: :carts, source: :buyer
+  has_many :carts, through: :cart_products, source: :cart
+
+  def buyers
+    buyers = []
+
+    if self.carts.any?
+      self.carts.each do |cart|
+        if !cart.buyer_id
+          buyers << "guest"
+        else
+          buyers << User.find(cart.buyer_id)
+        end
+      end
+    end
+
+    buyers
+  end
 
   def amount_saved
     if self.original_price
