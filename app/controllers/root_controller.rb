@@ -9,9 +9,10 @@ class RootController < ApplicationController
       @cart = Cart.find_by(session_token: session[:guest_token])
     else
       @cart = Cart.find_by(buyer_id: current_user.id)
-      guest_cart = Cart.find_by(session_token: session[:guest_token])
-      if guest_cart
-        @cart.cart_products += guest_cart.cart_products
+      @guest_cart = Cart.find_by(session_token: session[:guest_token])
+      if @guest_cart
+        @cart.products += @guest_cart.products
+        @guest_cart.destroy
       end
     end
 
