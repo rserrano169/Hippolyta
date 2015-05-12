@@ -22,14 +22,16 @@ class User < ActiveRecord::Base
     :products,
     class_name: "Product",
     foreign_key: :seller_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(
     :queries,
     class_name: "Query",
     foreign_key: :querier_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   def self.find_by_credentials(email, password)

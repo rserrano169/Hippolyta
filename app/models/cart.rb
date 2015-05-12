@@ -6,7 +6,6 @@ class Cart < ActiveRecord::Base
     class_name: "User",
     foreign_key: :buyer_id,
     primary_key: :id,
-    dependent: :destroy
   )
 
   has_many(
@@ -14,6 +13,7 @@ class Cart < ActiveRecord::Base
     class_name: "CartProduct",
     foreign_key: :cart_id,
     primary_key: :id,
+    dependent: :destroy
   )
 
   has_many :products, through: :cart_products, source: :product

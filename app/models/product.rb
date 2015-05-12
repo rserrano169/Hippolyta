@@ -32,7 +32,6 @@ class Product < ActiveRecord::Base
     class_name: "User",
     foreign_key: :seller_id,
     primary_key: :id,
-    dependent: :destroy
   )
 
   has_many(
@@ -40,6 +39,7 @@ class Product < ActiveRecord::Base
     class_name: "CartProduct",
     foreign_key: :product_id,
     primary_key: :id,
+    dependent: :destroy
   )
 
   has_many :carts, through: :cart_products, source: :cart

@@ -6,7 +6,6 @@ class CartProduct < ActiveRecord::Base
     class_name: "Cart",
     foreign_key: :cart_id,
     primary_key: :id,
-    dependent: :destroy
   )
 
   belongs_to(
@@ -14,6 +13,5 @@ class CartProduct < ActiveRecord::Base
     class_name: "Product",
     foreign_key: :product_id,
     primary_key: :id,
-    dependent: :destroy
   )
 end
