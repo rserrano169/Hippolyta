@@ -22,7 +22,6 @@ class Api::CartProductsController < ApplicationController
       cart_id: current_cart.id,
       product_id: params[:product_id]
     )
-    fail
     @cart_product.destroy
 
     redirect_to "#carts/#{current_cart.id}"

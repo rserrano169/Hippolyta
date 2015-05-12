@@ -23,14 +23,6 @@ class Api::ProductsController < ApplicationController
     render :index
   end
 
-  def add_to_cart
-    @product = Product.find(params[:id])
-    @cart = current_cart
-    @cart.products << @product unless @cart.products.include?(@product)
-
-    redirect_to "#carts/#{@cart.id}"
-  end
-
   private
 
   def product_params
