@@ -1,9 +1,6 @@
 <% if (products.length < 1) { %>
   <section id="empty-cart">
-    <header>
-      Your Shopping Cart is empty.
-    </header>
-
+    <header>Your Shopping Cart is empty.</header>
     <body>
       <ul>
         <li>
@@ -26,59 +23,66 @@
       </ul>
     </body>
   </section>
+<% } else { %>
+
+  <header>Your Shopping Cart</header>
+
+  <ul>
+    <% products.each( function(product) { %>
+      <li>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
+        </a>
+      </li>
+
+      <li>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          <%= product.escape("name") %>
+        </a>
+      </li>
+
+      <li>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          Price: <%= product.escape("sale_price") %>
+        </a>
+      </li>
+
+      <li>
+        <% if (product.escape("original_price")) { %>
+          <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+            Original Price: <%= product.escape("original_price") %>
+          </a>
+        <% } %>
+      </li>
+
+      <li>
+        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+          Qty: <%= product.escape("quantity") %>
+        </a>
+      </li>
+
+      <li>
+        <% if (product.escape("description")) { %>
+          <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+            Description: <%= product.escape("description") %>
+          </a>
+        <% } %>
+      </li>
+
+      <li>
+        <form action="index.html" method="post">
+            Quantity:
+            <input type="number" value="">
+            <button>Update</button>
+        </form>
+      </li>
+
+      <li>
+        <a href="/api/carts/<%= cart.id %>/products/<%= product.id %>"
+           data-method="patch">
+          Delete from Cart
+        </a>
+      </li>
+    <% }) %>
+  </ul>
 <% }; %>
-
-<header>
-  Your Shopping Cart
-</header>
-
-<ul>
-  <% products.each( function(product) { %>
-    <li>
-      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-        <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
-      </a>
-    </li>
-
-    <li>
-      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-        <%= product.escape("name") %>
-      </a>
-    </li>
-
-    <li>
-      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-        Price: <%= product.escape("sale_price") %>
-      </a>
-    </li>
-
-    <li>
-      <% if (product.escape("original_price")) { %>
-        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-          Original Price: <%= product.escape("original_price") %>
-        </a>
-      <% } %>
-    </li>
-
-    <li>
-      <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-        Qty: <%= product.escape("quantity") %>
-      </a>
-    </li>
-
-    <li>
-      <% if (product.escape("description")) { %>
-        <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-          Description: <%= product.escape("description") %>
-        </a>
-      <% } %>
-    </li>
-
-    <li>
-      <a href="/api/carts/<%= cart.id %>/products/<%= product.id %>"
-         data-method="patch">
-        Delete from Cart
-      </a>
-    </li>
-  <% }) %>
-</ul>
