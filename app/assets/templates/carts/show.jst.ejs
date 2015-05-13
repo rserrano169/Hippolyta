@@ -70,18 +70,20 @@
       </li>
 
       <li>
-        <form action="index.html" method="post">
+        <form action="/api/cart_products/qty/<%= product.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
             Quantity:
             <input type="number"
                    min="0"
                    max="<%= product.escape("quantity") %>"
+                   name="cart_product[quantity]"
                    value="">
             <button>Update</button>
         </form>
       </li>
 
       <li>
-        <a href="/api/cart_products/del/<%= product.id %>" data-method="post">
+        <a href="/api/cart_products/del/<%= product.id %>" data-method="delete">
           Delete from Cart
         </a>
       </li>

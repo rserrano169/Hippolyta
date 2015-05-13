@@ -27,4 +27,23 @@ class Api::CartProductsController < ApplicationController
     redirect_to "#carts/#{current_cart.id}"
   end
 
+  def update_quantity
+    @cart_product = CartProduct.find_by(
+      cart_id: current_cart.id,
+      product_id: params[:product_id]
+    )
+
+    @cart_product.update_attributes({
+      quantity: cart_product_params[:quantity]
+    })
+
+    redirect_to "#carts/#{current_cart.id}"
+  end
+
+  private
+
+  def cart_product_params
+    params.require(:cart_product).permit(:quantity)
+  end
+
 end
