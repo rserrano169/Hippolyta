@@ -4,13 +4,16 @@ Hippolyta.Views.CartItems = Backbone.View.extend({
 
   initialize: function (options) {
     this.cart = options.cart;
+    this.cartProducts = options.cartProducts;
+    this.products = options.products;
     this.listenTo(this.cart, "sync", this.render);
   },
 
   render: function () {
     var content = this.template({
       cart: this.cart,
-      products: this.collection
+      cartProducts: this.cartProducts,
+      products: this.products
     });
     this.$el.html(content);
 

@@ -15,7 +15,7 @@ Hippolyta.Collections.Products = Backbone.Collection.extend({
         },
       });
     } else {
-      product.fetch()
+      product.fetch();
     }
 
     return product;

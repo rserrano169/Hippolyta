@@ -29,6 +29,7 @@
 
   <ul>
     <% products.each( function(product) { %>
+      <% cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id) %>
       <li>
         <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
           <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
@@ -77,7 +78,7 @@
                    min="0"
                    max="<%= product.escape("quantity") %>"
                    name="cart_product[quantity]"
-                   value="">
+                   value="<%= cartProduct.escape("quantity") %>">
             <button>Update</button>
         </form>
       </li>

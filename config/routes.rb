@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     resources :queries, only: [:index]
     resources :carts, only: [:show]
+    resources :cart_products, only: [:show, :index]
     post "/cart_products/add/:product_id", to: "cart_products#add_to_cart"
     delete "/cart_products/del/:product_id", to: "cart_products#delete_from_cart"
     patch "/cart_products/qty/:product_id", to: "cart_products#update_quantity"

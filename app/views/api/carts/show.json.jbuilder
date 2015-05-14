@@ -1,5 +1,15 @@
 json.(@cart, :id, :buyer_id, :session_token)
 
+json.cart_products @cart.cart_products do |cart_product|
+  json.extract!(
+    cart_product,
+    :id,
+    :cart_id,
+    :product_id,
+    :quantity,
+  )
+end
+
 json.products @cart.products do |product|
   json.extract!(
     product,

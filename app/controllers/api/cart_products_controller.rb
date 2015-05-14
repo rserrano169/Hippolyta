@@ -1,5 +1,17 @@
 class Api::CartProductsController < ApplicationController
 
+  def show
+    @cart_product = CartProduct.find(params[:id])
+
+    render :show
+  end
+
+  def index
+    @cart_products = current_cart.cart_products
+
+    render :index
+  end
+
   def add_to_cart
     @cart_product = CartProduct.find_by(
       cart_id: current_cart.id,

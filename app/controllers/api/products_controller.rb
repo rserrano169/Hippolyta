@@ -19,7 +19,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def index
-    @products = current_user.products
+    user = User.find(params[:user_id])
+    @products = user.products
     render :index
   end
 
