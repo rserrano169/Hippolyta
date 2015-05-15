@@ -18,12 +18,13 @@
       <li>
         Original Price: $<%= originalPrice %>
       </li>
+      
+      <li>
+        <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+        You save: $<%= amountSaved %>
+      </li>
     <% }; %>
 
-    <li>
-      <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
-      You save: $<%= amountSaved %>
-    </li>
 
     <% var quantity = product.escape("quantity") %>
     <% if (quantity < 1) { %>
