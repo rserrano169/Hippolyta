@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?, :current_cart
+  helper_method :current_user, :signed_in?, :current_cart, :money_string
 
   private
 
@@ -35,6 +35,10 @@ class ApplicationController < ActionController::Base
   def sign_out
     current_user.reset_session_token!
     session[:user_token] = nil
+  end
+
+  def money_string(num)
+    (num * 100).round.to_s.insert(-3, ".")
   end
 
 end

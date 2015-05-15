@@ -138,12 +138,12 @@
                                alt="product image" />
                           <%= product.name %>
                           <br>
-                          $<%= product.sale_price %>
+                          $<%= money_string(product.sale_price) %>
                         </a>
                       </li>
                     <% end %>
                     <li id="cart-total">
-                      Total: $<%= current_cart.total %>
+                      Total: $<%= money_string(current_cart.total) %>
                     </li>
                   <% end %>
                   <li>

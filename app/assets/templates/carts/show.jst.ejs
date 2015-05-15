@@ -88,7 +88,7 @@
       </li>
 
       <li>
-        Sub-Total: <%= cartProduct.escape("quantity") * product.escape("sale_price") %>
+        Sub-Total: $<%= (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2) %>
       </li>
 
       <li>
