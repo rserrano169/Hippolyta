@@ -6,44 +6,44 @@
 
 <ul>
   <% results.each( function(result) { %>
-    <li>
-      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+    <% var quantity = result.escape("quantity") %>
+    <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
+    <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+      <li>
         <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
-      </a>
-    </li>
+      </li>
 
-    <li>
-      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+      <li>
         <%= result.escape("name") %>
-      </a>
-    </li>
+      </li>
 
-    <li>
-      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-        Price: <%= result.escape("sale_price") %>
-      </a>
-    </li>
+      <li>
+        by <%= result.escape("seller_name") %>
+      </li>
 
-    <li>
-      <% if (result.escape("original_price")) { %>
-        <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-          Original Price: <%= result.escape("original_price") %>
-        </a>
-      <% } %>
-    </li>
+      <li>
+        Price: $<%= salePrice %>
+      </li>
 
-    <li>
-      <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-        Qty: <%= result.escape("quantity") %>
-      </a>
-    </li>
+      <% if (quantity < 1) { %>
+          <li id="out-of-stock">
+            Qty: Out of Stock
+          </li>
+      <% } else if (quantity > 25) { %>
+          <li id="in-stock">
+            Qty: In Stock
+          </li>
+      <% } else { %>
+          <li>
+            Qty: <%= quantity %>
+          </li>
+      <% }; %>
 
-    <li>
-      <% if (result.escape("description")) { %>
-        <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+      <li>
+        <% if (result.escape("description")) { %>
           Description: <%= result.escape("description") %>
-        </a>
-      <% } %>
-    </li>
+        <% }; %>
+      </li>
+    </a>
   <% }) %>
 </ul>

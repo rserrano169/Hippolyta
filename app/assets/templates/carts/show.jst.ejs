@@ -29,7 +29,13 @@
 
   <ul>
     <% products.each( function(product) { %>
-      <% cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id) %>
+      <% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id) %>
+      <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
+      <% if (product.escape("original_price")) { %>
+        <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
+      <% }; %>
+      <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+
       <li>
         <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
           <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
@@ -44,17 +50,14 @@
 
       <li>
         <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-          Price: <%= product.escape("sale_price") %>
+          Price: $<%= salePrice %>
         </a>
       </li>
 
       <li>
-        <% if (product.escape("original_price")) { %>
-          <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-            Original Price: <%= product.escape("original_price") %>
-          </a>
-        <% } %>
+        You save: $<%= amountSaved %>
       </li>
+
 
       <li>
         <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>

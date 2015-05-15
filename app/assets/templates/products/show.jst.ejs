@@ -8,8 +8,8 @@
       <%= product.escape("name") %>
     </li>
 
-    <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
     <li>
+      <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
       Price: $<%= salePrice %>
     </li>
 
@@ -20,8 +20,8 @@
       </li>
     <% }; %>
 
-    <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
     <li>
+      <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
       You save: $<%= amountSaved %>
     </li>
 
@@ -31,7 +31,7 @@
           Qty: Out of Stock
         </li>
     <% } else if (quantity > 25) { %>
-        <li>
+        <li id="in-stock">
           Qty: In Stock
         </li>
     <% } else { %>

@@ -10,6 +10,8 @@ json.array! @search_results.each do |result|
     :id
   )
 
+  json.seller_name(result.seller.name)
+
   json.thumb_picture_url image_url(result.picture.url(:thumb))
   json.small_picture_url image_url(result.picture.url(:small))
   json.medium_picture_url image_url(result.picture.url(:medium))
