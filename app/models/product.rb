@@ -60,6 +60,10 @@ class Product < ActiveRecord::Base
     buyers
   end
 
+  def sale_price_round
+    (self.sale_price * 100).round / 100
+  end
+
   def amount_saved
     if self.original_price
       (self.original_price - self.sale_price).to_f

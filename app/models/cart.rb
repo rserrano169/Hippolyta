@@ -24,8 +24,8 @@ class Cart < ActiveRecord::Base
 
   def total
     @total_price = 0
-    self.products.each do |product|
-      @total_price += product.sale_price
+    self.cart_products.each do |cart_prod|
+      @total_price += cart_prod.product.sale_price * cart_prod.quantity
     end
 
     return @total_price

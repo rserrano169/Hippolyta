@@ -84,6 +84,10 @@
       </li>
 
       <li>
+        Sub-Total: <%= cartProduct.escape("quantity") * product.escape("sale_price") %>
+      </li>
+
+      <li>
         <a href="/api/cart_products/del/<%= product.id %>" data-method="delete">
           Delete from Cart
         </a>

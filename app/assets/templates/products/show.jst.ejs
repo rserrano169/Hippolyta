@@ -8,19 +8,37 @@
       <%= product.escape("name") %>
     </li>
 
+    <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
     <li>
-      Price: <%= product.escape("sale_price") %>
+      Price: $<%= salePrice %>
     </li>
 
     <% if (product.escape("original_price")) { %>
+      <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
       <li>
-        Original Price: <%= product.escape("original_price") %>
+        Original Price: $<%= originalPrice %>
       </li>
-    <% } %>
+    <% }; %>
 
+    <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
     <li>
-      Qty: <%= product.escape("quantity") %>
+      You save: $<%= amountSaved %>
     </li>
+
+    <% var quantity = product.escape("quantity") %>
+    <% if (quantity < 1) { %>
+        <li id="out-of-stock">
+          Qty: Out of Stock
+        </li>
+    <% } else if (quantity > 25) { %>
+        <li>
+          Qty: In Stock
+        </li>
+    <% } else { %>
+        <li>
+          Qty: <%= quantity %>
+        </li>
+    <% }; %>
 
     <% if (product.escape("description")) { %>
       <li>
