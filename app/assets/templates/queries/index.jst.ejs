@@ -1,49 +1,55 @@
-<% if (results.length < 1) { %>
-  <section id="matchless-search">
-    <%= "Your search did not match any products." %>
-  </section>
-<% }; %>
+<main id="search-results">
+  <% if (results.length < 1) { %>
+    <section id="matchless-search">
+      <%= "Your search did not match any products." %>
+    </section>
+  <% }; %>
 
-<ul>
-  <% results.each( function(result) { %>
-    <% var quantity = result.escape("quantity") %>
-    <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
-    <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+  <ul>
+    <% results.each( function(result) { %>
+      <% var quantity = result.escape("quantity") %>
+      <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
       <li>
-        <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
-      </li>
+        <ul class="result group">
+          <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+            <li class="image">
+              <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
+            </li>
 
-      <li>
-        <%= result.escape("name") %>
-      </li>
+            <li>
+              <%= result.escape("name") %>
+            </li>
 
-      <li>
-        Sold by <%= result.escape("seller_name") %>
-      </li>
+            <li>
+              Sold by <%= result.escape("seller_name") %>
+            </li>
 
-      <li>
-        Price: $<%= salePrice %>
-      </li>
+            <li>
+              Price: $<%= salePrice %>
+            </li>
 
-      <% if (quantity < 1) { %>
-          <li id="out-of-stock">
-            Qty: Out of Stock
-          </li>
-      <% } else if (quantity > 25) { %>
-          <li id="in-stock">
-            Qty: In Stock
-          </li>
-      <% } else { %>
-          <li>
-            Qty: <%= quantity %>
-          </li>
-      <% }; %>
+            <% if (quantity < 1) { %>
+                <li id="out-of-stock">
+                  Qty: Out of Stock
+                </li>
+            <% } else if (quantity > 25) { %>
+                <li id="in-stock">
+                  Qty: In Stock
+                </li>
+            <% } else { %>
+                <li>
+                  Qty: <%= quantity %>
+                </li>
+            <% }; %>
 
-      <li>
-        <% if (result.escape("description")) { %>
-          Description: <%= result.escape("description") %>
-        <% }; %>
+            <li>
+              <% if (result.escape("description")) { %>
+                Description: <%= result.escape("description") %>
+              <% }; %>
+            </li>
+          </a>
+        </ul>
       </li>
-    </a>
-  <% }) %>
-</ul>
+    <% }) %>
+  </ul>
+</main>
