@@ -1,4 +1,4 @@
-json.array! @search_results.each do |result|
+json.results @search_results.each do |result|
   json.extract!(
     result,
     :name,
@@ -17,3 +17,5 @@ json.array! @search_results.each do |result|
   json.medium_picture_url image_url(result.picture.url(:medium))
   json.large_picture_url image_url(result.picture.url(:large))
 end
+
+json.keywords(@query.keywords)

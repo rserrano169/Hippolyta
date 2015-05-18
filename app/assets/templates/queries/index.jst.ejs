@@ -1,67 +1,70 @@
 <main id="search-results">
   <% if (results.length < 1) { %>
-    <section id="matchless-search">
-      <%= "Your search did not match any products." %>
-    </section>
-  <% }; %>
-
-  <ul>
-    <% results.each( function(result) { %>
-      <% var quantity = result.escape("quantity") %>
-      <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
-      <li>
-        <ul class="result group">
-          <li class="image">
-            <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-              <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
-            </a>
-          </li>
-
-          <li class="name">
-            <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-              <%= result.escape("name") %>
-            </a>
-          </li>
-
-          <li class="sold-by">
-              Sold by <%= result.escape("seller_name") %>
-          </li>
-
+      <section id="matchless-search">
+        <%= "Your search did not match any products." %>
+      </section>
+  <% } else { %>
+      <header>
+        Showing results for: "<%= results.keywords %>"
+      </header>
+      <ul>
+        <% results.each( function(result) { %>
+          <% var quantity = result.escape("quantity") %>
+          <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
           <li>
-            <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-              Price: $<%= salePrice %>
-            </a>
+            <ul class="result group">
+              <li class="image">
+                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                  <img src="<%= result.escape("medium_picture_url") %>" alt="product image"/>
+                </a>
+              </li>
+
+              <li class="name">
+                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                  <%= result.escape("name") %>
+                </a>
+              </li>
+
+              <li class="sold-by">
+                  Sold by <%= result.escape("seller_name") %>
+              </li>
+
+              <li>
+                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                  Price: $<%= salePrice %>
+                </a>
+              </li>
+
+              <% if (quantity < 1) { %>
+                  <li id="out-of-stock">
+                    <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                      Qty: Out of Stock
+                    </a>
+                  </li>
+              <% } else if (quantity > 25) { %>
+                  <li id="in-stock">
+                    <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                      Qty: In Stock
+                    </a>
+                  </li>
+              <% } else { %>
+                  <li class="quantity">
+                    <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                      Qty: <%= quantity %>
+                    </a>
+                  </li>
+              <% }; %>
+
+              <% if (result.escape("description")) { %>
+                <li>
+                  <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                    Description: <%= result.escape("description") %>
+                  </a>
+                </li>
+              <% }; %>
+            </ul>
           </li>
-
-          <% if (quantity < 1) { %>
-              <li id="out-of-stock">
-                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-                  Qty: Out of Stock
-                </a>
-              </li>
-          <% } else if (quantity > 25) { %>
-              <li id="in-stock">
-                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-                  Qty: In Stock
-                </a>
-              </li>
-          <% } else { %>
-              <li class="quantity">
-                <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-                  Qty: <%= quantity %>
-                </a>
-              </li>
-          <% }; %>
-
-          <% if (result.escape("description")) { %>
-            <li>
-              <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
-                Description: <%= result.escape("description") %>
-              </a>
-            </li>
-          <% }; %>
-        </ul>
-      </li>
-    <% }) %>
-  </ul>
+        <% }) %>
+      </ul>
+  <% }; %>
 </main>
