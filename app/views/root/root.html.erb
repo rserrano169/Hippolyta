@@ -19,7 +19,7 @@
               <input id="query"
                      type="text"
                      name="query[keywords]"
-                     value=""
+                     value="<% if last_query %><%= last_query.keywords %><% end %>"                     
                      autofocus="autofocus">
             </li>
             <li>
