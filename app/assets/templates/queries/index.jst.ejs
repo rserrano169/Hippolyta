@@ -17,13 +17,13 @@
             </a>
           </li>
 
-          <li>
+          <li class="name">
             <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
               <%= result.escape("name") %>
             </a>
           </li>
 
-          <li>
+          <li class="sold-by">
               Sold by <%= result.escape("seller_name") %>
           </li>
 
@@ -46,7 +46,7 @@
                 </a>
               </li>
           <% } else { %>
-              <li>
+              <li class="quantity">
                 <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
                   Qty: <%= quantity %>
                 </a>
