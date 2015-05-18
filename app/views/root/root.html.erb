@@ -12,20 +12,19 @@
         <form action="<%= queries_url %>" method="post">
           <%= authenticity_token %>
           <ul>
-            <li>
-              <label>Search</label>
+            <li id="search-label">
+              Search
             </li>
             <li>
               <input id="query"
                      type="text"
                      name="query[keywords]"
-                     value="<% if last_query %><%= last_query.keywords %><% end %>"                     
+                     value="<% if last_query %><%= last_query.keywords %><% end %>"
                      autofocus="autofocus">
             </li>
             <li>
-              <button class="search-button">
-                <img id="search-button"
-                     src="<%= image_url("seed/root_page/search-button.png") %>"
+              <button id="search-button">
+                <img src="<%= image_url("seed/root_page/search-button.png") %>"
                      alt="Go" />
               </button>
             </li>

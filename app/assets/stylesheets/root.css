@@ -35,20 +35,16 @@
 }
 
 .top #search-block form {
-  position: relative;
   min-width: 340px;
 }
 
 .top #search-block input {
   width: 100%;
   padding: 5px;
-  margin: 0px 0px 0px 70px;
 }
 
-.top #search-block label {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.top #search-block #search-label {
+  font-weight: bold;
   padding: 5px 9px 6px 10px;
   background: #f3f3f3;
   border-right: 1px solid #cdcdcd;
@@ -65,7 +61,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.top #search-block #search-button {
+.top #search-block #search-button img{
   width: 18px;
 }
 
