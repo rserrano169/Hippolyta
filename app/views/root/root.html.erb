@@ -37,7 +37,48 @@
     <div id="left">
 
     </div>
-    <% if !signed_in? %>
+    <% if signed_in? %>
+      <div id="middle">
+        <a id="hippolyta" href="#users/<%= current_user.id %>">
+          <%= current_user.name %>'s Hippolyta.com
+        </a>
+
+        <a id="recent-search" href="/#search_results">
+          Most recent search
+        </a>
+      </div>
+
+      <div id="right">
+        <ul>
+          <li>
+            <ul id="account-drop-down-ul">
+              <li>
+                <a id="account" href="<%= session_url %>" data-method="delete">
+                  <span id="top-line">Your Account</span>
+                  <br>
+                  <span>Sign Out? <div id="down-arrow"></div></span>
+                </a>
+              </li>
+              <li id="account-drop-down">
+                <ul>
+                  <li>
+                    <button>
+                      <a href="<%= session_url %>" data-method="delete">
+                        Sign Out
+                      </a>
+                    </button>
+                  </li>
+                  <li id="after-button">
+                    Want to view
+                    <a href="#users/<%= current_user.id %>">
+                      your account?
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+    <% else %>
       <div id="middle">
           <a id="hippolyta" href="<%= new_session_url %>">
             Your Hippolyta.com
@@ -74,47 +115,6 @@
                     New customer?
                     <a href="<%= new_user_url %>">
                       Start here.
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-    <% else %>
-      <div id="middle">
-        <a id="hippolyta" href="#users/<%= current_user.id %>">
-          <%= current_user.name %>'s Hippolyta.com
-        </a>
-
-        <a id="recent-search" href="/#search_results">
-          Most recent search
-        </a>
-      </div>
-
-      <div id="right">
-        <ul>
-          <li>
-            <ul id="account-drop-down-ul">
-              <li>
-                <a id="account" href="<%= session_url %>" data-method="delete">
-                  <span id="top-line">Your Account</span>
-                  <br>
-                  <span>Sign Out? <div id="down-arrow"></div></span>
-                </a>
-              </li>
-              <li id="account-drop-down">
-                <ul>
-                  <li>
-                    <button>
-                      <a href="<%= session_url %>" data-method="delete">
-                        Sign Out
-                      </a>
-                    </button>
-                  </li>
-                  <li id="after-button">
-                    Want to view
-                    <a href="#users/<%= current_user.id %>">
-                      your account?
                     </a>
                   </li>
                 </ul>

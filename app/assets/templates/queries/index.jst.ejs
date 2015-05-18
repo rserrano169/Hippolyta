@@ -1,11 +1,11 @@
 <main id="search-results">
   <% if (results.length < 1) { %>
       <section id="matchless-search">
-        <%= "Your search did not match any products." %>
+        Your search for "<%= escape(results.keywords) %>" did not match any products.
       </section>
   <% } else { %>
       <header>
-        Showing results for: "<%= results.keywords %>"
+        Showing results for: "<%= escape(results.keywords) %>"
       </header>
       <ul>
         <% results.each( function(result) { %>
