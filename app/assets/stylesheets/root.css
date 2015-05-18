@@ -88,8 +88,16 @@
   min-width: 420px;
 }
 
+.bottom #middle a {
+  color: #cccccc;
+}
+
 .bottom #middle a:hover {
   text-decoration: underline;
+}
+
+.bottom #middle #hippolyta {
+  margin-right: 30px;
 }
 
 .bottom #right {
