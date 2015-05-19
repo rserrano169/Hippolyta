@@ -22,6 +22,8 @@ json.products @cart.products do |product|
     :id
   )
 
+  json.seller_name(product.seller.name)
+
   json.thumb_picture_url image_url(product.picture.url(:thumb))
   json.small_picture_url image_url(product.picture.url(:small))
   json.medium_picture_url image_url(product.picture.url(:medium))

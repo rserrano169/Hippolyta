@@ -1,0 +1,37 @@
+#cart-show #populated-cart {
+  min-width: 920px;
+}
+
+#cart-show #populated-cart header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#cart-show #populated-cart #column-labels li {
+  display: inline;
+}
+
+#cart-show #side-bar {
+  display: block;
+  float: right;
+  white-space: nowrap;
+  padding: 20px;
+  margin: 20px 30px;
+  background: #f3f3f3;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+#cart-show #side-bar #subt{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#cart-show #main-container {
+  min-width: 640px;
+  height: auto;
+}
+
+#cart-show #main {
+  float: left;
+}
