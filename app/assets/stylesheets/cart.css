@@ -6,9 +6,10 @@
 
 #cart-show #main {
   display: table-cell;
+  vertical-align: top;
   white-space: normal;
-  padding: 20px 0px 20px 25px;
-  min-width: 550px;
+  padding: 20px 0px 20px 20px;
+  min-width: 555px;
 }
 
 #cart-show #populated-cart header {
@@ -22,17 +23,18 @@
 
 #cart-show #side-bar {
   display: table-cell;
+  vertical-align: top;
   white-space: nowrap;
-  width: 350px;
+  width: 345px;
 }
 
-#cart-show #checkout-box {
+#cart-show #side-bar #checkout-box {
   display: block;
   width: 250px;
   right: 0px;
   text-align: center;
   padding: 20px;
-  margin: 20px 0px 0px 33px;
+  margin: 20px 0px 0px 28px;
   background: #f3f3f3;
   border: 1px solid #dddddd;
   border-radius: 4px;
