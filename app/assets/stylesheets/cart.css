@@ -1,5 +1,14 @@
 #cart-show #populated-cart {
+  display: table;
   min-width: 920px;
+  width: 100%;
+}
+
+#cart-show #main {
+  display: table-cell;
+  white-space: normal;
+  padding: 20px 0px 20px 25px;
+  min-width: 550px;
 }
 
 #cart-show #populated-cart header {
@@ -11,29 +20,26 @@
   display: inline;
 }
 
-#cart-show #main-container {
-  min-width: 640px;
-  height: auto;
-}
-
-#cart-show #main {
-  float: left;
-}
-
 #cart-show #side-bar {
-  display: block;
-  float: right;
+  display: table-cell;
   white-space: nowrap;
+  width: 350px;
+}
+
+#cart-show #checkout-box {
+  display: block;
+  width: 250px;
+  right: 0px;
   text-align: center;
   padding: 20px;
-  margin: 20px 25px;
+  margin: 20px 0px 0px 33px;
   background: #f3f3f3;
   border: 1px solid #dddddd;
   border-radius: 4px;
 }
 
 #cart-show #side-bar #subtotal {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
 }
 
