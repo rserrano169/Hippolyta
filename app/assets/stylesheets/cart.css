@@ -21,10 +21,30 @@
   display: inline;
 }
 
+#cart-show .product {
+  display: table;
+  width: 100%;
+}
+
+#cart-show .product ul {
+  display: table-cell;
+  vertical-align: top;
+  border-bottom: 1px solid #dddddd;
+  padding: 20px 0px;
+}
+
+#cart-show .product .image-cell {
+  width: 100px;
+  text-align: center;
+  padding-right: 20px;
+}
+
+#cart-show .product .name-cell {
+}
+
 #cart-show #side-bar {
   display: table-cell;
   vertical-align: top;
-  white-space: nowrap;
   width: 345px;
 }
 

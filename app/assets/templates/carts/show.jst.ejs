@@ -34,8 +34,8 @@
         </ul>
 
         <ul id="column-labels">
-          <li>Price</li>
-          <li>Quantity</li>
+          <li id="quantity-label">Quantity</li>
+          <li id="price-label">Price</li>
         </ul>
 
         <% var cart_subtotal_price = 0; %>
@@ -47,73 +47,80 @@
             <% var originalPrice = (product.escape("original_price") * 1).toFixed(2); %>
             <% var amountSaved = (originalPrice - salePrice).toFixed(2); %>
           <% }; %>
-
-          <ul>
-            <li>
-              <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-                <img src="<%= product.escape("small_picture_url") %>" alt="product image"/>
-              </a>
-            </li>
-
-            <li>
-              <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-                <%= product.escape("name") %>
-              </a>
-            </li>
-
-            <li>
-              sold by <%= product.escape("seller_name") %>
-            </li>
-
-            <% var quantity = product.escape("quantity") %>
-            <% if (quantity < 1) { %>
-                <li class="out-of-stock">
-                  Out of Stock
-                </li>
-            <% } else if (quantity > 25) { %>
-                <li class="in-stock">
-                  In Stock
-                </li>
-            <% } else { %>
-                <li class="left-in-stock">
-                  Only <%= quantity %> left in stock.
-                </li>
-            <% }; %>
-
-            <li>
-              <a href="/api/cart_products/del/<%= product.id %>" data-method="delete">
-                Delete from Cart
-              </a>
-            </li>
-
-            <li>
-              Price: $<%= salePrice %>
-            </li>
-
-            <% if (amountSaved) { %>
+          <div class="product">
+            <ul class="image-cell">
               <li>
-                You save: $<%= amountSaved %>
+                <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+                  <img src="<%= product.escape("small_picture_url") %>" alt="product image"/>
+                </a>
               </li>
-            <% }; %>
+            </ul>
 
-            <li>
-              <form action="/api/cart_products/qty/<%= product.id %>" method="post">
-                <input type="hidden" name="_method" value="patch">
-                  Quantity:
-                  <input type="number"
-                         min="0"
-                         max="<%= product.escape("quantity") %>"
-                         name="cart_product[quantity]"
-                         value="<%= cartProduct.escape("quantity") %>">
-                  <button>Update</button>
-              </form>
-            </li>
+            <ul class="name-cell">
+              <li>
+                <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
+                  <%= product.escape("name") %>
+                </a>
+              </li>
 
-            <li>
-              <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
-              Sub-Total: $<%= subtotal %>
-            </li>
-          </ul>
+              <li>
+                sold by <%= product.escape("seller_name") %>
+              </li>
+
+              <% var quantity = product.escape("quantity") %>
+              <% if (quantity < 1) { %>
+                  <li class="out-of-stock">
+                    Out of Stock
+                  </li>
+              <% } else if (quantity > 25) { %>
+                  <li class="in-stock">
+                    In Stock
+                  </li>
+              <% } else { %>
+                  <li class="left-in-stock">
+                    Only <%= quantity %> left in stock.
+                  </li>
+              <% }; %>
+
+              <li>
+                <a href="/api/cart_products/del/<%= product.id %>" data-method="delete">
+                  Delete from Cart
+                </a>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                Price: $<%= salePrice %>
+              </li>
+
+              <% if (amountSaved) { %>
+                <li>
+                  You save: $<%= amountSaved %>
+                </li>
+              <% }; %>
+            </ul>
+
+            <ul>
+              <li>
+                <form action="/api/cart_products/qty/<%= product.id %>" method="post">
+                  <input type="hidden" name="_method" value="patch">
+                    Quantity:
+                    <input type="number"
+                           min="0"
+                           max="<%= product.escape("quantity") %>"
+                           name="cart_product[quantity]"
+                           value="<%= cartProduct.escape("quantity") %>">
+                    <button>Update</button>
+                </form>
+              </li>
+
+              <li>
+                <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
+                Sub-Total: $<%= subtotal %>
+              </li>
+            </ul>
+          </div>
 
           <% cart_subtotal_price += Number(subtotal); %>
           <% cart_total_quantity += Number(cartProduct.escape("quantity")) %>
