@@ -34,8 +34,14 @@
         </ul>
 
         <ul id="column-labels">
-          <li id="quantity-label">Quantity</li>
-          <li id="price-label">Price</li>
+          <li id="price-label">
+            <div id="price-div">
+              Price
+            </div>
+          </li>
+          <li id="quantity-label">
+            Quantity
+          </li>
         </ul>
 
         <% var cart_subtotal_price = 0; %>
@@ -43,6 +49,7 @@
         <% products.each( function(product) { %>
           <% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id); %>
           <% var salePrice = (product.escape("sale_price") * 1).toFixed(2); %>
+          <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
           <% if (product.escape("original_price")) { %>
             <% var originalPrice = (product.escape("original_price") * 1).toFixed(2); %>
             <% var amountSaved = (originalPrice - salePrice).toFixed(2); %>
@@ -91,7 +98,7 @@
 
             <ul>
               <li>
-                Price: $<%= salePrice %>
+                Price: $<%= subtotal %>
               </li>
 
               <% if (amountSaved) { %>
@@ -113,11 +120,6 @@
                            value="<%= cartProduct.escape("quantity") %>">
                     <button>Update</button>
                 </form>
-              </li>
-
-              <li>
-                <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
-                Sub-Total: $<%= subtotal %>
               </li>
             </ul>
           </div>
