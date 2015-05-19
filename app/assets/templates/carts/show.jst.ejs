@@ -30,12 +30,14 @@
 <ul>
   <li>
     <ul>
+      <% var cart_subtotal_price = 0; %>
+      <% var cart_total_quantity = 0; %>
       <% products.each( function(product) { %>
-        <% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id) %>
-        <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
+        <% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id); %>
+        <% var salePrice = (product.escape("sale_price") * 1).toFixed(2); %>
         <% if (product.escape("original_price")) { %>
-          <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
-          <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+          <% var originalPrice = (product.escape("original_price") * 1).toFixed(2); %>
+          <% var amountSaved = (originalPrice - salePrice).toFixed(2); %>
         <% }; %>
 
         <li>
@@ -90,7 +92,8 @@
         </li>
 
         <li>
-          Sub-Total: $<%= (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2) %>
+          <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
+          Sub-Total: $<%= subtotal %>
         </li>
 
         <li>
@@ -98,12 +101,24 @@
             Delete from Cart
           </a>
         </li>
+
+        <% cart_subtotal_price += Number(subtotal); %>
       <% }) %>
     </ul>
   </li>
 
   <li>
-    
+    <ul>
+      <li>
+        Subtotal (items): $<%= cart_subtotal_price.toFixed(2) %>
+      </li>
+
+      <li>
+        <a href="#">
+          Proceed to checkout
+        </a>
+      </li>
+    </ul>
   </li>
 </ul>
 <% }; %>

@@ -9,14 +9,14 @@ Hippolyta.Collections.CartProducts = Backbone.Collection.extend({
       cartProducts = this;
 
     if (!cartProduct) {
-      cartProduct = new Hippolyta.Models.CartProduct({ id: id });
-      cartProduct.fetch({
-        success: function () {
-          cartProducts.add(cartProduct);
-        },
-      });
+        cartProduct = new Hippolyta.Models.CartProduct({ id: id });
+        cartProduct.fetch({
+          success: function () {
+            cartProducts.add(cartProduct);
+          },
+        });
     } else {
-      cartProduct.fetch();
+        cartProduct.fetch();
     };
 
     return cartProduct;
@@ -30,17 +30,17 @@ Hippolyta.Collections.CartProducts = Backbone.Collection.extend({
         cartProducts = this;
 
     if (!cartProduct) {
-      cartProduct = new Hippolyta.Models.CartProduct({
-        cart_id: cart_id,
-        product_id: product_id
-      });
-      cartProduct.fetch({
-        success: function () {
-          cartProducts.add(cartProduct);
-        },
-      });
+        cartProduct = new Hippolyta.Models.CartProduct({
+          cart_id: cart_id,
+          product_id: product_id
+        });
+        cartProduct.fetch({
+          success: function () {
+            cartProducts.add(cartProduct);
+          },
+        });
     } else {
-      cartProduct.fetch();
+        cartProduct.fetch();
     };
 
     return cartProduct;
