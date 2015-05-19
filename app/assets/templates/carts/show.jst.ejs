@@ -49,10 +49,11 @@
         <% products.each( function(product) { %>
           <% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id); %>
           <% var salePrice = (product.escape("sale_price") * 1).toFixed(2); %>
-          <% var subtotal = (cartProduct.escape("quantity") * product.escape("sale_price")).toFixed(2); %>
+          <% var subtotal = (cartProduct.escape("quantity") * salePrice).toFixed(2); %>
           <% if (product.escape("original_price")) { %>
             <% var originalPrice = (product.escape("original_price") * 1).toFixed(2); %>
-            <% var amountSaved = (originalPrice - salePrice).toFixed(2); %>
+            <% var amountSavedPer = (originalPrice - salePrice).toFixed(2); %>
+            <% var amountSavedTotal = (amountSavedPer * cartProduct.escape("quantity")).toFixed(2); %>
           <% }; %>
           <div class="product">
             <ul class="image-cell">
@@ -98,12 +99,12 @@
 
             <ul>
               <li>
-                Price: $<%= subtotal %>
+                $<%= subtotal %>
               </li>
 
-              <% if (amountSaved) { %>
+              <% if (amountSavedTotal) { %>
                 <li>
-                  You save: $<%= amountSaved %>
+                  You save: $<%= amountSavedTotal %>
                 </li>
               <% }; %>
             </ul>
@@ -112,7 +113,6 @@
               <li>
                 <form action="/api/cart_products/qty/<%= product.id %>" method="post">
                   <input type="hidden" name="_method" value="patch">
-                    Quantity:
                     <input type="number"
                            min="0"
                            max="<%= product.escape("quantity") %>"
