@@ -98,12 +98,16 @@
 
             <ul class="price-cell">
               <li>
-                $<%= subtotal %>
+                <span class="price-total">$
+                  <%= subtotal %>
+                </span>
               </li>
 
               <% if (amountSavedTotal) { %>
                 <li>
-                  You save: $<%= amountSavedTotal %>
+                  <span class="saved-total">
+                    You save: $<%= amountSavedTotal %>
+                  </span>
                 </li>
               <% }; %>
             </ul>
