@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
                 :signed_in?,
                 :current_cart,
                 :money_string,
-                :last_query
+                :last_query,
+                :sanitize_this
 
   private
 
@@ -53,6 +54,10 @@ class ApplicationController < ActionController::Base
 
   def money_string(num)
     (num * 100).round.to_s.insert(-3, ".")
+  end
+
+  def sanitize_this(str)
+    ActionController::Base.helpers.sanitize(str, tags: [], attributes: [])
   end
 
 end

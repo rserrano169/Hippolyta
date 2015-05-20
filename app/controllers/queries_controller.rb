@@ -12,7 +12,7 @@ class QueriesController < ApplicationController
     @query = Query.new({
       querier_id: @querier_id,
       session_token: @session_token,
-      keywords: query_params["keywords"]
+      keywords: sanitize_this(query_params["keywords"])
     })
 
     if @query.save
