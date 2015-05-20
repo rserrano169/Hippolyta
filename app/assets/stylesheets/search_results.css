@@ -67,6 +67,10 @@
   color: #0066c0;
 }
 
+#search-results #successful-search .name:hover {
+  color: #c45500;
+}
+
 #search-results #successful-search .sold-by {
   font-size: 13px;
   color: #555555;
