@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="info-cell">
-                  <ul>
+                  <ul class="info-ul">
                     <li class="name">
                       <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
                         <%= result.escape("name") %>
@@ -56,13 +56,13 @@
                     </li>
 
                     <% if (quantity < 1) { %>
-                        <li id="out-of-stock stock">
+                        <li class="out-of-stock stock">
                           <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
                             Out of Stock
                           </a>
                         </li>
                     <% } else if (quantity > 25) { %>
-                        <li id="in-stock stock">
+                        <li class="in-stock stock">
                           <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
                             In Stock
                           </a>

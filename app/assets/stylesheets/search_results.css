@@ -46,6 +46,10 @@
   vertical-align: top;
 }
 
+#search-results #successful-search .info-ul {
+  margin-right: 20px;
+}
+
 #search-results #successful-search .image {
   display: block;
   width: 200px;
@@ -83,5 +87,17 @@
 
 #search-results #successful-search .stock {
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 5px;
+}
+
+#search-results #successful-search .in-stock {
+  color: #008a00;
+}
+
+#search-results #successful-search .left-in-stock {
+  color: #cd950c;
+}
+
+#search-results #successful-search .out-of-stock {
+  color: #b12704;
 }
