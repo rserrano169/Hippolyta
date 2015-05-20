@@ -67,7 +67,7 @@
   color: #0066c0;
 }
 
-#search-results #successful-search .name:hover {
+#search-results #successful-search .name a:hover {
   color: #c45500;
 }
 
