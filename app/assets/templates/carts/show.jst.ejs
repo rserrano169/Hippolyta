@@ -53,6 +53,7 @@
             <% var originalPrice = (product.escape("original_price") * 1).toFixed(2); %>
             <% var amountSavedPer = (originalPrice - salePrice).toFixed(2); %>
             <% var amountSavedTotal = (amountSavedPer * cartProduct.escape("quantity")).toFixed(2); %>
+            <% var percentSaved = (100 / (subtotal / amountSavedTotal)).toFixed(0) %>
           <% }; %>
           <div class="product">
             <ul class="image-cell">
@@ -106,6 +107,7 @@
                   You save:
                   <div>
                     $<%= amountSavedTotal %>
+                    (<%= percentSaved %>%)
                   </div>
                 </li>
               <% }; %>
