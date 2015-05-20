@@ -142,9 +142,8 @@
 #cart-show #side-bar #checkout-box {
   display: block;
   width: 250px;
-  right: 0px;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
   margin: 20px 0px 0px 28px;
   background: #f3f3f3;
   border: 1px solid #dddddd;
@@ -163,7 +162,7 @@
 #cart-show #side-bar #checkout-button a {
   display: block;
   font-size: 13px;
-  margin: 20px auto 0px auto;
+  margin: 40px auto 0px auto;
   padding: 10px 0px 10px 0px;
   background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
   border: 1px solid #c89411;

@@ -17,7 +17,6 @@
             <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
             <% if (result.escape("original_price")) { %>
               <% var originalPrice = (result.escape("original_price") * 1).toFixed(2); %>
-              <% var amountSaved = (originalPrice - salePrice).toFixed(2); %>
             <% }; %>
             <li>
               <ul class="result">
@@ -48,9 +47,9 @@
                         $<%= salePrice %>
                       </a>
 
-                      <% if (amountSaved) { %>
-                        <span class="amount-saved">
-                          $<%= amountSaved %>
+                      <% if (originalPrice) { %>
+                        <span class="original-price">
+                          $<%= originalPrice %>
                         </span>
                       <% }; %>
                     </li>

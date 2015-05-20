@@ -79,7 +79,7 @@
   color: #b12704;
 }
 
-#search-results #successful-search .sale-price .amount-saved {
+#search-results #successful-search .sale-price .original-price {
   font-size: 13px;
   font-weight: normal;
   color: #555555;
