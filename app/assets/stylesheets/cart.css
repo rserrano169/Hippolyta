@@ -129,6 +129,10 @@
   text-decoration: underline;
 }
 
+#cart-show .product .quantity-cell input {
+  width: 60px;
+}
+
 #cart-show #side-bar {
   display: table-cell;
   vertical-align: top;
