@@ -43,9 +43,11 @@
           <%= current_user.name %>'s Hippolyta.com
         </a>
 
-        <a id="recent-search" href="/#search_results">
-          Most recent search
-        </a>
+        <% if last_query %>
+          <a id="recent-search" href="/#search_results">
+            Most recent search
+          </a>
+        <% end %>
       </div>
 
       <div id="right">
