@@ -27,6 +27,36 @@
 #search-results #successful-search #results {
 }
 
+#search-results #successful-search .result {
+  display: table;
+  min-width: 920px;
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+
+#search-results #successful-search .image-cell {
+  display: table-cell;
+  vertical-align: top;
+  width: 240px;
+}
+
+#search-results #successful-search .info-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+#search-results #successful-search .image {
+  display: block;
+  width: 200px;
+  margin: 0px 20px;
+}
+
+#search-results #successful-search .image img {
+  display: block;
+  margin: 0px auto;
+}
+
 #search-results #successful-search .name {
   font-size: 18px;
   color: #0066c0;
@@ -49,4 +79,9 @@
   font-weight: normal;
   color: #555555;
   text-decoration: line-through;
+}
+
+#search-results #successful-search .stock {
+  font-size: 14px;
+  margin-top: 20px;
 }
