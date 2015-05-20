@@ -64,13 +64,13 @@
             </ul>
 
             <ul class="name-cell">
-              <li>
+              <li class="name-li">
                 <a href='#sellers/<%= product.escape("seller_id") %>/products/<%= product.id %>'>
-                  <%= product.escape("name") %>
+                    <%= product.escape("name") %>
                 </a>
               </li>
 
-              <li>
+              <li class="sold-by">
                 sold by <%= product.escape("seller_name") %>
               </li>
 
@@ -89,7 +89,7 @@
                   </li>
               <% }; %>
 
-              <li>
+              <li class="delete">
                 <a href="/api/cart_products/del/<%= product.id %>" data-method="delete">
                   Delete from Cart
                 </a>
@@ -97,17 +97,16 @@
             </ul>
 
             <ul class="price-cell">
-              <li>
-                <span class="price-total">$
-                  <%= subtotal %>
-                </span>
+              <li class="price-total">
+                $<%= subtotal %>
               </li>
 
               <% if (amountSavedTotal) { %>
-                <li>
-                  <span class="saved-total">
-                    You save: $<%= amountSavedTotal %>
-                  </span>
+                <li class="saved-total">
+                  You save:
+                  <div>
+                    $<%= amountSavedTotal %>
+                  </div>
                 </li>
               <% }; %>
             </ul>
