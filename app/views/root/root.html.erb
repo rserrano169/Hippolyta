@@ -138,21 +138,33 @@
                       Your Cart is empty.
                     </li>
                   <% else %>
-                    <% current_cart.products.each do |product| %>
+                    <% current_cart.cart_products.each do |cart_product| %>
+                      <% product = cart_product.product %>
                       <li class="cart-item">
                         <a class="group"
                            href="#sellers/<%= product.seller_id %>/products/<%= product.id %>">
                           <img class="product-image"
                                src="<%= product.picture.url(:thumb) %>"
                                alt="product image" />
-                          <%= product.name %>
-                          <br>
-                          $<%= money_string(product.sale_price) %>
+                          <ul class="product-info">
+                            <li class="product-name">
+                              <%= product.name %>
+                            </li>
+                            <li class="product-price">
+                              $<%= money_string(product.sale_price * cart_product.quantity) %>
+                            </li>
+                            <li class="product-quantity">
+                              Quantity: <%= cart_product.quantity %>
+                            </li>
+                          </ul>
                         </a>
                       </li>
                     <% end %>
                     <li id="cart-total">
-                      Total: $<%= money_string(current_cart.total) %>
+                      Total:
+                      <span>
+                        $<%= money_string(current_cart.total) %>
+                      </span>
                     </li>
                   <% end %>
                   <li>
