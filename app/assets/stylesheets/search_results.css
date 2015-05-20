@@ -1,0 +1,52 @@
+#search-results {
+  min-width: 920px;
+}
+
+#search-results #matchless-search {
+  font-size: 18px;
+  margin: 20px 0px 0px 30px;
+}
+
+#search-results #matchless-search #search-query {
+  font-weight: bold;
+}
+
+#search-results #successful-search #search-query {
+  color: #c45500;
+  font-weight: bold;
+}
+
+#search-results #successful-search header {
+  font-size: 16px;
+  padding: 10px 0px 9px 30px;
+  margin: 0px 0px 10px 0px;
+  background: #f3f3f3;
+  border-bottom: 1px solid #dddddd;
+}
+
+#search-results #successful-search #results {
+}
+
+#search-results #successful-search .name {
+  font-size: 18px;
+  color: #0066c0;
+}
+
+#search-results #successful-search .sold-by {
+  font-size: 13px;
+  color: #555555;
+  margin: 0px 0px 10px 0px;
+}
+
+#search-results #successful-search .sale-price {
+  font-size: 15px;
+  font-weight: bold;
+  color: #b12704;
+}
+
+#search-results #successful-search .sale-price .amount-saved {
+  font-size: 13px;
+  font-weight: normal;
+  color: #555555;
+  text-decoration: line-through;
+}
