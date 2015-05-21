@@ -3,7 +3,7 @@
 }
 
 #product-show header {
-  font-size: 12px;
+  font-size: 13px;
   color: #767676;
   padding: 10px 0px 9px 10px;
   background: #f3f3f3;
@@ -30,8 +30,12 @@
   border-right: 5px solid #c45500;
 }
 
+#product-show header span {
+}
+
 #product-show #product {
   display: table;
+  width: 100%;
 }
 
 #product-show #picture-cell {
@@ -57,4 +61,5 @@
 #product-show #add-to-cart-cell {
   display: table-cell;
   vertical-align: top;
+  width: 125px;
 }
