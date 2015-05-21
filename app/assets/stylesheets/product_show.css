@@ -14,13 +14,20 @@
   display: inline-block;
   vertical-align: -1px;
   width: 5px;
-  height: 10px;
-  background: purple;
+  height: 0px;
+  margin-right: 5px;
+  border-top: 5px solid #f3f3f3;
+  border-right: 5px solid #767676;
+  border-bottom: 5px solid #f3f3f3;
 }
 
 #product-show header a:hover {
   color: #c45500;
   text-decoration: underline;
+}
+
+#product-show header a:hover #back-arrow {
+  border-right: 5px solid #c45500;
 }
 
 #product-show #product {

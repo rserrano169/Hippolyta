@@ -2,9 +2,11 @@
 
   <% if (product.escape("last_query")) { %>
     <header>
-      <div id="back-arrow"></div>
       <a href="/#search_results">
-        Back to search results for "<span><%= product.escape("last_query") %></span>"
+        <div id="back-arrow">
+        </div>Back
+        to search results for
+        "<%= product.escape("last_query") %>"
       </a>
     </header>
   <% }; %>
