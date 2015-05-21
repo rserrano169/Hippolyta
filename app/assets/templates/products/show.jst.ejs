@@ -1,60 +1,85 @@
 <main id="product-show" class="group">
-  <header>
-    <a href="#">
-      
-    </a>
-  </header>
 
-  <ul>
-    <li id="picture">
-      <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
-    </li>
+  <% if (product.escape("last_query")) { %>
+    <header>
+      <div id="back-arrow"></div>
+      <a href="/#search_results">
+        Back to search results for "<span><%= product.escape("last_query") %></span>"
+      </a>
+    </header>
+  <% }; %>
 
-    <li>
-      <%= product.escape("name") %>
-    </li>
+  <div id="product">
+    <ul id="picture-cell">
+      <li id="picture">
+        <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
+      </li>
+    </ul>
 
-    <li>
-      <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
-      Price: $<%= salePrice %>
-    </li>
-
-    <% if (product.escape("original_price")) { %>
-      <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
-      <li>
-        Original Price: $<%= originalPrice %>
+    <ul id="info-cell">
+      <li id="name">
+        <%= product.escape("name") %>
       </li>
 
+
       <li>
-        <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
-        You save: $<%= amountSaved %>
+        <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
+        Price: $<%= salePrice %>
       </li>
-    <% }; %>
 
-
-    <% var quantity = product.escape("quantity") %>
-    <% if (quantity < 1) { %>
-        <li id="out-of-stock">
-          Qty: Out of Stock
-        </li>
-    <% } else if (quantity > 25) { %>
-        <li id="in-stock">
-          Qty: In Stock
-        </li>
-    <% } else { %>
+      <% if (product.escape("original_price")) { %>
+        <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
         <li>
-          Qty: <%= quantity %>
+          Original Price: $<%= originalPrice %>
         </li>
-    <% }; %>
 
-    <% if (product.escape("description")) { %>
-      <li>
-        Description: <%= product.escape("description") %>
+        <li>
+          <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+          You save: $<%= amountSaved %>
+        </li>
+      <% }; %>
+
+
+      <% var quantity = product.escape("quantity") %>
+      <% if (quantity < 1) { %>
+          <li id="out-of-stock">
+            Qty: Out of Stock
+          </li>
+      <% } else if (quantity > 25) { %>
+          <li id="in-stock">
+            Qty: In Stock
+          </li>
+      <% } else { %>
+          <li>
+            Qty: <%= quantity %>
+          </li>
+      <% }; %>
+
+      <li id="seller-name">
+        Sold by <%= product.escape("seller_name") %>
       </li>
-    <% } %>
+    </ul>
 
-    <a href="/api/cart_products/add/<%= product.id %>" data-method="post">
-        Add to Cart
-    </a>
-  </ul>
+    <ul id="add-to-cart-cell">
+      <li>
+        <a href="/api/cart_products/add/<%= product.id %>" data-method="post">
+            Add to Cart
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="description">
+    <ul>
+      <% if (product.escape("description")) { %>
+          <li>
+            Product Description: <%= product.escape("description") %>
+          </li>
+      <% } else { %>
+          <li>
+            Product Description: No specific description was given by seller.
+          </li>
+      <% }; %>
+    </ul>
+  </div>
 </main>
