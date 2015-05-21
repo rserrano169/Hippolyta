@@ -107,7 +107,11 @@
                   You save:
                   <div>
                     $<%= amountSavedTotal %>
-                    (<%= percentSaved %>%)
+                    <% if (amountSavedTotal > 0) { %>
+                        (<%= percentSaved %>%)
+                    <% } else { %>
+                        (0%)
+                    <% }; %>
                   </div>
                 </li>
               <% }; %>

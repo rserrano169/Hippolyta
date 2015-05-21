@@ -53,6 +53,7 @@ class ApplicationController < ActionController::Base
   end
 
   def money_string(num)
+    return '0.00' if num == 0
     (num * 100).round.to_s.insert(-3, ".")
   end
 
