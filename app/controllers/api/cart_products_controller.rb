@@ -45,9 +45,13 @@ class Api::CartProductsController < ApplicationController
       product_id: params[:product_id]
     )
 
-    @cart_product.update_attributes({
-      quantity: cart_product_params[:quantity]
-    })
+    if cart_product_params[:quantity] == "0"
+      @cart_product.destroy
+    else
+      @cart_product.update_attributes({
+        quantity: cart_product_params[:quantity]
+      })
+    end
 
     redirect_to "#carts/#{current_cart.id}"
   end
