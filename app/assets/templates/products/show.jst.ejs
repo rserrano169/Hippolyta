@@ -98,11 +98,23 @@
     <ul>
       <% if (product.escape("description")) { %>
           <li>
-            Product Description: <%= product.escape("description") %>
+            <div id="description-title">
+              Product Description:
+            </div>
+
+            <span id="description-text">
+              <%= product.escape("description") %>
+            </span>
           </li>
       <% } else { %>
           <li>
-            Product Description: No specific description was given by seller.
+            <div id="description-title">
+              Product Description:
+            </div>
+
+            <span id="description-text">
+              No specific description was given by the seller.
+            </span>
           </li>
       <% }; %>
     </ul>

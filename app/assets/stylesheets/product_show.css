@@ -42,7 +42,6 @@
   display: table-cell;
   vertical-align: top;
   width: 340px;
-  height: 340px;
 }
 
 #product-show #picture {
@@ -62,7 +61,7 @@
 }
 
 #product-show #price-tables {
-  margin: 15px 0px 15px 0px;
+  margin: 20px 0px;
 }
 
 #product-show .prices {
@@ -121,4 +120,23 @@
   display: table-cell;
   vertical-align: top;
   width: 125px;
+}
+
+#product-show #description {
+  display: block;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  border-top: 1px solid #cccccc;
+}
+
+#product-show #description #description-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 20px 15px 0px;
+  color: #cc6600;
+}
+
+#product-show #description #description-text {
+  display: block;
+  margin: 0px 20px;
 }
