@@ -95,7 +95,9 @@
 
     <ul id="add-to-cart-cell">
       <li>
-        <form action="/api/cart_products/add/<%= product.id %>" method="post">
+        <form id="add-to-cart-form"
+              action="/api/cart_products/add/<%= product.id %>"
+              method="post">
 
           Qty: <input type="number"
                  min="0"

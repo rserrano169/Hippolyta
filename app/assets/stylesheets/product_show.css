@@ -52,6 +52,7 @@
 #product-show #info-cell {
   display: table-cell;
   vertical-align: top;
+  padding-right: 20px;
 }
 
 #product-show #name {
@@ -125,8 +126,36 @@
 #product-show #add-to-cart-cell {
   display: table-cell;
   vertical-align: top;
-  width: 150px;
+  text-align: center;
+  width: 200px;
   padding-top: 20px;
+}
+
+#product-show #add-to-cart-cell #add-to-cart-form {
+  display: block;
+  margin-right: 20px;
+  padding: 30px 0px;
+  background: #f3f3f3;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+#product-show #add-to-cart-cell #add-to-cart-form input {
+  width: 50px;
+}
+
+#product-show #add-to-cart-cell #add-to-cart-form button {
+  display: block;
+  font-size: 13px;
+  margin: 15px auto 0px auto;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+#product-show #add-to-cart-cell #add-to-cart-form button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
 #product-show #description {
