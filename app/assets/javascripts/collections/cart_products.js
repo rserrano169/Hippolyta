@@ -47,3 +47,5 @@ Hippolyta.Collections.CartProducts = Backbone.Collection.extend({
   },
 
 });
+
+Hippolyta.Collections.cartproducts = new Hippolyta.Collections.CartProducts();

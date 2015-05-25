@@ -73,6 +73,11 @@
   color: #0066c0;
 }
 
+#cart-show .product .name-cell .name-li:hover a {
+  color: #e47911;
+  text-decoration: underline;
+}
+
 #cart-show .product .name-cell .sold-by {
   font-size: 14px;
   padding: 5px 0px;

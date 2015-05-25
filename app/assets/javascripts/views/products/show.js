@@ -14,6 +14,14 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
       product: this.product
     });
     this.$el.html(content);
+
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
+    this.$("form").prepend(
+      '<input type="hidden" name="authenticity_token" value="' +
+      csrfToken +
+      '">'
+    );
+
     return this;
   },
 

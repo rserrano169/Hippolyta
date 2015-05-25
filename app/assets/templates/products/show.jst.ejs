@@ -95,9 +95,16 @@
 
     <ul id="add-to-cart-cell">
       <li>
-        <a href="/api/cart_products/add/<%= product.id %>" data-method="post">
-            Add to Cart
-        </a>
+        <form action="/api/cart_products/add/<%= product.id %>" method="post">
+
+          Qty: <input type="number"
+                 min="0"
+                 max="<%= product.escape("quantity") %>"
+                 name="cart_product[quantity]"
+                 value="1">
+          <br>
+          <button>Add to Cart</button>
+        </form>
       </li>
     </ul>
   </div>

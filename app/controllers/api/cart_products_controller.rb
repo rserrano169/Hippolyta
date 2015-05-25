@@ -22,8 +22,18 @@ class Api::CartProductsController < ApplicationController
       @cart_product = CartProduct.create({
         cart_id: current_cart.id,
         product_id: params[:product_id],
-        quantity: 1
+        quantity: cart_product_params[:quantity]
       })
+    else
+      if cart_product_params[:quantity] == "0"
+        @cart_product.destroy
+      else
+        new_qty = @cart_product.quantity + (cart_product_params[:quantity]).to_i
+        if new_qty > @cart_product.product.quantity
+          new_qty = @cart_product.product.quantity
+        end
+        @cart_product.update_attributes({ quantity: new_qty })
+      end
     end
 
     redirect_to "#carts/#{current_cart.id}"
