@@ -45,6 +45,7 @@
 }
 
 #product-show #picture {
+  text-align: center;
   margin: 20px;
 }
 
@@ -77,6 +78,11 @@
 #product-show .price-type {
   width: 62px;
   text-align: right;
+  padding-right: 5px;
+}
+
+#product-show #price .price-type-sale-only {
+  width: auto;
   padding-right: 5px;
 }
 
@@ -113,13 +119,14 @@
 
 #product-show #seller-name {
   font-size: 13px;
-  margin-top: 3px;
+  margin: 3px 0px 20px 0px;
 }
 
 #product-show #add-to-cart-cell {
   display: table-cell;
   vertical-align: top;
-  width: 125px;
+  width: 150px;
+  padding-top: 20px;
 }
 
 #product-show #description {

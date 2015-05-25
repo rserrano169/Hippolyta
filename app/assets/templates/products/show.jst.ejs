@@ -26,42 +26,50 @@
       <li id="price-tables">
         <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
         <% if (product.escape("original_price")) { %>
-          <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
-          <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
-          <% var percentSaved = (100 / (salePrice / amountSaved)).toFixed(0) %>
-          <ul class="prices">
-            <li class="price-type">
-              List Price:
-            </li>
+            <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
+            <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+            <% var percentSaved = (100 / (salePrice / amountSaved)).toFixed(0) %>
+            <ul class="prices">
+              <li class="price-type">
+                List Price:
+              </li>
 
-            <li id="original-price">
-              $<%= originalPrice %>
-            </li>
-          </ul>
+              <li id="original-price">
+                $<%= originalPrice %>
+              </li>
+            </ul>
+
+            <ul id="price" class="prices">
+              <li class="price-type">
+                Price:
+              </li>
+
+              <li id="sale-price" class="red-prices">
+                $<%= salePrice %>
+              </li>
+            </ul>
+
+            <ul class="prices">
+              <li class="price-type">
+                You save:
+              </li>
+
+              <li class="red-prices">
+                $<%= amountSaved %>
+                (<%= percentSaved %>%)
+              </li>
+            </ul>
+        <% } else { %>
+            <ul id="price" class="prices">
+              <li class="price-type-sale-only">
+                Price:
+              </li>
+
+              <li id="sale-price" class="red-prices">
+                $<%= salePrice %>
+              </li>
+            </ul>
         <% }; %>
-
-        <ul id="price" class="prices">
-          <li class="price-type">
-            Price:
-          </li>
-
-          <li id="sale-price" class="red-prices">
-            $<%= salePrice %>
-          </li>
-        </ul>
-
-        <ul class="prices">
-          <% if (percentSaved) { %>
-            <li class="price-type">
-              You save:
-            </li>
-
-            <li class="red-prices">
-              $<%= amountSaved %>
-              (<%= percentSaved %>%)
-            </li>
-          <% }; %>
-        </ul>
       </li>
 
 
