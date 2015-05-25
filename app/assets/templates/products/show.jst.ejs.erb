@@ -1,41 +1,41 @@
 <main id="product-show" class="group">
 
-  <% if (product.escape("last_query")) { %>
+  <%% if (product.escape("last_query")) { %>
     <header>
       <a href="/#search_results">
         <div id="back-arrow">
         </div>Back
         to search results for
-        "<span><%= product.escape("last_query") %></span>"
+        "<span><%%= product.escape("last_query") %></span>"
       </a>
     </header>
-  <% }; %>
+  <%% }; %>
 
   <div id="product">
     <ul id="picture-cell">
       <li id="picture">
-        <img src="<%= product.escape("large_picture_url") %>" alt="product image"/>
+        <img src="<%%= product.escape("large_picture_url") %>" alt="product image"/>
       </li>
     </ul>
 
     <ul id="info-cell">
       <li id="name">
-        <%= product.escape("name") %>
+        <%%= product.escape("name") %>
       </li>
 
       <li id="price-tables">
-        <% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
-        <% if (product.escape("original_price")) { %>
-            <% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
-            <% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
-            <% var percentSaved = (100 / (salePrice / amountSaved)).toFixed(0) %>
+        <%% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
+        <%% if (product.escape("original_price")) { %>
+            <%% var originalPrice = (product.escape("original_price") * 1).toFixed(2) %>
+            <%% var amountSaved = (originalPrice - salePrice).toFixed(2) %>
+            <%% var percentSaved = (100 / (salePrice / amountSaved)).toFixed(0) %>
             <ul class="prices">
               <li class="price-type">
                 List Price:
               </li>
 
               <li id="original-price">
-                $<%= originalPrice %>
+                $<%%= originalPrice %>
               </li>
             </ul>
 
@@ -45,7 +45,7 @@
               </li>
 
               <li id="sale-price" class="red-prices">
-                $<%= salePrice %>
+                $<%%= salePrice %>
               </li>
             </ul>
 
@@ -55,57 +55,66 @@
               </li>
 
               <li class="red-prices">
-                $<%= amountSaved %>
-                (<%= percentSaved %>%)
+                $<%%= amountSaved %>
+                (<%%= percentSaved %>%)
               </li>
             </ul>
-        <% } else { %>
+        <%% } else { %>
             <ul id="price" class="prices">
               <li class="price-type-sale-only">
                 Price:
               </li>
 
               <li id="sale-price" class="red-prices">
-                $<%= salePrice %>
+                $<%%= salePrice %>
               </li>
             </ul>
-        <% }; %>
+        <%% }; %>
       </li>
 
 
-      <% var quantity = product.escape("quantity") %>
-      <% if (quantity < 1) { %>
+      <%% var quantity = product.escape("quantity") %>
+      <%% if (quantity < 1) { %>
           <li id="out-of-stock">
             Out of Stock
           </li>
-      <% } else if (quantity > 25) { %>
+      <%% } else if (quantity > 25) { %>
           <li id="in-stock">
             In Stock
           </li>
-      <% } else { %>
+      <%% } else { %>
           <li id="left-in-stock">
-            <%= quantity %> left in stock.
+            <%%= quantity %> left in stock.
           </li>
-      <% }; %>
+      <%% }; %>
 
       <li id="seller-name">
-        Sold by <%= product.escape("seller_name") %>
+        Sold by <%%= product.escape("seller_name") %>
       </li>
     </ul>
 
     <ul id="add-to-cart-cell">
       <li>
         <form id="add-to-cart-form"
-              action="/api/cart_products/add/<%= product.id %>"
+              action="/api/cart_products/add/<%%= product.id %>"
               method="post">
 
           Qty: <input type="number"
                  min="0"
-                 max="<%= product.escape("quantity") %>"
+                 max="<%%= product.escape("quantity") %>"
                  name="cart_product[quantity]"
                  value="1">
           <br>
-          <button>Add to Cart</button>
+          <button id="add-to-cart-button">
+            <div id="add-to-cart-image">
+              <img id="cart-image"
+                   src=" <%= image_url("amazon-cart.png") %> "
+                   alt="cart-image" />
+            </div>
+            <div id="add-to-cart-text">
+              Add to Cart
+            </div>
+          </button>
         </form>
       </li>
     </ul>
@@ -113,17 +122,17 @@
 
   <div id="description">
     <ul>
-      <% if (product.escape("description")) { %>
+      <%% if (product.escape("description")) { %>
           <li>
             <div id="description-title">
               Product Description:
             </div>
 
             <span id="description-text">
-              <%= product.escape("description") %>
+              <%%= product.escape("description") %>
             </span>
           </li>
-      <% } else { %>
+      <%% } else { %>
           <li>
             <div id="description-title">
               Product Description:
@@ -133,7 +142,7 @@
               No specific description was given by the seller.
             </span>
           </li>
-      <% }; %>
+      <%% }; %>
     </ul>
   </div>
 </main>
