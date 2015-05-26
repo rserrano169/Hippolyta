@@ -8,6 +8,10 @@
   margin: 0px 0px 20px 0px;
 }
 
+#cart-show #empty-cart #empty-cart-ul {
+  padding-left: 20px;
+}
+
 #cart-show #empty-cart .empty-cart-li {
   margin: 0px 0px 10px 0px;
 }
@@ -53,7 +57,7 @@
   vertical-align: center;
 }
 
-#cart-show #column-labels #spacer {
+#cart-show #column-labels #cart-spacer {
   background: white;
 }
 

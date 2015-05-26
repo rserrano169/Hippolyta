@@ -1,0 +1,21 @@
+#checkout #header-table {
+  display: table;
+  vertical-align: middle;
+}
+
+#checkout #logo-cell {
+  display: table-cell;
+}
+
+#checkout #header-text-cell {
+  display: table-cell;
+  min-width: 600px;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+}
+
+#checkout #checkout-spacer-cell {
+  display: table-cell;
+  min-width: 135px;
+}

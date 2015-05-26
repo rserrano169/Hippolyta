@@ -5,7 +5,7 @@
         Your Shopping Cart is empty.
       </header>
       <body>
-        <ul>
+        <ul id="empty-cart-ul">
           <li class="empty-cart-li">
             Your Shopping Cart lives to serve.
             Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.
@@ -36,7 +36,7 @@
         </ul>
 
         <ul id="column-labels">
-          <li id="spacer"></li>
+          <li id="cart-spacer"></li>
           <li id="price-label">
             Price
           </li>
@@ -149,7 +149,7 @@
             </li>
 
             <li id="checkout-button">
-              <a href="#">
+              <a href="/checkout" data-method="post">
                 Proceed to checkout
               </a>
             </li>
