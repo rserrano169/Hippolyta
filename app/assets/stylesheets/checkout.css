@@ -1,21 +1,26 @@
 #checkout #header-table {
   display: table;
+  min-width: 920px;
+  width: 100%;
   vertical-align: middle;
+  text-align: center;
+  padding: 10px 0px;
+  background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  border-bottom: 1px solid #dddddd;
 }
 
 #checkout #logo-cell {
   display: table-cell;
+  width: 200px;
 }
 
 #checkout #header-text-cell {
   display: table-cell;
-  min-width: 600px;
-  width: 100%;
   font-size: 30px;
   text-align: center;
 }
 
 #checkout #checkout-spacer-cell {
   display: table-cell;
-  min-width: 135px;
+  width: 200px;
 }
