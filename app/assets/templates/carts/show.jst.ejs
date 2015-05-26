@@ -1,22 +1,24 @@
 <main id="cart-show">
   <% if (products.length < 1) { %>
     <section id="empty-cart">
-      <header>Your Shopping Cart is empty.</header>
+      <header id="empty-cart-header">
+        Your Shopping Cart is empty.
+      </header>
       <body>
         <ul>
-          <li>
+          <li class="empty-cart-li">
             Your Shopping Cart lives to serve.
             Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.
             If you already have an account,
-              <a href="/session/new">
-                Sign In
-              </a>
+              <a href="/session/new">Sign In</a>
             to see your Cart.
           </li>
-          <li>
-            Continue shopping on the<a href="/"> Hippolyta.com</a> homepage.
+          <li class="empty-cart-li">
+            Continue shopping on the
+              <a href="/">Hippolyta.com</a>
+            homepage.
           </li>
-          <li>
+          <li class="empty-cart-li">
             The price and availability of items at Hippolyta.com are subject to change.
             The Cart is a temporary place to store a list of your items and reflects
             each item's most recent price.

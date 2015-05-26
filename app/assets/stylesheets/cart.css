@@ -1,3 +1,26 @@
+#cart-show #empty-cart {
+  padding: 20px;
+  font-size: 14px;
+}
+
+#cart-show #empty-cart #empty-cart-header {
+  font-size: 24px;
+  margin: 0px 0px 20px 0px;
+}
+
+#cart-show #empty-cart .empty-cart-li {
+  margin: 0px 0px 10px 0px;
+}
+
+#cart-show #empty-cart .empty-cart-li a {
+  color: #0066c0;
+  text-decoration: underline;
+}
+
+#cart-show #empty-cart .empty-cart-li a:hover {
+  color: #c45500;
+}
+
 #cart-show #populated-cart {
   display: table;
   min-width: 920px;
