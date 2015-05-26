@@ -20,12 +20,16 @@
   float: right;
   text-align: right;
   color: #004b91;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-right: 3px;
 }
 
 .auth-header .links a {
   text-decoration: underline;
+}
+
+.auth-header .links a:hover {
+  color: #c45500;
 }
 
 .auth-header .links > .sign-up-link {
