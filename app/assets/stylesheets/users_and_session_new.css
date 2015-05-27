@@ -20,7 +20,7 @@
   float: right;
   text-align: right;
   color: #004b91;
-  margin-top: 30px;
+  margin-top: 25px;
   margin-right: 3px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .auth-header .links > .sign-up-link {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* --- BODY --- */
