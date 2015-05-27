@@ -52,7 +52,7 @@
   border-bottom-left-radius: 5px;
 }
 
-.top #search-block button {
+.top #search-block #search-button {
   position: absolute;
   padding: 4px 6px 3px 6px;
   font-weight: bold;
@@ -307,7 +307,7 @@
   border-top: 5px solid #a7acb2;
 }
 
-.bottom #right button {
+.bottom #right .drop-down-button {
   display: block;
   width: 185px;
   height: 30px;
@@ -317,7 +317,7 @@
   border-radius: 3px;
 }
 
-.bottom #right button:hover {
+.bottom #right .drop-down-button:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
