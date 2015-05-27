@@ -1,3 +1,5 @@
+/* --- HEADER --- */
+
 #checkout #header-table {
   display: table;
   min-width: 920px;
@@ -23,4 +25,24 @@
 #checkout #checkout-spacer-cell {
   display: table-cell;
   width: 200px;
+}
+
+/* --- VIEW --- */
+
+#checkout-view {
+  padding: 40px;
+}
+
+#checkout-view > .checkout-steps {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#checkout-view > .checkout-steps:hover {
+  cursor: pointer;
+}
+
+#checkout-view .checkout-steps > .step-span {
+  padding-left: 12px;
+  word-spacing: 4px;
 }

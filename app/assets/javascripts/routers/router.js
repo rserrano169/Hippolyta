@@ -12,7 +12,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "search_results": "searchResults",
     "sellers/:seller_id/products/:id": "productShow",
     "carts/:cart_id": "cartShow",
-    "sign_in": "checkoutSignIn",
+    "must_sign_in": "checkoutSignIn",
     "checkout": "checkout",
   },
 
@@ -92,7 +92,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   checkout: function () {
-    console.log("checked out");
+    var checkoutView = new Hippolyta.Views.Checkout({});
+    this._swapView(checkoutView);
   },
 
   _swapView: function (view) {
