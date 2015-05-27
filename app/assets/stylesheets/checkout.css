@@ -36,6 +36,7 @@
 #checkout-view > .checkout-steps {
   font-size: 20px;
   font-weight: bold;
+  padding-bottom: 15px; 
 }
 
 #checkout-view > .checkout-steps:hover {

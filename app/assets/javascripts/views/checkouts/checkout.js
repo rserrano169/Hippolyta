@@ -2,8 +2,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   template: JST["checkouts/checkout"],
 
-  initialize: function () {
-
+  initialize: function (options) {
+    this.cart = options.cart;
+    this.cartProducts = options.cartProducts;
+    this.products = options.products;
+    this.listenTo(this.cart, "sync", this.render);
   },
 
   events: {
