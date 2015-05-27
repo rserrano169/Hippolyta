@@ -6,7 +6,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.cart = options.cart;
     this.cartProducts = options.cartProducts;
     this.products = options.products;
+    this.users = options.users;
     this.listenTo(this.cart, "sync", this.render);
+    this.listenTo(this.users, "sync", this.render);
   },
 
   events: {
@@ -16,7 +18,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({});
+    var user = this.users.getOrFetch(this.cart.get("buyer_id")),
+        content = this.template({
+          cart: this.cart,
+          cartProducts: this.cartProducts,
+          products: this.products,
+          users: this.users,
+          user: user,
+        });
     this.$el.html(content);
     return this;
   },
