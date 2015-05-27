@@ -12,6 +12,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "search_results": "searchResults",
     "sellers/:seller_id/products/:id": "productShow",
     "carts/:cart_id": "cartShow",
+    "sign_in": "checkoutSignIn",
+    "checkout": "checkout",
   },
 
   userShow: function (user_id) {
@@ -82,6 +84,14 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           products: products
         });
     this._swapView(cartItemsView);
+  },
+
+  checkoutSignIn: function () {
+    this.$rootEl.html("You must be signed in before you can checkout.")
+  },
+
+  checkout: function () {
+    console.log("checked out");
   },
 
   _swapView: function (view) {

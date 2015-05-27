@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :destroy]
   resource :session, only: [:new, :create, :destroy]
   resources :queries, only: [:create]
-  post "checkout", to: "checkouts#checkout"
+  get "checkout", to: "checkouts#checkout"
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :edit, :update] do
