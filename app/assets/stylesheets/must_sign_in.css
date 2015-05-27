@@ -1,0 +1,14 @@
+#sign-in-before-checkout {
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0px;
+}
+
+#sign-in-before-checkout .sign-in-or-up {
+  font-size: 22px;
+  color: #005bac;
+}
+#sign-in-before-checkout .sign-in-or-up:hover {
+  color: #e47911;
+  text-decoration: underline;
+}

@@ -1,14 +1,15 @@
-#search-results {
-  min-width: 920px;
-}
-
 #search-results #matchless-search {
-  font-size: 18px;
-  margin: 20px 0px 0px 30px;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0px;
 }
 
 #search-results #matchless-search #search-query {
   font-weight: bold;
+}
+
+#search-results #successful-search {
+  min-width: 920px;
 }
 
 #search-results #successful-search #search-query {

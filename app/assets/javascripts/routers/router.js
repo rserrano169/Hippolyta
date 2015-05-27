@@ -87,7 +87,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   checkoutSignIn: function () {
-    this.$rootEl.html("You must be signed in before you can checkout.")
+    var signInView = new Hippolyta.Views.SignInBeforeCheckout({});
+    this._swapView(signInView);
   },
 
   checkout: function () {
