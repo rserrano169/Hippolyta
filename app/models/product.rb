@@ -42,6 +42,14 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many(
+    :purchased_products,
+    class_name: "PurchasedProduct",
+    foreign_key: :product_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   has_many :carts, through: :cart_products, source: :cart
 
   def buyers

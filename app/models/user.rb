@@ -34,6 +34,22 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_one(
+    :cart,
+    class_name: "Cart",
+    foreign_key: :buyer_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
+  has_many(
+    :purchased_products,
+    class_name: "PurchasedProduct",
+    foreign_key: :buyer_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
 
