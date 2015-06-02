@@ -14,6 +14,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "carts/:cart_id": "cartShow",
     "must_sign_in": "checkoutSignIn",
     "checkout/:cart_id": "checkout",
+    "checkout-placed": "checkoutPlaced",
   },
 
   userShow: function (user_id) {
@@ -103,6 +104,11 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           users: users,
         });
     this._swapView(checkoutView);
+  },
+
+  checkoutPlaced: function () {
+    var checkoutPlacedView = new Hippolyta.Views.CheckoutPlaced();
+    this._swapView(checkoutPlacedView);
   },
 
   _swapView: function (view) {
