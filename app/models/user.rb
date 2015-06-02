@@ -42,6 +42,8 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many :cart_products, through: :cart, source: :cart_products
+
   has_many(
     :purchased_products,
     class_name: "PurchasedProduct",

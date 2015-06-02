@@ -14,7 +14,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "carts/:cart_id": "cartShow",
     "must_sign_in": "checkoutSignIn",
     "checkout/:cart_id": "checkout",
-    "checkout-placed": "checkoutPlaced",
+    "checkout_placed": "checkoutPlaced",
   },
 
   userShow: function (user_id) {
