@@ -6,4 +6,8 @@ class CheckoutsController < ApplicationController
     end
   end
 
+  def update_quantity
+
+  end
+
 end

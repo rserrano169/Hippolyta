@@ -63,7 +63,11 @@ class Api::CartProductsController < ApplicationController
       })
     end
 
-    redirect_to "#carts/#{current_cart.id}"
+    if params[:checkout?] && params[:checkout?] == "true"
+      redirect_to "/checkout#checkout/#{current_cart.id}"
+    else
+      redirect_to "#carts/#{current_cart.id}"
+    end
   end
 
   private

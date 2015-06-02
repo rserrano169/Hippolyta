@@ -1,0 +1,93 @@
+<main id="checkout-view">
+  <div id="checkout-steps-hidden">
+    <div id="shipping-address" class="checkout-steps">
+      1
+      <span class="step-span">
+        Shipping Address
+      </span>
+    </div>
+
+    <div id="payment-method" class="checkout-steps">
+      <!-- 2
+      <span class="step-span"> -->
+        Payment Method
+      <!-- </span> -->
+      <section id="stripe">
+        <form action="" method="POST">
+          <script src="https://checkout.stripe.com/checkout.js"
+                  class="stripe-button"
+                  data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                  data-amount="2000"
+                  data-name="Hippolyta"
+                  data-description="($20.00)">
+          </script>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div id="review-cart" class="checkout-steps">
+    <!-- 3
+    <span class="step-span"> -->
+      Review Cart Items
+    <!-- </span> -->
+  </div>
+
+
+  <div id="checkout-products">
+    <%% products.each( function(product){ %>
+      <%% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id); %>
+      <ul class="checkout-product">
+        <li class="checkout-product-image-cell">
+          <ul>
+            <li>
+              <img src="<%%= product.escape("small_picture_url") %>"
+                   alt="product img" />
+            </li>
+          </ul>
+        </li>
+
+        <li class="checkout-product-info-cell">
+          <ul>
+            <li>
+              <%%= product.escape("name") %>
+            </li>
+
+            <li>
+              <%%= product.escape("seller_name") %>
+            </li>
+
+            <%% var quantity = product.escape("quantity") %>
+            <%% if (quantity < 1) { %>
+                <li class="out-of-stock">
+                  Out of Stock
+                </li>
+            <%% } else if (quantity > 25) { %>
+                <li class="in-stock">
+                  In Stock
+                </li>
+            <%% } else { %>
+                <li class="left-in-stock">
+                  Only <%%= quantity %> left in stock.
+                </li>
+            <%% }; %>
+
+            <%% if(cartProduct) { %>
+              <form action="/api/cart_products/qty/<%%= product.id %>" method="post">
+                <input type="hidden" name="_method" value="patch">
+                <input type="hidden" name="checkout?" value="true">
+                <input type="number"
+                       min="0"
+                       max="<%%= product.escape("quantity") %>"
+                       name="cart_product[quantity]"
+                       value="<%%= cartProduct.escape("quantity") %>">
+                <br>
+                <button>Update</button>
+              </form>
+            <%% }; %>
+          </ul>
+        </li>
+      </ul>
+    <%% }) %>
+  </div>
+</main>

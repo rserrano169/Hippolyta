@@ -29,6 +29,8 @@ gem 'kaminari'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 # Compile and evaluate EJS (Embedded JavaScript) templates from Ruby.
 gem 'ejs', '~> 1.1.1'
+# Stripe is the easiest way to accept payments online. See https://stripe.com for details.
+gem 'stripe'
 
 group :development do
   gem 'better_errors'

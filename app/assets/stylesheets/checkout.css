@@ -33,10 +33,14 @@
   padding: 40px;
 }
 
+#checkout-view > #checkout-steps-hidden {
+  display: none;
+}
+
 #checkout-view > .checkout-steps {
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 15px; 
+  padding-bottom: 15px;
 }
 
 #checkout-view > .checkout-steps:hover {
