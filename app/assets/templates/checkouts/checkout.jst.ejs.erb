@@ -49,12 +49,8 @@
 
         <li class="checkout-product-info-cell">
           <ul>
-            <li>
+            <li class="checkout-product-name">
               <%%= product.escape("name") %>
-            </li>
-
-            <li>
-              <%%= product.escape("seller_name") %>
             </li>
 
             <%% var quantity = product.escape("quantity") %>
@@ -76,15 +72,22 @@
               <form action="/api/cart_products/qty/<%%= product.id %>" method="post">
                 <input type="hidden" name="_method" value="patch">
                 <input type="hidden" name="checkout?" value="true">
-                <input type="number"
+                <input class="checkout-product-quantity-input"
+                       type="number"
                        min="0"
                        max="<%%= product.escape("quantity") %>"
                        name="cart_product[quantity]"
                        value="<%%= cartProduct.escape("quantity") %>">
                 <br>
-                <button>Update</button>
+                <button class="checkout-product-quantity-update">
+                  Update
+                </button>
               </form>
             <%% }; %>
+
+            <li class="checkout-product-seller">
+              Sold by <%%= product.escape("seller_name") %>
+            </li>
           </ul>
         </li>
       </ul>

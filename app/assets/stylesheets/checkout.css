@@ -33,21 +33,83 @@
   padding: 40px;
 }
 
-#checkout-view > #checkout-steps-hidden {
+#checkout-view #checkout-steps-hidden {
   display: none;
 }
 
-#checkout-view > .checkout-steps {
+#checkout-view .checkout-steps {
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 
-#checkout-view > .checkout-steps:hover {
-  cursor: pointer;
-}
-
-#checkout-view .checkout-steps > .step-span {
+#checkout-view .checkout-steps .step-span {
   padding-left: 12px;
   word-spacing: 4px;
+}
+
+#checkout-view #checkout-products {
+  min-width: 500px;
+}
+
+#checkout-view .checkout-product {
+  display: table;
+  vertical-align: top;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#checkout-view .checkout-product-image-cell {
+  display: table-cell;
+  width: 100px;
+  height: 100px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+#checkout-view .checkout-product-info-cell {
+  display: table-cell;
+}
+
+#checkout-view .checkout-product-name {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+#checkout-view .in-stock {
+  font-size: 13px;
+  color: #008a00;
+  padding-bottom: 5px;
+}
+
+#checkout-view .left-in-stock {
+  font-size: 13px;
+  color: #cd950c;
+  padding-bottom: 5px;
+}
+
+#checkout-view .out-of-stock {
+  font-size: 13px;
+  color: #b12704;
+  padding-bottom: 5px;
+}
+
+#checkout-view .checkout-product-quantity-input {
+  font-size: 13px;
+  width: 40px;
+}
+
+#checkout-view .checkout-product-quantity-update {
+  font-size: 12px;
+  color: #2f6ac9;
+}
+
+#checkout-view .checkout-product-quantity-update:hover {
+  color: #e47911;
+  text-decoration: underline;
+}
+
+#checkout-view .checkout-product-seller {
+  font-size: 12px;
+  color: #555555;
 }
