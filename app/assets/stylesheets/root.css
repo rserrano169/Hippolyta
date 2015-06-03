@@ -336,3 +336,25 @@
   height: auto;
   margin: 0 auto;
 }
+
+#demo-button-section {
+  min-width: 920px;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+#content #demo-button-section #demo-button {
+  display: block;
+  width: 300px;
+  height: 35px;
+  font-size: 16px;
+  padding: 14px 0px 0px 0px;
+  margin: 0px auto;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+#content #demo-button-section #demo-button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}

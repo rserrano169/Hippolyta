@@ -191,6 +191,14 @@
       <img src="<%= image_url("seed/root_page/Baby-Hippopotamus-Gregor-Berlin-Zoo.jpg") %>"
            alt="picture"/>
     </section>
+
+    <% if !current_user %>
+      <section id="demo-button-section">
+        <a id="demo-button" href="/session/demo" data-method="post">
+          Sign in as Demo User to test site
+        </a>
+      </section>
+    <% end %>
   </div>
 </main>
 

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    
+
   end
 
   def create
@@ -18,6 +18,13 @@ class SessionsController < ApplicationController
         ["There was an error with your E-Mail/Password combination. Please try again."]
       render :new
     end
+  end
+
+  def demo_user_sign_in
+    @user = User.find(1)
+
+    sign_in(@user)
+    redirect_to root_url
   end
 
   def destroy

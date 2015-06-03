@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "root#root"
   resources :users, only: [:new, :create, :destroy]
   resource :session, only: [:new, :create, :destroy]
+  post "session/demo", to: "sessions#demo_user_sign_in"
   resources :queries, only: [:create]
   get "checkout", to: "checkouts#checkout"
   post "checkout/add_purchased_products", to: "checkouts#add_purchased_products"
