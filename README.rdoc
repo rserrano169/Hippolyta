@@ -1,8 +1,8 @@
-## Hippolyta
+Hippolyta
 
-**Hippolyta is a web application inspired by Amazon.com.**
-**Users(sellers) can put products up for sale on Hippolyta, and other users(buyers)**
-**can search for those products, add them to their carts, and then mock purchase them.**
+Hippolyta is a web application inspired by Amazon.com.
+Users(sellers) can put products up for sale on Hippolyta, and other users(buyers)
+can search for those products, add them to their carts, and then mock purchase them.
 
 To implement this application, I used:
 
