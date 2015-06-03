@@ -1,28 +1,42 @@
-== README
+## Hippolyta
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Hippolyta is a web application inspired by Amazon.com.**
+**Users(sellers) can put products up for sale on Hippolyta, and other users(buyers)**
+**can search for those products, add them to their carts, and then mock purchase them.**
 
-Things you may want to cover:
+To implement this application, I used:
 
-* Ruby version
+* Ruby on Rails
 
-* System dependencies
+* PostgreSQL
 
-* Configuration
+* JavaScript, jQuery, and Backbone.js
 
-* Database creation
+* HTML5
 
-* Database initialization
+* CSS
 
-* How to run the test suite
+and various Ruby gems, such as:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Pg_search
 
-* Deployment instructions
+* Kaminari
 
-* ...
+* Paperclip
 
+* Figaro
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* jbuilder
+
+* ejs
+
+* stripe
+
+* BCrypt
+
+Implementing gems is often the most time consuming task for me,
+as each gem is like its own language, and requires its own
+considerations and understandings.  Once I aquired a deeper understanding
+for how these gems worked, especially Pg_search, paperclip, jbuilder,
+and figaro, I was able to utilize them to really increase the creative
+freedom with which I coded this app.
