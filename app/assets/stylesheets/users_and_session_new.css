@@ -113,3 +113,24 @@
 .auth-main #new-user-submit {
   border-radius: 5px;
 }
+
+#new-session-demo-button-section {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+#new-session-demo-button-section #new-session-demo-button {
+  display: block;
+  width: 230px;
+  height: 30px;
+  font-size: 14px;
+  padding: 14px 0px 0px 0px;
+  margin: 0px auto;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+#new-session-demo-button-section #new-session-demo-button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}

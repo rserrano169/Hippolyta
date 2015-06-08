@@ -1,70 +1,80 @@
-<header class="auth-header group">
-  <ul>
-    <li>
-      <a href="/">
-        <img class="logo"
-             src="<%= image_url("hippolyta_logo_black.png") %>"
-             alt="hippolyta logo" />
-      </a>
-    </li>
-
-    <section class="links">
-      <li class="sign-up-link">
-        New customer?
-        <a href="<%= new_user_url %>"> Start here.</a>
+<section id="new-session">
+  <header class="auth-header group">
+    <ul>
+      <li>
+        <a href="/">
+          <img class="logo"
+               src="<%= image_url("hippolyta_logo_black.png") %>"
+               alt="hippolyta logo" />
+        </a>
       </li>
+
+      <section class="links">
+        <li class="sign-up-link">
+          New customer?
+          <a href="<%= new_user_url %>"> Start here.</a>
+        </li>
+      </section>
+
+    </ul>
+  </header>
+
+
+  <main class="auth-main">
+
+    <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
+
+    <h2 class="auth-h2 sign-in">Sign In</h2>
+
+      <form class="create-session group"
+            action="<%= session_url %>"
+            method="post">
+        <%= authenticity_token %>
+
+        <fieldset>
+          <div class="auth-input group">
+            <h3 class="auth-h3">What is your e-mail address?</h3>
+            <ul>
+              <li>
+                <label id="new-session-email-label">My e-mail address is:</label>
+                <input id="new-session-email-input"
+                       type="text"
+                       name="[email]"
+                       value="<%= params[:email] %>"
+                       autofocus="autofocus">
+              </li>
+            </ul>
+          </div>
+
+          <div class="auth-input group">
+            <h3 class="auth-h3">Do you have an Hippolyta.com password?</h3>
+            <ul>
+              <li>
+                <input id="radio-no" type="radio" name="password?" value="">
+                <label>No, I am a new customer.</label>
+              </li>
+
+              <li>
+                <input id="radio-yes" type="radio" name="password?" value="" checked>
+                <label>Yes, I have a password:</label>
+
+                <input type="password" name="[password]" value="">
+              </li>
+            </ul>
+          </div>
+
+          <button id="new-session-submit" class="sing-in">
+            Sign in using our secure server
+          </button>
+        </fieldset>
+      </form>
+  </main>
+
+  <% if !current_user %>
+    <section id="new-session-demo-button-section">
+      <a id="new-session-demo-button" href="/session/demo" data-method="post">
+        Sign in as Demo User to test site
+      </a>
     </section>
-
-  </ul>
-</header>
-
-
-<main class="auth-main">
-
-  <%= (flash[:errors].join("<br>") + "<br>" + "<br>").html_safe if flash[:errors] %>
-
-  <h2 class="auth-h2 sign-in">Sign In</h2>
-
-    <form class="create-session group"
-          action="<%= session_url %>"
-          method="post">
-      <%= authenticity_token %>
-
-      <fieldset>
-        <div class="auth-input group">
-          <h3 class="auth-h3">What is your e-mail address?</h3>
-          <ul>
-            <li>
-              <label id="new-session-email-label">My e-mail address is:</label>
-              <input id="new-session-email-input"
-                     type="text"
-                     name="[email]"
-                     value="<%= params[:email] %>"
-                     autofocus="autofocus">
-            </li>
-          </ul>
-        </div>
-
-        <div class="auth-input group">
-          <h3 class="auth-h3">Do you have an Hippolyta.com password?</h3>
-          <ul>
-            <li>
-              <input id="radio-no" type="radio" name="password?" value="">
-              <label>No, I am a new customer.</label>
-            </li>
-
-            <li>
-              <input id="radio-yes" type="radio" name="password?" value="" checked>
-              <label>Yes, I have a password:</label>
-
-              <input type="password" name="[password]" value="">
-            </li>
-          </ul>
-        </div>
-
-        <button id="new-session-submit" class="sing-in">
-          Sign in using our secure server
-        </button>
-      </fieldset>
-    </form>
-</main>
+  <% end %>
+</section>
