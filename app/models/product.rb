@@ -50,7 +50,16 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many(
+    :product_tags,
+    class_name: "ProductTag",
+    foreign_key: :product_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   has_many :carts, through: :cart_products, source: :cart
+  has_many :tags, through: :product_tags, source: :tag
 
   def buyers
     buyers = []
