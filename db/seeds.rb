@@ -15,6 +15,38 @@ u1 = User.create({
 u1.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/hippolyta_logo_black.png"))
 u1.save!
 
+u2 = User.create({
+  name: "Angela",
+  email: "angela@hippolyta.com",
+  password: "hippolyta",
+})
+
+u2.save!
+
+u3 = User.create({
+  name: "Raul",
+  email: "raul@hippolyta.com",
+  password: "hippolyta",
+})
+
+u3.save!
+
+u4 = User.create({
+  name: "Mark",
+  email: "mark@hippolyta.com",
+  password: "hippolyta",
+})
+
+u4.save!
+
+u5 = User.create({
+  name: "Aracely",
+  email: "aracely@hippolyta.com",
+  password: "hippolyta",
+})
+
+u5.save!
+
 p1 = Product.create({
   name: "Hungry Hungry Hippos",
   seller_id: u1.id,
@@ -59,3 +91,15 @@ p4 = Product.create({
 
 p4.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/keep_calm_thermos.jpg"))
 p4.save!
+
+p5 = Product.create({
+  name: 'Aurora World Aurora Plush 12" Hippo Tubbie Wubbie',
+  seller_id: u1.id,
+  sale_price: 10.27,
+  original_price: 11.99,
+  quantity: 100,
+  description: "Realistic Styling. Wonderful Gift Item. Fine Plush Fabric. Premier manufacturer of gift plush. Soft and cuddly.",
+})
+
+p5.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/aurora_world_aurora_plush_12in_hippo.jpg"))
+p5.save!

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527233312) do
+ActiveRecord::Schema.define(version: 20150614200732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20150527233312) do
     t.datetime "updated_at"
   end
 
-  add_index "cart_products", ["cart_id"], name: "index_cart_products_on_cart_id", using: :btree
-  add_index "cart_products", ["product_id"], name: "index_cart_products_on_product_id", using: :btree
+  add_index "cart_products", ["cart_id", "product_id"], name: "index_cart_products_on_cart_id_and_product_id", unique: true, using: :btree
+  add_index "cart_products", ["product_id", "cart_id"], name: "index_cart_products_on_product_id_and_cart_id", unique: true, using: :btree
 
   create_table "carts", force: true do |t|
     t.integer  "buyer_id"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20150527233312) do
 
   add_index "carts", ["buyer_id"], name: "index_carts_on_buyer_id", unique: true, using: :btree
   add_index "carts", ["session_token"], name: "index_carts_on_session_token", unique: true, using: :btree
+
+  create_table "product_tags", force: true do |t|
+    t.integer  "product_id", null: false
+    t.integer  "tag_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_tags", ["product_id", "tag_id"], name: "index_product_tags_on_product_id_and_tag_id", unique: true, using: :btree
+  add_index "product_tags", ["tag_id", "product_id"], name: "index_product_tags_on_tag_id_and_product_id", unique: true, using: :btree
 
   create_table "products", force: true do |t|
     t.string   "name",                                          null: false
@@ -80,6 +90,14 @@ ActiveRecord::Schema.define(version: 20150527233312) do
 
   add_index "queries", ["querier_id"], name: "index_queries_on_querier_id", using: :btree
   add_index "queries", ["session_token"], name: "index_queries_on_session_token", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name",       limit: 20, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                null: false
