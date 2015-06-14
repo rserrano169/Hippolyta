@@ -2,6 +2,9 @@ class Product < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search,
                   against: { name: 'A', description: 'B' },
+                  associated_against: {
+                    tags: { name: 'C' }
+                  },
                   ignoring: :accents,
                   using: {
                     tsearch: {
@@ -12,7 +15,6 @@ class Product < ActiveRecord::Base
                     trigram: {},
                     dmetaphone: { anyword: true }
                   }
-
 
   validates :name, :seller_id, :sale_price, :quantity, presence: true
 
@@ -42,6 +44,8 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many :carts, through: :cart_products, source: :cart
+
   has_many(
     :purchased_products,
     class_name: "PurchasedProduct",
@@ -58,7 +62,6 @@ class Product < ActiveRecord::Base
     dependent: :destroy
   )
 
-  has_many :carts, through: :cart_products, source: :cart
   has_many :tags, through: :product_tags, source: :tag
 
   def buyers
