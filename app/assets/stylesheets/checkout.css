@@ -56,7 +56,7 @@
 }
 
 #checkout-view #checkout-products {
-  min-width: 560px;
+  display: none;
 }
 
 #checkout-view .checkout-product {
@@ -163,10 +163,6 @@
 
 #checkout-view #review-cart-dropped {
   color: #c45500;
-}
-
-#checkout-view #checkout-products-hidden {
-  display: none;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */

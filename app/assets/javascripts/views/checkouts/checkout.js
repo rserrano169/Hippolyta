@@ -36,12 +36,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   dropDownCart: function () {
-    this.$("#review-cart").attr("id", "review-cart-dropped")
-    this.$("#checkout-products").attr("id", "checkout-products-hidden")
+    this.$("#review-cart>.step-span").html("Review Items");
+    this.$("#review-cart").attr("id", "review-cart-dropped");
+    this.$("#checkout-products").slideDown("fast");
   },
 
   liftUpCart: function () {
-    this.$("#review-cart-dropped").attr("id", "review-cart")
+    this.$("#review-cart-dropped>.step-span").html("Cart Items");
+    this.$("#review-cart-dropped").attr("id", "review-cart");
+    this.$("#checkout-products").slideUp("fast");
   },
 
 });
