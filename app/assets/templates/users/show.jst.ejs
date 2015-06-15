@@ -1,17 +1,23 @@
-<img id="user-image"
-     src="<%= user.escape("small_picture_url") %>"
-     alt="<%= user.escape("name") %>'s picture/logo"
-     style="cursor: pointer;"/>
+<section id="user-profile">
+  <% if (!user.escape("email")) { %>
+      Sign in or sign up to view and edit your profile.
+  <% } else { %>
+      <img id="user-image"
+           src="<%= user.escape("small_picture_url") %>"
+           alt="<%= user.escape("name") %>'s picture/logo"
+           style="cursor: pointer;"/>
 
-<strong style="padding-left: 20px; font-size: 24px; padding-right: 20px;">
-  <%= user.escape("name") %>'s Hippolyta
-</strong>
+      <strong style="padding-left: 20px; font-size: 24px; padding-right: 20px;">
+        <%= user.escape("name") %>'s Hippolyta
+      </strong>
 
-Customer since <%= new Date(user.escape("created_at")) %>
-<br>
-<br>
-<br>
+      Customer since <%= new Date(user.escape("created_at")) %>
+      <br>
+      <br>
+      <br>
 
-<p>
-  <a href="#users/<%= user.id %>/products">My Products</a>
-</p>
+      <p>
+        <a href="#users/<%= user.id %>/products">My Products</a>
+      </p>
+  <% } %>
+</section>
