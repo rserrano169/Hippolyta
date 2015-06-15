@@ -6,8 +6,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
     render :show
   end
 
@@ -15,7 +14,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
     render :show
-  end
+  # end
 
   private
 
