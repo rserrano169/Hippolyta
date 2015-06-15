@@ -2,7 +2,7 @@
 
 #checkout #header-table {
   display: table;
-  min-width: 920px;
+  min-width: 1020px;
   width: 100%;
   vertical-align: middle;
   text-align: center;
@@ -29,17 +29,18 @@
 
 /* --- VIEW BEFORE ORDER PLACED --- */
 
+/* --- BODY --- */
+
 #checkout-view {
   display: table;
-  padding: 40px;
+  width: 100%;
 }
 
 #checkout-view #checkout-body {
   display: table-cell;
-}
-
-#checkout-view #checkout-steps-hidden {
-  display: none;
+  min-width: 620px;
+  vertical-align: top;
+  padding: 40px 0px 40px 40px;
 }
 
 #checkout-view .checkout-steps {
@@ -51,6 +52,7 @@
 #checkout-view .checkout-steps .step-span {
   padding-left: 12px;
   word-spacing: 4px;
+  cursor: pointer;
 }
 
 #checkout-view #checkout-products {
@@ -119,10 +121,13 @@
   color: #555555;
 }
 
+/* --- SIDEBAR --- */
+
 #checkout-view #checkout-sidebar {
   display: table-cell;
   min-width: 300px;
-  padding-left: 20px;
+  vertical-align: top;
+  padding: 40px 40px 0px 20px;
 }
 
 #checkout-view #checkout-sidebar-box {
@@ -132,7 +137,7 @@
 }
 
 #checkout-view .checkout-sidebar-pricings {
-  display: none;
+  display: block;
   padding: 10px 0px;
   margin: 15px 0px;
   border-bottom: 1px solid #e7e7e7;
@@ -152,6 +157,16 @@
 
 #checkout-view #checkout-place-order:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
+/* --- DROPDOWN CHANGES --- */
+
+#checkout-view #review-cart-dropped {
+  color: #c45500;
+}
+
+#checkout-view #checkout-products-hidden {
+  display: none;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */
