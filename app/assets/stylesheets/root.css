@@ -179,11 +179,11 @@
 .bottom #right #account-drop-down #drop-down-demo-button a {
   font-weight: bold;
   color: red;
+  text-decoration: underline;
 }
 
 .bottom #right #account-drop-down #drop-down-demo-button a:hover {
   color: #0b5cad;
-  text-decoration: underline;
 }
 
 .bottom #right #cart {
