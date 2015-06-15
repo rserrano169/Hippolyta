@@ -1,6 +1,13 @@
-<section id="user-profile">
-  <% if (!user.escape("email")) { %>
-      Sign in or sign up to view and edit your profile.
+<section id="user-private-profile">
+  <% if (!user.escape("email") || !user.escape("name")) { %>
+      <div id="sign-in-to-view-profile">
+        <a href="/session/new" class="sign-in-or-up">
+          Sign in</a>
+        or
+        <a href="/users/new" class="sign-in-or-up">
+          sign up</a>
+        to view and edit your profile.
+      </div>
   <% } else { %>
       <img id="user-image"
            src="<%= user.escape("small_picture_url") %>"
