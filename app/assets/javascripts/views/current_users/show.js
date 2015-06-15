@@ -1,6 +1,6 @@
-Hippolyta.Views.UserShow = Backbone.View.extend({
+Hippolyta.Views.CurrentUserShow = Backbone.View.extend({
 
-  template: JST["users/show"],
+  template: JST["current_users/show"],
 
   events: {
     "click #user-image": "editPicture",
@@ -11,7 +11,7 @@ Hippolyta.Views.UserShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({ user: this.model });
+    var content = this.template({ currentUser: this.model });
     this.$el.html(content);
     return this;
   },

@@ -5,7 +5,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "users/:user_id": "userShow",
+    "current_user/profile": "currentUserProfile",
     "users/:user_id/edit": "userEdit",
     "users/:seller_id/products": "productsIndex",
     "products/new": "productsNew",
@@ -17,10 +17,10 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "checkout_placed": "checkoutPlaced",
   },
 
-  userShow: function (user_id) {
-    Hippolyta.Collections.users.fetch();
-    var model = Hippolyta.Collections.users.getOrFetch(user_id),
-        showView = new Hippolyta.Views.UserShow({ model: model });
+  currentUserProfile: function () {
+    var model = new Hippolyta.Models.CurrentUser();
+    model.fetch();
+    var showView = new Hippolyta.Views.CurrentUserShow({ model: model });
     this._swapView(showView);
   },
 

@@ -1,5 +1,5 @@
 <section id="user-private-profile">
-  <% if (!user.escape("email") || !user.escape("name")) { %>
+  <% if (!currentUser.escape("email") || !currentUser.escape("name")) { %>
       <div id="sign-in-to-view-profile">
         <a href="/session/new" class="sign-in-or-up">
           Sign in</a>
@@ -10,21 +10,21 @@
       </div>
   <% } else { %>
       <img id="user-image"
-           src="<%= user.escape("small_picture_url") %>"
-           alt="<%= user.escape("name") %>'s picture/logo"
+           src="<%= currentUser.escape("small_picture_url") %>"
+           alt="<%= currentUser.escape("name") %>'s picture/logo"
            style="cursor: pointer;"/>
 
       <strong style="padding-left: 20px; font-size: 24px; padding-right: 20px;">
-        <%= user.escape("name") %>'s Hippolyta
+        <%= currentUser.escape("name") %>'s Hippolyta
       </strong>
 
-      Customer since <%= new Date(user.escape("created_at")) %>
+      Customer since <%= new Date(currentUser.escape("created_at")) %>
       <br>
       <br>
       <br>
 
       <p>
-        <a href="#users/<%= user.id %>/products">My Products</a>
+        <a href="#users/<%= currentUser.id %>/products">My Products</a>
       </p>
   <% } %>
 </section>
