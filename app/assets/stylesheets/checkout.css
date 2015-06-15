@@ -40,7 +40,7 @@
   display: table-cell;
   min-width: 620px;
   vertical-align: top;
-  padding: 20px 0px 40px 40px;
+  padding: 15px 0px 40px 40px;
 }
 
 #checkout-view .checkout-steps {
@@ -48,14 +48,17 @@
   width: 100%;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px 0px;
-  border-bottom: 1px solid #e7e7e7;
+  padding: 25px 0px;
+  border-top: 1px solid #e7e7e7;
+}
+
+#checkout-view .checkout-steps:first-child {
+  border-top: none;
 }
 
 #checkout-view #review-cart,
 #checkout-view #review-cart-dropped {
-  padding-bottom: 25px;
-  border-bottom: none;
+  padding-bottom: 30px;
 }
 
 #checkout-view .checkout-steps > .step-number {
@@ -166,6 +169,7 @@
 #checkout-view #checkout-sidebar {
   display: table-cell;
   min-width: 300px;
+  width: 300px;
   vertical-align: top;
   padding: 40px 40px 0px 20px;
 }
