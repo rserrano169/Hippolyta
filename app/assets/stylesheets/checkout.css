@@ -40,7 +40,7 @@
   display: table-cell;
   min-width: 620px;
   vertical-align: top;
-  padding: 40px 0px 40px 40px;
+  padding: 20px 0px 40px 40px;
 }
 
 #checkout-view .checkout-steps {
@@ -48,7 +48,14 @@
   width: 100%;
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 20px;
+  padding: 20px 0px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#checkout-view #review-cart,
+#checkout-view #review-cart-dropped {
+  padding-bottom: 25px;
+  border-bottom: none;
 }
 
 #checkout-view .checkout-steps > .step-number {
