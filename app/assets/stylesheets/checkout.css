@@ -44,14 +44,47 @@
 }
 
 #checkout-view .checkout-steps {
+  display: table;
+  width: 100%;
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 20px;
 }
 
-#checkout-view .checkout-steps .step-span {
-  padding-left: 12px;
+#checkout-view .checkout-steps > .step-number {
+  display: table-cell;
+  vertical-align: middle;
+  width: 24px;
+}
+
+#checkout-view .checkout-steps > .step-title-span {
+  display: table-cell;
+  vertical-align: middle;
   word-spacing: 4px;
+}
+
+#checkout-view .checkout-steps > .step-title-span > .step-title {
+  cursor: pointer;
+}
+
+#checkout-view .checkout-steps > .step-button-span {
+  display: table-cell;
+  width: 150px;
+  vertical-align: middle;
+  text-align: center;
+  color: #121212;
+}
+
+#checkout-view .checkout-steps > .step-button-span > .step-button {
+  display: block;
+  width: 110px;
+  margin-left: 28px;
+  padding: 2px 0px;
+  font-weight: normal;
+  font-size: 13px;
+  border: 1px solid #8d9096;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #fbfbfc, #e7e9ec);
   cursor: pointer;
 }
 

@@ -11,8 +11,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   events: {
-    "click #review-cart>.step-span": "dropDownCart",
-    "click #review-cart-dropped>.step-span": "liftUpCart",
+    "click #review-cart-title": "slideDownCart",
+    "click #review-cart-title-dropped": "slideUpCart",
+    "click #review-cart-button": "slideDownCart",
+    "click #review-cart-button-dropped": "slideUpCart",
   },
 
   render: function () {
@@ -35,15 +37,21 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     return this;
   },
 
-  dropDownCart: function () {
-    this.$("#review-cart>.step-span").html("Review Items");
+  slideDownCart: function () {
+    this.$("#review-cart-title")
+      .attr("id", "review-cart-title-dropped")
+      .html("Review Items");
     this.$("#review-cart").attr("id", "review-cart-dropped");
+    this.$("#review-cart-button").attr("id", "review-cart-button-dropped");
     this.$("#checkout-products").slideDown("fast");
   },
 
-  liftUpCart: function () {
-    this.$("#review-cart-dropped>.step-span").html("Cart Items");
+  slideUpCart: function () {
+    this.$("#review-cart-title-dropped")
+      .attr("id", "review-cart-title")
+      .html("Cart Items");
     this.$("#review-cart-dropped").attr("id", "review-cart");
+    this.$("#review-cart-button-dropped").attr("id", "review-cart-button");
     this.$("#checkout-products").slideUp("fast");
   },
 
