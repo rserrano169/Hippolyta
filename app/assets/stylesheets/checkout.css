@@ -195,10 +195,12 @@
 
 #checkout-view .top-bar {
   display: block;
-  background: linear-gradient(to bottom, #fafafa, #ebebeb);
+  background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
 }
 
 #checkout-view .top-bar-title {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #checkout-view .top-bar-x {
@@ -206,6 +208,7 @@
   float: right;
   font-size: 25px;
   padding: 3px 10px;
+  cursor: pointer;
 }
 
 #checkout-view #review-cart-dropped {

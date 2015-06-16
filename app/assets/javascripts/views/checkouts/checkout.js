@@ -8,15 +8,17 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     this.users = options.users;
+    this.isCardFormOpen = false;
     this.isCartSlidDown = false;
   },
 
   events: {
-    "click #review-cart-title": "slideDownCart",
-    "click #review-cart-title-dropped": "slideUpCart",
-    "click #review-cart-button": "slideDownCart",
-    "click #review-cart-button-dropped": "slideUpCart",
     "click #payment-add-card": "openCardForm",
+    "click .top-bar-x": "closeCardForm",
+    "click #review-cart-title": "slideDownCart",
+    "click #review-cart-button": "slideDownCart",
+    "click #review-cart-title-dropped": "slideUpCart",
+    "click #review-cart-button-dropped": "slideUpCart",
   },
 
   render: function () {
@@ -79,5 +81,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         totalTop = topIndent + topScroll + "px",
     this.$("#add-card-modal").css({left: totalLeft});
     this.$("#add-card-modal").css({top: totalTop});
+  },
+
+  closeCardForm: function () {
+    $(window).off("resize scroll");
+    this.$("#add-card-form-overlay").hide();
   },
 });
