@@ -15,6 +15,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   events: {
     "click #payment-add-card": "openCardForm",
     "click .top-bar-x": "closeCardForm",
+    "submit #add-card-form": "submitCard",
     "click #review-cart-title": "slideDownCart",
     "click #review-cart-button": "slideDownCart",
     "click #review-cart-title-dropped": "slideUpCart",
@@ -40,26 +41,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
 
     return this;
-  },
-
-  slideDownCart: function () {
-    this.$("#review-cart-title")
-      .attr("id", "review-cart-title-dropped")
-      .html("Review Items");
-    this.$("#review-cart").attr("id", "review-cart-dropped");
-    this.$("#review-cart-button").attr("id", "review-cart-button-dropped");
-    this.$("#checkout-products").slideDown("fast");
-    this.isCartSlidDown = true;
-  },
-
-  slideUpCart: function () {
-    this.$("#review-cart-title-dropped")
-      .attr("id", "review-cart-title")
-      .html("Cart Items");
-    this.$("#review-cart-dropped").attr("id", "review-cart");
-    this.$("#review-cart-button-dropped").attr("id", "review-cart-button");
-    this.$("#checkout-products").slideUp("fast");
-    this.isCartSlidDown = false;
   },
 
   openCardForm: function () {
@@ -96,5 +77,49 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $(window).off("resize scroll");
     $(window).off("keydown");
     this.$("#add-card-form-overlay").hide();
+  },
+
+  submitCard: function () {
+    this.$("#add-card-form").find("button").prop("disabled", true);
+
+    Stripe.card.createToken(
+      this.$("#add-card-form"),
+      this.stripeResponseHandler.bind(this)
+    );
+
+    return false;
+  },
+
+  stripeResponseHandler: function (status, response) {
+    var $form = this.$("#add-card-form");
+
+    if (response.error) {
+      $form.find(".payment-errors").text(response.error.message);
+      $form.find("button").prop("disabled", false);
+    } else {
+      var token = response.id;
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      $form.get(0).submit();
+    };
+  },
+
+  slideDownCart: function () {
+    this.$("#review-cart-title")
+      .attr("id", "review-cart-title-dropped")
+      .html("Review Items");
+    this.$("#review-cart").attr("id", "review-cart-dropped");
+    this.$("#review-cart-button").attr("id", "review-cart-button-dropped");
+    this.$("#checkout-products").slideDown("fast");
+    this.isCartSlidDown = true;
+  },
+
+  slideUpCart: function () {
+    this.$("#review-cart-title-dropped")
+      .attr("id", "review-cart-title")
+      .html("Cart Items");
+    this.$("#review-cart-dropped").attr("id", "review-cart");
+    this.$("#review-cart-button-dropped").attr("id", "review-cart-button");
+    this.$("#checkout-products").slideUp("fast");
+    this.isCartSlidDown = false;
   },
 });

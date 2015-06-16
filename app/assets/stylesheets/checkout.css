@@ -191,11 +191,15 @@
   width: 700px;
   height: 300px;
   background: #ffffff;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
 }
 
 #checkout-view .top-bar {
   display: block;
   background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 #checkout-view .top-bar-title {

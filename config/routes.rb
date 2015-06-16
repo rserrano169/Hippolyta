@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "session/demo", to: "sessions#demo_user_sign_in"
   resources :queries, only: [:create]
   get "checkout", to: "checkouts#checkout"
-  post "checkout/add_card", to: "checkout#add_card"
+  post "checkout/add_card", to: "checkouts#add_card"
   post "checkout/add_purchased_products", to: "checkouts#add_purchased_products"
 
   namespace :api, defaults: { format: :json } do
