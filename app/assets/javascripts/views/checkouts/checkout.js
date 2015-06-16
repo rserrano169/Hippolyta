@@ -91,8 +91,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   stripeResponseHandler: function (status, response) {
-    console.log(Stripe.card.validateCardNumber('4242424242424242'));
-    console.log(response);
     var $form = $("#add-card-form");
 
     if (response.error) {

@@ -22,6 +22,14 @@ class CheckoutsController < ApplicationController
   end
 
   def add_card
+    token = params[:stripeToken]
+    current_customer = Stripe::Customer.create(
+      source: token,
+      email: current_user.email
+    )
+    p current_customer.id
+    # current_user.stripe_id = current_customer.id
+
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 end
