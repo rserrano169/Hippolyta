@@ -22,6 +22,6 @@ class CheckoutsController < ApplicationController
   end
 
   def add_card
-    p params
+    redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 end
