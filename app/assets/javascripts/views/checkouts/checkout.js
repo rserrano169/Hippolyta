@@ -15,6 +15,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #review-cart-title-dropped": "slideUpCart",
     "click #review-cart-button": "slideDownCart",
     "click #review-cart-button-dropped": "slideUpCart",
+    "click #payment-add-card": "openPaymentForm",
   },
 
   render: function () {
@@ -55,4 +56,48 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.$("#checkout-products").slideUp("fast");
   },
 
+  openPaymentForm: function (event) {
+    this.disableOpenPaymentForm();
+
+    var handler = StripeCheckout.configure({
+          key: 'pk_test_JL4t7hmhcbXwo7mWvSGZxiIK',
+          token: function(token) {
+            // Use the token to create the charge with a server-side script.
+            // You can access the token ID with `token.id`
+          }
+        }),
+        totalCartQuantity = 0,
+        totalCartPrice = 0;
+
+    this.cartProducts.forEach(function (cp) {
+      totalCartQuantity += parseInt(cp.escape("quantity"));
+    });
+
+    this.products.forEach(function (prod) {
+      totalCartPrice += parseFloat(prod.escape("sale_price") * 100);
+    });
+
+    handler.open({
+      name: 'Hippolyta',
+      description: totalCartQuantity + ' total items',
+      amount: totalCartPrice
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+      handler.close();
+    });
+
+    this.enableOpenPaymenyForm();
+  },
+
+  disableOpenPaymentForm: function () {
+    this.events['click #payment-add-card'] = undefined;
+    this.delegateEvents(this.events);
+  },
+
+  enableOpenPaymenyForm: function () {
+    this.events['click #payment-add-card'] = 'openPaymentForm';
+    this.delegateEvents(this.events);
+  },
 });

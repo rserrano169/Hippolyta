@@ -12,7 +12,7 @@ u1 = User.create({
   password: "hippolyta",
 })
 
-u1.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/hippolyta_logo_black.png"))
+u1.picture = File.open(File.join(Rails.root, "/app/assets/images/seed/hippolyta_hippo.png"))
 u1.save!
 
 u2 = User.create({
