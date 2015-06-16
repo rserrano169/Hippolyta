@@ -38,6 +38,7 @@
 
 #checkout-view #checkout-body {
   display: table-cell;
+  position: relative;
   min-width: 620px;
   vertical-align: top;
   padding: 15px 0px 40px 40px;
@@ -164,6 +165,38 @@
   color: #555555;
 }
 
+/* --- MENU CHANGES --- */
+
+#checkout-view #add-card-form-modal {
+  display: none;
+  position: absolute;
+  min-width: 1020px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: url("modal-tint-75-percent.png");
+}
+
+#checkout-view #add-card-relative-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#checkout-view #add-card-form {
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  background: #ffffff;
+}
+
+#checkout-view #review-cart-dropped {
+  color: #c45500;
+}
+
 /* --- SIDEBAR --- */
 
 #checkout-view #checkout-sidebar {
@@ -201,12 +234,6 @@
 
 #checkout-view #checkout-place-order:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
-}
-
-/* --- DROPDOWN CHANGES --- */
-
-#checkout-view #review-cart-dropped {
-  color: #c45500;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */

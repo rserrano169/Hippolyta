@@ -33,7 +33,7 @@
     </ul>
 
     <div id="current-payment-method">
-      
+
     </div>
 
     <ul id="review-cart" class="checkout-steps">
@@ -144,4 +144,34 @@
       </section>
     </div>
   </section>
+
+  <div id="add-card-form-modal">
+    <div id="add-card-relative-container">
+      <form id="add-card-form" action="checkout/add_card" method="post">
+        <span class="payment-errors"></span>
+
+        <div class="form-row">
+          <span>Card number</span>
+          <input type="text" size="20" data-stripe="number"/>
+
+          <span>CVC</span>
+          <input type="text" size="4" data-stripe="cvc"/>
+        </div>
+
+        <div class="form-row">
+          <span>Name on card</span>
+          <input type="text" size="30" data-stripe="number"/>
+        </div>
+
+        <div class="form-row">
+          <span>Expiration date (MM/YYYY)</span>
+          <input type="text" size="2" data-stripe="exp-month"/>
+          <span> / </span>
+          <input type="text" size="4" data-stripe="exp-year"/>
+        </div>
+
+        <button type="submit">Submit Payment</button>
+      </form>
+    </div>
+  </div>
 </main>

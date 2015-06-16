@@ -15,7 +15,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #review-cart-title-dropped": "slideUpCart",
     "click #review-cart-button": "slideDownCart",
     "click #review-cart-button-dropped": "slideUpCart",
-    "click #payment-add-card": "openPaymentForm",
+    "click #payment-add-card": "openCardForm",
   },
 
   render: function () {
@@ -56,47 +56,18 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.$("#checkout-products").slideUp("fast");
   },
 
-  openPaymentForm: function (event) {
-    this.disableOpenPaymentForm();
-
-    var handler = StripeCheckout.configure({
-          key: 'pk_test_JL4t7hmhcbXwo7mWvSGZxiIK',
-          token: function(token) {
-            console.log(token.id);
-            console.log("token created");
-          }
-        }),
-        totalCartQuantity = 0,
-        totalCartPrice = 0;
-
-    this.cartProducts.forEach(function (cp) {
-      totalCartQuantity += parseInt(cp.escape("quantity"));
-    });
-
-    this.products.forEach(function (prod) {
-      totalCartPrice += parseFloat(prod.escape("sale_price") * 100);
-    });
-
-    handler.open({
-      name: 'Hippolyta',
-      description: totalCartQuantity + ' total items',
-      amount: totalCartPrice
-    });
-
-    $(window).on('popstate', function() {
-      handler.close();
-    });
-
-    this.enableOpenPaymenyForm();
+  openCardForm: function () {
+    this.adjustCardFormPosition();
+    $(window).on("resize", this.adjustCardFormPosition);
+    this.$("#add-card-form-modal").show();
   },
 
-  disableOpenPaymentForm: function () {
-    this.events['click #payment-add-card'] = undefined;
-    this.delegateEvents(this.events);
-  },
-
-  enableOpenPaymenyForm: function () {
-    this.events['click #payment-add-card'] = 'openPaymentForm';
-    this.delegateEvents(this.events);
+  adjustCardFormPosition: function () {
+    var formWidth = this.$("#add-card-form").width(),
+        formHeight = this.$("#add-card-form").height(),
+        leftIndent = ((this.$("#add-card-form-modal").width() - formWidth) / 2) + "px",
+        topIndent = ((this.$("#add-card-form-modal").height() - formHeight) / 2) + "px";
+    this.$("#add-card-form").css({left: leftIndent})
+    this.$("#add-card-form").css({top: topIndent})
   },
 });

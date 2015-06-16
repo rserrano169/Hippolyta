@@ -17,8 +17,11 @@ class CheckoutsController < ApplicationController
     end
 
     current_cart.destroy
-    
+
     redirect_to "/checkout#checkout_placed"
   end
 
+  def add_card
+    p params
+  end
 end
