@@ -58,16 +58,20 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   openCardForm: function () {
     this.adjustCardFormPosition();
-    $(window).on("resize", this.adjustCardFormPosition);
+    $(window).on("resize scroll", this.adjustCardFormPosition);
     this.$("#add-card-form-modal").show();
   },
 
   adjustCardFormPosition: function () {
-    var formWidth = this.$("#add-card-form").width(),
-        formHeight = this.$("#add-card-form").height(),
-        leftIndent = ((this.$("#add-card-form-modal").width() - formWidth) / 2) + "px",
-        topIndent = ((this.$("#add-card-form-modal").height() - formHeight) / 2) + "px";
-    this.$("#add-card-form").css({left: leftIndent})
-    this.$("#add-card-form").css({top: topIndent})
+    var formWidth = this.$("#add-card-form").width() + 2,
+        formHeight = this.$("#add-card-form").height() + 2,
+        leftScroll = $(window).scrollLeft(),
+        topScroll = $(window).scrollTop(),
+        leftIndent = ($(window).width() - formWidth) / 2,
+        topIndent = ($(window).height() - formHeight) / 2,
+        totalLeft = leftIndent + leftScroll + "px";
+        totalTop = topIndent + topScroll + "px",
+    this.$("#add-card-form").css({left: totalLeft});
+    this.$("#add-card-form").css({top: totalTop});
   },
 });
