@@ -145,33 +145,43 @@
     </div>
   </section>
 
-  <div id="add-card-form-modal">
+  <div id="add-card-form-overlay">
     <div id="add-card-relative-container">
-      <form id="add-card-form" action="checkout/add_card" method="post">
-        <span class="payment-errors"></span>
-
-        <div class="form-row">
-          <span>Card number</span>
-          <input type="text" size="20" data-stripe="number"/>
-
-          <span>CVC</span>
-          <input type="text" size="4" data-stripe="cvc"/>
+      <div id="add-card-modal">
+        <div class="top-bar group">
+          <span class="top-bar-title">
+            Add a debit or credit card
+          </span>
+          <span class="top-bar-x">
+            &times
+          </span>
         </div>
+        <form id="add-card-form" action="checkout/add_card" method="post">
+          <span class="payment-errors"></span>
 
-        <div class="form-row">
-          <span>Name on card</span>
-          <input type="text" size="30" data-stripe="number"/>
-        </div>
+          <div class="form-row">
+            <span>Card number</span>
+            <input type="text" size="20" data-stripe="number"/>
 
-        <div class="form-row">
-          <span>Expiration date (MM/YYYY)</span>
-          <input type="text" size="2" data-stripe="exp-month"/>
-          <span> / </span>
-          <input type="text" size="4" data-stripe="exp-year"/>
-        </div>
+            <span>CVC</span>
+            <input type="text" size="4" data-stripe="cvc"/>
+          </div>
 
-        <button type="submit">Submit Payment</button>
-      </form>
+          <div class="form-row">
+            <span>Name on card</span>
+            <input type="text" size="30" data-stripe="number"/>
+          </div>
+
+          <div class="form-row">
+            <span>Expiration date (MM/YYYY)</span>
+            <input type="text" size="2" data-stripe="exp-month"/>
+            <span> / </span>
+            <input type="text" size="4" data-stripe="exp-year"/>
+          </div>
+
+          <button type="submit">Submit Payment</button>
+        </form>
+      </div>
     </div>
   </div>
 </main>

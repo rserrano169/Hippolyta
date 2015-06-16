@@ -4,10 +4,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   initialize: function (options) {
     this.cart = options.cart;
+    this.listenTo(this.cart, "sync", this.render);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     this.users = options.users;
-    this.listenTo(this.cart, "sync", this.render);
+    this.isCartSlidDown = false;
   },
 
   events: {
@@ -45,6 +46,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.$("#review-cart").attr("id", "review-cart-dropped");
     this.$("#review-cart-button").attr("id", "review-cart-button-dropped");
     this.$("#checkout-products").slideDown("fast");
+    this.isCartSlidDown = true;
   },
 
   slideUpCart: function () {
@@ -54,24 +56,28 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.$("#review-cart-dropped").attr("id", "review-cart");
     this.$("#review-cart-button-dropped").attr("id", "review-cart-button");
     this.$("#checkout-products").slideUp("fast");
+    this.isCartSlidDown = false;
   },
 
   openCardForm: function () {
+    if (this.isCartSlidDown) {
+      this.slideUpCart();
+    };
     this.adjustCardFormPosition();
     $(window).on("resize scroll", this.adjustCardFormPosition);
-    this.$("#add-card-form-modal").show();
+    this.$("#add-card-form-overlay").show();
   },
 
   adjustCardFormPosition: function () {
-    var formWidth = this.$("#add-card-form").width() + 2,
-        formHeight = this.$("#add-card-form").height() + 2,
+    var modalWidth = this.$("#add-card-modal").width() + 2,
+        modalHeight = this.$("#add-card-modal").height() + 2,
         leftScroll = $(window).scrollLeft(),
         topScroll = $(window).scrollTop(),
-        leftIndent = ($(window).width() - formWidth) / 2,
-        topIndent = ($(window).height() - formHeight) / 2,
+        leftIndent = ($(window).width() - modalWidth) / 2,
+        topIndent = ($(window).height() - modalHeight) / 2,
         totalLeft = leftIndent + leftScroll + "px";
         totalTop = topIndent + topScroll + "px",
-    this.$("#add-card-form").css({left: totalLeft});
-    this.$("#add-card-form").css({top: totalTop});
+    this.$("#add-card-modal").css({left: totalLeft});
+    this.$("#add-card-modal").css({top: totalTop});
   },
 });

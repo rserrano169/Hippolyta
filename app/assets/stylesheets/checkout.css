@@ -167,7 +167,7 @@
 
 /* --- MENU CHANGES --- */
 
-#checkout-view #add-card-form-modal {
+#checkout-view #add-card-form-overlay {
   display: none;
   position: absolute;
   min-width: 1020px;
@@ -186,11 +186,26 @@
   background: transparent;
 }
 
-#checkout-view #add-card-form {
+#checkout-view #add-card-modal {
   position: absolute;
   width: 700px;
   height: 300px;
   background: #ffffff;
+}
+
+#checkout-view .top-bar {
+  display: block;
+  background: linear-gradient(to bottom, #fafafa, #ebebeb);
+}
+
+#checkout-view .top-bar-title {
+}
+
+#checkout-view .top-bar-x {
+  display: block;
+  float: right;
+  font-size: 25px;
+  padding: 3px 10px;
 }
 
 #checkout-view #review-cart-dropped {

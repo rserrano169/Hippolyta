@@ -187,7 +187,7 @@
   font-weight: bold;
 }
 
-#cart-show #side-bar #subtotal span {
+#cart-show #side-bar #subtotal #subtotal-span {
   color: #b12704;
 }
 
