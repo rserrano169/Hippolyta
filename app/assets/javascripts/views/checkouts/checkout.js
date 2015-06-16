@@ -62,8 +62,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     var handler = StripeCheckout.configure({
           key: 'pk_test_JL4t7hmhcbXwo7mWvSGZxiIK',
           token: function(token) {
-            // Use the token to create the charge with a server-side script.
-            // You can access the token ID with `token.id`
+            console.log(token.id);
+            console.log("token created");
           }
         }),
         totalCartQuantity = 0,
@@ -83,7 +83,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       amount: totalCartPrice
     });
 
-    // Close Checkout on page navigation
     $(window).on('popstate', function() {
       handler.close();
     });
