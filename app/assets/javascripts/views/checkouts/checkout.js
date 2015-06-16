@@ -31,6 +31,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           user: user,
         }),
         csrfToken = $("meta[name='csrf-token']").attr('content');
+
     this.$el.html(content);
     this.$("form").prepend(
       '<input type="hidden" name="authenticity_token" value="' +
@@ -67,6 +68,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     };
     this.adjustCardFormPosition();
     $(window).on("resize scroll", this.adjustCardFormPosition);
+    $(window).on("keydown", this.handleKeyEvent.bind(this));
     this.$("#add-card-form-overlay").show();
   },
 
@@ -83,8 +85,16 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.$("#add-card-modal").css({top: totalTop});
   },
 
+  handleKeyEvent: function (event) {
+    if (event.keyCode === 27) {
+      event.preventDefault();
+      this.closeCardForm();
+    };
+  },
+
   closeCardForm: function () {
     $(window).off("resize scroll");
+    $(window).off("keydown");
     this.$("#add-card-form-overlay").hide();
   },
 });
