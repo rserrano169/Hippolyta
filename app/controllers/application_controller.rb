@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
                 :current_cart,
                 :money_string,
                 :last_query,
-                :sanitize_this
+                :sanitize_this,
+                :current_customer
 
   private
 
@@ -27,6 +28,11 @@ class ApplicationController < ActionController::Base
     else
       Cart.find_by(session_token: session[:guest_token])
     end
+  end
+
+  def current_customer
+    return nil unless current_user.stripe_id
+    Stripe::Customer.retrieve(current_user.stripe_id)
   end
 
   def last_query

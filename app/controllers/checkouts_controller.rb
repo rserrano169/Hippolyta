@@ -23,13 +23,41 @@ class CheckoutsController < ApplicationController
 
   def add_card
     token = params[:stripeToken]
-    current_customer = Stripe::Customer.create(
-      source: token,
-      email: current_user.email
-    )
-    current_user.stripe_id ||= current_customer.id
-    current_user.save!
+    set_current_customer(token)
+
+    @customer_cards_last4s_to_brands, @cards, @card = {}, [], nil
+    current_customer.sources.all(object: "card").each do |card|
+      @customer_cards_last4s_to_brands[card.last4] = card.brand
+      @cards << card
+    end
+
+    @this_card = current_customer.sources.create(source: token)
+    if @customer_cards_last4s_to_brands[@this_card.last4] == @this_card.brand
+      @cards.each do |card|
+        if card.last4 == @this_card.last4 && card.brand == @this_card.brand
+          @card = card
+        end
+      end
+      @this_card.delete()
+    else
+      @card = @this_card
+    end
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
+  end
+
+  private
+
+  def set_current_customer(token)
+    if current_customer
+      @current_customer = current_customer
+    else
+      @current_customer = Stripe::Customer.create(
+      source: token,
+      email: current_user.email
+      )
+    end
+    current_user.stripe_id ||= @current_customer.id
+    current_user.save!
   end
 end
