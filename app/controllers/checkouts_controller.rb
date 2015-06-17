@@ -43,10 +43,6 @@ class CheckoutsController < ApplicationController
       @card = @this_card
     end
 
-    # if !current_user.stripe_card_ids.include?(@card.id)
-    #   current_user.stripe_card_ids << @card.id
-    # end
-
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 

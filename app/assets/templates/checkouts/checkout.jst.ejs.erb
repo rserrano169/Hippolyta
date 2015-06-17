@@ -21,13 +21,13 @@
         2
       </li>
       <li class="step-title-span">
-        <span class="step-title">
+        <span id="payment-method-title" class="step-title">
           Payment Method
         </span>
       </li>
       <li class="step-button-span">
-        <span id="payment-add-card" class="step-button">
-          Add Card
+        <span id="payment-select-card-button" class="step-button">
+          Select Card
         </span>
       </li>
     </ul>
@@ -37,12 +37,13 @@
         <ul>
           <li>
             <span id="card-number">
-              xxxxxxxxxxxx<%%= card.escape("last4") %></span>
+              XXXXXXXXXXXX<%%= card.escape("last4") %></span>
             <span id="card-brand">
               <%%= card.escape("brand") %></span>
           </li>
         </ul>
       <%% }) %>
+      <div id="payment-add-card">Add card</div>
     </div>
 
     <ul id="review-cart" class="checkout-steps">
