@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614200732) do
+ActiveRecord::Schema.define(version: 20150617010403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,9 +111,11 @@ ActiveRecord::Schema.define(version: 20150614200732) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "stripe_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+  add_index "users", ["stripe_id"], name: "index_users_on_stripe_id", unique: true, using: :btree
 
 end

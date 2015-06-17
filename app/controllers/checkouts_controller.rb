@@ -27,8 +27,8 @@ class CheckoutsController < ApplicationController
       source: token,
       email: current_user.email
     )
-    p customer.id
-    # current_user.stripe_id = current_customer.id
+    current_user.stripe_id ||= current_customer.id
+    current_user.save!
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
