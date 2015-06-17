@@ -8,6 +8,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     this.users = options.users;
+    this.cards = options.cards;
+    this.listenTo(this.cards, "sync", this.render);
     this.isCardFormOpen = false;
     this.isCartSlidDown = false;
   },
@@ -30,6 +32,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           products: this.products,
           users: this.users,
           user: user,
+          cards: this.cards,
         }),
         csrfToken = $("meta[name='csrf-token']").attr('content');
 

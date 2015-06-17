@@ -167,6 +167,10 @@
 
 /* --- MENU CHANGES --- */
 
+#checkout-view #payment-method-options {
+  
+}
+
 #checkout-view #add-card-form-overlay {
   display: none;
   position: absolute;

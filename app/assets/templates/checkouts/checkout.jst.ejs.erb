@@ -32,8 +32,17 @@
       </li>
     </ul>
 
-    <div id="current-payment-method">
-
+    <div id="payment-method-options">
+      <%% cards.each( function(card){ %>
+        <ul>
+          <li>
+            <span id="card-number">
+              xxxxxxxxxxxx<%%= card.escape("last4") %></span>
+            <span id="card-brand">
+              <%%= card.escape("brand") %></span>
+          </li>
+        </ul>
+      <%% }) %>
     </div>
 
     <ul id="review-cart" class="checkout-steps">
