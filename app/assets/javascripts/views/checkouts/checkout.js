@@ -54,15 +54,16 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCards: function () {
-    var content = this.template2({
-      cards: this.cards,
-    });
+    var csrfToken = $("meta[name='csrf-token']").attr('content'),
+        content = this.template2({
+          cards: this.cards,
+        });
     $("#payment-method-options").html(content)
 
     if (
       $("#payment-method-form")
       .html()
-      .indexOf('<input type="hidden" name="authenticity_token"') > -1
+      .indexOf('<input type="hidden" name="authenticity_token"') === -1
     ) {
       $("#payment-method-form").prepend(
         '<input type="hidden" name="authenticity_token" value="' +
