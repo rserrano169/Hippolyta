@@ -29,7 +29,7 @@
 
 /* --- VIEW BEFORE ORDER PLACED --- */
 
-/* --- BODY --- */
+  /* --- BODY --- */
 
 #checkout-view {
   display: table;
@@ -99,11 +99,85 @@
   cursor: pointer;
 }
 
-/* --- PAYMENT METHODS --- */
+#checkout-view .top-bar {
+  display: block;
+  background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
+#checkout-view .top-bar-title {
+  display: inline-block;
+  vertical-align: middle;
+}
 
+#checkout-view .top-bar-x {
+  display: block;
+  float: right;
+  font-size: 25px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
 
-/* --- CHECKOUT PRODUCTS --- */
+    /* --- PAYMENT METHODS --- */
+
+#checkout-view #no-card-selection {
+  display: block;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+#checkout-view #payment-method-options {
+  display: none;
+  margin-bottom: 30px;
+}
+
+#checkout-view #payment-method-dropped {
+  color: #c45500;
+}
+
+#checkout-view #payment-add-card {
+  cursor: pointer;
+  width: 180px;
+  color: #0066c0;
+  margin: 25px 0px 25px 25px;
+}
+
+#checkout-view #payment-add-card:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+#checkout-view #add-card-form-overlay {
+  display: none;
+  position: absolute;
+  min-width: 1020px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: url("modal-tint-75-percent.png");
+}
+
+#checkout-view #add-card-relative-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#checkout-view #add-card-modal {
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  background: #ffffff;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+}
+
+    /* --- CART ITEMS --- */
 
 #checkout-view #checkout-products {
   display: none;
@@ -171,88 +245,11 @@
   color: #555555;
 }
 
-/* --- MENU CHANGES --- */
-
-#checkout-view #no-card-selection {
-  display: block;
-  padding: 15px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-}
-
-#checkout-view #payment-method-options {
-  display: none;
-  margin-bottom: 30px;
-}
-
-#checkout-view #payment-method-dropped {
-  color: #c45500;
-}
-
-#checkout-view #payment-add-card {
-  cursor: pointer;
-  color: #0066c0;
-  margin: 25px;
-}
-
-#checkout-view #payment-add-card:hover {
-  color: #c45500;
-  text-decoration: underline;
-}
-
-#checkout-view #add-card-form-overlay {
-  display: none;
-  position: absolute;
-  min-width: 1020px;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  background-image: url("modal-tint-75-percent.png");
-}
-
-#checkout-view #add-card-relative-container {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-
-#checkout-view #add-card-modal {
-  position: absolute;
-  width: 700px;
-  height: 300px;
-  background: #ffffff;
-  border: 1px solid #3f3f3f;
-  border-radius: 5px;
-}
-
-#checkout-view .top-bar {
-  display: block;
-  background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-#checkout-view .top-bar-title {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#checkout-view .top-bar-x {
-  display: block;
-  float: right;
-  font-size: 25px;
-  padding: 3px 10px;
-  cursor: pointer;
-}
-
 #checkout-view #review-cart-dropped {
   color: #c45500;
 }
 
-/* --- SIDEBAR --- */
+  /* --- SIDEBAR --- */
 
 #checkout-view #checkout-sidebar {
   display: table-cell;
