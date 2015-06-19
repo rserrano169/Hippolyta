@@ -36,10 +36,18 @@
       <%% cards.each( function(card){ %>
         <ul>
           <li>
-            <span id="card-number">
-              XXXXXXXXXXXX<%%= card.escape("last4") %></span>
             <span id="card-brand">
-              <%%= card.escape("brand") %></span>
+              <%%= card.escape("brand") %>
+            </span>
+            <span id="card-number">
+              XXXXXXXXXXXX<%%= card.escape("last4") %>
+            </span>
+            <span id="card-name">
+              <%%= card.escape("name") %>
+            </span>
+            <span>
+              <%%= card.escape("exp_month") %>/<%%= card.escape("exp_year") %>
+            </span>
           </li>
         </ul>
       <%% }) %>

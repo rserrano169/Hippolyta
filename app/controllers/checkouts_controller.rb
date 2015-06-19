@@ -25,19 +25,24 @@ class CheckoutsController < ApplicationController
     token = params[:stripeToken]
     set_current_customer(token)
 
-    @customer_cards_last4s_to_brands, @cards, @card = {}, [], nil
+    @customer_cards_info, @card = {}, nil
     current_customer.sources.all(object: "card").each do |card|
-      @customer_cards_last4s_to_brands[card.last4] = card.brand
-      @cards << card
+      @customer_cards_info[card.last4] = [
+        card,
+        card.brand,
+        card.exp_month,
+        card.exp_year,
+        card.name
+      ]
     end
-
     @this_card = current_customer.sources.create(source: token)
-    if @customer_cards_last4s_to_brands[@this_card.last4] == @this_card.brand
-      @cards.each do |card|
-        if card.last4 == @this_card.last4 && card.brand == @this_card.brand
-          @card = card
-        end
-      end
+    if @customer_cards_info[@this_card.last4][1,4] == [
+      @this_card.brand,
+      @this_card.exp_month,
+      @this_card.exp_year,
+      @this_card.name
+    ]
+      @card = @customer_cards_info[@this_card.last4][0]
       @this_card.delete()
     else
       @card = @this_card
