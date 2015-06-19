@@ -1,32 +1,38 @@
 <form id="payment-method-form" action="index.html" method="post">
-  <%% cards.each( function(card){ %>
-    <ul>
-      <li>
-        <input type="radio" name="card-selection" value="">
-        <span id="card-brand">
-          <%%= card.escape("brand") %>
-        </span>
-        <span id="card-number">
-          XXXXXXXXXXXX<%%= card.escape("last4") %>
-        </span>
-        <span id="card-name">
-          <%%= card.escape("name") %>
-        </span>
-        <span>
-          <%% if (card.escape("exp_month").length === 1) { %>
-              <%% var exp_month = "0" + card.escape("exp_month") %>
-          <%% } else { %>
-              <%% var exp_month = card.escape("exp_month") %>
-          <%% } %>
-          <%%= exp_month %>/<%%= card.escape("exp_year") %>
-        </span>
-      </li>
-    </ul>
-  <%% }) %>
-  <button id="payment-method-form-button">
-    Use this payment method
-  </button>
+  <%% if (cards.length < 1) { %>
+      <span id="no-card-selection">
+        You don't have any saved credit or debit cards.
+      </span>
+  <%% } else { %>
+      <%% cards.each( function(card){ %>
+        <ul>
+          <li>
+            <input type="radio" name="card-selection" value="">
+            <span id="card-brand">
+              <%%= card.escape("brand") %>
+            </span>
+            <span id="card-number">
+              XXXXXXXXXXXX<%%= card.escape("last4") %>
+            </span>
+            <span id="card-name">
+              <%%= card.escape("name") %>
+            </span>
+            <span>
+              <%% if (card.escape("exp_month").length === 1) { %>
+                  <%% var exp_month = "0" + card.escape("exp_month") %>
+              <%% } else { %>
+                  <%% var exp_month = card.escape("exp_month") %>
+              <%% } %>
+              <%%= exp_month %>/<%%= card.escape("exp_year") %>
+            </span>
+          </li>
+        </ul>
+      <%% }) %>
+      <button id="payment-method-form-button">
+        Use this payment method
+      </button>
+  <%% }; %>
 </form>
 <div id="payment-add-card">
-  Add card
+  Add a credit or debit card?
 </div>

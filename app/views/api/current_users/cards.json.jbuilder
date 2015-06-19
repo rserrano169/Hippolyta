@@ -5,6 +5,5 @@ json.array!(
   :exp_month,
   :exp_year,
   :name,
-
   :metadata
 )

@@ -5,7 +5,12 @@ class Api::CurrentUsersController < ApplicationController
   end
 
   def cards
-    @cards = current_customer.sources.all(object: "card")
+    if current_customer
+      @cards = current_customer.sources.all(object: "card")
+    else
+      @cards = []
+    end
+
     render :cards
   end
 end
