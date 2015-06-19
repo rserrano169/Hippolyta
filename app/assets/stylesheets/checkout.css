@@ -137,6 +137,32 @@
   color: #c45500;
 }
 
+#checkout-view #payment-method-form {
+  display: block;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+#checkout-view #payment-method-form-button-table {
+  display: table;
+  width: 100%;
+  background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
+  border-top: 1px solid #dddddd;
+}
+
+#checkout-view #payment-method-form-button {
+  display: table-cell;
+  margin: 9px 0px 10px 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+#checkout-view #payment-method-form-button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
 #checkout-view #payment-add-card {
   cursor: pointer;
   width: 180px;
