@@ -1,12 +1,14 @@
 Hippolyta.Views.Checkout = Backbone.View.extend({
 
-  template: JST["checkouts/checkout"],
+  template1: JST["checkouts/checkout"],
+
+  template2: JST["checkouts/cards"],
 
   initialize: function (options) {
     this.cart = options.cart;
     this.listenTo(this.cart, "sync", this.render);
     this.cards = options.cards;
-    this.listenTo(this.cards, "sync", this.render);
+    this.listenTo(this.cards, "sync", this.renderCards);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     this.users = options.users;
@@ -31,7 +33,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   render: function () {
     var user = this.users.getOrFetch(this.cart.get("buyer_id")),
-        content = this.template({
+        content = this.template1({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
@@ -49,6 +51,25 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
 
     return this;
+  },
+
+  renderCards: function () {
+    var content = this.template2({
+      cards: this.cards,
+    });
+    $("#payment-method-options").html(content)
+
+    if (
+      $("#payment-method-form")
+      .html()
+      .indexOf('<input type="hidden" name="authenticity_token"') > -1
+    ) {
+      $("#payment-method-form").prepend(
+        '<input type="hidden" name="authenticity_token" value="' +
+        csrfToken +
+        '">'
+      );
+    };
   },
 
   slideDownPaymentOptions: function () {
