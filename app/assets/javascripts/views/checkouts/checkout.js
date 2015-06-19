@@ -39,7 +39,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           products: this.products,
           users: this.users,
           user: user,
-          cards: this.cards,
         }),
         csrfToken = $("meta[name='csrf-token']").attr('content');
 
@@ -49,6 +48,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       csrfToken +
       '">'
     );
+
+    if ($("#payment-method-form").html() === undefined) {
+      $("#payment-method-options").html(
+        '<span id="loading-payment-options">' +
+        'Loading...' +
+        '</span>'
+      );
+    };
 
     return this;
   },
