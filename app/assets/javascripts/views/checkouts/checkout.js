@@ -34,13 +34,13 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template1({
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
+        content = this.template1({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
           // user: this.user,
         }),
-        csrfToken = $("meta[name='csrf-token']").attr('content');
 
     this.$el.html(content);
     $("form").prepend(
@@ -122,22 +122,64 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     };
 
     this.adjustCardFormPosition();
-    $(window).on("resize scroll", this.adjustCardFormPosition);
+    $(window).on("scroll", this.adjustCardFormPosition.bind(this));
+    $(window).on("resize", this.adjustCardFormPosition.bind(this));
     $(window).on("keydown", this.handleKeyEvent.bind(this));
+
     $("#add-card-form-overlay").show();
   },
 
   adjustCardFormPosition: function () {
-    var modalWidth = $("#add-card-modal").width() + 2,
-        modalHeight = $("#add-card-modal").height() + 2,
-        leftScroll = $(window).scrollLeft(),
+    this.adjustCardFormModalSize();
+
+    if ($(window).height() > $("#add-card-modal").height() + 2) {
+        this.adjustCardFormIndentTop();
+    } else {
+        $("#add-card-modal").css("top", 0);
+    };
+
+    if ($(window).width() > $("#add-card-modal").width() + 2) {
+        this.adjustCardFormIndentLeft();
+    } else {
+        $("#add-card-modal").css("left", 0);
+    };
+  },
+
+  adjustCardFormIndentTop: function () {
+    var modalHeight = $("#add-card-modal").height() + 2,
         topScroll = $(window).scrollTop(),
-        leftIndent = ($(window).width() - modalWidth) / 2,
         topIndent = ($(window).height() - modalHeight) / 2,
-        totalLeft = leftIndent + leftScroll + "px";
-        totalTop = topIndent + topScroll + "px",
-    $("#add-card-modal").css({left: totalLeft});
+        totalTop = topIndent + topScroll + "px";
     $("#add-card-modal").css({top: totalTop});
+
+  },
+
+  adjustCardFormIndentLeft: function () {
+    var modalWidth = $("#add-card-modal").width() + 2,
+        leftScroll = $(window).scrollLeft(),
+        leftIndent = ($(window).width() - modalWidth) / 2,
+        totalLeft = leftIndent + leftScroll + "px";
+    $("#add-card-modal").css({left: totalLeft});
+  },
+
+  adjustCardFormModalSize: function () {
+    var htmlHeight = $("html").height(),
+        htmlWidth = $("html").width(),
+        totalHeight = "",
+        totalWidth = "";
+    if (htmlHeight < $(window).height()) {
+        totalHeight = $(window).height();
+    } else {
+        totalHeight = htmlHeight + "px";
+    };
+    if (htmlWidth < $(window).width()) {
+        totalWidth = $(window).width();
+    } else {
+        totalWidth = htmlWidth + "px";
+    };
+
+    $("#add-card-form-overlay").height(totalHeight);
+    $("#add-card-form-overlay").width(totalWidth);
   },
 
   handleKeyEvent: function (event) {
