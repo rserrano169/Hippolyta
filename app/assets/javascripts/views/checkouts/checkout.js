@@ -11,8 +11,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.listenTo(this.cards, "sync", this.renderCards);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
-    this.user = options.user;
-    this.listenTo(this.user, "sync", this.render);
+    // this.user = options.user;
+    // this.listenTo(this.user, "sync", this.render);
     this.cardsAlreadyRendered = false;
     this.arePaymentOptionsSlidDown = false;
     this.isCardFormOpen = false;
@@ -38,7 +38,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
-          user: this.user,
+          // user: this.user,
         }),
         csrfToken = $("meta[name='csrf-token']").attr('content');
 

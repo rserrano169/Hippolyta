@@ -1,5 +1,4 @@
 class Api::ProductsController < ApplicationController
-
   def new
     @product = Product.new
     render :new
@@ -36,5 +35,4 @@ class Api::ProductsController < ApplicationController
       :picture
     )
   end
-
 end

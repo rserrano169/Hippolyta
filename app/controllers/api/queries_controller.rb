@@ -1,5 +1,4 @@
 class Api::QueriesController < ApplicationController
-
   def index
     if current_user
       @query = current_user.queries.last
@@ -11,5 +10,4 @@ class Api::QueriesController < ApplicationController
 
     render :index
   end
-
 end

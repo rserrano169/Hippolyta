@@ -1,5 +1,4 @@
 class RootController < ApplicationController
-
   def root
     session[:guest_token] ||= SecureRandom.urlsafe_base64(24)
     Cart.create({session_token: session[:guest_token]})
@@ -36,5 +35,4 @@ class RootController < ApplicationController
       @guest_cart.destroy
     end
   end
-
 end

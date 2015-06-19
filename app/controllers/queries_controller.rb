@@ -1,5 +1,4 @@
 class QueriesController < ApplicationController
-
   def create
     if current_user
       @querier_id = current_user.id
@@ -33,5 +32,4 @@ class QueriesController < ApplicationController
   def query_params
     params.require(:query).permit(:keywords)
   end
-
 end

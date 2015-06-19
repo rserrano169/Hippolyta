@@ -1,5 +1,4 @@
 class CheckoutsController < ApplicationController
-
   def checkout
     if !signed_in?
       redirect_to "#must_sign_in"
@@ -23,9 +22,23 @@ class CheckoutsController < ApplicationController
 
   def add_card
     token = params[:stripeToken]
-    set_current_stripe_customer(token)
-    fail
+    if current_stripe_customer
+      was_card_a_duplicate(token)
+    else
+      @current_stripe_customer = Stripe::Customer.create(
+        source: token,
+        email: current_user.email
+      )
+    end
+    current_user.stripe_id ||= @current_stripe_customer.id
+    current_user.save!
 
+    redirect_to "/checkout#checkout/#{current_cart.id}"
+  end
+
+  private
+
+  def was_card_a_duplicate(token)
     @customer_cards_info, @card = {}, nil
     current_stripe_customer.sources.all(object: "card").each do |card|
       @customer_cards_info[card.last4] = [
@@ -36,6 +49,7 @@ class CheckoutsController < ApplicationController
         card.name
       ]
     end
+
     @this_card = current_stripe_customer.sources.create(source: token)
     if @customer_cards_info[@this_card.last4][1,4] == [
       @this_card.brand,
@@ -45,25 +59,11 @@ class CheckoutsController < ApplicationController
     ]
       @card = @customer_cards_info[@this_card.last4][0]
       @this_card.delete()
-    else
-      @card = @this_card
+
+      return true
     end
+    @card = @this_card
 
-    redirect_to "/checkout#checkout/#{current_cart.id}"
-  end
-
-  private
-
-  def set_current_stripe_customer(token)
-    if current_stripe_customer
-      @current_stripe_customer = current_stripe_customer
-    else
-      @current_stripe_customer = Stripe::Customer.create(
-        source: token,
-        email: current_user.email
-      )
-    end
-    current_user.stripe_id ||= @current_stripe_customer.id
-    current_user.save!
+    false
   end
 end

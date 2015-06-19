@@ -1,5 +1,4 @@
 class Api::CartProductsController < ApplicationController
-
   def show
     @cart_product = CartProduct.find(params[:id])
 
@@ -75,5 +74,4 @@ class Api::CartProductsController < ApplicationController
   def cart_product_params
     params.require(:cart_product).permit(:quantity)
   end
-
 end
