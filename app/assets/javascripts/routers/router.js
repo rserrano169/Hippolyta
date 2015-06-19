@@ -92,9 +92,9 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
 
   checkout: function (cart_id) {
     var cart = new Hippolyta.Models.Cart({ id: cart_id }),
-        users = Hippolyta.Collections.users,
-        cards = new Hippolyta.Collections.CurrentUserCards;
-    users.fetch();
+        user = new Hippolyta.Models.CurrentUser();
+        cards = new Hippolyta.Collections.CurrentUserCards();
+    user.fetch();
     cart.fetch();
     cards.fetch();
     var cartProducts = cart.cartProducts(),
@@ -103,7 +103,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           cart: cart,
           cartProducts: cartProducts,
           products: products,
-          users: users,
+          user: user,
           cards: cards,
         });
     this._swapView(checkoutView);

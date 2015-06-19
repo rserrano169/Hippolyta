@@ -23,10 +23,11 @@ class CheckoutsController < ApplicationController
 
   def add_card
     token = params[:stripeToken]
-    set_current_customer(token)
+    set_current_stripe_customer(token)
+    fail
 
     @customer_cards_info, @card = {}, nil
-    current_customer.sources.all(object: "card").each do |card|
+    current_stripe_customer.sources.all(object: "card").each do |card|
       @customer_cards_info[card.last4] = [
         card,
         card.brand,
@@ -35,7 +36,7 @@ class CheckoutsController < ApplicationController
         card.name
       ]
     end
-    @this_card = current_customer.sources.create(source: token)
+    @this_card = current_stripe_customer.sources.create(source: token)
     if @customer_cards_info[@this_card.last4][1,4] == [
       @this_card.brand,
       @this_card.exp_month,
@@ -53,16 +54,16 @@ class CheckoutsController < ApplicationController
 
   private
 
-  def set_current_customer(token)
-    if current_customer
-      @current_customer = current_customer
+  def set_current_stripe_customer(token)
+    if current_stripe_customer
+      @current_stripe_customer = current_stripe_customer
     else
-      @current_customer = Stripe::Customer.create(
-      source: token,
-      email: current_user.email
+      @current_stripe_customer = Stripe::Customer.create(
+        source: token,
+        email: current_user.email
       )
     end
-    current_user.stripe_id ||= @current_customer.id
+    current_user.stripe_id ||= @current_stripe_customer.id
     current_user.save!
   end
 end

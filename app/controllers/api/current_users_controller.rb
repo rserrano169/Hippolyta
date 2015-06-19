@@ -5,8 +5,8 @@ class Api::CurrentUsersController < ApplicationController
   end
 
   def cards
-    if current_customer
-      @cards = current_customer.sources.all(object: "card")
+    if current_stripe_customer
+      @cards = current_stripe_customer.sources.all(object: "card")
     else
       @cards = []
     end

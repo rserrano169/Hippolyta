@@ -11,7 +11,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.listenTo(this.cards, "sync", this.renderCards);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
-    this.users = options.users;
+    this.user = options.user;
+    this.listenTo(this.user, "sync", this.render);
+    this.cardsAlreadyRendered = false;
     this.arePaymentOptionsSlidDown = false;
     this.isCardFormOpen = false;
     this.isCartSlidDown = false;
@@ -32,13 +34,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    var user = this.users.getOrFetch(this.cart.get("buyer_id")),
-        content = this.template1({
+    var content = this.template1({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
-          users: this.users,
-          user: user,
+          user: this.user,
         }),
         csrfToken = $("meta[name='csrf-token']").attr('content');
 
@@ -55,6 +55,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         'Loading...' +
         '</span>'
       );
+    };
+
+    if (this.cardsAlreadyRendered === true) {
+      this.renderCards();
     };
 
     return this;
@@ -78,6 +82,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         '">'
       );
     };
+
+    this.cardsAlreadyRendered = true;
   },
 
   slideDownPaymentOptions: function () {
@@ -152,13 +158,13 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     Stripe.card.createToken(
       $("#add-card-form"),
-      this.stripeResponseHandler
+      this.stripeAppendCardToken.bind(this)
     );
 
     return false;
   },
 
-  stripeResponseHandler: function (status, response) {
+  stripeAppendCardToken: function (status, response) {
     var $form = $("#add-card-form");
 
     if (response.error) {

@@ -1,4 +1,4 @@
-json.(@current_user, :id, :name, :email, :phone_number, :created_at)
+json.(@current_user, :id, :name, :email, :phone_number, :stripe_id, :created_at)
 
 json.thumb_picture_url image_url(@current_user.picture.url(:thumb))
 json.small_picture_url image_url(@current_user.picture.url(:small))

@@ -173,9 +173,16 @@
 
 /* --- MENU CHANGES --- */
 
+#checkout-view #no-card-selection {
+  display: block;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
 #checkout-view #payment-method-options {
   display: none;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #checkout-view #payment-method-dropped {
@@ -184,10 +191,13 @@
 
 #checkout-view #payment-add-card {
   cursor: pointer;
-  width: 90px;
-  text-align: center;
-  padding: 5px 0px;
-  border: 1px solid black;
+  color: #0066c0;
+  margin: 25px;
+}
+
+#checkout-view #payment-add-card:hover {
+  color: #c45500;
+  text-decoration: underline;
 }
 
 #checkout-view #add-card-form-overlay {

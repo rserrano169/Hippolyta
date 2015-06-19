@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
                 :money_string,
                 :last_query,
                 :sanitize_this,
-                :current_customer
+                :current_stripe_customer
 
   private
 
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_customer
+  def current_stripe_customer
     return nil unless current_user.stripe_id
     Stripe::Customer.retrieve(current_user.stripe_id)
   end
