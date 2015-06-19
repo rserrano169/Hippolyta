@@ -151,6 +151,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       .attr("id", "review-cart-title-dropped")
       .html("Review Items");
     $("#review-cart").attr("id", "review-cart-dropped");
+    $("#review-cart-button").html("Close");
     $("#review-cart-button").attr("id", "review-cart-button-dropped");
     $("#checkout-products").slideDown("fast");
     this.isCartSlidDown = true;
@@ -161,6 +162,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       .attr("id", "review-cart-title")
       .html("Cart Items");
     $("#review-cart-dropped").attr("id", "review-cart");
+    $("#review-cart-button-dropped").html("View");
     $("#review-cart-button-dropped").attr("id", "review-cart-button");
     $("#checkout-products").slideUp("fast");
     this.isCartSlidDown = false;
