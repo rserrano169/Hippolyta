@@ -158,7 +158,7 @@
   display: block;
   font-size: 18px;
   margin: 20px 0px 0px 20px;
-  padding: 0px 20px 20px 0px;
+  padding: 0px 20px 15px 0px;
   border-bottom: 1px solid #dddddd;
 }
 
@@ -171,7 +171,8 @@
 #checkout-view #payment-method-header-name {
   display: block;
   font-size: 14px;
-  padding-bottom: 20px;
+  color: #555555;
+  padding-bottom: 15px;
   border-bottom: 1px solid #dddddd;
 }
 
@@ -184,8 +185,60 @@
 #checkout-view #payment-method-header-expire {
   display: block;
   font-size: 14px;
-  padding-bottom: 20px;
+  color: #555555;
+  padding-bottom: 15px;
   border-bottom: 1px solid #dddddd;
+}
+
+#checkout-view .card-table {
+  display: table;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+#checkout-view .card-table .first-card-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+
+#checkout-view .card-table .card-radio {
+  display: inline-block;
+  margin: 0px 8px 0px 16px;
+}
+
+#checkout-view .card-table .card-brand {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#checkout-view .card-table .card-last4 {
+  color: #555555;
+}
+
+#checkout-view .card-table .card-number {
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+#checkout-view .card-table .second-card-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+
+#checkout-view .card-table .card-name {
+  margin-left: 10px;
+}
+
+#checkout-view .card-table .third-card-cell {
+  display: table-cell;
+  vertical-align: middle;
+  min-width: 100px;
+}
+
+#checkout-view .card-table .card-exp {
+
 }
 
 #checkout-view #payment-method-form-button-table {
@@ -195,10 +248,15 @@
   border-top: 1px solid #dddddd;
 }
 
-#checkout-view #payment-method-form-button {
+#checkout-view #payment-method-button-cell {
   display: table-cell;
-  margin: 9px 0px 10px 20px;
-  padding: 10px 20px;
+  vertical-align: middle;
+  min-width: 205px;
+}
+
+#checkout-view #payment-method-form-button {
+  margin: 19px 0px 10px 20px;
+  padding: 8px 16px;
   background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
   border: 1px solid #c89411;
   border-radius: 3px;
@@ -208,11 +266,16 @@
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
+#checkout-view #payment-add-card-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 #checkout-view #payment-add-card {
   cursor: pointer;
-  width: 180px;
+  width: 100%;
   color: #0066c0;
-  margin: 25px 0px 25px 35px;
+  margin: 10px 0px 0px 20px;
 }
 
 #checkout-view #payment-add-card:hover {

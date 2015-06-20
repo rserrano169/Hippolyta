@@ -25,35 +25,54 @@
   <%% } else { %>
       <%% cards.each( function(card){ %>
         <ul>
-          <li>
-            <input type="radio" name="card-selection" value="">
-            <span id="card-brand">
-              <%%= card.escape("brand") %>
-            </span>
-            <span id="card-number">
-              XXXXXXXXXXXX<%%= card.escape("last4") %>
-            </span>
-            <span id="card-name">
-              <%%= card.escape("name") %>
-            </span>
-            <span>
-              <%% if (card.escape("exp_month").length === 1) { %>
-                  <%% var exp_month = "0" + card.escape("exp_month") %>
-              <%% } else { %>
-                  <%% var exp_month = card.escape("exp_month") %>
-              <%% } %>
-              <%%= exp_month %>/<%%= card.escape("exp_year") %>
-            </span>
+          <li class="card-table">
+            <ul>
+              <li class="first-card-cell">
+                <span class="card-radio">
+                  <input type="radio" name="card-selection" value="">
+                </span>
+                <span class="card-brand">
+                  <%%= card.escape("brand") %>
+                </span>
+                <span class="card-last4">
+                  ending in
+                  <span class="card-number">
+                    <%%= card.escape("last4") %>
+                  </span>
+                </span>
+              </li>
+              <li class="second-card-cell">
+                <span class="card-name">
+                  <%%= card.escape("name") %>
+                </span>
+              </li>
+              <li class="third-card-cell">
+                <span class="card-exp">
+                  <%% if (card.escape("exp_month").length === 1) { %>
+                      <%% var exp_month = "0" + card.escape("exp_month") %>
+                  <%% } else { %>
+                      <%% var exp_month = card.escape("exp_month") %>
+                  <%% } %>
+                  <%%= exp_month %>/<%%= card.escape("exp_year") %>
+                </span>
+              </li>
+            </ul>
           </li>
         </ul>
       <%% }) %>
       <div id="payment-method-form-button-table">
-        <button id="payment-method-form-button">
-          Use this payment method
-        </button>
+        <ul>
+          <li id="payment-method-button-cell">
+            <button id="payment-method-form-button">
+              Use this payment method
+            </button>
+          </li>
+          <li id="payment-add-card-cell">
+            <div id="payment-add-card">
+              Add another card?
+            </div>
+          </li>
+        </ul>
       </div>
   <%% }; %>
 </form>
-<div id="payment-add-card">
-  Add a credit or debit card?
-</div>
