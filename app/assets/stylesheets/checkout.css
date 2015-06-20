@@ -123,9 +123,8 @@
 
 #checkout-view #no-card-selection {
   display: block;
-  padding: 15px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
+  padding: 15px 20px;
+  /*background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);*/
 }
 
 #checkout-view #payment-method-options {
@@ -141,6 +140,52 @@
   display: block;
   border: 1px solid #dddddd;
   border-radius: 5px;
+}
+
+#checkout-view #payment-method-form-header-table {
+  display: table;
+  width: 100%;
+  white-space: nowrap;
+}
+
+#checkout-view #payment-method-form-header-title-cell {
+  display: table-cell;
+  width: 50%;
+  vertical-align: bottom;
+}
+
+#checkout-view #payment-method-header-title {
+  display: block;
+  font-size: 18px;
+  margin: 20px 0px 0px 20px;
+  padding: 0px 20px 20px 0px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#checkout-view #payment-method-form-header-name-cell {
+  display: table-cell;
+  width: 50%;
+  vertical-align: bottom;
+}
+
+#checkout-view #payment-method-header-name {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#checkout-view #payment-method-form-header-expire-cell {
+  display: table-cell;
+  vertical-align: bottom;
+  min-width: 100px
+}
+
+#checkout-view #payment-method-header-expire {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
 }
 
 #checkout-view #payment-method-form-button-table {
@@ -167,7 +212,7 @@
   cursor: pointer;
   width: 180px;
   color: #0066c0;
-  margin: 25px 0px 25px 25px;
+  margin: 25px 0px 25px 35px;
 }
 
 #checkout-view #payment-add-card:hover {

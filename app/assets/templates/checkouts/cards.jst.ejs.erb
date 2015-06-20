@@ -1,4 +1,23 @@
 <form id="payment-method-form" action="index.html" method="post">
+  <div id="payment-method-form-header-table">
+    <ul>
+      <li id="payment-method-form-header-title-cell">
+        <span id="payment-method-header-title">
+          Your credit and debit cards
+        </span>
+      </li>
+      <li id="payment-method-form-header-name-cell">
+        <span id="payment-method-header-name">
+          Name on card
+        </span>
+      </li>
+      <li id="payment-method-form-header-expire-cell">
+        <span id="payment-method-header-expire">
+          Expires on
+        </span>
+      </li>
+    </ul>
+  </div>
   <%% if (cards.length < 1) { %>
       <span id="no-card-selection">
         You don't have any saved credit or debit cards.
