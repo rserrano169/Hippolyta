@@ -9,6 +9,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.listenTo(this.cart, "sync", this.render);
     this.cards = options.cards;
     this.listenTo(this.cards, "sync", this.renderCards);
+    this.listenTo(this.cards, "error", this.renderCardsError);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     // this.user = options.user;
@@ -70,6 +71,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         content = this.template2({
           cards: this.cards,
         });
+
     $("#payment-method-options").html(content)
 
     if (
@@ -85,6 +87,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     };
 
     this.cardsAlreadyRendered = true;
+  },
+
+  renderCardsError: function () {
+    $("#payment-method-options").html(
+      '<span id="error-loading-payment-options">' +
+      'We were unable to load your card data. Reload the page to try again.' +
+      '</span>'
+    );
   },
 
   slideDownPaymentOptions: function () {

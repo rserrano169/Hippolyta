@@ -31,8 +31,8 @@ class CheckoutsController < ApplicationController
       )
       @card = @current_stripe_customer.sources.all(object: "card").data.last
       current_user.stripe_id = @current_stripe_customer.id
+      current_user.save!
     end
-    current_user.save!
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end

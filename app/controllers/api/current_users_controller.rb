@@ -6,10 +6,16 @@ class Api::CurrentUsersController < ApplicationController
 
   def cards
     if current_stripe_customer
-      @cards = current_stripe_customer.sources.all(object: "card")
+      begin
+        @cards = current_stripe_customer.sources.all(object: "card")
+      rescue Stripe::APIConnectionError
+        fail
+      end
     else
       @cards = []
     end
+
+    render :cards
   end
 
   def current_card
