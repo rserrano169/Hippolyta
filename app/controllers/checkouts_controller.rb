@@ -22,6 +22,7 @@ class CheckoutsController < ApplicationController
 
   def add_card
     token = params[:stripeToken]
+
     if current_stripe_customer
       @card = delete_if_duplicate(token)
     else
@@ -32,19 +33,20 @@ class CheckoutsController < ApplicationController
       @card = @current_stripe_customer.sources.all(object: "card").data.last
       current_user.stripe_id = @current_stripe_customer.id
     end
-
+    
     if params[:set_as_default] == "true"
       current_user.stripe_default_card_id = @card.id
     end
-
     current_user.save!
+
+    set_stripe_customer_default_source(@card.id)
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 
   def select_card
-    current_stripe_customer.default_source = params[:cardId]
-    fail
+    set_stripe_customer_default_source(params[:cardId])
+
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 
@@ -76,5 +78,11 @@ class CheckoutsController < ApplicationController
     end
 
     @card
+  end
+
+  def set_stripe_customer_default_source(card_id)
+    @current_stripe_customer = current_stripe_customer
+    @current_stripe_customer.default_source = card_id
+    @current_stripe_customer.save
   end
 end

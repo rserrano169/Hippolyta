@@ -5,6 +5,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   template2: JST["checkouts/cards"],
 
   initialize: function (options) {
+    this.cardsAlreadyRendered = false;
+    this.arePaymentOptionsSlidDown = false;
+    this.isCardFormOpen = false;
+    this.isCartSlidDown = false;
     this.cart = options.cart;
     this.listenTo(this.cart, "sync", this.render);
     this.cards = options.cards;
@@ -13,11 +17,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.cartProducts = options.cartProducts;
     this.products = options.products;
     // this.user = options.user;
-    // this.listenTo(this.user, "sync", this.render);
-    this.cardsAlreadyRendered = false;
-    this.arePaymentOptionsSlidDown = false;
-    this.isCardFormOpen = false;
-    this.isCartSlidDown = false;
   },
 
   events: {
@@ -45,22 +44,21 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         }),
 
     this.$el.html(content);
+
     $("form").prepend(
       '<input type="hidden" name="authenticity_token" value="' +
       csrfToken +
       '">'
     );
 
-    if ($("#payment-method-form").html() === undefined) {
-      $("#payment-method-options").html(
-        '<span id="loading-payment-options">' +
-        'Loading...' +
-        '</span>'
-      );
-    };
-
-    if (this.cardsAlreadyRendered === true) {
-      this.renderCards();
+    if (this.cardsAlreadyRendered === false) {
+        $("#payment-method-options").html(
+          '<span id="loading-payment-options">' +
+          'Loading...' +
+          '</span>'
+        );
+    } else {
+        this.renderCards();
     };
 
     return this;
@@ -74,17 +72,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     $("#payment-method-options").html(content)
 
-    if (
-      $("#payment-method-form")
-      .html()
-      .indexOf('<input type="hidden" name="authenticity_token"') === -1
-    ) {
-      $("#payment-method-form").prepend(
-        '<input type="hidden" name="authenticity_token" value="' +
-        csrfToken +
-        '">'
-      );
-    };
+    $("#payment-method-form").prepend(
+      '<input type="hidden" name="authenticity_token" value="' +
+      csrfToken +
+      '">'
+    );
 
     this.cardsAlreadyRendered = true;
   },
@@ -92,7 +84,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   renderCardsError: function () {
     $("#payment-method-options").html(
       '<span id="error-loading-payment-options">' +
-      'We were unable to load your card data. Reload the page to try again.' +
+      'We were unable to load your card data. Please reload the page to try again.' +
       '</span>'
     );
   },
