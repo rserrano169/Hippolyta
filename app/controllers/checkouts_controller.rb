@@ -23,22 +23,44 @@ class CheckoutsController < ApplicationController
   def add_card
     token = params[:stripeToken]
     if current_stripe_customer
-      was_card_a_duplicate(token)
+      @card = delete_if_duplicate(token)
     else
       @current_stripe_customer = Stripe::Customer.create(
         source: token,
         email: current_user.email
       )
+      @card = @current_stripe_customer.sources.all(object: "card").data.last
     end
+
+    p "before default_source"
+    p @current_stripe_customer.default_source
+
+    if params[:set_as_default] == "true"
+      @current_stripe_customer.default_source = @card.id
+    end
+
+    p "after default_source"
+    p @current_stripe_customer
+
     current_user.stripe_id ||= @current_stripe_customer.id
+    # current_user.current_card ||= @card
     current_user.save!
+
+    redirect_to "/checkout#checkout/#{current_cart.id}"
+  end
+
+  def select_card
+    p "params"
+    p params
+    @card_id = params[:cardId]
+    p @card_id
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 
   private
 
-  def was_card_a_duplicate(token)
+  def delete_if_duplicate(token)
     @customer_cards_info, @card = {}, nil
     current_stripe_customer.sources.all(object: "card").each do |card|
       @customer_cards_info[card.last4] = [
@@ -59,11 +81,10 @@ class CheckoutsController < ApplicationController
     ]
       @card = @customer_cards_info[@this_card.last4][0]
       @this_card.delete()
-
-      return true
+    else
+      @card = @this_card
     end
-    @card = @this_card
 
-    false
+    @card
   end
 end

@@ -1,5 +1,6 @@
 json.array!(
   @cards,
+  :id,
   :brand,
   :last4,
   :exp_month,

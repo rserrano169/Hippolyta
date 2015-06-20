@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "checkout", to: "checkouts#checkout"
   post "checkout/add_card", to: "checkouts#add_card"
   post "checkout/add_purchased_products", to: "checkouts#add_purchased_products"
+  post "checkout/select_card", to: "checkouts#select_card"
 
   namespace :api, defaults: { format: :json } do
     resource :current_user, only: [:show]

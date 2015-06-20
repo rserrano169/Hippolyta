@@ -200,7 +200,7 @@
 #checkout-view .card-table .first-card-cell {
   display: table-cell;
   vertical-align: middle;
-  min-width: 237px;
+  min-width: 282px;
   width: 50%;
 }
 
@@ -229,6 +229,8 @@
 }
 
 #checkout-view .card-table .card-name {
+  display: block;
+  width: 190px;
 }
 
 #checkout-view .card-table .third-card-cell {
@@ -238,7 +240,6 @@
 }
 
 #checkout-view .card-table .card-exp {
-
 }
 
 #checkout-view #payment-method-form-button-table {

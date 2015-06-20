@@ -13,4 +13,10 @@ class Api::CurrentUsersController < ApplicationController
 
     render :cards
   end
+
+  def current_card
+    # if current_stripe_customer
+    #   @card =
+    # end
+  end
 end

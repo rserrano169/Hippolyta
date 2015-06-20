@@ -1,4 +1,4 @@
-<form id="payment-method-form" action="index.html" method="post">
+<form id="payment-method-form" action="/checkout/select_card" method="post">
   <div id="payment-method-form-header-table">
     <ul>
       <li id="payment-method-form-header-title-cell">
@@ -29,7 +29,7 @@
             <ul>
               <li class="first-card-cell">
                 <span class="card-radio">
-                  <input type="radio" name="card-selection" value="">
+                  <input type="radio" name="cardId" value="<%%= card.escape("id") %>">
                 </span>
                 <span class="card-brand">
                   <%%= card.escape("brand") %>
