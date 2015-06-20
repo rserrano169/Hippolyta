@@ -6,11 +6,7 @@ class Api::CurrentUsersController < ApplicationController
 
   def cards
     if current_stripe_customer
-      begin
-        @cards = current_stripe_customer.sources.all(object: "card")
-      rescue Stripe::APIConnectionError
-        fail
-      end
+      @cards = current_stripe_customer.sources.all(object: "card")
     else
       @cards = []
     end
