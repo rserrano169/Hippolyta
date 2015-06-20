@@ -30,31 +30,16 @@ class CheckoutsController < ApplicationController
         email: current_user.email
       )
       @card = @current_stripe_customer.sources.all(object: "card").data.last
+      current_user.stripe_id = @current_stripe_customer.id
     end
-
-    p "before default_source"
-    p @current_stripe_customer.default_source
-
-    if params[:set_as_default] == "true"
-      @current_stripe_customer.default_source = @card.id
-    end
-
-    p "after default_source"
-    p @current_stripe_customer
-
-    current_user.stripe_id ||= @current_stripe_customer.id
-    # current_user.current_card ||= @card
     current_user.save!
 
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 
   def select_card
-    p "params"
-    p params
-    @card_id = params[:cardId]
-    p @card_id
-
+    current_stripe_customer.default_source = params[:cardId]
+    fail
     redirect_to "/checkout#checkout/#{current_cart.id}"
   end
 

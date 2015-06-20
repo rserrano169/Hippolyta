@@ -10,8 +10,6 @@ class Api::CurrentUsersController < ApplicationController
     else
       @cards = []
     end
-
-    render :cards
   end
 
   def current_card

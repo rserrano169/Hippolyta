@@ -19,9 +19,13 @@
     </ul>
   </div>
   <%% if (cards.length < 1) { %>
-      <span id="no-card-selection">
-        You don't have any saved credit or debit cards.
-      </span>
+        <span id="no-card-selection">
+          You don't have any saved credit or debit cards.
+        </span>
+      </form>
+      <div id="payment-add-first-card">
+        Add a credit or debit card?
+      </div>
   <%% } else { %>
       <%% cards.each( function(card){ %>
         <ul>

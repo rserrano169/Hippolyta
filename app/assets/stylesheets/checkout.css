@@ -123,8 +123,21 @@
 
 #checkout-view #no-card-selection {
   display: block;
+  color: #b12704;
+  font-weight: bold;
   padding: 15px 20px;
-  /*background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);*/
+}
+
+#checkout-view #payment-add-first-card {
+  cursor: pointer;
+  width: 180px;
+  color: #0066c0;
+  margin: 20px 0px 0px 40px;
+}
+
+#checkout-view #payment-add-first-card:hover {
+  color: #c45500;
+  text-decoration: underline;
 }
 
 #checkout-view #payment-method-options {

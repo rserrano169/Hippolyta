@@ -24,6 +24,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #payment-select-card-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
     "click #payment-select-card-button-dropped": "slideUpPaymentOptions",
+    "click #payment-add-first-card": "openCardForm",
     "click #payment-add-card": "openCardForm",
     "click .top-bar-x": "closeCardForm",
     "submit #add-card-form": "submitCard",
