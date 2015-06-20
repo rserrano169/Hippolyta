@@ -163,7 +163,7 @@
 
 #checkout-view #payment-method-form-header-title-cell {
   display: table-cell;
-  width: 50%;
+  width: 70%;
   vertical-align: bottom;
 }
 
@@ -171,36 +171,39 @@
   display: block;
   font-size: 18px;
   margin: 20px 0px 0px 20px;
-  padding: 0px 20px 15px 0px;
+  padding: 0px 0px 15px 0px;
   border-bottom: 1px solid #dddddd;
 }
 
 #checkout-view #payment-method-form-header-name-cell {
   display: table-cell;
-  width: 50%;
+  width: 30%;
   vertical-align: bottom;
+  border-bottom: 1px solid #dddddd;
 }
 
 #checkout-view #payment-method-header-name {
   display: block;
+  width: 170px;
   font-size: 14px;
   color: #555555;
   padding-bottom: 15px;
-  border-bottom: 1px solid #dddddd;
 }
 
 #checkout-view #payment-method-form-header-expire-cell {
   display: table-cell;
   vertical-align: bottom;
-  min-width: 100px
+  min-width: 90px;
+  border-bottom: 1px solid #dddddd;
 }
 
 #checkout-view #payment-method-header-expire {
   display: block;
+  width: 70px;
   font-size: 14px;
   color: #555555;
   padding-bottom: 15px;
-  border-bottom: 1px solid #dddddd;
+  margin: 0px 20px 0px 0px;
 }
 
 #checkout-view .card-table {
@@ -214,7 +217,7 @@
   display: table-cell;
   vertical-align: middle;
   min-width: 282px;
-  width: 50%;
+  width: 70%;
 }
 
 #checkout-view .card-table .card-radio {
@@ -238,21 +241,24 @@
 #checkout-view .card-table .second-card-cell {
   display: table-cell;
   vertical-align: middle;
-  width: 50%;
+  width: 30%;
 }
 
 #checkout-view .card-table .card-name {
   display: block;
-  width: 190px;
+  width: 170px;
 }
 
 #checkout-view .card-table .third-card-cell {
   display: table-cell;
   vertical-align: middle;
-  min-width: 100px;
+  min-width: 90px;
 }
 
 #checkout-view .card-table .card-exp {
+  display: block;
+  width: 70px;
+  margin: 0px 20px 0px 0px;
 }
 
 #checkout-view #payment-method-form-button-table {

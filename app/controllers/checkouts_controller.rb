@@ -33,7 +33,7 @@ class CheckoutsController < ApplicationController
       @card = @current_stripe_customer.sources.all(object: "card").data.last
       current_user.stripe_id = @current_stripe_customer.id
     end
-    
+
     if params[:set_as_default] == "true"
       current_user.stripe_default_card_id = @card.id
     end
@@ -54,7 +54,7 @@ class CheckoutsController < ApplicationController
 
   def delete_if_duplicate(token)
     @customer_cards_info, @card = {}, nil
-    current_stripe_customer.sources.all(object: "card").each do |card|
+    current_stripe_customer.sources.all(object: "card").data.each do |card|
       @customer_cards_info[card.last4] = [
         card,
         card.brand,
