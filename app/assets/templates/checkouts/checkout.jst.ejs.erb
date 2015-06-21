@@ -159,40 +159,57 @@
             &times
           </span>
         </div>
-        <form id="add-card-form" action="checkout/add_card" method="post">
-          <span class="payment-errors"></span>
+        <div id="add-card-form-container">
+          <form id="add-card-form" action="checkout/add_card" method="post">
+            <span class="payment-errors"></span>
 
-          <div class="form-row">
-            <span>Card number</span>
-            <input id="card-number"
-                   type="text"
-                   size="20"
-                   data-stripe="number"
-                   autofocus="autofocus"/>
+            <div class="form-row">
+              <div class="first-form-cell">
+                <span>Card number</span>
+              </div>
+              <div class="second-form-cell">
+                <input id="card-number"
+                       type="text"
+                       size="20"
+                       data-stripe="number"
+                       autofocus="autofocus"/>
 
-            <span>CVC</span>
-            <input type="text" size="4" data-stripe="cvc"/>
-          </div>
+                <span>CVC</span>
+                <input type="text" size="4" data-stripe="cvc"/>
+              </div>
+            </div>
 
-          <div class="form-row">
-            <span>Name on card</span>
-            <input type="text" size="30" data-stripe="name"/>
-          </div>
+            <div class="form-row">
+              <div class="first-form-cell">
+                <span>Name on card</span>
+              </div>
+              <div class="second-form-cell">
+                <input type="text" size="30" data-stripe="name"/>
+              </div>
+            </div>
 
-          <div class="form-row">
-            <span>Expiration date (MM/YYYY)</span>
-            <input type="text" size="2" data-stripe="exp-month"/>
-            <span> / </span>
-            <input type="text" size="4" data-stripe="exp-year"/>
-          </div>
+            <div class="form-row">
+              <div class="first-form-cell">
+                <span>Expiration date (MM/YYYY)</span>
+              </div>
+              <div class="second-form-cell">
+                <input type="text" size="2" data-stripe="exp-month"/>
+                <span> / </span>
+                <input type="text" size="4" data-stripe="exp-year"/>
+              </div>
+            </div>
 
-          <div class="form-row">
-            <input type="checkbox" name="set_as_default" value="true">
-            <span>Use as my default payment</span>
-          </div>
+            <div class="form-row">
+              <span class="first-form-cell"></span>
+              <div class="second-form-cell">
+                <input type="checkbox" name="set_as_default" value="true">
+                <span>Use as my default payment</span>
+              </div>
+            </div>
 
-          <button>Add your card</button>
-        </form>
+            <button>Add your card</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

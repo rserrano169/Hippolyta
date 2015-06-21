@@ -114,6 +114,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCardsError: function () {
+    $("#payment-method-current-selection").html(
+      '<span id="error-loading-current-payment-options">' +
+      'Unable to load card data. Reload to try again.' +
+      '</span>'
+    );
+
     $("#payment-method-options").html(
       '<span id="error-loading-payment-options">' +
       'We were unable to load your card data. Please reload the page to try again.' +

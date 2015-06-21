@@ -70,6 +70,7 @@
 
 #checkout-view .checkout-steps > .step-title-span {
   display: table-cell;
+  min-width: 175px;
   vertical-align: middle;
   word-spacing: 4px;
 }
@@ -118,7 +119,9 @@
 
 #checkout-view .top-bar-title {
   display: inline-block;
+  font-weight: bold;
   vertical-align: middle;
+  padding: 10px 20px;
 }
 
 #checkout-view .top-bar-x {
@@ -132,6 +135,10 @@
     /* --- PAYMENT METHODS --- */
 
 #checkout-view #loading-payment-current-selection {
+  color: black;
+}
+
+#checkout-view #error-loading-current-payment-options {
   color: black;
 }
 
@@ -357,6 +364,38 @@
   background: #ffffff;
   border: 1px solid #3f3f3f;
   border-radius: 5px;
+}
+
+#checkout-view #add-card-form-container {
+  padding: 20px 30px;
+}
+
+#checkout-view #add-card-form {
+  display: table;
+  width: 100%;
+}
+
+#checkout-view #add-card-form > .form-row {
+  display: table-row;
+}
+
+#checkout-view #add-card-form > .form-row > .first-form-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  width: 210px;
+  height: 40px;
+  font-weight: bold;
+}
+
+#checkout-view #add-card-form > .form-row > .first-form-cell > span {
+  padding-right: 15px;
+}
+
+#checkout-view #add-card-form > .form-row > .second-form-cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 40px;
 }
 
     /* --- CART ITEMS --- */
