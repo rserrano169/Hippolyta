@@ -1,0 +1,40 @@
+<main>
+  <% if (products.length < 1) { %>
+    You're not selling any products yet. Would you like to <a href="#products/new">sell something?</a>
+  <% }; %>
+  <ul>
+    <% products.each( function (product) { %>
+      <li>
+        <ul>
+          <li>
+            <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
+          </li>
+          <li>
+            Name: <%= product.escape("name") %>
+          </li>
+          <li>
+            Sale price: $<%= product.escape("sale_price") %>
+          </li>
+          <li>
+            <% if (product.escape("original_price")) { %>
+              Original Price: $<%= product.escape("original_price") %>
+            <% } %>
+          </li>
+          <li>
+            Quantity: <%= product.escape("quantity") %>
+          </li>
+          <li>
+            <% if (product.escape("description")) { %>
+              Description: <%= product.escape("description") %>
+            <% } %>
+          </li>
+          <button>Edit Product</button>
+        </ul>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div id="name">
+    <a href="#products/new">Add a product</a>
+  </div>
+</main>

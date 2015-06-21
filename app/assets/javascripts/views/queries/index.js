@@ -1,4 +1,4 @@
-Hippolyta.Views.SearchResults = Backbone.View.extend ({
+Hippolyta.Views.SearchResults = Backbone.View.extend({
 
   template: JST["queries/index"],
 

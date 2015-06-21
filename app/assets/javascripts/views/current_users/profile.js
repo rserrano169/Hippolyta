@@ -1,6 +1,6 @@
-Hippolyta.Views.CurrentUserShow = Backbone.View.extend({
+Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
 
-  template: JST["current_users/show"],
+  template: JST["current_users/profile"],
 
   events: {
     "click #user-image": "editPicture",

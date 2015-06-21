@@ -4,6 +4,18 @@ class Api::CurrentUsersController < ApplicationController
     render :show
   end
 
+  def products
+    @products = current_user.products
+
+    render :products
+  end
+
+  def cart
+    @cart = current_cart
+
+    render :cart
+  end
+
   def cards
     if current_stripe_customer
       default_card_id = current_user.stripe_default_card_id
@@ -16,11 +28,5 @@ class Api::CurrentUsersController < ApplicationController
     end
 
     render :cards
-  end
-
-  def cart
-    @cart = current_cart
-
-    render :cart
   end
 end

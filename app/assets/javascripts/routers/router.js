@@ -7,11 +7,11 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   routes: {
     "current_user/profile": "currentUserProfile",
     "users/:user_id/edit": "userEdit",
-    "users/:seller_id/products": "productsIndex",
+    "current_user/products": "currentUserProducts",
     "products/new": "productsNew",
     "search_results": "searchResults",
     "sellers/:seller_id/products/:id": "productShow",
-    "cart": "cartShow",
+    "cart": "currentCartShow",
     "must_sign_in": "checkoutSignIn",
     "checkout": "checkout",
     "checkout_placed": "checkoutPlaced",
@@ -20,18 +20,17 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   currentUserProfile: function () {
     var model = new Hippolyta.Models.CurrentUser();
     model.fetch();
-    var showView = new Hippolyta.Views.CurrentUserShow({ model: model });
-    this._swapView(showView);
+    var profileView = new Hippolyta.Views.CurrentUserProfile({ model: model });
+    this._swapView(profileView);
   },
 
-  productsIndex: function (seller_id) {
-    Hippolyta.Collections.users.fetch();
-    var seller = Hippolyta.Collections.users.getOrFetch(seller_id),
-        indexView = new Hippolyta.Views.ProductsIndex({
-          user: seller,
-          collection: seller.products(),
-        });
-    this._swapView(indexView);
+  currentUserProducts: function () {
+    var collection = new Hippolyta.Collections.CurrentUserProducts();
+    collection.fetch();
+    var productsView = new Hippolyta.Views.CurrentUserProducts({
+      collection: collection,
+    });
+    this._swapView(productsView);
   },
 
   productsNew: function () {
@@ -72,7 +71,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(productShowView);
   },
 
-  cartShow: function () {
+  currentCartShow: function () {
     var cart = new Hippolyta.Models.CurrentUserCart();
     cart.fetch();
     var cartProducts = cart.cartProducts(),

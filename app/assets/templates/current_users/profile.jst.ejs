@@ -11,20 +11,12 @@
   <% } else { %>
       <img id="user-image"
            src="<%= currentUser.escape("small_picture_url") %>"
-           alt="<%= currentUser.escape("name") %>'s picture/logo"
-           style="cursor: pointer;"/>
+           alt="<%= currentUser.escape("name") %>'s picture/logo"/>
 
-      <strong style="padding-left: 20px; font-size: 24px; padding-right: 20px;">
-        <%= currentUser.escape("name") %>'s Hippolyta
-      </strong>
+      <%= currentUser.escape("name") %>'s Hippolyta
 
       Customer since <%= new Date(currentUser.escape("created_at")) %>
-      <br>
-      <br>
-      <br>
 
-      <p>
-        <a href="#users/<%= currentUser.id %>/products">My Products</a>
-      </p>
+      <a href="#current_user/products">My Products</a>
   <% } %>
 </section>
