@@ -113,15 +113,17 @@
 #checkout-view .top-bar {
   display: block;
   background: linear-gradient(to bottom, #fafafa, #fafafa 20%, #ebebeb);
+  border-bottom: 1px solid #c4c4c4;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 #checkout-view .top-bar-title {
   display: inline-block;
+  font-size: 18px;
   font-weight: bold;
   vertical-align: middle;
-  padding: 10px 20px;
+  padding: 10px 0px 9px 20px;
 }
 
 #checkout-view .top-bar-x {
@@ -359,7 +361,7 @@
 
 #checkout-view #add-card-modal {
   position: absolute;
-  width: 700px;
+  width: 540px;
   height: 300px;
   background: #ffffff;
   border: 1px solid #3f3f3f;
@@ -396,6 +398,19 @@
   display: table-cell;
   vertical-align: middle;
   height: 40px;
+}
+
+#checkout-view #add-card-form > .form-row > .second-form-cell > span {
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
+#checkout-view #add-card-form > #add-card-form-button-container > button {
+  margin: 10px 0px;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
 }
 
     /* --- CART ITEMS --- */

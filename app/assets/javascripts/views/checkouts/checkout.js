@@ -179,7 +179,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   adjustCardFormPosition: function () {
-    this.adjustCardFormModalSize();
+    this.adjustCardFormOverlaySize();
 
     if ($(window).height() > $("#add-card-modal").height() + 2) {
         this.adjustCardFormIndentTop();
@@ -199,6 +199,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         topScroll = $(window).scrollTop(),
         topIndent = ($(window).height() - modalHeight) / 2,
         totalTop = topIndent + topScroll + "px";
+        console.log(topScroll);
     $("#add-card-modal").css({top: totalTop});
 
   },
@@ -211,7 +212,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#add-card-modal").css({left: totalLeft});
   },
 
-  adjustCardFormModalSize: function () {
+  adjustCardFormOverlaySize: function () {
     var htmlHeight = $("html").height(),
         htmlWidth = $("html").width(),
         totalHeight = "",
