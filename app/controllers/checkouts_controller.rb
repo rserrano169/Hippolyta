@@ -61,7 +61,7 @@ class CheckoutsController < ApplicationController
         card.name
       ]
     end
-    
+
     @this_card = current_stripe_customer.sources.create(source: token)
     if (
       @customer_cards_info[@this_card.last4] &&

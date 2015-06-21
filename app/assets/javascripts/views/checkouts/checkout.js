@@ -6,6 +6,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   initialize: function (options) {
     this.cardsAlreadyRendered = false;
+    this.noCardsAdded = false;
     this.arePaymentOptionsSlidDown = false;
     this.isCardFormOpen = false;
     this.isCartSlidDown = false;
@@ -34,7 +35,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    console.log("rendered");
     var csrfToken = $("meta[name='csrf-token']").attr('content');
         content = this.template1({
           cart: this.cart,
@@ -76,9 +76,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         content = this.template2({
           cards: this.cards,
         });
-
     $("#payment-method-options").html(content)
-
     $("#payment-method-form").prepend(
       '<input type="hidden" name="authenticity_token" value="' +
       csrfToken +
@@ -89,19 +87,30 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCurrentCard: function () {
-    var card = this.cards.currentCard;
+    if (this.cards.currentCard !== undefined) {
+        var card = this.cards.currentCard;
 
-    $("#payment-method-current-selection").html(
-      '<span id="current-card-brand">' +
-      card.brand +
-      '</span>' +
-      '<span id="current-card-last4">' +
-      ' ending in ' +
-      '<span id="current-card-number">' +
-      card.last4 +
-      '</span>' +
-      '</span>'
-    );
+        $("#payment-method-current-selection").html(
+          '<span id="current-card-brand">' +
+          card.brand +
+          '</span>' +
+          '<span id="current-card-last4">' +
+          ' ending in ' +
+          '<span id="current-card-number">' +
+          card.last4 +
+          '</span>' +
+          '</span>'
+        );
+    } else {
+        $("#payment-method-current-selection").html(
+          '<span id="loading-payment-current-selection">' +
+          "You haven't added any credit or debit cards yet." +
+          '</span>'
+        );
+        $("#payment-select-card-button").html("Add a card")
+
+        this.noCardsAdded = true;
+    };
   },
 
   renderCardsError: function () {
@@ -129,13 +138,19 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   slideUpPaymentOptions: function () {
+    if (this.noCardsAdded === true) {
+        $("#payment-select-card-button-dropped")
+          .html("Add a card")
+          .attr("id", "payment-select-card-button");
+    } else {
+        $("#payment-select-card-button-dropped")
+          .html("Change Card")
+          .attr("id", "payment-select-card-button");
+    };
     $("#payment-method-title-dropped")
       .attr("id", "payment-method-title")
       .html("Payment Method");
     $("#payment-method-dropped").attr("id", "payment-method");
-    $("#payment-select-card-button-dropped")
-      .html("Change Card")
-      .attr("id", "payment-select-card-button");
     $("#payment-method-options").slideUp("fast");
     this.arePaymentOptionsSlidDown = false;
   },
