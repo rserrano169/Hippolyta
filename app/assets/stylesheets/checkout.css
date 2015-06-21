@@ -78,6 +78,16 @@
   cursor: pointer;
 }
 
+#checkout-view .checkout-steps > .step-current-selection-span {
+  display: table-cell;
+  min-width: 270px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+
 #checkout-view .checkout-steps > .step-button-span {
   display: table-cell;
   width: 150px;
@@ -120,6 +130,23 @@
 }
 
     /* --- PAYMENT METHODS --- */
+
+#checkout-view #loading-payment-current-selection {
+  color: black;
+}
+
+#checkout-view #payment-method-current-selection #current-card-brand {
+  font-weight: bold;
+  color: black;
+}
+
+#checkout-view #payment-method-current-selection #current-card-last4 {
+  color: #555555;
+}
+
+#checkout-view #payment-method-current-selection .card-number {
+  font-weight: bold;
+}
 
 #checkout-view #no-card-selection {
   display: block;

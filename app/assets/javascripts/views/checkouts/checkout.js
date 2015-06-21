@@ -16,7 +16,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.listenTo(this.cards, "error", this.renderCardsError);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
-    // this.user = options.user;
   },
 
   events: {
@@ -35,12 +34,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
+    console.log("rendered");
     var csrfToken = $("meta[name='csrf-token']").attr('content');
         content = this.template1({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
-          // user: this.user,
         }),
 
     this.$el.html(content);
@@ -51,20 +50,28 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       '">'
     );
 
-    if (this.cardsAlreadyRendered === false) {
-        $("#payment-method-options").html(
-          '<span id="loading-payment-options">' +
-          'Loading...' +
-          '</span>'
-        );
-    } else {
-        this.renderCards();
+    $("#payment-method-options").html(
+      '<span id="loading-payment-options">' +
+      'Loading...' +
+      '</span>'
+    );
+
+    $("#payment-method-current-selection").html(
+      '<span id="loading-payment-current-selection">' +
+      'Loading...' +
+      '</span>'
+    );
+
+    if (this.cardsAlreadyRendered === true) {
+      this.renderCards();
     };
 
     return this;
   },
 
   renderCards: function () {
+    this.renderCurrentCard();
+
     var csrfToken = $("meta[name='csrf-token']").attr('content'),
         content = this.template2({
           cards: this.cards,
@@ -79,6 +86,22 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
 
     this.cardsAlreadyRendered = true;
+  },
+
+  renderCurrentCard: function () {
+    var card = this.cards.currentCard;
+
+    $("#payment-method-current-selection").html(
+      '<span id="current-card-brand">' +
+      card.brand +
+      '</span>' +
+      '<span id="current-card-last4">' +
+      ' ending in ' +
+      '<span id="current-card-number">' +
+      card.last4 +
+      '</span>' +
+      '</span>'
+    );
   },
 
   renderCardsError: function () {
@@ -99,6 +122,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       .html("Select Method");
     $("#payment-method").attr("id", "payment-method-dropped");
     $("#payment-select-card-button")
+      .html("Cancel")
       .attr("id", "payment-select-card-button-dropped");
     $("#payment-method-options").slideDown("fast");
     this.arePaymentOptionsSlidDown = true;
@@ -110,6 +134,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       .html("Payment Method");
     $("#payment-method-dropped").attr("id", "payment-method");
     $("#payment-select-card-button-dropped")
+      .html("Change Card")
       .attr("id", "payment-select-card-button");
     $("#payment-method-options").slideUp("fast");
     this.arePaymentOptionsSlidDown = false;
