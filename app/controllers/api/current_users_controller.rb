@@ -18,9 +18,9 @@ class Api::CurrentUsersController < ApplicationController
     render :cards
   end
 
-  def current_card
-    # if current_stripe_customer
-    #   @card =
-    # end
+  def cart
+    @cart = current_cart
+
+    render :cart
   end
 end

@@ -1,5 +1,5 @@
-Hippolyta.Models.Cart = Backbone.Model.extend({
-  urlRoot: "/api/carts",
+Hippolyta.Models.CurrentUserCart = Backbone.Model.extend({
+  urlRoot: "/api/current_user/cart",
 
   cartProducts: function () {
     if (!this._cartProducts) {

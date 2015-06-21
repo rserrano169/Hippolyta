@@ -11,9 +11,9 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "products/new": "productsNew",
     "search_results": "searchResults",
     "sellers/:seller_id/products/:id": "productShow",
-    "carts/:cart_id": "cartShow",
+    "cart": "cartShow",
     "must_sign_in": "checkoutSignIn",
-    "checkout/:cart_id": "checkout",
+    "checkout": "checkout",
     "checkout_placed": "checkoutPlaced",
   },
 
@@ -72,8 +72,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(productShowView);
   },
 
-  cartShow: function (cart_id) {
-    var cart = new Hippolyta.Models.Cart({ id: cart_id });
+  cartShow: function () {
+    var cart = new Hippolyta.Models.CurrentUserCart();
     cart.fetch();
     var cartProducts = cart.cartProducts(),
         products = cart.products(),
@@ -90,8 +90,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(signInView);
   },
 
-  checkout: function (cart_id) {
-    var cart = new Hippolyta.Models.Cart({ id: cart_id }),
+  checkout: function () {
+    var cart = new Hippolyta.Models.CurrentUserCart(),
         cards = new Hippolyta.Collections.CurrentUserCards();
     cart.fetch();
     cards.fetch();

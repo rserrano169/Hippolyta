@@ -35,7 +35,7 @@ class Api::CartProductsController < ApplicationController
       end
     end
 
-    redirect_to "#carts/#{current_cart.id}"
+    redirect_to "#cart"
   end
 
   def delete_from_cart
@@ -45,7 +45,7 @@ class Api::CartProductsController < ApplicationController
     )
     @cart_product.destroy
 
-    redirect_to "#carts/#{current_cart.id}"
+    redirect_to "#cart"
   end
 
   def update_quantity
@@ -65,7 +65,7 @@ class Api::CartProductsController < ApplicationController
     if params[:checkout?] && params[:checkout?] == "true"
       redirect_to "/checkout#checkout/#{current_cart.id}"
     else
-      redirect_to "#carts/#{current_cart.id}"
+      redirect_to "#cart"
     end
   end
 

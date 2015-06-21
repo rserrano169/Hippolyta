@@ -132,7 +132,7 @@
           <li>
             <ul id="cart-drop-down-ul">
               <li>
-                <a id="cart" href="#carts/<%= current_cart.id %>">
+                <a id="cart" href="#cart">
                   <div id="quantity"><%= current_cart.quantity %></div>
                   <img src="<%= image_url("cart.png") %>" alt="cart" />
                   <span>Cart <div id="down-arrow"></div></span>
@@ -176,7 +176,7 @@
                   <% end %>
                   <li>
                     <button class="drop-down-button">
-                      <a href="/checkout#checkout/<%= current_cart.id %>">
+                      <a href="/checkout#checkout">
                         Proceed to checkout
                       </a>
                     </button>

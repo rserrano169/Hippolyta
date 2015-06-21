@@ -1,6 +1,6 @@
 Hippolyta.Views.CartItems = Backbone.View.extend({
 
-  template: JST["carts/show"],
+  template: JST["current_users/cart"],
 
   initialize: function (options) {
     this.cart = options.cart;
