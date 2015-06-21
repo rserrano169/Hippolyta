@@ -1,6 +1,10 @@
 class Api::CartProductsController < ApplicationController
   def show
-    @cart_product = CartProduct.find(params[:id])
+    if current_cart.cart_products.exists?(id: params[:id])
+      @cart_product = current_cart.cart_products.find(params[:id])
+    else
+      @card_product = nil
+    end
 
     render :show
   end
