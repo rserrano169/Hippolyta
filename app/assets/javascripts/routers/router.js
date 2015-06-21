@@ -103,8 +103,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           cart: cart,
           cartProducts: cartProducts,
           products: products,
-          // user: user,
           cards: cards,
+          // user: user,
         });
     this._swapView(checkoutView);
   },

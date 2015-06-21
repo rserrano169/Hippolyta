@@ -22,7 +22,6 @@ class CheckoutsController < ApplicationController
 
   def add_card
     token = params[:stripeToken]
-
     if current_stripe_customer
       @card = delete_if_duplicate(token)
     else
@@ -33,7 +32,6 @@ class CheckoutsController < ApplicationController
       @card = @current_stripe_customer.sources.all(object: "card").data.last
       current_user.stripe_id = @current_stripe_customer.id
     end
-
     if params[:set_as_default] == "true"
       current_user.stripe_default_card_id = @card.id
     end
@@ -54,7 +52,7 @@ class CheckoutsController < ApplicationController
 
   def delete_if_duplicate(token)
     @customer_cards_info, @card = {}, nil
-    current_stripe_customer.sources.all(object: "card").data.each do |card|
+    current_stripe_customer.sources.all(object: "card").each do |card|
       @customer_cards_info[card.last4] = [
         card,
         card.brand,
@@ -63,7 +61,7 @@ class CheckoutsController < ApplicationController
         card.name
       ]
     end
-
+    
     @this_card = current_stripe_customer.sources.create(source: token)
     if (
       @customer_cards_info[@this_card.last4] &&
