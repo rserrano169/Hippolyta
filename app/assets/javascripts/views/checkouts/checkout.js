@@ -20,10 +20,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   events: {
+    "click #shipping-address-title": "slideDownShippingAdresses",
+    "click #shipping-address-button": "slideDownShippingAdresses",
     "click #payment-method-title": "slideDownPaymentOptions",
-    "click #payment-select-card-button": "slideDownPaymentOptions",
+    "click #payment-method-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
-    "click #payment-select-card-button-dropped": "slideUpPaymentOptions",
+    "click #payment-method-button-dropped": "slideUpPaymentOptions",
     "click #payment-add-first-card": "openCardForm",
     "click #payment-add-card": "openCardForm",
     "click .top-bar-x": "closeCardForm",
@@ -107,7 +109,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           "You haven't added any credit or debit cards yet." +
           '</span>'
         );
-        $("#payment-select-card-button").html("Add a card")
+        $("#payment-method-button").html("Add a card")
 
         this.noCardsAdded = true;
     };
@@ -127,6 +129,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
   },
 
+  slideDownShippingAdresses: function () {
+    console.log("shipping");
+  },
+
   slideDownPaymentOptions: function () {
     if (this.isCartSlidDown) {
       this.slideUpCart();
@@ -136,22 +142,22 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       .attr("id", "payment-method-title-dropped")
       .html("Select Method");
     $("#payment-method").attr("id", "payment-method-dropped");
-    $("#payment-select-card-button")
+    $("#payment-method-button")
       .html("Cancel")
-      .attr("id", "payment-select-card-button-dropped");
+      .attr("id", "payment-method-button-dropped");
     $("#payment-method-options").slideDown("fast");
     this.arePaymentOptionsSlidDown = true;
   },
 
   slideUpPaymentOptions: function () {
     if (this.noCardsAdded === true) {
-        $("#payment-select-card-button-dropped")
+        $("#payment-method-button-dropped")
           .html("Add a card")
-          .attr("id", "payment-select-card-button");
+          .attr("id", "payment-method-button");
     } else {
-        $("#payment-select-card-button-dropped")
+        $("#payment-method-button-dropped")
           .html("Change Card")
-          .attr("id", "payment-select-card-button");
+          .attr("id", "payment-method-button");
     };
     $("#payment-method-title-dropped")
       .attr("id", "payment-method-title")
@@ -199,9 +205,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         topScroll = $(window).scrollTop(),
         topIndent = ($(window).height() - modalHeight) / 2,
         totalTop = topIndent + topScroll + "px";
-        console.log(topScroll);
     $("#add-card-modal").css({top: totalTop});
-
   },
 
   adjustCardFormIndentLeft: function () {
