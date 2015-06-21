@@ -65,12 +65,15 @@ class CheckoutsController < ApplicationController
     end
 
     @this_card = current_stripe_customer.sources.create(source: token)
-    if @customer_cards_info[@this_card.last4][1,4] == [
-      @this_card.brand,
-      @this_card.exp_month,
-      @this_card.exp_year,
-      @this_card.name
-    ]
+    if (
+      @customer_cards_info[@this_card.last4] &&
+      @customer_cards_info[@this_card.last4][1,4] == [
+        @this_card.brand,
+        @this_card.exp_month,
+        @this_card.exp_year,
+        @this_card.name
+      ]
+    )
       @card = @customer_cards_info[@this_card.last4][0]
       @this_card.delete()
     else
