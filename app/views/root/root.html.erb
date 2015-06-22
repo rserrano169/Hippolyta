@@ -40,7 +40,7 @@
     <% if signed_in? %>
       <div id="middle">
         <a id="hippolyta" href="#current_user/profile">
-          <%= current_user.name %>'s Hippolyta.com
+          <%= current_user.name %>'s Hippolyta.us
         </a>
 
         <% if last_query %>
@@ -83,7 +83,7 @@
     <% else %>
       <div id="middle">
           <a id="hippolyta" href="<%= new_session_url %>">
-            Your Hippolyta.com
+            Your Hippolyta.us
           </a>
 
           <% if last_query %>

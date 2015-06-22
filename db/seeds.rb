@@ -8,7 +8,7 @@
 
 u1 = User.create({
   name: "Hippolyta",
-  email: "hippo@hippolyta.com",
+  email: "hippo@hippolyta.us",
   password: "hippolyta",
 })
 
@@ -17,7 +17,7 @@ u1.save!
 
 u2 = User.create({
   name: "Angela",
-  email: "angela@hippolyta.com",
+  email: "angela@hippolyta.us",
   password: "hippolyta",
 })
 
@@ -25,7 +25,7 @@ u2.save!
 
 u3 = User.create({
   name: "Raul",
-  email: "raul@hippolyta.com",
+  email: "raul@hippolyta.us",
   password: "hippolyta",
 })
 
@@ -33,7 +33,7 @@ u3.save!
 
 u4 = User.create({
   name: "Mark",
-  email: "mark@hippolyta.com",
+  email: "mark@hippolyta.us",
   password: "hippolyta",
 })
 
@@ -41,7 +41,7 @@ u4.save!
 
 u5 = User.create({
   name: "Aracely",
-  email: "aracely@hippolyta.com",
+  email: "aracely@hippolyta.us",
   password: "hippolyta",
 })
 
