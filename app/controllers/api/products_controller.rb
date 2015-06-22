@@ -26,7 +26,6 @@ class Api::ProductsController < ApplicationController
       :original_price,
       :quantity,
       :description,
-      :tags,
       :picture
     )
   end
