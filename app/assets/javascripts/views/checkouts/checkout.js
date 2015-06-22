@@ -2,9 +2,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   template1: JST["checkouts/checkout"],
 
-  template2: JST["checkouts/cards"],
+  template2: JST["checkouts/payment_methods"],
+
+  template3: JST["checkouts/address_form"],
 
   initialize: function (options) {
+    this.isAddressFormAppended = false;
     this.cardsAlreadyRendered = false;
     this.noCardsAdded = false;
     this.arePaymentOptionsSlidDown = false;
@@ -22,13 +25,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   events: {
     "click #shipping-address-title": "slideDownShippingAdresses",
     "click #shipping-address-button": "slideDownShippingAdresses",
+    "click #shipping-address-button": "openAddressForm",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
     "click #payment-method-button-dropped": "slideUpPaymentOptions",
     "click #payment-add-first-card": "openCardForm",
     "click #payment-add-card": "openCardForm",
-    "click .top-bar-x": "closeCardForm",
+    "click .top-bar-x": "closeForms",
     "submit #add-card-form": "submitCard",
     "click #review-cart-title": "slideDownCart",
     "click #review-cart-button": "slideDownCart",
@@ -133,6 +137,24 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     console.log("shipping");
   },
 
+  openAddressForm: function () {
+    if (this.isAddressFormAppended === false) {
+      $("#checkout-view").append(this.template3());
+      this.isAddressFormAppended = true;
+    };
+
+    this.slideUpAll()
+
+    var $form = $("#add-address-modal"),
+    $formOverlay = $("#add-address-form-overlay");
+    this.adjustFormPosition($form, $formOverlay)
+    $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
+    $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
+    $(window).on("keydown", this.handleKeyEvent.bind(this));
+
+    $("#add-address-form-overlay").show();
+  },
+
   slideDownPaymentOptions: function () {
     if (this.isCartSlidDown) {
       this.slideUpCart();
@@ -168,55 +190,51 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   openCardForm: function () {
-    if (this.isCartSlidDown) {
-      this.slideUpCart();
-    };
+    this.slideUpAll()
 
-    if (this.arePaymentOptionsSlidDown) {
-      this.slideUpPaymentOptions();
-    };
-
-    this.adjustCardFormPosition();
-    $(window).on("scroll", this.adjustCardFormPosition.bind(this));
-    $(window).on("resize", this.adjustCardFormPosition.bind(this));
+    var $form = $("#add-card-modal"),
+        $formOverlay = $("#add-card-form-overlay");
+    this.adjustFormPosition($form, $formOverlay)
+    $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
+    $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
     $(window).on("keydown", this.handleKeyEvent.bind(this));
 
     $("#add-card-form-overlay").show();
   },
 
-  adjustCardFormPosition: function () {
-    this.adjustCardFormOverlaySize();
+  adjustFormPosition: function ($form, $formOverlay) {
+    this.adjustFormOverlaySize($formOverlay);
 
-    if ($(window).height() > $("#add-card-modal").height() + 2) {
-        this.adjustCardFormIndentTop();
+    if ($(window).height() > $form.height() + 2) {
+        this.adjustFormIndentTop($form);
     } else {
-        $("#add-card-modal").css("top", 0);
+        $form.css("top", 0);
     };
 
-    if ($(window).width() > $("#add-card-modal").width() + 2) {
-        this.adjustCardFormIndentLeft();
+    if ($(window).width() > $form.width() + 2) {
+      this.adjustFormIndentLeft($form);
     } else {
-        $("#add-card-modal").css("left", 0);
+        $form.css("left", 0);
     };
   },
 
-  adjustCardFormIndentTop: function () {
-    var modalHeight = $("#add-card-modal").height() + 2,
+  adjustFormIndentTop: function ($form) {
+    var modalHeight = $form.height() + 2,
         topScroll = $(window).scrollTop(),
         topIndent = ($(window).height() - modalHeight) / 2,
         totalTop = topIndent + topScroll + "px";
-    $("#add-card-modal").css({top: totalTop});
+    $form.css({top: totalTop});
   },
 
-  adjustCardFormIndentLeft: function () {
-    var modalWidth = $("#add-card-modal").width() + 2,
+  adjustFormIndentLeft: function ($form) {
+    var modalWidth = $form.width() + 2,
         leftScroll = $(window).scrollLeft(),
         leftIndent = ($(window).width() - modalWidth) / 2,
         totalLeft = leftIndent + leftScroll + "px";
-    $("#add-card-modal").css({left: totalLeft});
+    $form.css({left: totalLeft});
   },
 
-  adjustCardFormOverlaySize: function () {
+  adjustFormOverlaySize: function ($formOverlay) {
     var htmlHeight = $("html").height(),
         htmlWidth = $("html").width(),
         totalHeight = "",
@@ -232,21 +250,22 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         totalWidth = htmlWidth + "px";
     };
 
-    $("#add-card-form-overlay").height(totalHeight);
-    $("#add-card-form-overlay").width(totalWidth);
+    $formOverlay.height(totalHeight);
+    $formOverlay.width(totalWidth);
   },
 
   handleKeyEvent: function (event) {
     if (event.keyCode === 27) {
       event.preventDefault();
-      this.closeCardForm();
+      this.closeForms();
     };
   },
 
-  closeCardForm: function () {
+  closeForms: function () {
     $(window).off("resize scroll");
     $(window).off("keydown");
     $("#add-card-form-overlay").hide();
+    $("#add-address-form-overlay").hide()
   },
 
   submitCard: function () {
@@ -297,5 +316,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#review-cart-button-dropped").attr("id", "review-cart-button");
     $("#checkout-products").slideUp("fast");
     this.isCartSlidDown = false;
+  },
+
+  slideUpAll: function () {
+    if (this.isCartSlidDown) {
+      this.slideUpCart();
+    };
+
+    if (this.arePaymentOptionsSlidDown) {
+      this.slideUpPaymentOptions();
+    };
   },
 });

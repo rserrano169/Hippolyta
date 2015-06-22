@@ -134,6 +134,83 @@
   cursor: pointer;
 }
 
+    /* --- SHIPPING ADDRESS --- */
+
+      /* --- ADD ADDRESS MODAL --- */
+
+#checkout-view #add-address-form-overlay {
+  display: none;
+  position: absolute;
+  min-width: 1020px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: url("modal-tint-75-percent.png");
+}
+
+#checkout-view #add-address-relative-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#checkout-view #add-address-modal {
+  position: absolute;
+  width: 540px;
+  height: 300px;
+  background: #ffffff;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+}
+
+#checkout-view #add-address-form-container {
+  padding: 20px 30px;
+}
+
+#checkout-view #add-address-form {
+  display: table;
+  width: 100%;
+}
+
+#checkout-view #add-address-form > .form-row {
+  display: table-row;
+}
+
+#checkout-view #add-address-form > .form-row > .first-form-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  width: 210px;
+  height: 40px;
+  font-weight: bold;
+}
+
+#checkout-view #add-address-form > .form-row > .first-form-cell > span {
+  padding-right: 15px;
+}
+
+#checkout-view #add-address-form > .form-row > .second-form-cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 40px;
+}
+
+#checkout-view #add-address-form > .form-row > .second-form-cell > span {
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
+#checkout-view #add-address-form > #add-address-form-button-container > button {
+  margin: 10px 0px;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
     /* --- PAYMENT METHODS --- */
 
 #checkout-view #loading-payment-current-selection {

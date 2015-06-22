@@ -1,0 +1,67 @@
+<div id="add-address-form-overlay">
+  <div id="add-address-relative-container">
+    <div id="add-address-modal">
+      <div class="top-bar group">
+        <span class="top-bar-title">
+          Add a debit or credit card
+        </span>
+        <span class="top-bar-x">
+          &times
+        </span>
+      </div>
+      <div id="add-address-form-container">
+        <form id="add-address-form" action="checkout/add_card" method="post">
+          <span class="payment-errors"></span>
+
+          <div class="form-row">
+            <div class="first-form-cell">
+              <span>Card number</span>
+            </div>
+            <div class="second-form-cell">
+              <input id="card-number"
+              type="text"
+              size="20"
+              data-stripe="number"
+              autofocus="autofocus"/>
+
+              <span>CVC</span>
+              <input type="text" size="4" data-stripe="cvc"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="first-form-cell">
+              <span>Name on card</span>
+            </div>
+            <div class="second-form-cell">
+              <input type="text" size="30" data-stripe="name"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="first-form-cell">
+              <span>Expiration date (MM/YYYY)</span>
+            </div>
+            <div class="second-form-cell">
+              <input type="text" size="2" data-stripe="exp-month"/>
+              <span> / </span>
+              <input type="text" size="4" data-stripe="exp-year"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="first-form-cell"></span>
+            <div class="second-form-cell">
+              <input type="checkbox" name="set_as_default" value="true">
+              Use as my default payment
+            </div>
+          </div>
+
+          <div id="add-address-form-button-container">
+            <button>Add your card</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
