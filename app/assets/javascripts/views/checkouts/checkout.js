@@ -146,7 +146,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.slideUpAll()
 
     var $form = $("#add-address-modal"),
-    $formOverlay = $("#add-address-form-overlay");
+        $formOverlay = $("#add-address-form-overlay");
     this.adjustFormPosition($form, $formOverlay)
     $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
     $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
