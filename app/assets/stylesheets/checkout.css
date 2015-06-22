@@ -140,8 +140,18 @@
   color: black;
 }
 
-#checkout-view #error-loading-current-payment-options {
+#checkout-view #loading-payment-options {
+  display: block;
+  margin-bottom: 30px;
+}
+
+#checkout-view #error-loading-current-payment-selection {
   color: black;
+}
+
+#checkout-view #error-loading-payment-options {
+  diplay: block;
+  margin-bottom: 30px;
 }
 
 #checkout-view #payment-method-current-selection #current-card-brand {
@@ -168,7 +178,7 @@
   cursor: pointer;
   width: 180px;
   color: #0066c0;
-  margin: 20px 0px 0px 40px;
+  margin: 20px 0px 30px 40px;
 }
 
 #checkout-view #payment-add-first-card:hover {
@@ -178,7 +188,6 @@
 
 #checkout-view #payment-method-options {
   display: none;
-  margin-bottom: 30px;
 }
 
 #checkout-view #payment-method-dropped {
@@ -189,6 +198,7 @@
   display: block;
   border: 1px solid #dddddd;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 #checkout-view #payment-method-form-header-table {

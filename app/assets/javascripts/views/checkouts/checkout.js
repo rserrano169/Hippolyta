@@ -52,14 +52,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       '">'
     );
 
-    $("#payment-method-options").html(
-      '<span id="loading-payment-options">' +
+    $("#payment-method-current-selection").html(
+      '<span id="loading-payment-current-selection">' +
       'Loading...' +
       '</span>'
     );
 
-    $("#payment-method-current-selection").html(
-      '<span id="loading-payment-current-selection">' +
+    $("#payment-method-options").html(
+      '<span id="loading-payment-options">' +
       'Loading...' +
       '</span>'
     );
@@ -117,7 +117,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   renderCardsError: function () {
     $("#payment-method-current-selection").html(
-      '<span id="error-loading-current-payment-options">' +
+      '<span id="error-loading-current-payment-selection">' +
       'Unable to load card data. Reload to try again.' +
       '</span>'
     );

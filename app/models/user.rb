@@ -45,6 +45,14 @@ class User < ActiveRecord::Base
   has_many :cart_products, through: :cart, source: :cart_products
 
   has_many(
+    :addresses,
+    class_name: "Address",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
+  has_many(
     :purchased_products,
     class_name: "PurchasedProduct",
     foreign_key: :buyer_id,
