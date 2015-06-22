@@ -1,42 +1,51 @@
 <main id="current-user-product-new">
-  <form id="product-new-form" action="index.html" method="post">
-    <!-- auth_token -->
+  <form id="product-new-form" action="" method="post">
     <ul>
-      <li>
-        <span>My Product's Name:</span>
+      <li id="product-new-form-errors" class="product-new-form-row">
+        <div id="product-new-form-error-message">
+          There was an error while saving your product.
+          Please check to make sure that your form information is complete,
+          and then try again.
+        </div>
+      </li>
+      <li class="product-new-form-row">
+        <div>My Product's Name:</div>
         <input type="text" name="name" value="">
       </li>
-      <li>
-        <span>My Product's Sale Price</span>
-        <input type="text" name="sale_price" value="">
-        <div id="name">
+      <li class="product-new-form-row">
+        <div>My Product's Sale Price</div>
+        <div>
           (amount that you intend to sell your product for in USD):
         </div>
+        <input type="text" name="sale_price" value="">
       </li>
-      <li>
-        <span>My Product's Original Price (optional)</span>
-        <input type="text" name="original_price" value="">
-        <div id="name">
-           (used to calculate how much your customers are saving by buying your product at Sale Price):
+      <li class="product-new-form-row">
+        <div>My Product's Original Price (optional)</div>
+        <div>
+          (used to calculate how much your customers are saving
+          by buying your product at Sale Price):
         </div>
+        <input type="text" name="original_price" value="">
       </li>
-      <li>
-        <span>Quantity of My Product:</span>
+      <li class="product-new-form-row">
+        <div>Quantity of My Product:</div>
         <input type="text" name="quantity" value="">
       </li>
-      <li>
-        <span>Description of My Product (optional):</span>
+      <li class="product-new-form-row">
+        <div>Description of My Product (optional):</div>
         <input type="text" name="description" value="">
       </li>
-      <li>
-        <span>Image for My Product:</span>
+      <li class="product-new-form-row">
+        <div>Image for My Product:</div>
         <input id="input-picture-file" type="file" name="picture">
       </li>
-      <li>
-        <img src="" id="picture-preview" style="max-width: 200px; max-height: 200px;"/>
+      <li class="product-new-form-row">
+        <img src="" id="picture-new-preview"/>
       </li>
     </ul>
 
-    <button>Add My Product to Hippolyta.com!</button>
+    <button id="product-new-form-button">
+      Add My Product to Hippolyta.com!
+    </button>
   </form>
 </main>

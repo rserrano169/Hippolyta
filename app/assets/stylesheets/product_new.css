@@ -1,0 +1,32 @@
+#current-user-product-new {
+  min-width: 920px;
+}
+
+#current-user-product-new #product-new-form {
+  padding: 40px 60px;
+}
+
+#current-user-product-new #product-new-form-errors {
+  display: none;
+}
+
+#current-user-product-new #product-new-form-error-message {
+  display: inline-block;
+  width: auto;
+  font-weight: bold;
+  font-size: 16px;
+  color: #b12704;
+  padding: 15px 25px;
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+#current-user-product-new .product-new-form-row {
+  padding-bottom: 20px;
+}
+
+#current-user-product-new #picture-new-preview {
+  max-width: 200px;
+  max-height: 200px;
+}

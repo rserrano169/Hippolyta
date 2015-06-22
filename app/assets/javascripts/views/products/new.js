@@ -15,19 +15,22 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
+    $("#product-new-form-button").prop("disabled", true);
 
     var attr = $("#product-new-form").serializeJSON(),
       that = this;
 
     this.model.save(attr,{
       success: function () {
+        $("#product-new-form-button").prop("disabled", false);
         Backbone.history.navigate(
           "current_user/products",
           { trigger: true }
         );
       },
       error: function () {
-        console.log("error");
+        $("#product-new-form-button").prop("disabled", false);
+        $("#product-new-form-errors").show();
       }
     });
   },
@@ -43,13 +46,14 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
     };
 
     if (file === undefined) {
-        $("#picture-preview").hide();
+        $("#picture-new-preview").hide();
     } else {
         fileReader.readAsDataURL(file);
     };
   },
 
   previewPic: function (src) {
-    $("#picture-preview").attr("src", src);
+    $("#picture-new-preview").attr("src", src);
+    $("#picture-new-preview").show();
   },
 });
