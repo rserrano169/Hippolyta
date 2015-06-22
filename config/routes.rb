@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get "current_user/products", to: "current_users#products"
     get "current_user/cards", to: "current_users#cards"
     resources :users, only: [:index, :show, :edit, :update] do
-      resources :products, only: [:show]
+      resources :products, only: [:new, :create, :show]
     end
     resources :queries, only: [:index]
     resources :cart_products, only: [:show, :index]

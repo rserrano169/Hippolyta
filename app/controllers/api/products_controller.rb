@@ -8,7 +8,7 @@ class Api::ProductsController < ApplicationController
     @product = current_user.products.new(product_params)
 
     if @product.save
-      render :new
+      redirect_to "/#current_user/products"
     end
   end
 

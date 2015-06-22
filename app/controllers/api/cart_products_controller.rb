@@ -14,7 +14,7 @@ class Api::CartProductsController < ApplicationController
 
     render :index
   end
-  
+
   def add_to_cart
     @cart_product = CartProduct.find_by(
       cart_id: current_cart.id,
@@ -67,7 +67,7 @@ class Api::CartProductsController < ApplicationController
     end
 
     if params[:checkout?] && params[:checkout?] == "true"
-      redirect_to "/checkout#checkout/#{current_cart.id}"
+      redirect_to "/checkout#checkout"
     else
       redirect_to "#cart"
     end

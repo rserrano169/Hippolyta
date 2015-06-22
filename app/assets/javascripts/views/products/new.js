@@ -2,10 +2,8 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
 
   template: JST["products/new"],
 
-  tagName: "form",
-
   events: {
-    "submit": "submit",
+    "submit #product-new-form": "submit",
     "change #input-picture-file": "choosePicture",
   },
 
@@ -18,16 +16,19 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
 
-    var attr = this.$el.serializeJSON(),
+    var attr = $("#product-new-form").serializeJSON(),
       that = this;
 
     this.model.save(attr,{
       success: function () {
         Backbone.history.navigate(
-          "users/" + that.model.get("seller_id") + "/products",
+          "current_user/products",
           { trigger: true }
         );
       },
+      error: function () {
+        console.log("error");
+      }
     });
   },
 
@@ -41,10 +42,14 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
       that.previewPic(fileReader.result);
     };
 
-    fileReader.readAsDataURL(file);
+    if (file === undefined) {
+        $("#picture-preview").hide();
+    } else {
+        fileReader.readAsDataURL(file);
+    };
   },
 
   previewPic: function (src) {
-    this.$("#picture-preview").attr("src", src);
+    $("#picture-preview").attr("src", src);
   },
 });
