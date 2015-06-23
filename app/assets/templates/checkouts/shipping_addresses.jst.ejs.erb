@@ -1,5 +1,58 @@
-<form id="shipping-addresses-form" action="index.html" method="post">
+<form id="shipping-address-form" action="index.html" method="post">
+  <div id="shipping-address-form-header-table">
+    <ul>
+      <li id="shipping-address-form-header-title-cell">
+        <span id="shipping-address-header-title">
+          Your addresses
+        </span>
+      </li>
+    </ul>
+  </div>
   <%% addresses.each( function (address) { %>
-    <%%= address.escape("street") %>
+    <ul>
+      <li class="address-table">
+        <ul>
+          <li class="address-cell">
+            <span class="address-radio">
+              <input type="radio" name="addressId" value="<%%= address.escape("id") %>">
+            </span>
+            <span class="address-name">
+              <%%= address.escape("name") %>,
+            </span>
+            <span class="address-street">
+              <%%= address.escape("street") %>,
+            </span>
+            <%% if (address.escape("apt")) { %>
+              <span class="address-apt">
+                <%%= address.escape("apt") %>,
+              </span>
+            <%% } %>
+            <span class="address-city">
+              <%%= address.escape("city") %>,
+            </span>
+            <span class="address-state">
+              <%%= address.escape("state") %>,
+            </span>
+            <span class="address-zip">
+              <%%= address.escape("zip") %>
+            </span>
+          </li>
+        </ul>
+      </li>
+    </ul>
   <%% }) %>
+  <div id="shipping-address-form-button-table">
+    <ul>
+      <li id="shipping-address-button-cell">
+        <button id="shipping-address-form-button">
+          Use this shipping address
+        </button>
+      </li>
+      <li id="payment-add-address-cell">
+        <div id="payment-add-address">
+          Add another address?
+        </div>
+      </li>
+    </ul>
+  </div>
 </form>
