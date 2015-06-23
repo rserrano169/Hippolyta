@@ -1,20 +1,20 @@
 <form id="shipping-address-form" action="index.html" method="post">
   <div id="shipping-address-form-header-table">
-    <ul>
-      <li id="shipping-address-form-header-title-cell">
-        <span id="shipping-address-header-title">
-          Your addresses
-        </span>
-      </li>
-    </ul>
+    <div id="shipping-address-form-header-title-cell">
+      <span id="shipping-address-header-title">
+        Your addresses
+      </span>
+    </div>
   </div>
   <%% addresses.each( function (address) { %>
     <ul>
       <li class="address-table">
         <ul>
-          <li class="address-cell">
+          <li class="address-info-cell">
             <span class="address-radio">
-              <input type="radio" name="addressId" value="<%%= address.escape("id") %>">
+              <input type="radio"
+                     name="addressId"
+                     value="<%%= address.escape("id") %>">
             </span>
             <span class="address-name">
               <%%= address.escape("name") %>,
@@ -48,8 +48,8 @@
           Use this shipping address
         </button>
       </li>
-      <li id="payment-add-address-cell">
-        <div id="payment-add-address">
+      <li id="add-another-address-cell">
+        <div id="add-another-address">
           Add another address?
         </div>
       </li>

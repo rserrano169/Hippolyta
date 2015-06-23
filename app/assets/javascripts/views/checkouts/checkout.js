@@ -36,7 +36,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #shipping-address-button": "slideDownShippingAdresses",
     "click #shipping-address-title-dropped": "slideUpShippingAdresses",
     "click #shipping-address-button-dropped": "slideUpShippingAdresses",
-    // "click #shipping-address-button": "openAddressForm",
+    "click #add-another-address": "openAddressForm",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
