@@ -24,3 +24,5 @@ Hippolyta.Models.User = Backbone.Model.extend({
     };
   },
 });
+
+Hippolyta.Models.user = new Hippolyta.Models.User();

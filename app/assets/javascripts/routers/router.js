@@ -18,18 +18,22 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   currentUserProfile: function () {
-    var model = new Hippolyta.Models.CurrentUser();
-    model.fetch();
-    var profileView = new Hippolyta.Views.CurrentUserProfile({ model: model });
+    Hippolyta.Models.currentUser.fetch();
+
+    var model = Hippolyta.Models.currentUser,
+        profileView = new Hippolyta.Views.CurrentUserProfile({ model: model, });
+
     this._swapView(profileView);
   },
 
   currentUserProducts: function () {
-    var collection = new Hippolyta.Collections.CurrentUserProducts();
-    collection.fetch();
-    var productsView = new Hippolyta.Views.CurrentUserProducts({
-      collection: collection,
-    });
+    Hippolyta.Collections.currentUserProducts.fetch();
+
+    var collection = Hippolyta.Collections.currentUserProducts,
+        productsView = new Hippolyta.Views.CurrentUserProducts({
+          collection: collection,
+        });
+
     this._swapView(productsView);
   },
 
@@ -41,51 +45,59 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
 
   userEdit: function (user_id) {
     Hippolyta.Collections.users.fetch();
+
     var collection = Hippolyta.Collections.users,
         model = Hippolyta.Collections.users.getOrFetch(user_id),
         editView = new Hippolyta.Views.UserEdit({
           model: model,
-          collection: collection
+          collection: collection,
         });
+
     this._swapView(editView);
   },
 
   searchResults: function () {
-    Hippolyta.Collections.searchresults.fetch();
-    var collection = Hippolyta.Collections.searchresults,
+    Hippolyta.Collections.searchResults.fetch();
+
+    var collection = Hippolyta.Collections.searchResults,
         searchView = new Hippolyta.Views.SearchResults({
           collection: collection,
         });
+
     this._swapView(searchView);
   },
 
   productShow: function (seller_id, id) {
     Hippolyta.Collections.users.fetch();
+
     var seller = Hippolyta.Collections.users.getOrFetch(seller_id),
         collection = seller.products(),
         product = collection.getOrFetch(id),
         productShowView = new Hippolyta.Views.ProductShow({
           seller: seller,
-          product: product
+          product: product,
         });
+
     this._swapView(productShowView);
   },
 
   currentCartShow: function () {
-    var cart = new Hippolyta.Models.CurrentUserCart();
-    cart.fetch();
-    var cartProducts = cart.cartProducts(),
+    Hippolyta.Models.currentUserCart.fetch();
+
+    var cart = Hippolyta.Models.currentUserCart,
+        cartProducts = cart.cartProducts(),
         products = cart.products(),
         cartItemsView = new Hippolyta.Views.CartItems({
           cart: cart,
           cartProducts: cartProducts,
-          products: products
+          products: products,
         });
+
     this._swapView(cartItemsView);
   },
 
   checkoutSignIn: function () {
-    var signInView = new Hippolyta.Views.SignInBeforeCheckout({});
+    var signInView = new Hippolyta.Views.SignInBeforeCheckout();
     this._swapView(signInView);
   },
 
@@ -106,7 +118,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           addresses: addresses,
           cards: cards,
         });
-        
+
     this._swapView(checkoutView);
   },
 

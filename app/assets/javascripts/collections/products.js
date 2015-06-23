@@ -21,3 +21,5 @@ Hippolyta.Collections.Products = Backbone.Collection.extend({
     return product;
   },
 });
+
+Hippolyta.Collections.products = new Hippolyta.Collections.Products();

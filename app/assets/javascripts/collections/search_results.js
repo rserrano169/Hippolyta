@@ -14,4 +14,4 @@ Hippolyta.Collections.SearchResults = Backbone.Collection.extend({
   },
 });
 
-Hippolyta.Collections.searchresults = new Hippolyta.Collections.SearchResults();
+Hippolyta.Collections.searchResults = new Hippolyta.Collections.SearchResults();

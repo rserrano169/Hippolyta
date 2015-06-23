@@ -7,3 +7,5 @@ Hippolyta.Models.Product = Backbone.Model.extend({
     };
   },
 });
+
+Hippolyta.Models.product = new Hippolyta.Models.Product();
