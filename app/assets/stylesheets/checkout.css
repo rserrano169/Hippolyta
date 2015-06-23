@@ -136,6 +136,15 @@
 
     /* --- SHIPPING ADDRESS --- */
 
+#checkout-view #shipping-address-options {
+  display: none;
+}
+
+#checkout-view #shipping-address-step-number-dropped,
+#checkout-view #shipping-address-title-dropped {
+  color: #c45500;
+}
+
       /* --- ADD ADDRESS MODAL --- */
 
 #checkout-view #add-address-form-overlay {
@@ -213,27 +222,19 @@
 
     /* --- PAYMENT METHODS --- */
 
-#checkout-view #loading-payment-current-selection {
-  color: black;
-}
-
 #checkout-view #loading-payment-options {
   display: block;
   margin-bottom: 30px;
 }
 
-#checkout-view #error-loading-current-payment-selection {
-  color: black;
-}
-
 #checkout-view #error-loading-payment-options {
-  diplay: block;
+  display: block;
   margin-bottom: 30px;
 }
 
 #checkout-view #payment-method-current-selection #current-card-brand {
   font-weight: bold;
-  color: black;
+  /*color: black;*/
 }
 
 #checkout-view #payment-method-current-selection #current-card-last4 {
@@ -267,7 +268,8 @@
   display: none;
 }
 
-#checkout-view #payment-method-dropped {
+#checkout-view #payment-method-step-number-dropped,
+#checkout-view #payment-method-title-dropped {
   color: #c45500;
 }
 

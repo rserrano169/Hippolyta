@@ -11,6 +11,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   paymentFormTemplate: JST["checkouts/payment_form"],
 
   initialize: function (options) {
+    this.addressesAlreadyRendered = false;
+    this.areAddressOptionsSlidDown = false;
     this.isAddressFormAppended = false;
     this.isCardFormAppended = false;
     this.cardsAlreadyRendered = false;
@@ -30,7 +32,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   events: {
     "click #shipping-address-title": "slideDownShippingAdresses",
     "click #shipping-address-button": "slideDownShippingAdresses",
-    "click #shipping-address-button": "openAddressForm",
+    "click #shipping-address-title-dropped": "slideUpShippingAdresses",
+    "click #shipping-address-button-dropped": "slideUpShippingAdresses",
+    // "click #shipping-address-button": "openAddressForm",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
@@ -73,11 +77,30 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       '</span>'
     );
 
+    // if (this.addressesAlreadyRendered === true) {
+      this.renderAddresses();
+    // };
+
     if (this.cardsAlreadyRendered === true) {
       this.renderCards();
     };
 
     return this;
+  },
+
+  renderAddresses: function () {
+    // this.renderCurrentAddress()
+
+    var csrfToken = $("meta[name='csrf-token']").attr('content'),
+        content = this.shippingAddressesTemplate();
+    $("#shipping-address-options").html(content)
+    $("#shipping-address-options").prepend(
+      '<input type="hidden" name="authenticity_token" value="' +
+      csrfToken +
+      '">'
+    );
+
+    this.addressesAlreadyRendered = true;
   },
 
   renderCards: function () {
@@ -139,14 +162,48 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   slideDownShippingAdresses: function () {
-    console.log("shipping");
+    this.slideUpAll();
+
+    $("#shipping-address-step-number")
+      .attr("id", "shipping-address-step-number-dropped");
+    $("#shipping-address-title")
+      .attr("id", "shipping-address-title-dropped")
+      .html("Select Address");
+    $("#shipping-address-button")
+      .attr("id", "shipping-address-button-dropped")
+      .html("Cancel");
+
+    $("#shipping-address-options").slideDown("fast");
+
+    this.areAddressOptionsSlidDown = true;
+  },
+
+  slideUpShippingAdresses: function () {
+    $("#shipping-address-step-number-dropped")
+      .attr("id", "shipping-address-step-number");
+    $("#shipping-address-title-dropped")
+      .attr("id", "shipping-address-title")
+      .html("Shipping Address");
+    $("#shipping-address-button-dropped")
+      .attr("id", "shipping-address-button")
+      .html("Change Address");
+
+    $("#shipping-address-options").slideUp("fast");
+
+    this.areAddressOptionsSlidDown = false;
   },
 
   openAddressForm: function () {
     this.slideUpAll()
 
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
     if (this.isAddressFormAppended === false) {
       $("#checkout-view").append(this.addressFormTemplate());
+      $("#add-address-form").prepend(
+        '<input type="hidden" name="authenticity_token" value="' +
+        csrfToken +
+        '">'
+      );
       this.isAddressFormAppended = true;
     };
 
@@ -165,14 +222,17 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       this.slideUpCart();
     };
 
+    $("#payment-method-step-number")
+      .attr("id", "payment-method-step-number-dropped");
     $("#payment-method-title")
       .attr("id", "payment-method-title-dropped")
       .html("Select Method");
-    $("#payment-method").attr("id", "payment-method-dropped");
     $("#payment-method-button")
       .html("Cancel")
       .attr("id", "payment-method-button-dropped");
+
     $("#payment-method-options").slideDown("fast");
+
     this.arePaymentOptionsSlidDown = true;
   },
 
@@ -186,11 +246,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           .html("Change Card")
           .attr("id", "payment-method-button");
     };
+    
+    $("#payment-method-step-number-dropped")
+      .attr("id", "payment-method-step-number");
     $("#payment-method-title-dropped")
       .attr("id", "payment-method-title")
       .html("Payment Method");
-    $("#payment-method-dropped").attr("id", "payment-method");
+
     $("#payment-method-options").slideUp("fast");
+
     this.arePaymentOptionsSlidDown = false;
   },
 
@@ -199,6 +263,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     if (this.isCardFormAppended === false) {
       $("#checkout-view").append(this.paymentFormTemplate());
+      $("#add-card-form").prepend(
+        '<input type="hidden" name="authenticity_token" value="' +
+        csrfToken +
+        '">'
+      );
       this.isCardFormAppended = true;
     };
 
