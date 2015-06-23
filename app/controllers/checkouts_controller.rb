@@ -20,6 +20,11 @@ class CheckoutsController < ApplicationController
     redirect_to "/checkout#checkout_placed"
   end
 
+  def add_address
+
+    redirect_to "/checkout#checkout"
+  end
+
   def add_card
     token = params[:stripeToken]
     if current_stripe_customer
@@ -39,13 +44,21 @@ class CheckoutsController < ApplicationController
 
     set_stripe_customer_default_source(@card.id)
 
-    redirect_to "/checkout#checkout/#{current_cart.id}"
+    redirect_to "/checkout#checkout"
+  end
+
+  def select_address
+    @user = current_user
+    @user.current_shipping_address_id = params[:addressId]
+    @user.save!
+
+    redirect_to "/checkout#checkout"
   end
 
   def select_card
     set_stripe_customer_default_source(params[:cardId])
 
-    redirect_to "/checkout#checkout/#{current_cart.id}"
+    redirect_to "/checkout#checkout"
   end
 
   private

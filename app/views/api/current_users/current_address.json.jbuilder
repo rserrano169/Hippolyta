@@ -1,5 +1,5 @@
-json.array!(
-  @addresses,
+json.(
+  @current_address,
   :id,
   :name,
   :street,

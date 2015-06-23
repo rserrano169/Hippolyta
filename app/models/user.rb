@@ -86,4 +86,16 @@ class User < ActiveRecord::Base
   def ensure_session_token!
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
+
+  def default_shipping_address
+    return nil unless self.default_shipping_address_id
+
+    Address.find(self.default_shipping_address_id)
+  end
+
+  def current_shipping_address
+    return nil unless self.current_shipping_address_id
+
+    Address.find(self.current_shipping_address_id)
+  end
 end

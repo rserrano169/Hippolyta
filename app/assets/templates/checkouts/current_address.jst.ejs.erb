@@ -1,0 +1,22 @@
+<%% if (address) { %>
+    <span id="current-address-name">
+      <%%= address.escape("name") %>
+    </span>
+    <span id="current-address-street">
+      <%%= address.escape("street") %>
+    </span>
+    <%% if (address.escape("apt")) { %>
+      <span id="current-address-apt">
+        <%%= address.escape("apt") %>
+      </span>
+    <%% } %>
+    <span id="current-address-city">
+      <%%= address.escape("city") %>
+    </span>
+    <span id="current-address-state">
+      <%%= address.escape("state") %>
+    </span>
+    <span id="current-address-zip">
+      <%%= address.escape("zip") %>
+    </span>
+<%% } %>

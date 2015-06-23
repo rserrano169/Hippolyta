@@ -6,6 +6,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   addressFormTemplate: JST["checkouts/address_form"],
 
+  currentAddressTemplate: JST["checkouts/current_address"],
+
   paymentMethodsTemplate: JST["checkouts/payment_methods"],
 
   paymentFormTemplate: JST["checkouts/payment_form"],
@@ -24,6 +26,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.listenTo(this.cart, "sync", this.render);
     this.addresses = options.addresses;
     this.listenTo(this.addresses, "sync", this.renderAddresses);
+    this.currentAddress = options.currentAddress;
     this.cards = options.cards;
     this.listenTo(this.cards, "sync", this.renderCards);
     this.listenTo(this.cards, "error", this.renderCardsError);
@@ -79,9 +82,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       '</span>'
     );
 
-    // if (this.addressesAlreadyRendered === true) {
+    if (this.addressesAlreadyRendered === true) {
       this.renderAddresses();
-    // };
+    };
 
     if (this.cardsAlreadyRendered === true) {
       this.renderCards();
@@ -91,14 +94,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderAddresses: function () {
-    // this.renderCurrentAddress()
+    this.renderCurrentAddress();
 
     var csrfToken = $("meta[name='csrf-token']").attr('content'),
         content = this.shippingAddressesTemplate({
           addresses: this.addresses,
         });
+
     $("#shipping-address-options").html(content)
-    $("#shipping-address-options").prepend(
+    $("#shipping-address-form").prepend(
       '<input type="hidden" name="authenticity_token" value="' +
       csrfToken +
       '">'
@@ -124,8 +128,19 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.cardsAlreadyRendered = true;
   },
 
+  renderCurrentAddress: function () {
+    var address = this.currentAddress,
+        content = this.currentAddressTemplate({
+          address: address,
+        });
+
+    $("#shipping-address-current-selection").html(content);
+
+    this.noCardsAdded = true;
+  },
+
   renderCurrentCard: function () {
-    if (this.cards.currentCard !== undefined) {
+    if (this.cards.currentCard) {
         var card = this.cards.currentCard;
 
         $("#payment-method-current-selection").html(
@@ -296,7 +311,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     var $form = $("#add-address-modal"),
         $formOverlay = $("#add-address-form-overlay");
-        
+
     this.adjustFormPosition($form, $formOverlay)
     $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
     $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
