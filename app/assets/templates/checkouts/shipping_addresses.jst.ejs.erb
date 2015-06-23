@@ -1,3 +1,5 @@
-<section>
-  Shipping Addresses
-</section>
+<form id="shipping-addresses-form" action="index.html" method="post">
+  <%% addresses.each( function (address) { %>
+    <%%= address.escape("street") %>
+  <%% }) %>
+</form>

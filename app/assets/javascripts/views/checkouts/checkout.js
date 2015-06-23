@@ -22,6 +22,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.isCartSlidDown = false;
     this.cart = options.cart;
     this.listenTo(this.cart, "sync", this.render);
+    this.addresses = options.addresses;
+    this.listenTo(this.addresses, "sync", this.renderAddresses);
     this.cards = options.cards;
     this.listenTo(this.cards, "sync", this.renderCards);
     this.listenTo(this.cards, "error", this.renderCardsError);
@@ -92,7 +94,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     // this.renderCurrentAddress()
 
     var csrfToken = $("meta[name='csrf-token']").attr('content'),
-        content = this.shippingAddressesTemplate();
+        content = this.shippingAddressesTemplate({
+          addresses: this.addresses,
+        });
     $("#shipping-address-options").html(content)
     $("#shipping-address-options").prepend(
       '<input type="hidden" name="authenticity_token" value="' +
@@ -246,7 +250,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
           .html("Change Card")
           .attr("id", "payment-method-button");
     };
-    
+
     $("#payment-method-step-number-dropped")
       .attr("id", "payment-method-step-number");
     $("#payment-method-title-dropped")
