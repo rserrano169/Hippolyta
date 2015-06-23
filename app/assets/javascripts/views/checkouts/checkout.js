@@ -135,8 +135,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         });
 
     $("#shipping-address-current-selection").html(content);
-
-    this.noCardsAdded = true;
   },
 
   renderCurrentCard: function () {

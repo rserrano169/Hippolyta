@@ -10,32 +10,36 @@
     <ul>
       <li class="address-table">
         <ul>
-          <li class="address-info-cell">
+          <li class="address-radio-cell">
             <span class="address-radio">
               <input type="radio"
                      name="addressId"
                      value="<%%= address.escape("id") %>">
             </span>
-            <span class="address-name">
-              <%%= address.escape("name") %>,
-            </span>
-            <span class="address-street">
-              <%%= address.escape("street") %>,
-            </span>
-            <%% if (address.escape("apt")) { %>
-              <span class="address-apt">
-                <%%= address.escape("apt") %>,
+          </li>
+          <li class="address-info-cell">
+            <div class="address-info-container">
+              <span class="address-name">
+                <%%= address.escape("name").toUpperCase() %>,
               </span>
-            <%% } %>
-            <span class="address-city">
-              <%%= address.escape("city") %>,
-            </span>
-            <span class="address-state">
-              <%%= address.escape("state") %>,
-            </span>
-            <span class="address-zip">
-              <%%= address.escape("zip") %>
-            </span>
+              <span class="address-street">
+                <%%= address.escape("street").toUpperCase() %>,
+              </span>
+              <%% if (address.escape("apt")) { %>
+                <span class="address-apt">
+                  <%%= address.escape("apt").toUpperCase() %>,
+                </span>
+              <%% } %>
+              <span class="address-city">
+                <%%= address.escape("city").toUpperCase() %>,
+              </span>
+              <span class="address-state">
+                <%%= address.escape("state").toUpperCase() %>,
+              </span>
+              <span class="address-zip">
+                <%%= address.escape("zip").toUpperCase() %>
+              </span>
+            </div>
           </li>
         </ul>
       </li>

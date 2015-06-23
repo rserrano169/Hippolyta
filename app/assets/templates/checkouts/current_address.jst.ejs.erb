@@ -1,22 +1,22 @@
 <%% if (address) { %>
     <span id="current-address-name">
-      <%%= address.escape("name") %>
+      <%%= address.escape("name").toUpperCase() %>,
     </span>
     <span id="current-address-street">
-      <%%= address.escape("street") %>
+      <%%= address.escape("street").toUpperCase() %>,
     </span>
     <%% if (address.escape("apt")) { %>
       <span id="current-address-apt">
-        <%%= address.escape("apt") %>
+        APT. <%%= address.escape("apt").toUpperCase() %>,
       </span>
     <%% } %>
     <span id="current-address-city">
-      <%%= address.escape("city") %>
+      <%%= address.escape("city").toUpperCase() %>,
     </span>
     <span id="current-address-state">
-      <%%= address.escape("state") %>
+      <%%= address.escape("state").toUpperCase() %>,
     </span>
     <span id="current-address-zip">
-      <%%= address.escape("zip") %>
+      <%%= address.escape("zip").toUpperCase() %>
     </span>
 <%% } %>

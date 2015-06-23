@@ -65,13 +65,14 @@
 #checkout-view .checkout-steps > .step-number {
   display: table-cell;
   vertical-align: middle;
-  width: 24px;
+  width: 25px;
 }
 
 #checkout-view .checkout-steps > .step-title-span {
   display: table-cell;
-  min-width: 175px;
+  min-width: 190px;
   vertical-align: middle;
+  text-align: left;
   word-spacing: 4px;
 }
 
@@ -81,7 +82,7 @@
 
 #checkout-view .checkout-steps > .step-current-selection-span {
   display: table-cell;
-  min-width: 270px;
+  min-width: 255px;
   vertical-align: middle;
   text-align: center;
   font-size: 15px;
@@ -178,14 +179,24 @@
   padding: 10px 0px;
 }
 
-#checkout-view .address-table .address-info-cell {
+#checkout-view .address-table .address-radio-cell {
   display: table-cell;
   vertical-align: middle;
+  width: 45px;
 }
 
 #checkout-view .address-table .address-radio {
   display: inline-block;
   margin: 0px 8px 0px 16px;
+}
+
+#checkout-view .address-table .address-info-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#checkout-view .address-table .address-info-container {
+  padding-right: 20px;
 }
 
 #checkout-view .address-table .address-name,
