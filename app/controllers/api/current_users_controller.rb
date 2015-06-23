@@ -16,6 +16,12 @@ class Api::CurrentUsersController < ApplicationController
     render :cart
   end
 
+  def addresses
+    @addresses = current_user.addresses
+
+    render :addresses
+  end
+
   def cards
     if current_stripe_customer
       default_card_id = current_user.stripe_default_card_id
