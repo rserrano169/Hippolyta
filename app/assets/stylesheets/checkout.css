@@ -477,6 +477,7 @@
 #checkout-view .card-table .card-name {
   display: block;
   width: 170px;
+  overflow: hidden;
 }
 
 #checkout-view .card-table .third-card-cell {
