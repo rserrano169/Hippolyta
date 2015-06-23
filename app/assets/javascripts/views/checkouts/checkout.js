@@ -32,10 +32,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   events: {
-    "click #shipping-address-title": "slideDownShippingAdresses",
-    "click #shipping-address-button": "slideDownShippingAdresses",
-    "click #shipping-address-title-dropped": "slideUpShippingAdresses",
-    "click #shipping-address-button-dropped": "slideUpShippingAdresses",
+    "click #shipping-address-title": "slideDownAddressOptions",
+    "click #shipping-address-button": "slideDownAddressOptions",
+    "click #shipping-address-title-dropped": "slideUpAddressOptions",
+    "click #shipping-address-button-dropped": "slideUpAddressOptions",
     "click #add-another-address": "openAddressForm",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
@@ -165,7 +165,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
   },
 
-  slideDownShippingAdresses: function () {
+  slideDownAddressOptions: function () {
     this.slideUpAll();
 
     $("#shipping-address-step-number")
@@ -182,49 +182,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.areAddressOptionsSlidDown = true;
   },
 
-  slideUpShippingAdresses: function () {
-    $("#shipping-address-step-number-dropped")
-      .attr("id", "shipping-address-step-number");
-    $("#shipping-address-title-dropped")
-      .attr("id", "shipping-address-title")
-      .html("Shipping Address");
-    $("#shipping-address-button-dropped")
-      .attr("id", "shipping-address-button")
-      .html("Change Address");
-
-    $("#shipping-address-options").slideUp("fast");
-
-    this.areAddressOptionsSlidDown = false;
-  },
-
-  openAddressForm: function () {
-    this.slideUpAll()
-
-    var csrfToken = $("meta[name='csrf-token']").attr('content');
-    if (this.isAddressFormAppended === false) {
-      $("#checkout-view").append(this.addressFormTemplate());
-      $("#add-address-form").prepend(
-        '<input type="hidden" name="authenticity_token" value="' +
-        csrfToken +
-        '">'
-      );
-      this.isAddressFormAppended = true;
-    };
-
-    var $form = $("#add-address-modal"),
-        $formOverlay = $("#add-address-form-overlay");
-    this.adjustFormPosition($form, $formOverlay)
-    $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
-    $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
-    $(window).on("keydown", this.handleKeyEvent.bind(this));
-
-    $("#add-address-form-overlay").show();
-  },
-
   slideDownPaymentOptions: function () {
-    if (this.isCartSlidDown) {
-      this.slideUpCart();
-    };
+    this.slideUpAll();
 
     $("#payment-method-step-number")
       .attr("id", "payment-method-step-number-dropped");
@@ -238,6 +197,36 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#payment-method-options").slideDown("fast");
 
     this.arePaymentOptionsSlidDown = true;
+  },
+
+
+  slideDownCart: function () {
+    this.slideUpAll();
+
+    $("#review-cart-title")
+      .attr("id", "review-cart-title-dropped")
+      .html("Review Items");
+    $("#review-cart").attr("id", "review-cart-dropped");
+    $("#review-cart-button").html("Close");
+    $("#review-cart-button").attr("id", "review-cart-button-dropped");
+    $("#checkout-products").slideDown("fast");
+
+    this.isCartSlidDown = true;
+  },
+
+  slideUpAddressOptions: function () {
+    $("#shipping-address-step-number-dropped")
+      .attr("id", "shipping-address-step-number");
+    $("#shipping-address-title-dropped")
+      .attr("id", "shipping-address-title")
+      .html("Shipping Address");
+    $("#shipping-address-button-dropped")
+      .attr("id", "shipping-address-button")
+      .html("Change Address");
+
+    $("#shipping-address-options").slideUp("fast");
+
+    this.areAddressOptionsSlidDown = false;
   },
 
   slideUpPaymentOptions: function () {
@@ -262,9 +251,64 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.arePaymentOptionsSlidDown = false;
   },
 
+
+  slideUpCart: function () {
+    $("#review-cart-title-dropped")
+      .attr("id", "review-cart-title")
+      .html("Cart Items");
+    $("#review-cart-dropped").attr("id", "review-cart");
+    $("#review-cart-button-dropped").html("View");
+    $("#review-cart-button-dropped").attr("id", "review-cart-button");
+    $("#checkout-products").slideUp("fast");
+
+    this.isCartSlidDown = false;
+  },
+
+
+  slideUpAll: function () {
+    if (this.areAddressOptionsSlidDown) {
+      this.slideUpAddressOptions();
+    };
+
+    if (this.arePaymentOptionsSlidDown) {
+      this.slideUpPaymentOptions();
+    };
+
+    if (this.isCartSlidDown) {
+      this.slideUpCart();
+    };
+  },
+
+  openAddressForm: function () {
+    this.slideUpAll()
+
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
+    if (this.isAddressFormAppended === false) {
+      $("#checkout-view").append(this.addressFormTemplate());
+      $("#add-address-form").prepend(
+        '<input type="hidden" name="authenticity_token" value="' +
+        csrfToken +
+        '">'
+      );
+
+      this.isAddressFormAppended = true;
+    };
+
+    var $form = $("#add-address-modal"),
+        $formOverlay = $("#add-address-form-overlay");
+        
+    this.adjustFormPosition($form, $formOverlay)
+    $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
+    $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
+    $(window).on("keydown", this.handleKeyEvent.bind(this));
+
+    $("#add-address-form-overlay").show();
+  },
+
   openCardForm: function () {
     this.slideUpAll()
 
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
     if (this.isCardFormAppended === false) {
       $("#checkout-view").append(this.paymentFormTemplate());
       $("#add-card-form").prepend(
@@ -272,11 +316,13 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         csrfToken +
         '">'
       );
+
       this.isCardFormAppended = true;
     };
 
     var $form = $("#add-card-modal"),
         $formOverlay = $("#add-card-form-overlay");
+
     this.adjustFormPosition($form, $formOverlay)
     $(window).on("scroll", this.adjustFormPosition.bind(this, $form, $formOverlay));
     $(window).on("resize", this.adjustFormPosition.bind(this, $form, $formOverlay));
@@ -372,42 +418,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       var token = response.id;
       $form.append($('<input type="hidden" name="stripeToken"/>').val(token));
       $form.get(0).submit();
-    };
-  },
-
-  slideDownCart: function () {
-    if (this.arePaymentOptionsSlidDown) {
-      this.slideUpPaymentOptions();
-    };
-
-    $("#review-cart-title")
-      .attr("id", "review-cart-title-dropped")
-      .html("Review Items");
-    $("#review-cart").attr("id", "review-cart-dropped");
-    $("#review-cart-button").html("Close");
-    $("#review-cart-button").attr("id", "review-cart-button-dropped");
-    $("#checkout-products").slideDown("fast");
-    this.isCartSlidDown = true;
-  },
-
-  slideUpCart: function () {
-    $("#review-cart-title-dropped")
-      .attr("id", "review-cart-title")
-      .html("Cart Items");
-    $("#review-cart-dropped").attr("id", "review-cart");
-    $("#review-cart-button-dropped").html("View");
-    $("#review-cart-button-dropped").attr("id", "review-cart-button");
-    $("#checkout-products").slideUp("fast");
-    this.isCartSlidDown = false;
-  },
-
-  slideUpAll: function () {
-    if (this.isCartSlidDown) {
-      this.slideUpCart();
-    };
-
-    if (this.arePaymentOptionsSlidDown) {
-      this.slideUpPaymentOptions();
     };
   },
 });
