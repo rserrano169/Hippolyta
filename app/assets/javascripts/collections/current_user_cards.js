@@ -15,3 +15,5 @@ Hippolyta.Collections.CurrentUserCards = Backbone.Collection.extend({
     return response;
   },
 });
+
+Hippolyta.Collections.currentUserCards = new Hippolyta.Collections.CurrentUserCards();

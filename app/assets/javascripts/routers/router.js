@@ -90,11 +90,13 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
   },
 
   checkout: function () {
-    var cart = new Hippolyta.Models.CurrentUserCart(),
-        cards = new Hippolyta.Collections.CurrentUserCards();
-    cart.fetch();
-    cards.fetch();
-    var cartProducts = cart.cartProducts(),
+    Hippolyta.Models.currentUserCart.fetch();
+    Hippolyta.Collections.currentUserCards.fetch();
+    
+    var cart = Hippolyta.Models.currentUserCart,
+        // addresses = new Hippolyta.Collections.CurrentUserAddresses();
+        cards = Hippolyta.Collections.currentUserCards;
+        cartProducts = cart.cartProducts(),
         products = cart.products(),
         checkoutView = new Hippolyta.Views.Checkout({
           cart: cart,

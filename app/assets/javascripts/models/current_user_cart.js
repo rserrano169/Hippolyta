@@ -43,3 +43,5 @@ Hippolyta.Models.CurrentUserCart = Backbone.Model.extend({
     };
   },
 });
+
+Hippolyta.Models.currentUserCart = new Hippolyta.Models.CurrentUserCart();
