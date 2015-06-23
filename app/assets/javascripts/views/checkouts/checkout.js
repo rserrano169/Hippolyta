@@ -1,13 +1,18 @@
 Hippolyta.Views.Checkout = Backbone.View.extend({
 
-  template1: JST["checkouts/checkout"],
+  template: JST["checkouts/checkout"],
 
-  template2: JST["checkouts/payment_methods"],
+  shippingAddressesTemplate: JST["checkouts/shipping_addresses"],
 
-  template3: JST["checkouts/address_form"],
+  addressFormTemplate: JST["checkouts/address_form"],
+
+  paymentMethodsTemplate: JST["checkouts/payment_methods"],
+
+  paymentFormTemplate: JST["checkouts/payment_form"],
 
   initialize: function (options) {
     this.isAddressFormAppended = false;
+    this.isCardFormAppended = false;
     this.cardsAlreadyRendered = false;
     this.noCardsAdded = false;
     this.arePaymentOptionsSlidDown = false;
@@ -42,7 +47,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   render: function () {
     var csrfToken = $("meta[name='csrf-token']").attr('content');
-        content = this.template1({
+        content = this.template({
           cart: this.cart,
           cartProducts: this.cartProducts,
           products: this.products,
@@ -79,7 +84,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.renderCurrentCard();
 
     var csrfToken = $("meta[name='csrf-token']").attr('content'),
-        content = this.template2({
+        content = this.paymentMethodsTemplate({
           cards: this.cards,
         });
     $("#payment-method-options").html(content)
@@ -138,12 +143,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   openAddressForm: function () {
+    this.slideUpAll()
+
     if (this.isAddressFormAppended === false) {
-      $("#checkout-view").append(this.template3());
+      $("#checkout-view").append(this.addressFormTemplate());
       this.isAddressFormAppended = true;
     };
-
-    this.slideUpAll()
 
     var $form = $("#add-address-modal"),
         $formOverlay = $("#add-address-form-overlay");
@@ -191,6 +196,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   openCardForm: function () {
     this.slideUpAll()
+
+    if (this.isCardFormAppended === false) {
+      $("#checkout-view").append(this.paymentFormTemplate());
+      this.isCardFormAppended = true;
+    };
 
     var $form = $("#add-card-modal"),
         $formOverlay = $("#add-card-form-overlay");
