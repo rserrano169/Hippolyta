@@ -1,3 +1,4 @@
+  display: table;
 /* --- HEADER --- */
 
 #checkout #header-table {
@@ -354,6 +355,11 @@
   border-radius: 3px;
 }
 
+#checkout-view #add-address-form >
+#add-address-form-button-container > button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
     /* --- PAYMENT METHODS --- */
 
 #checkout-view #loading-payment-options {
@@ -638,6 +644,11 @@
   border-radius: 3px;
 }
 
+#checkout-view #add-card-form >
+#add-card-form-button-container > button:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
     /* --- CART ITEMS --- */
 
 #checkout-view #checkout-products {
@@ -748,6 +759,43 @@
 
 #checkout-view #checkout-place-order:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
+#checkout-view #checkout-order-summary {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0px 15px 0px;
+}
+
+#checkout-view .checkout-details-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#checkout-view .checkout-details-row {
+  display: table-row;
+}
+
+#checkout-view .checkout-details-cell-one {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 175px;
+  word-wrap: break-word;
+}
+
+#checkout-view .checkout-details-cell-two {
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
+  width: 83px;
+}
+
+#checkout-view #checkout-details-divider {
+  display: block;
+  padding-top: 9px;
+  margin-top: 10px;
+  border-top: 1px solid #e7e7e7;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */

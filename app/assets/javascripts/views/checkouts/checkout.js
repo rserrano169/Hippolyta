@@ -62,7 +62,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #review-cart-button": "slideDownCart",
     "click #review-cart-title-dropped": "slideUpCart",
     "click #review-cart-button-dropped": "slideUpCart",
-    "submit .checkout-product-update-quantity": "updateQuantity",
+    // "submit .checkout-product-update-quantity": "updateQuantity",
   },
 
   render: function () {
@@ -440,9 +440,9 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     };
   },
 
-  updateQuantity: function () {
-    
-  },
+  // updateQuantity: function (event) {
+  //
+  // },
 
   closeForms: function () {
     $(window).off("resize scroll");

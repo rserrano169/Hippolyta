@@ -6,6 +6,8 @@ class CheckoutsController < ApplicationController
   end
 
   def add_purchased_products
+    
+
     @cart_products = current_user.cart_products
     @cart_products.each do |cart_product|
       PurchasedProduct.create!({

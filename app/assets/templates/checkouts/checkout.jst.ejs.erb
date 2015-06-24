@@ -91,25 +91,51 @@
       </form>
 
       <section class="checkout-sidebar-pricings">
-        Order Summary
+        <div id="checkout-order-summary">
+          Order Summary
+        </div>
         <div id="checkout-price-details">
-          <section id="checkout-price-details-left">
-            <ul>
-              <li>
-                Items
-                (<span id="checkout-sidebar-items-quantity"></span>):
-              </li>
-              <li>
+          <ul class="checkout-details-table">
+            <li class="checkout-details-row">
+              <div class="checkout-details-cell-one">
+                Items(<span id="checkout-sidebar-items-quantity">0</span>):
+              </div>
+              <div class="checkout-details-cell-two">
+                $<span id="checkout-sidebar-items-price">0.00</span>
+              </div>
+            </li>
+            <li class="checkout-details-row">
+              <div class="checkout-details-cell-one">
                 Shipping & handling:
-              </li>
-              <li>
+              </div>
+              <div class="checkout-details-cell-two">
+                $<span id="checkout-sidebar-items-ship-hand">0.00</span>
+              </div>
+            </li>
+            <li class="checkout-details-row">
+              <div class="checkout-details-cell-one">
+              </div>
+              <div id="checkout-details-divider"
+                   class="checkout-details-cell-two">
+              </div>
+            </li>
+            <li class="checkout-details-row">
+              <div class="checkout-details-cell-one">
                 Total before tax:
-              </li>
-              <li>
+              </div>
+              <div class="checkout-details-cell-two">
+                $<span id="checkout-sidebar-items-subtotal">0.00</span>
+              </div>
+            </li>
+            <li class="checkout-details-row">
+              <div class="checkout-details-cell-one">
                 Estimated tax to be collected:
-              </li>
-            </ul>
-          </section>
+              </div>
+              <div class="checkout-details-cell-two">
+                $<span id="checkout-sidebar-items-tax">0.00</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
