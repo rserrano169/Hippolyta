@@ -12,8 +12,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   paymentFormTemplate: JST["checkouts/payment_form"],
 
+  currentCardTemplate: JST["checkouts/current_card"],
+
   initialize: function (options) {
     this.addressesAlreadyRendered = false;
+    this.currentAddressAlreadyRendered = false;
     this.areAddressOptionsSlidDown = false;
     this.isAddressFormAppended = false;
     this.isCardFormAppended = false;
@@ -27,6 +30,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.addresses = options.addresses;
     this.listenTo(this.addresses, "sync", this.renderAddresses);
     this.currentAddress = options.currentAddress;
+    this.listenTo(this.currentAddress, "sync", this.renderCurrentAddress);
+    this.listenTo(this.currentAddress, "sync", this.renderAddressesError);
     this.cards = options.cards;
     this.listenTo(this.cards, "sync", this.renderCards);
     this.listenTo(this.cards, "error", this.renderCardsError);
@@ -55,19 +60,51 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    var csrfToken = $("meta[name='csrf-token']").attr('content');
-        content = this.template({
-          cart: this.cart,
-          cartProducts: this.cartProducts,
-          products: this.products,
-        }),
+    var content = this.template({
+      cart: this.cart,
+      cartProducts: this.cartProducts,
+      products: this.products,
+    });
 
     this.$el.html(content);
+    this.prependCsrfToken($("form"));
+    this.renderLoading();
 
-    $("form").prepend(
+    if (this.currentAddressAlreadyRendered) {
+      this.renderCurrentAddress();
+    };
+
+    if (this.addressesAlreadyRendered) {
+      this.renderAddresses();
+    };
+
+    if (this.cardsAlreadyRendered) {
+      this.renderCards();
+    };
+
+    return this;
+  },
+
+  prependCsrfToken: function ($form) {
+    var csrfToken = $("meta[name='csrf-token']").attr('content');
+    $form.prepend(
       '<input type="hidden" name="authenticity_token" value="' +
       csrfToken +
       '">'
+    );
+  },
+
+  renderLoading: function () {
+    $("#shipping-address-current-selection").html(
+      '<span id="loading-address-current-selection">' +
+      'Loading...' +
+      '</span>'
+    );
+
+    $("#shipping-address-options").html(
+      '<span id="loading-address-options">' +
+      'Loading...' +
+      '</span>'
     );
 
     $("#payment-method-current-selection").html(
@@ -81,32 +118,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       'Loading...' +
       '</span>'
     );
-
-    if (this.addressesAlreadyRendered === true) {
-      this.renderAddresses();
-    };
-
-    if (this.cardsAlreadyRendered === true) {
-      this.renderCards();
-    };
-
-    return this;
   },
 
   renderAddresses: function () {
-    this.renderCurrentAddress();
-
-    var csrfToken = $("meta[name='csrf-token']").attr('content'),
-        content = this.shippingAddressesTemplate({
-          addresses: this.addresses,
-        });
+    var content = this.shippingAddressesTemplate({
+      addresses: this.addresses,
+    });
 
     $("#shipping-address-options").html(content)
-    $("#shipping-address-form").prepend(
-      '<input type="hidden" name="authenticity_token" value="' +
-      csrfToken +
-      '">'
-    );
+    this.prependCsrfToken($("#shipping-address-form"));
 
     this.addressesAlreadyRendered = true;
   },
@@ -114,54 +134,40 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   renderCards: function () {
     this.renderCurrentCard();
 
-    var csrfToken = $("meta[name='csrf-token']").attr('content'),
-        content = this.paymentMethodsTemplate({
-          cards: this.cards,
-        });
+    var content = this.paymentMethodsTemplate({
+      cards: this.cards,
+    });
     $("#payment-method-options").html(content)
-    $("#payment-method-form").prepend(
-      '<input type="hidden" name="authenticity_token" value="' +
-      csrfToken +
-      '">'
-    );
+    this.prependCsrfToken($("#payment-method-form"));
 
     this.cardsAlreadyRendered = true;
   },
 
   renderCurrentAddress: function () {
-    var address = this.currentAddress,
-        content = this.currentAddressTemplate({
-          address: address,
-        });
+    var content = this.currentAddressTemplate({
+      address: this.currentAddress,
+    });
 
     $("#shipping-address-current-selection").html(content);
+
+    this.currentAddressAlreadyRendered = true;
   },
 
   renderCurrentCard: function () {
-    if (this.cards.currentCard) {
-        var card = this.cards.currentCard;
+    var content = this.currentCardTemplate({
+      card: this.cards.currentCard
+    });
+    $("#payment-method-current-selection").html(content);
 
-        $("#payment-method-current-selection").html(
-          '<span id="current-card-brand">' +
-          card.brand +
-          '</span>' +
-          '<span id="current-card-last4">' +
-          ' ending in ' +
-          '<span id="current-card-number">' +
-          card.last4 +
-          '</span>' +
-          '</span>'
-        );
-    } else {
-        $("#payment-method-current-selection").html(
-          '<span id="loading-payment-current-selection">' +
-          "You haven't added any credit or debit cards yet." +
-          '</span>'
-        );
-        $("#payment-method-button").html("Add a card")
+    if (!this.cards.currentCard) {
+      $("#payment-method-button").html("Add a card")
 
-        this.noCardsAdded = true;
+      this.noCardsAdded = true;
     };
+  },
+
+  renderAddressesError: function () {
+
   },
 
   renderCardsError: function () {

@@ -1,4 +1,4 @@
-<%% if (address) { %>
+<%% if (!_.isEmpty(address.attributes)) { %>
     <span id="current-address-name">
       <%%= address.escape("name").toUpperCase() %>,
     </span>
@@ -18,5 +18,9 @@
     </span>
     <span id="current-address-zip">
       <%%= address.escape("zip").toUpperCase() %>
+    </span>
+<%% } else { %>
+    <span id="no-address-current-selection">
+      You haven't added any shipping addresses yet.
     </span>
 <%% } %>

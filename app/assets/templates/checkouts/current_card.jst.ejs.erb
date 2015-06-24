@@ -1,0 +1,15 @@
+<%% if (card) { %>
+    <span id="current-card-brand">
+      <%%= card.brand %>
+    </span>
+    <span id="current-card-last4">
+      ending in
+      <span id="current-card-number">
+        <%%= card.last4 %>
+      </span>
+    </span>
+<%% } else { %>
+    <span id="no-payment-current-selection">
+      You haven't added any credit or debit cards yet.
+    </span>
+<%% } %>

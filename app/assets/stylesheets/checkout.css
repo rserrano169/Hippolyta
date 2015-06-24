@@ -137,6 +137,11 @@
 
     /* --- SHIPPING ADDRESS --- */
 
+#checkout-view #loading-address-options {
+  display: block;
+  margin-bottom: 30px;
+}
+
 #checkout-view #shipping-address-options {
   display: none;
 }
