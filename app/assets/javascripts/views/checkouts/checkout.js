@@ -69,7 +69,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     this.$el.html(content);
     this.prependCsrfToken($("form"));
-    this.renderLoading();
 
     if (this.cartItemsAlreadyRendered) {
       this.renderCartItems();
@@ -96,32 +95,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       '<input type="hidden" name="authenticity_token" value="' +
       csrfToken +
       '">'
-    );
-  },
-
-  renderLoading: function () {
-    $("#shipping-address-current-selection").html(
-      '<span id="loading-address-current-selection">' +
-      'Loading...' +
-      '</span>'
-    );
-
-    $("#shipping-address-options").html(
-      '<span id="loading-address-options">' +
-      'Loading...' +
-      '</span>'
-    );
-
-    $("#payment-method-current-selection").html(
-      '<span id="loading-payment-current-selection">' +
-      'Loading...' +
-      '</span>'
-    );
-
-    $("#payment-method-options").html(
-      '<span id="loading-payment-options">' +
-      'Loading...' +
-      '</span>'
     );
   },
 

@@ -368,7 +368,6 @@
 
 #checkout-view #payment-method-current-selection #current-card-brand {
   font-weight: bold;
-  /*color: black;*/
 }
 
 #checkout-view #payment-method-current-selection #current-card-last4 {
