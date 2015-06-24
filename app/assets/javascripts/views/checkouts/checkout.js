@@ -19,6 +19,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.currentAddressAlreadyRendered = false;
     this.areAddressOptionsSlidDown = false;
     this.isAddressFormAppended = false;
+    this.noAddressesAdded = false;
     this.isCardFormAppended = false;
     this.cardsAlreadyRendered = false;
     this.noCardsAdded = false;
@@ -151,6 +152,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     $("#shipping-address-current-selection").html(content);
 
+    if (_.isEmpty(this.currentAddress.attributes)) {
+      $("#shipping-address-button").html("Add an Address")
+
+      this.noAddressesAdded = true;
+    };
+
     this.currentAddressAlreadyRendered = true;
   },
 
@@ -161,7 +168,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#payment-method-current-selection").html(content);
 
     if (!this.cards.currentCard) {
-      $("#payment-method-button").html("Add a card")
+      $("#payment-method-button").html("Add a Card")
 
       this.noCardsAdded = true;
     };
@@ -247,6 +254,16 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   slideUpAddressOptions: function () {
+    if (this.noAddressesAdded === true) {
+        $("#shipping-address-button-dropped")
+          .html("Add an Address")
+          .attr("id", "shipping-address-button");
+    } else {
+        $("#shipping-address-button-dropped")
+          .html("Change Address")
+          .attr("id", "shipping-address-button");
+    };
+
     $("#shipping-address-step-number-dropped")
       .attr("id", "shipping-address-step-number");
     $("#shipping-address-title-dropped")
