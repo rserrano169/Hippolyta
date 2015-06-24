@@ -14,7 +14,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   addPaymentFormTemplate: JST["checkouts/payment_form"],
 
+  cartItemsTemplate: JST["checkouts/cart_items"],
+
   initialize: function (options) {
+    this.cartItemsAlreadyRendered = false;
     this.addressesAlreadyRendered = false;
     this.currentAddressAlreadyRendered = false;
     this.areAddressOptionsSlidDown = false;
@@ -26,16 +29,16 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.arePaymentOptionsSlidDown = false;
     this.isCardFormOpen = false;
     this.isCartSlidDown = false;
-    this.cart = options.cart;
-    this.listenTo(this.cart, "sync", this.render);
     this.addresses = options.addresses;
     this.listenTo(this.addresses, "sync", this.renderAddresses);
     this.currentAddress = options.currentAddress;
     this.listenTo(this.currentAddress, "sync", this.renderCurrentAddress);
-    this.listenTo(this.currentAddress, "sync", this.renderAddressesError);
+    this.listenTo(this.currentAddress, "error", this.renderAddressesError);
     this.cards = options.cards;
     this.listenTo(this.cards, "sync", this.renderCards);
     this.listenTo(this.cards, "error", this.renderCardsError);
+    this.cart = options.cart;
+    this.listenTo(this.cart, "sync", this.renderCartItems);
     this.cartProducts = options.cartProducts;
     this.products = options.products;
   },
@@ -62,15 +65,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({
-      cart: this.cart,
-      cartProducts: this.cartProducts,
-      products: this.products,
-    });
+    var content = this.template();
 
     this.$el.html(content);
     this.prependCsrfToken($("form"));
     this.renderLoading();
+
+    if (this.cartItemsAlreadyRendered) {
+      this.renderCartItems();
+    };
 
     if (this.currentAddressAlreadyRendered) {
       this.renderCurrentAddress();
@@ -122,6 +125,23 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
   },
 
+  renderCartItems: function () {
+    var content = this.cartItemsTemplate({
+      cart: this.cart,
+      cartProducts: this.cartProducts,
+      products: this.products,
+    });
+
+    $("#checkout-products").html(content);
+    this.prependCsrfToken($(".checkout-product-update-quantity"));
+
+    $("#checkout-sidebar-items-quantity").html(
+      this.cart.escape("cart_quantity")
+    );
+
+    this.cartItemsAlreadyRendered = true;
+  },
+
   renderAddresses: function () {
     var content = this.shippingAddressesTemplate({
       addresses: this.addresses,
@@ -163,7 +183,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   renderCurrentCard: function () {
     var content = this.currentCardTemplate({
-      card: this.cards.currentCard
+      card: this.cards.currentCard,
     });
     $("#payment-method-current-selection").html(content);
 

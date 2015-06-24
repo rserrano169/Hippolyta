@@ -63,63 +63,6 @@
     </ul>
 
     <div id="checkout-products">
-      <%% products.each( function(product){ %>
-        <%% var cartProduct = cartProducts.getOrFetchByCartAndProductId(cart.id, product.id); %>
-        <ul class="checkout-product">
-          <li class="checkout-product-image-cell">
-            <ul>
-              <li>
-                <img src="<%%= product.escape("small_picture_url") %>"
-                     alt="product img" />
-              </li>
-            </ul>
-          </li>
-
-          <li class="checkout-product-info-cell">
-            <ul>
-              <li class="checkout-product-name">
-                <%%= product.escape("name") %>
-              </li>
-
-              <%% var quantity = product.escape("quantity") %>
-              <%% if (quantity < 1) { %>
-                  <li class="out-of-stock">
-                    Out of Stock
-                  </li>
-              <%% } else if (quantity > 25) { %>
-                  <li class="in-stock">
-                    In Stock
-                  </li>
-              <%% } else { %>
-                  <li class="left-in-stock">
-                    Only <%%= quantity %> left in stock.
-                  </li>
-              <%% }; %>
-
-              <%% if(cartProduct) { %>
-                <form action="/api/cart_products/qty/<%%= product.id %>" method="post">
-                  <input type="hidden" name="_method" value="patch">
-                  <input type="hidden" name="checkout?" value="true">
-                  <input class="checkout-product-quantity-input"
-                         type="number"
-                         min="0"
-                         max="<%%= product.escape("quantity") %>"
-                         name="cart_product[quantity]"
-                         value="<%%= cartProduct.escape("quantity") %>">
-                  <br>
-                  <button class="checkout-product-quantity-update">
-                    Update
-                  </button>
-                </form>
-              <%% }; %>
-
-              <li class="checkout-product-seller">
-                Sold by <%%= product.escape("seller_name") %>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      <%% }) %>
     </div>
   </section>
 
@@ -137,7 +80,8 @@
           <section id="checkout-price-details-left">
             <ul>
               <li>
-                Items (<%%= cart.escape("cart_quantity") %>):
+                Items
+                (<span id="checkout-sidebar-items-quantity"></span>):
               </li>
               <li>
                 Shipping & handling:
