@@ -764,7 +764,7 @@
 #checkout-view #checkout-order-summary {
   font-size: 18px;
   font-weight: bold;
-  padding: 5px 0px 15px 0px;
+  padding: 8px 0px 10px 0px;
 }
 
 #checkout-view .checkout-details-table {
@@ -782,6 +782,7 @@
   vertical-align: bottom;
   width: 175px;
   word-wrap: break-word;
+  padding-top: 8px;
 }
 
 #checkout-view .checkout-details-cell-two {
@@ -796,6 +797,31 @@
   padding-top: 9px;
   margin-top: 10px;
   border-top: 1px solid #e7e7e7;
+}
+
+#checkout-view #checkout-total-price-table {
+  display: table;
+  width: 100%;
+}
+
+#checkout-view #checkout-total-price-row {
+  display: table-row;
+  font-size: 18px;
+  font-weight: bold;
+  color: #b12704;
+}
+
+#checkout-view #checkout-total-price-cell-one {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 175px;
+}
+
+#checkout-view #checkout-total-price-cell-two {
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
+  width: 83px;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */
