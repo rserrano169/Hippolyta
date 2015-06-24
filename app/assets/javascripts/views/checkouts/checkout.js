@@ -44,6 +44,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #shipping-address-button": "slideDownAddressOptions",
     "click #shipping-address-title-dropped": "slideUpAddressOptions",
     "click #shipping-address-button-dropped": "slideUpAddressOptions",
+    "click #shipping-add-first-address": "openAddressForm",
     "click #add-another-address": "openAddressForm",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
@@ -167,7 +168,18 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderAddressesError: function () {
+    $("#shipping-address-current-selection").html(
+      '<span id="error-loading-current-address-selection">' +
+      'Unable to load address data. Reload to try again.' +
+      '</span>'
+    );
 
+    $("#shipping-address-options").html(
+      '<span id="error-loading-address-options">' +
+      'We were unable to load your address data.' +
+      'Please reload the page to try again.' +
+      '</span>'
+    );
   },
 
   renderCardsError: function () {
@@ -179,7 +191,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     $("#payment-method-options").html(
       '<span id="error-loading-payment-options">' +
-      'We were unable to load your card data. Please reload the page to try again.' +
+      'We were unable to load your card data.' +
+      'Please reload the page to try again.' +
       '</span>'
     );
   },

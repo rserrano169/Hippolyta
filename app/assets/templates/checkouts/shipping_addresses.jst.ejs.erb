@@ -6,57 +6,67 @@
       </span>
     </div>
   </div>
-  <%% addresses.each( function (address) { %>
-    <ul>
-      <li class="address-table">
+  <%% if (addresses.length < 1) { %>
+        <span id="no-address-selection">
+          You don't have any saved shipping addresses.
+        </span>
+      </form>
+      <div id="shipping-add-first-address">
+        Add a shipping address?
+      </div>
+  <%% } else { %>
+      <%% addresses.each( function (address) { %>
         <ul>
-          <li class="address-radio-cell">
-            <span class="address-radio">
-              <input type="radio"
-                     name="addressId"
-                     value="<%%= address.escape("id") %>">
-            </span>
-          </li>
-          <li class="address-info-cell">
-            <div class="address-info-container">
-              <span class="address-name">
-                <%%= address.escape("name").toUpperCase() %>,
-              </span>
-              <span class="address-street">
-                <%%= address.escape("street").toUpperCase() %>,
-              </span>
-              <%% if (address.escape("apt")) { %>
-                <span class="address-apt">
-                  <%%= address.escape("apt").toUpperCase() %>,
+          <li class="address-table">
+            <ul>
+              <li class="address-radio-cell">
+                <span class="address-radio">
+                  <input type="radio"
+                         name="addressId"
+                         value="<%%= address.escape("id") %>">
                 </span>
-              <%% } %>
-              <span class="address-city">
-                <%%= address.escape("city").toUpperCase() %>,
-              </span>
-              <span class="address-state">
-                <%%= address.escape("state").toUpperCase() %>,
-              </span>
-              <span class="address-zip">
-                <%%= address.escape("zip").toUpperCase() %>
-              </span>
+              </li>
+              <li class="address-info-cell">
+                <div class="address-info-container">
+                  <span class="address-name">
+                    <%%= address.escape("name").toUpperCase() %>,
+                  </span>
+                  <span class="address-street">
+                    <%%= address.escape("street").toUpperCase() %>,
+                  </span>
+                  <%% if (address.escape("apt")) { %>
+                    <span class="address-apt">
+                      <%%= address.escape("apt").toUpperCase() %>,
+                    </span>
+                  <%% } %>
+                  <span class="address-city">
+                    <%%= address.escape("city").toUpperCase() %>,
+                  </span>
+                  <span class="address-state">
+                    <%%= address.escape("state").toUpperCase() %>,
+                  </span>
+                  <span class="address-zip">
+                    <%%= address.escape("zip").toUpperCase() %>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <%% }) %>
+      <div id="shipping-address-form-button-table">
+        <ul>
+          <li id="shipping-address-button-cell">
+            <button id="shipping-address-form-button">
+              Use this shipping address
+            </button>
+          </li>
+          <li id="add-another-address-cell">
+            <div id="add-another-address">
+              Add another address?
             </div>
           </li>
         </ul>
-      </li>
-    </ul>
-  <%% }) %>
-  <div id="shipping-address-form-button-table">
-    <ul>
-      <li id="shipping-address-button-cell">
-        <button id="shipping-address-form-button">
-          Use this shipping address
-        </button>
-      </li>
-      <li id="add-another-address-cell">
-        <div id="add-another-address">
-          Add another address?
-        </div>
-      </li>
-    </ul>
-  </div>
-</form>
+      </div>
+    </form>
+<%% } %>
