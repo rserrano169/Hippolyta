@@ -83,11 +83,12 @@
 
   <section id="checkout-sidebar">
     <div id="checkout-sidebar-box">
-      <a id="checkout-place-order"
-         href="/checkout/add_purchased_products"
-         data-method="post">
-        Place your order
-      </a>
+      <form action="/checkout/add_purchased_products" method="post">
+        <input type="hidden" name="amount" value="">
+        <button id="checkout-place-order">
+          Place your order
+        </button>
+      </form>
 
       <section class="checkout-sidebar-pricings">
         Order Summary
