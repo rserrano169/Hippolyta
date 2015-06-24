@@ -21,8 +21,19 @@ class CheckoutsController < ApplicationController
   end
 
   def add_address
+    @address = Address.new(address_params)
+    current_user.addresses << @address
+    if current_user.save
+      current_user.current_shipping_address_id = @address.id
+      if params[:set_as_default] = "true"
+        current_user.default_shipping_address_id = @address.id
+      end
+      current_user.save!
 
-    redirect_to "/checkout#checkout"
+      redirect_to "/checkout#checkout"
+    else
+      redirect_to "/checkout#checkout"
+    end
   end
 
   def add_card
@@ -62,6 +73,10 @@ class CheckoutsController < ApplicationController
   end
 
   private
+
+  def address_params
+    params.require(:address).permit(:name, :street, :apt, :city, :state, :zip)
+  end
 
   def delete_if_duplicate(token)
     @customer_cards_info, @card = {}, nil

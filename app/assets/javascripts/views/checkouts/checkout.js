@@ -2,17 +2,17 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   template: JST["checkouts/checkout"],
 
+  currentAddressTemplate: JST["checkouts/current_address"],
+
   shippingAddressesTemplate: JST["checkouts/shipping_addresses"],
 
-  addressFormTemplate: JST["checkouts/address_form"],
+  addAddressFormTemplate: JST["checkouts/address_form"],
 
-  currentAddressTemplate: JST["checkouts/current_address"],
+  currentCardTemplate: JST["checkouts/current_card"],
 
   paymentMethodsTemplate: JST["checkouts/payment_methods"],
 
-  paymentFormTemplate: JST["checkouts/payment_form"],
-
-  currentCardTemplate: JST["checkouts/current_card"],
+  addPaymentFormTemplate: JST["checkouts/payment_form"],
 
   initialize: function (options) {
     this.addressesAlreadyRendered = false;
@@ -333,12 +333,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     var csrfToken = $("meta[name='csrf-token']").attr('content');
     if (this.isAddressFormAppended === false) {
-      $("#checkout-view").append(this.addressFormTemplate());
-      $("#add-address-form").prepend(
-        '<input type="hidden" name="authenticity_token" value="' +
-        csrfToken +
-        '">'
-      );
+      $("#checkout-view").append(this.addAddressFormTemplate());
+      this.prependCsrfToken($("#add-address-form"));
 
       this.isAddressFormAppended = true;
     };
@@ -359,12 +355,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     var csrfToken = $("meta[name='csrf-token']").attr('content');
     if (this.isCardFormAppended === false) {
-      $("#checkout-view").append(this.paymentFormTemplate());
-      $("#add-card-form").prepend(
-        '<input type="hidden" name="authenticity_token" value="' +
-        csrfToken +
-        '">'
-      );
+      $("#checkout-view").append(this.addPaymentFormTemplate());
+      this.prependCsrfToken($("#add-card-form"));
 
       this.isCardFormAppended = true;
     };

@@ -302,8 +302,8 @@
 
 #checkout-view #add-address-modal {
   position: absolute;
-  width: 540px;
-  height: 300px;
+  width: 600px;
+  height: 420px;
   background: #ffffff;
   border: 1px solid #3f3f3f;
   border-radius: 5px;
@@ -326,7 +326,7 @@
   display: table-cell;
   vertical-align: middle;
   text-align: right;
-  width: 210px;
+  width: 220px;
   height: 40px;
   font-weight: bold;
 }
