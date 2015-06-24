@@ -16,7 +16,6 @@
 //= require underscore
 //= require backbone
 //= require hippolyta
-//= require_tree ../stylesheets
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

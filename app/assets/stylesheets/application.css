@@ -78,7 +78,7 @@ input[type="radio"] {
 /* --- CLEARFIX --- */
 
 .group:after {
-  display: block;
   content: "";
   clear: both;
+  display: block;
 }
