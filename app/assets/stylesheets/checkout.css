@@ -346,7 +346,16 @@
   padding: 0px 5px;
 }
 
-#checkout-view #add-address-form > #add-address-form-button-container > button {
+#checkout-view #add-address-form > #add-address-form-button-row {
+  display: table-row;
+}
+
+#checkout-view #add-address-form > #add-address-form-button-cell-one {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#checkout-view #add-address-form #add-address-form-button {
   margin: 10px 0px;
   padding: 10px 20px;
   background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
@@ -354,9 +363,26 @@
   border-radius: 3px;
 }
 
-#checkout-view #add-address-form >
-#add-address-form-button-container > button:hover {
+#checkout-view #add-address-form #add-address-form-button:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
+
+#checkout-view #add-address-form-button-cell-two {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#checkout-view #add-address-form-insert-info {
+  display: block;
+  width: 180px;
+  margin-left: 35px;
+  cursor: pointer;
+  color: #0066c0;
+}
+
+#checkout-view #add-address-form-insert-info:hover {
+  color: #c45500;
+  text-decoration: underline;
 }
 
     /* --- PAYMENT METHODS --- */
@@ -635,7 +661,16 @@
   padding: 0px 5px;
 }
 
-#checkout-view #add-card-form > #add-card-form-button-container > button {
+#checkout-view #add-card-form > #add-card-form-button-row {
+  display: table-row;
+}
+
+#checkout-view #add-card-form > #add-card-form-button-cell-one {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#checkout-view #add-card-form #add-card-form-button {
   margin: 10px 0px;
   padding: 10px 20px;
   background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
@@ -643,11 +678,25 @@
   border-radius: 3px;
 }
 
-#checkout-view #add-card-form >
-#add-card-form-button-container > button:hover {
+#checkout-view #add-card-form #add-card-form-button:hover {
   background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
 }
 
+#checkout-view #add-card-form-button-cell-two {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#checkout-view #add-card-form-insert-info {
+  cursor: pointer;
+  width: 180px;
+  color: #0066c0;
+}
+
+#checkout-view #add-card-form-insert-info:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
     /* --- CART ITEMS --- */
 
 #checkout-view #checkout-products {

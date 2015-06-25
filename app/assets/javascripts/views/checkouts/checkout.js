@@ -50,12 +50,14 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #shipping-address-button-dropped": "slideUpAddressOptions",
     "click #shipping-add-first-address": "openAddressForm",
     "click #add-another-address": "openAddressForm",
+    "click #add-address-form-insert-info": "insertTestAddressInfo",
     "click #payment-method-title": "slideDownPaymentOptions",
     "click #payment-method-button": "slideDownPaymentOptions",
     "click #payment-method-title-dropped": "slideUpPaymentOptions",
     "click #payment-method-button-dropped": "slideUpPaymentOptions",
     "click #payment-add-first-card": "openCardForm",
     "click #payment-add-card": "openCardForm",
+    "click #add-card-form-insert-info": "insertTestCardInfo",
     "click .top-bar-x": "closeForms",
     "submit #add-card-form": "submitCard",
     "click #review-cart-title": "slideDownCart",
@@ -99,23 +101,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     );
   },
 
-  renderCartItems: function () {
-    var content = this.cartItemsTemplate({
-      cart: this.cart,
-      cartProducts: this.cartProducts,
-      products: this.products,
-    });
-
-    $("#checkout-products").html(content);
-    this.prependCsrfToken($(".checkout-product-update-quantity"));
-
-    $("#checkout-sidebar-items-quantity").html(
-      this.cart.escape("cart_quantity")
-    );
-
-    this.cartItemsAlreadyRendered = true;
-  },
-
   renderAddresses: function () {
     var content = this.shippingAddressesTemplate({
       addresses: this.addresses,
@@ -128,10 +113,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.prependCsrfToken($("#shipping-address-form"));
 
     this.addressesAlreadyRendered = true;
-  },
-
-  enableAddressSelect: function () {
-    $("#shipping-address-form-button").prop("disabled", false);
   },
 
   renderCards: function () {
@@ -148,6 +129,35 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.prependCsrfToken($("#payment-method-form"));
 
     this.cardsAlreadyRendered = true;
+  },
+
+  renderCartItems: function () {
+    var content = this.cartItemsTemplate({
+      cart: this.cart,
+      cartProducts: this.cartProducts,
+      products: this.products,
+    });
+
+    $("#checkout-products").html(content);
+    this.prependCsrfToken($(".checkout-product-update-quantity"));
+    this.insertCartTotals();
+
+    this.cartItemsAlreadyRendered = true;
+  },
+
+  insertCartTotals: function () {
+    var totalPrice = this.cart.escape("cart_total");
+
+    $("#checkout-sidebar-items-quantity").html(
+      this.cart.escape("cart_quantity")
+    );
+    $("#checkout-sidebar-items-price").html(totalPrice);
+    $("#checkout-sidebar-items-subtotal").html(totalPrice);
+    $("#checkout-total-price").html(totalPrice);
+  },
+
+  enableAddressSelect: function () {
+    $("#shipping-address-form-button").prop("disabled", false);
   },
 
   enableCardSelect: function () {
@@ -211,6 +221,35 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
       'Please reload the page to try again.' +
       '</span>'
     );
+  },
+
+  insertTestAddressInfo: function () {
+    var testName = 'Test Address',
+        testStreet = '123 Test Street',
+        testApt = '1t',
+        testCity = 'New Test City',
+        testZip = '10001';
+
+    $("input[name='address[name]']").prop("value", testName);
+    $("input[name='address[street]']").prop("value", testStreet);
+    $("input[name='address[apt]']").prop("value", testApt);
+    $("input[name='address[city]']").prop("value", testCity);
+    $("option[value='NY']").prop("selected", "selected");
+    $("input[name='address[zip]']").prop("value", testZip);
+  },
+
+  insertTestCardInfo: function () {
+    var testNumber = '4242424242424242',
+        testCVC = '123',
+        testName = 'Test Card',
+        testExpMo = '01',
+        testExpYr = '2020';
+
+    $("input[data-stripe='number']").prop("data-stripe", testNumber);
+    $("input[data-stripe='cvc']").prop("data-stripe", testCVC);
+    $("input[data-stripe='name']").prop("data-stripe", testName);
+    $("input[data-stripe='exp-month']").prop("data-stripe", testExpMo);
+    $("input[data-stripe='exp-year']").prop("data-stripe", testExpYr);
   },
 
   slideDownAddressOptions: function () {
