@@ -60,10 +60,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     "click #add-card-form-insert-info": "insertTestCardInfo",
     "click .top-bar-x": "closeForms",
     "submit #add-card-form": "submitCard",
-    "click #review-cart-title": "slideDownCart",
-    "click #review-cart-button": "slideDownCart",
-    "click #review-cart-title-dropped": "slideUpCart",
-    "click #review-cart-button-dropped": "slideUpCart",
+    "click #cart-items-title": "slideDownCartItems",
+    "click #cart-items-button": "slideDownCartItems",
+    "click #cart-items-title-dropped": "slideUpCart",
+    "click #cart-items-button-dropped": "slideUpCart",
     // "submit .checkout-product-update-quantity": "updateQuantity",
   },
 
@@ -132,6 +132,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCartItems: function () {
+    this.renderCurrentCartQuantity();
+
     var content = this.cartItemsTemplate({
       cart: this.cart,
       cartProducts: this.cartProducts,
@@ -191,6 +193,10 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
       this.noCardsAdded = true;
     };
+  },
+
+  renderCurrentCartQuantity: function () {
+    $("#cart-items-current-quantity").html();
   },
 
   renderAddressesError: function () {
@@ -287,15 +293,15 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
 
-  slideDownCart: function () {
+  slideDownCartItems: function () {
     this.slideUpAll();
 
-    $("#review-cart-title")
-      .attr("id", "review-cart-title-dropped")
+    $("#cart-items-step-number").attr("id", "cart-items-step-number-dropped");
+    $("#cart-items-title")
+      .attr("id", "cart-items-title-dropped")
       .html("Review Items");
-    $("#review-cart").attr("id", "review-cart-dropped");
-    $("#review-cart-button").html("Close");
-    $("#review-cart-button").attr("id", "review-cart-button-dropped");
+    $("#cart-items-button").html("Close");
+    $("#cart-items-button").attr("id", "cart-items-button-dropped");
     $("#checkout-products").slideDown("fast");
 
     this.isCartSlidDown = true;
@@ -350,12 +356,12 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
 
   slideUpCart: function () {
-    $("#review-cart-title-dropped")
-      .attr("id", "review-cart-title")
+    $("#cart-items-step-number-dropped").attr("id", "cart-items-step-number");
+    $("#cart-items-title-dropped")
+      .attr("id", "cart-items-title")
       .html("Cart Items");
-    $("#review-cart-dropped").attr("id", "review-cart");
-    $("#review-cart-button-dropped").html("View");
-    $("#review-cart-button-dropped").attr("id", "review-cart-button");
+    $("#cart-items-button-dropped").html("View");
+    $("#cart-items-button-dropped").attr("id", "cart-items-button");
     $("#checkout-products").slideUp("fast");
 
     this.isCartSlidDown = false;

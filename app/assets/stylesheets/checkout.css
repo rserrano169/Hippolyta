@@ -57,11 +57,6 @@
   border-top: none;
 }
 
-#checkout-view #review-cart,
-#checkout-view #review-cart-dropped {
-  padding-bottom: 30px;
-}
-
 #checkout-view .checkout-steps > .step-number {
   display: table-cell;
   vertical-align: middle;
@@ -765,7 +760,12 @@
   color: #555555;
 }
 
-#checkout-view #review-cart-dropped {
+#checkout-view #cart-items {
+  padding-bottom: 30px;
+}
+
+#checkout-view #cart-items-step-number-dropped,
+#checkout-view #cart-items-title-dropped {
   color: #c45500;
 }
 
