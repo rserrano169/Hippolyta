@@ -22,6 +22,15 @@ class Cart < ActiveRecord::Base
     self.products.length
   end
 
+  def total_units
+    @total_units = 0
+    self.cart_products.each do |cp|
+      @total_units += cp.quantity
+    end
+
+    @total_units
+  end
+
   def total
     @total_price = 0
     self.cart_products.each do |cart_prod|

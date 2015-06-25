@@ -1,6 +1,7 @@
 json.(@cart, :id, :buyer_id)
 
 json.cart_quantity @cart.quantity
+json.cart_units @cart.total_units
 json.cart_total money_string(@cart.total)
 
 json.cart_products @cart.cart_products do |cart_product|

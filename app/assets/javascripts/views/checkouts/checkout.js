@@ -16,6 +16,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   cartItemsTemplate: JST["checkouts/cart_items"],
 
+  currentCartUnitsTemplate: JST["checkouts/current_cart_units"],
+
   initialize: function (options) {
     this.cartItemsAlreadyRendered = false;
     this.addressesAlreadyRendered = false;
@@ -132,7 +134,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCartItems: function () {
-    this.renderCurrentCartQuantity();
+    this.renderCurrentCartUnits();
 
     var content = this.cartItemsTemplate({
       cart: this.cart,
@@ -195,8 +197,13 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     };
   },
 
-  renderCurrentCartQuantity: function () {
-    $("#cart-items-current-quantity").html();
+  renderCurrentCartUnits: function () {
+    var content = this.currentCartUnitsTemplate({
+      units: this.cart.escape("cart_units"),
+      price: this.cart.escape("cart_total"),
+    });
+
+    $("#cart-items-current-quantity").html(content);
   },
 
   renderAddressesError: function () {

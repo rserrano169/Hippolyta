@@ -394,6 +394,7 @@
 
 #checkout-view #payment-method-current-selection #current-card-brand {
   font-weight: bold;
+  color: #003360;
 }
 
 #checkout-view #payment-method-current-selection #current-card-last4 {
@@ -758,6 +759,15 @@
 #checkout-view .checkout-product-seller {
   font-size: 12px;
   color: #555555;
+}
+
+#checkout-view #current-cart-units {
+  font-weight: bold;
+}
+
+#checkout-view #current-cart-units-price {
+  font-weight: bold;
+  color: #b12704;
 }
 
 #checkout-view #cart-items {
