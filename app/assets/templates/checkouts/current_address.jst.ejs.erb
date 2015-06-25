@@ -1,26 +1,28 @@
-<%% if (!_.isEmpty(address.attributes)) { %>
-    <span id="current-address-name">
-      <%%= address.escape("name").toUpperCase() %>,
-    </span>
-    <span id="current-address-street">
-      <%%= address.escape("street").toUpperCase() %>,
-    </span>
-    <%% if (address.escape("apt")) { %>
-      <span id="current-address-apt">
-        APT. <%%= address.escape("apt").toUpperCase() %>,
+<span id="current-address-clickable">
+  <%% if (!_.isEmpty(address.attributes)) { %>
+      <span id="current-address-name">
+        <%%= capitalize(address.escape("name")) %>,
       </span>
-    <%% } %>
-    <span id="current-address-city">
-      <%%= address.escape("city").toUpperCase() %>,
-    </span>
-    <span id="current-address-state">
-      <%%= address.escape("state").toUpperCase() %>,
-    </span>
-    <span id="current-address-zip">
-      <%%= address.escape("zip").toUpperCase() %>
-    </span>
-<%% } else { %>
-    <span id="no-address-current-selection">
-      You haven't added any shipping addresses yet.
-    </span>
-<%% } %>
+      <span id="current-address-street">
+        <%%= capitalize(address.escape("street")) %>,
+      </span>
+      <%% if (address.escape("apt")) { %>
+        <span id="current-address-apt">
+          Apt. <%%= address.escape("apt").toUpperCase() %>,
+        </span>
+      <%% } %>
+      <span id="current-address-city">
+        <%%= capitalize(address.escape("city")) %>,
+      </span>
+      <span id="current-address-state">
+        <%%= address.escape("state") %>,
+      </span>
+      <span id="current-address-zip">
+        <%%= address.escape("zip") %>
+      </span>
+  <%% } else { %>
+      <span id="no-address-current-selection">
+        You haven't added any shipping addresses yet.
+      </span>
+  <%% } %>
+</span>

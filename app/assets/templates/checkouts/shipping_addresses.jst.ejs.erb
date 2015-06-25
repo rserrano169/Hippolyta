@@ -29,10 +29,10 @@
               <li class="address-info-cell">
                 <div class="address-info-container">
                   <span class="address-name">
-                    <%%= address.escape("name").toUpperCase() %>,
+                    <%%= capitalize(address.escape("name")) %>,
                   </span>
                   <span class="address-street">
-                    <%%= address.escape("street").toUpperCase() %>,
+                    <%%= capitalize(address.escape("street")) %>,
                   </span>
                   <%% if (address.escape("apt")) { %>
                     <span class="address-apt">
@@ -40,13 +40,13 @@
                     </span>
                   <%% } %>
                   <span class="address-city">
-                    <%%= address.escape("city").toUpperCase() %>,
+                    <%%= capitalize(address.escape("city")) %>,
                   </span>
                   <span class="address-state">
-                    <%%= address.escape("state").toUpperCase() %>,
+                    <%%= address.escape("state") %>,
                   </span>
                   <span class="address-zip">
-                    <%%= address.escape("zip").toUpperCase() %>
+                    <%%= address.escape("zip") %>
                   </span>
                 </div>
               </li>

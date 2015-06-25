@@ -47,6 +47,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
   events: {
     "click #shipping-address-title": "slideDownAddressOptions",
+    "click #current-address-clickable": "slideDownAddressOptions",
     "click #shipping-address-button": "slideDownAddressOptions",
     "click #shipping-address-title-dropped": "slideUpAddressOptions",
     "click #shipping-address-button-dropped": "slideUpAddressOptions",
@@ -106,6 +107,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   renderAddresses: function () {
     var content = this.shippingAddressesTemplate({
       addresses: this.addresses,
+      capitalize: this.capitalize,
     });
 
     $("#shipping-address-options").html(content);
@@ -122,6 +124,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     var content = this.paymentMethodsTemplate({
       cards: this.cards,
+      capitalize: this.capitalize,
     });
 
     $("#payment-method-options").html(content)
@@ -169,8 +172,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   renderCurrentAddress: function () {
+    console.log(this.capitalize(this.currentAddress.escape("name")));
+
     var content = this.currentAddressTemplate({
       address: this.currentAddress,
+      capitalize: this.capitalize,
     });
 
     $("#shipping-address-current-selection").html(content);
@@ -273,6 +279,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#shipping-address-title")
       .attr("id", "shipping-address-title-dropped")
       .html("Select Address");
+    $("#current-address-clickable")
+      .attr("id", "current-address-clickable-dropped");
     $("#shipping-address-button")
       .attr("id", "shipping-address-button-dropped")
       .html("Cancel");
@@ -330,6 +338,8 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#shipping-address-title-dropped")
       .attr("id", "shipping-address-title")
       .html("Shipping Address");
+    $("#current-address-clickable-dropped")
+      .attr("id", "current-address-clickable");
     $("#shipping-address-button-dropped")
       .attr("id", "shipping-address-button")
       .html("Change Address");
@@ -361,7 +371,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     this.arePaymentOptionsSlidDown = false;
   },
 
-
   slideUpCart: function () {
     $("#cart-items-step-number-dropped").attr("id", "cart-items-step-number");
     $("#cart-items-title-dropped")
@@ -373,7 +382,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
 
     this.isCartSlidDown = false;
   },
-
 
   slideUpAll: function () {
     if (this.areAddressOptionsSlidDown) {
@@ -525,5 +533,19 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         $form.append($('<input type="hidden" name="stripeToken"/>').val(token));
         $form.get(0).submit();
     };
+  },
+
+  capitalize: function (string) {
+    var words = [],
+        wordsArray = string.split(/\s*(\W|-)\s*/);
+
+    wordsArray.forEach( function (word) {
+      if (word === '') {
+        return;
+      };
+      words.push(word.charAt(0).toUpperCase() + word.toLowerCase().slice(1));
+    })
+
+    return words.join(' ');
   },
 });
