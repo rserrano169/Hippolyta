@@ -376,7 +376,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     $("#cart-items-title-dropped")
       .attr("id", "cart-items-title")
       .html("Cart Items");
-    $("#cart-items-button-dropped").html("View");
+    $("#cart-items-button-dropped").html("View/Change Qty");
     $("#cart-items-button-dropped").attr("id", "cart-items-button");
     $("#checkout-products").slideUp("fast");
 
