@@ -828,7 +828,7 @@
 #checkout-view .checkout-details-cell-one {
   display: table-cell;
   vertical-align: bottom;
-  width: 175px;
+  width: 150px;
   word-wrap: break-word;
   padding-top: 8px;
 }
@@ -837,7 +837,7 @@
   display: table-cell;
   vertical-align: bottom;
   text-align: right;
-  width: 83px;
+  width: 108px;
 }
 
 #checkout-view #checkout-details-divider {
@@ -862,14 +862,14 @@
 #checkout-view #checkout-total-price-cell-one {
   display: table-cell;
   vertical-align: bottom;
-  width: 175px;
+  width: 120px;
 }
 
 #checkout-view #checkout-total-price-cell-two {
   display: table-cell;
   vertical-align: bottom;
   text-align: right;
-  width: 83px;
+  width: 138px;
 }
 
 /* --- VIEW AFTER CHECKOUT --- */
