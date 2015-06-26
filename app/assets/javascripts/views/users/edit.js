@@ -1,6 +1,6 @@
-Hippolyta.Views.UserEdit = Backbone.View.extend({
+Hippolyta.Views.CurrentUserEdit = Backbone.View.extend({
 
-  template: JST["users/edit"],
+  template: JST["current_users/edit"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);

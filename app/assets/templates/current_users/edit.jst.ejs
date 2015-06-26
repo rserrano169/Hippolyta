@@ -1,0 +1,14 @@
+<main id="current-user-edit">
+  <img id="current-user-edit-profile-pic"
+       src="<%= user.escape("large_picture_url") %>"
+       alt="my current profile picture / logo" />
+
+  <form id="current-user-upload-form">
+    <input id="current-user-upload-button" type="file" name="picture">
+    Reset preview to current picture
+    <button>Upload</button>
+  </form>
+
+  <%= user.escape("name") %>
+  <button>Edit</button>
+</main>

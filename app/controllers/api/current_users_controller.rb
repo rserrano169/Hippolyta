@@ -3,6 +3,12 @@ class Api::CurrentUsersController < ApplicationController
     @current_user = current_user
     render :show
   end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    render :show
+  end
 
   def products
     @products = current_user.products

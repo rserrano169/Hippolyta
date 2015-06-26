@@ -6,7 +6,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "current_user/profile": "currentUserProfile",
-    "users/:user_id/edit": "userEdit",
+    "current_user/edit": "currentUserEdit",
     "current_user/products": "currentUserProducts",
     "products/new": "productsNew",
     "search_results": "searchResults",
@@ -43,15 +43,11 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(newView);
   },
 
-  userEdit: function (user_id) {
-    Hippolyta.Collections.users.fetch();
+  currentUserEdit: function (user_id) {
+    Hippolyta.Models.currentUser.fetch();
 
-    var collection = Hippolyta.Collections.users,
-        model = Hippolyta.Collections.users.getOrFetch(user_id),
-        editView = new Hippolyta.Views.UserEdit({
-          model: model,
-          collection: collection,
-        });
+    var model = Hippolyta.Models.currentUser,
+        editView = new Hippolyta.Views.CurrentUserEdit({ model: model, });
 
     this._swapView(editView);
   },

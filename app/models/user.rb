@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
 
   has_attached_file :picture,
                     styles: {
-                      thumb: "65x65>",
-                      small: "100x100>",
-                      medium: "200x200>",
-                      large: "300x300>"
+                      thumb: "65x65",
+                      small: "100x100",
+                      medium: "200x200",
+                      large: "300x300"
                     },
                     default_url: "user_default_picture_small.png"
 

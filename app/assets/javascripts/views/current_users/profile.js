@@ -3,7 +3,7 @@ Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
   template: JST["current_users/profile"],
 
   events: {
-    "click #private-profile-header-image": "editPicture",
+    // "click #private-profile-header-image": "editPicture",
   },
 
   initialize: function () {
@@ -19,12 +19,12 @@ Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
     return this;
   },
 
-  editPicture: function () {
-    Backbone.history.navigate(
-      "users/" + this.model.id + "/edit",
-      { trigger: true }
-    );
-  },
+  // editPicture: function () {
+  //   Backbone.history.navigate(
+  //     "users/" + this.model.id + "/edit",
+  //     { trigger: true }
+  //   );
+  // },
 
   dateString: function (dateObj) {
     return (dateObj + '').slice(0, 15);
