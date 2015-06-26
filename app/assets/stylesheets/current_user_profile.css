@@ -1,3 +1,7 @@
+#user-private-profile {
+  min-width: 920px;
+}
+
 #sign-in-to-view-profile {
   font-size: 20px;
   text-align: center;
@@ -12,4 +16,34 @@
 #sign-in-to-view-profile > .sign-in-or-up:hover {
   color: #e47911;
   text-decoration: underline;
+}
+
+#user-private-profile-body {
+  display: block;
+  padding: 40px;
+}
+
+#private-profile-header-table {
+  display: table;
+  width: 100%;
+}
+
+.private-profile-header-row {
+  display: table-row;
+}
+
+.private-profile-header-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#private-profile-header-name {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0px 40px;
+}
+
+#private-profile-header-date {
+  font-size: 20px;
 }

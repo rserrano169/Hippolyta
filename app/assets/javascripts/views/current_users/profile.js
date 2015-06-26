@@ -11,7 +11,10 @@ Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({ currentUser: this.model });
+    var content = this.template({
+      currentUser: this.model,
+      dateString: this.dateString,
+    });
     this.$el.html(content);
     return this;
   },
@@ -21,5 +24,9 @@ Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
       "users/" + this.model.id + "/edit",
       { trigger: true }
     );
+  },
+
+  dateString: function (dateObj) {
+    return (dateObj + '').slice(0, 15);
   },
 });

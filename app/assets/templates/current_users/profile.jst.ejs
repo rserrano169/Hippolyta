@@ -1,4 +1,4 @@
-<section id="user-private-profile">
+<main id="user-private-profile">
   <% if (!currentUser.escape("email") || !currentUser.escape("name")) { %>
       <div id="sign-in-to-view-profile">
         <a href="/session/new" class="sign-in-or-up">
@@ -9,14 +9,27 @@
         to view and edit your profile.
       </div>
   <% } else { %>
-      <img id="user-image"
-           src="<%= currentUser.escape("small_picture_url") %>"
-           alt="<%= currentUser.escape("name") %>'s picture/logo"/>
-
-      <%= currentUser.escape("name") %>'s Hippolyta
-
-      Customer since <%= new Date(currentUser.escape("created_at")) %>
+    <section id="user-private-profile-body">
+      <div id="private-profile-header-table">
+        <div class="private-profile-header-row">
+          <div class="private-profile-header-cell">
+            <img id="private-profile-header-image"
+                 src="<%= currentUser.escape("medium_picture_url") %>"
+                 alt="<%= currentUser.escape("name") %>'s picture/logo"/>
+          </div>
+          <div class="private-profile-header-cell">
+            <span id="private-profile-header-name">
+              <%= currentUser.escape("name") %>'s Hippolyta
+            </span>
+            <span id="private-profile-header-date">
+              Valued Customer since
+              <%= dateString(new Date(currentUser.escape("created_at"))) %>
+            </span>
+          </div>
+        </div>
+      </div>
 
       <a href="#current_user/products">My Products</a>
+    </section>
   <% } %>
-</section>
+</main>
