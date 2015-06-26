@@ -176,9 +176,15 @@
                   <% end %>
                   <li>
                     <button class="drop-down-button">
-                      <a href="/checkout#checkout">
-                        Proceed to checkout
-                      </a>
+                      <% if current_cart.products.empty? %>
+                        <a href="/#cart">
+                          View Cart
+                        </a>
+                      <% else %>
+                        <a href="/checkout#checkout">
+                          Proceed to checkout
+                        </a>
+                      <% end %>
                     </button>
                   </li>
                 </ul>

@@ -1,12 +1,15 @@
 class CheckoutsController < ApplicationController
   def checkout
     if !signed_in?
-      redirect_to "#must_sign_in"
+      redirect_to "/#must_sign_in"
+    end
+    if current_cart.products.empty?
+      redirect_to "/#cart"
     end
   end
 
   def add_purchased_products
-    
+
 
     @cart_products = current_user.cart_products
     @cart_products.each do |cart_product|
