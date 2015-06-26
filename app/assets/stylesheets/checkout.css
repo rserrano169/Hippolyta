@@ -75,7 +75,7 @@
   cursor: pointer;
 }
 
-#checkout-view .checkout-steps > .step-current-selection-span {
+#checkout-view .checkout-steps > .step-current-selection {
   display: table-cell;
   min-width: 255px;
   vertical-align: middle;
@@ -84,6 +84,9 @@
   font-weight: normal;
 }
 
+#checkout-view .current-selection-clickable {
+  cursor: pointer;
+}
 
 #checkout-view .checkout-steps > .step-button-span {
   display: table-cell;
