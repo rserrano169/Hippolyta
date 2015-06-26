@@ -3,11 +3,16 @@ class Api::CurrentUsersController < ApplicationController
     @current_user = current_user
     render :show
   end
-  
+
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(user_params)
-    render :show
+    @user = current_user
+    @picture = params[:picture]
+    @user.picture = @picture unless @picture == nil
+    if @user.save
+      redirect_to "/#current_user/profile"
+    else
+      redirect_to "/#current_user/edit"
+    end
   end
 
   def products
@@ -46,5 +51,11 @@ class Api::CurrentUsersController < ApplicationController
     end
 
     render :cards
+  end
+
+  private
+
+  def picture_params
+    params.require(:current_user).permit(:picture)
   end
 end

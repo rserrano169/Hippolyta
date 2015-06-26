@@ -33,7 +33,13 @@
   display: table-row;
 }
 
-#user-private-profile .private-profile-header-cell {
+#user-private-profile .private-profile-header-cell-one {
+  display: table-cell;
+  vertical-align: middle;
+  width: 200px;
+}
+
+#user-private-profile .private-profile-header-cell-two {
   display: table-cell;
   vertical-align: middle;
 }
@@ -43,14 +49,16 @@
 }
 
 #user-private-profile #private-profile-header-name {
-  display: inline-block;
+  display: block;
   font-size: 30px;
   font-weight: bold;
-  padding: 0px 40px;
+  padding: 0px 0px 25px 50px;
 }
 
 #user-private-profile #private-profile-header-date {
   font-size: 20px;
+  padding-left: 50px;
+  white-space: nowrap;
 }
 
 #user-private-profile #user-private-profile-body {

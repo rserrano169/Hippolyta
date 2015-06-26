@@ -1,9 +1,37 @@
 #current-user-edit {
   min-width: 920px;
+}
+
+#current-user-edit #current-user-edit-container {
   padding: 40px;
 }
 
 #current-user-edit #current-user-edit-profile-pic {
-  /*width: 300px;
-  height: 300px;*/
+  max-width: 300px;
+  max-height: 300px;
+}
+
+#current-user-edit #current-user-edit-choose-button {
+  margin: 10px 0px 30px 0px;
+  width: 300px;
+}
+
+#current-user-edit #current-user-reset-picture {
+  text-align: center;
+  width: 260px;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #fbfbfc, #e7e9ec);
+  border: 1px solid #8d9096;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#current-user-edit #current-user-edit-form-submit {
+  text-align: center;
+  width: 260px;
+  padding: 10px 20px;
+  margin: 20px 0px 0px 0px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
 }

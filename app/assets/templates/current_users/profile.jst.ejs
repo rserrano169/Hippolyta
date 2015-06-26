@@ -12,14 +12,14 @@
     <section id="user-private-profile-header">
       <div id="private-profile-header-table">
         <div class="private-profile-header-row">
-          <div class="private-profile-header-cell">
+          <div class="private-profile-header-cell-one">
             <a href="/#current_user/edit">
             <img id="private-profile-header-image"
-                 src="<%= currentUser.escape("small_picture_url") %>"
+                 src="<%= currentUser.escape("medium_picture_url") %>"
                  alt="<%= currentUser.escape("name") %>'s picture/logo"/>
             </a>
           </div>
-          <div class="private-profile-header-cell">
+          <div class="private-profile-header-cell-two">
             <span id="private-profile-header-name">
               <%= currentUser.escape("name") %>'s Hippolyta
             </span>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resource :current_user, only: [:show]
-    get "current_user/edit", to: "current_users#edit"
+    post "current_user/update", to: "current_users#update"
     get "current_user/cart", to: "current_users#cart"
     get "current_user/products", to: "current_users#products"
     get "current_user/addresses", to: "current_users#addresses"

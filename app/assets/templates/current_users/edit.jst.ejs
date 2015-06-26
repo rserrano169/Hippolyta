@@ -1,14 +1,22 @@
 <main id="current-user-edit">
-  <img id="current-user-edit-profile-pic"
-       src="<%= user.escape("large_picture_url") %>"
-       alt="my current profile picture / logo" />
+  <div id="current-user-edit-container">
+    <img id="current-user-edit-profile-pic"
+         src="<%= user.escape("large_picture_url") %>"
+         alt="my current profile picture" />
 
-  <form id="current-user-upload-form">
-    <input id="current-user-upload-button" type="file" name="picture">
-    Reset preview to current picture
-    <button>Upload</button>
-  </form>
-
-  <%= user.escape("name") %>
-  <button>Edit</button>
+    <form id="current-user-edit-form"
+          action="/api/current_user/update"
+          method="post"
+          enctype="multipart/form-data">
+      <input id="current-user-edit-choose-button"
+             type="file"
+             name="picture">
+      <div id="current-user-reset-picture">
+        Reset preview to current picture
+      </div>
+      <button id="current-user-edit-form-submit">
+        Upload
+      </button>
+    </form>
+  </div>
 </main>

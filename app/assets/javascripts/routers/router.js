@@ -43,7 +43,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(newView);
   },
 
-  currentUserEdit: function (user_id) {
+  currentUserEdit: function () {
     Hippolyta.Models.currentUser.fetch();
 
     var model = Hippolyta.Models.currentUser,

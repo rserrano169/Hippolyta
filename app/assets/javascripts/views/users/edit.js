@@ -7,9 +7,8 @@ Hippolyta.Views.CurrentUserEdit = Backbone.View.extend({
   },
 
   events: {
-    "change #upload-button": "selectProfilePic",
-    "click #reset-picture": "render",
-    "submit #upload-form": "submitProfilePic",
+    "change #current-user-edit-choose-button": "selectProfilePic",
+    "click #current-user-reset-picture": "render",
   },
 
   render: function () {
@@ -26,32 +25,20 @@ Hippolyta.Views.CurrentUserEdit = Backbone.View.extend({
     return this;
   },
 
-  submitProfilePic: function (event) {
-    event.preventDefault();
-
-    var $form = $(event.currentTarget),
-      attr = $form.serializeJSON(),
-      that = this;
-
-    this.model.save(attr, {
-      success: function () {
-        that.collection.add(that.model, { merge: true });
-        // that.$el.append("<p>Your picture has been saved</p>");
-      },
-    });
-  },
-
   selectProfilePic: function (event) {
     var file = event.currentTarget.files[0],
         fileReader = new FileReader(),
         that = this;
 
     fileReader.onloadend = function () {
-      that.model.set("picture", fileReader.result);
-      that.$("#profile-pic").attr("src", fileReader.result);
+      $("#current-user-edit-profile-pic").attr("src", fileReader.result);
     };
 
-    fileReader.readAsDataURL(file);
+    if (file === undefined) {
+      this.render();
+    } else {
+      fileReader.readAsDataURL(file);
+    };
   }
 
 });
