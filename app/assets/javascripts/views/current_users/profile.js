@@ -3,7 +3,7 @@ Hippolyta.Views.CurrentUserProfile = Backbone.View.extend({
   template: JST["current_users/profile"],
 
   events: {
-    "click #user-image": "editPicture",
+    "click #private-profile-header-image": "editPicture",
   },
 
   initialize: function () {

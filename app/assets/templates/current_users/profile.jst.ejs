@@ -9,7 +9,7 @@
         to view and edit your profile.
       </div>
   <% } else { %>
-    <section id="user-private-profile-body">
+    <section id="user-private-profile-header">
       <div id="private-profile-header-table">
         <div class="private-profile-header-row">
           <div class="private-profile-header-cell">
@@ -28,8 +28,18 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <a href="#current_user/products">My Products</a>
+    <section id="user-private-profile-body">
+      <div id="private-profile-body-table">
+        <div class="private-profile-body-row">
+          <div class="private-profile-body-cell-one">
+            <span id="user-private-profile-products">
+              <a href="#current_user/products">My Products</a>
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   <% } %>
 </main>
