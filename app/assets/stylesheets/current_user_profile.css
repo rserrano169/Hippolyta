@@ -88,3 +88,7 @@
   text-decoration: underline;
   margin-left: 40px;
 }
+
+#user-private-profile #user-private-profile-products:hover {
+  color: #c45500;  
+}
