@@ -79,7 +79,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
     var content = this.template();
 
     this.$el.html(content);
-    this.prependCsrfToken($("form"));
+    this.prependCsrfToken(this.$el.find("form"));
 
     if (this.cartItemsAlreadyRendered) {
       this.renderCartItems();
@@ -101,6 +101,7 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   prependCsrfToken: function ($form) {
+    console.log($form);
     var csrfToken = $("meta[name='csrf-token']").attr('content');
     $form.prepend(
       '<input type="hidden" name="authenticity_token" value="' +

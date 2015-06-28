@@ -90,8 +90,9 @@
 
   <section id="checkout-sidebar">
     <div id="checkout-sidebar-box">
-      <form action="/checkout/add_purchased_products" method="post">
-        <input type="hidden" name="amount" value="">
+      <form id="place-order-form"
+            action="/checkout/add_purchased_products"
+            method="post">
         <button id="checkout-place-order">
           Place your order
         </button>
