@@ -1,0 +1,31 @@
+#current-user-products {
+  padding: 40px;
+}
+
+#current-user-products .current-user-product:first-child {
+  padding: 0px 0px 20px 0px;
+}
+
+#current-user-products .current-user-product {
+  padding: 20px 0px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#current-user-products .current-user-product-picture {
+  padding-bottom: 10px;
+}
+
+#current-user-products #current-user-add-product {
+  padding-top: 20px;
+}
+
+#current-user-products #current-user-add-product-button {
+  padding: 15px 20px;
+  border: 1px solid #8d9096;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #fbfbfc, #e7e9ec);
+}
+
+#current-user-products #current-user-add-product-button:hover {
+  background: linear-gradient(to bottom, #f5f5f5, #f5f5f5 50%, #cacacb);
+}

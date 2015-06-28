@@ -1,40 +1,63 @@
-<main>
+<main id="current-user-products">
   <% if (products.length < 1) { %>
     You're not selling any products yet. Would you like to <a href="#products/new">sell something?</a>
   <% }; %>
   <ul>
     <% products.each( function (product) { %>
-      <li>
+      <li class="current-user-product">
         <ul>
-          <li>
+          <li class="current-user-product-picture">
             <img src="<%= product.escape("medium_picture_url") %>" alt="product image"/>
           </li>
-          <li>
-            Name: <%= product.escape("name") %>
+          <li class="current-user-product-name">
+            <label>
+              Name:
+            </label>
+            <%= product.escape("name") %>
           </li>
-          <li>
-            Sale price: $<%= product.escape("sale_price") %>
+          <li class="current-user-product-sale-price">
+            <label>
+              Sale price:
+            </label>
+            $<%= product.escape("sale_price") %>
           </li>
-          <li>
+          <li class="current-user-product-original-price">
+            <label>
+              Original Price:
+            </label>
             <% if (product.escape("original_price")) { %>
-              Original Price: $<%= product.escape("original_price") %>
+                $<%= product.escape("original_price") %>
+            <% } else { %>
+                None Provided
             <% } %>
           </li>
-          <li>
-            Quantity: <%= product.escape("quantity") %>
+          <li class="current-user-product-quantity">
+            <label>
+              Quantity:
+            </label>
+            <%= product.escape("quantity") %>
           </li>
-          <li>
+          <li class="current-user-product-description">
+            <label>
+              Description:
+            </label>
             <% if (product.escape("description")) { %>
-              Description: <%= product.escape("description") %>
+              <%= product.escape("description") %>
+            <% } else { %>
+              None Provided
             <% } %>
           </li>
-          <button>Edit Product</button>
+          <!-- <button>Edit Product</button> -->
         </ul>
       </li>
     <% }) %>
   </ul>
 
-  <div id="name">
-    <a href="#products/new">Add a product</a>
+  <div id="current-user-add-product">
+    <a href="#products/new">
+      <button id="current-user-add-product-button">
+        Add another product
+      </button>
+    </a>
   </div>
 </main>
