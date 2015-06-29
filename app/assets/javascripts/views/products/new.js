@@ -33,6 +33,8 @@ Hippolyta.Views.ProductNewForm = Backbone.View.extend({
         $("#product-new-form-errors").show();
       }
     });
+
+    return false
   },
 
   choosePicture: function (event) {

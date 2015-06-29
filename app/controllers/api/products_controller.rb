@@ -5,11 +5,13 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
-    @product = current_user.products.new(product_params)
-
-    if @product.save
-      redirect_to "/#current_user/products"
+    @product = current_user.products.create(product_params)
+    @tags = params[:product][:tags].split(", ")
+    @tags.each do |tag|
+      @product.tags.create({name: tag})
     end
+
+    render :new
   end
 
   def show
