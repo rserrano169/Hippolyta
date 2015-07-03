@@ -18,7 +18,7 @@ To implement this application, I used:
 
 and various Ruby gems, such as:
 
-* Pg_search
+* pg_search
 
 * Kaminari
 
@@ -26,17 +26,17 @@ and various Ruby gems, such as:
 
 * Figaro
 
-* jbuilder
+* JBuilder
 
-* ejs
-
-* stripe
+* EJS
 
 * BCrypt
 
-Implementing gems is often the most time consuming task for me,
-as each gem is like its own language, and requires its own
-considerations and understandings.  Once I aquired a deeper understanding
-for how these gems worked, especially Pg_search, paperclip, jbuilder,
-and figaro, I was able to utilize them to really increase the creative
-freedom with which I coded this app.
+* Stripe
+
+The credit card form in the checkout view only accepts test information,
+uses Stripe to store a token to the database, and does not record any sensitive
+data.
+
+Try out the app [here](http://hippolyta.us).  Sign in as a test user, to view
+the features, or make your own account and play around.
