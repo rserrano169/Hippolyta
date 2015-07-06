@@ -103,15 +103,20 @@ PRODUCT_TAG_NAMES = {
     "games",
     "toys",
     "kids",
+    "children",
     "tabletop games",
     "marbles",
-    "1970"
+    "1970",
+    "animals"
   ],
   1: [
+    "hippopotamus",
     "hippo",
     "board game",
     "kids",
-    "math"
+    "children",
+    "math",
+    "animals"
   ],
   2: [
     "hippo",
@@ -122,14 +127,26 @@ PRODUCT_TAG_NAMES = {
     "New Zealand",
     "CD",
     "MP3",
-    "download"
+    "download",
+    "animals"
   ],
   3: [
+    "hippopotamus",
     "drink",
     "coffee",
-    "tea"
+    "tea",
+    "hot liquid",
+    "animals",
+    "novelty"
   ],
-  4: [],
+  4: [
+    "hippopotamus"
+    "toys",
+    "stuffed",
+    "animals",
+    "kids",
+    "children"
+  ],
 }
 
 prod_num = 0
