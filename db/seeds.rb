@@ -24,7 +24,7 @@ USER_EMAILS = {
 P_WORDS = "hippolyta"
 
 USER_PIC_URLS = {
-  0 => "/app/assets/images/seed/hippolyta_hippo.png",
+  0 => "hippolyta_hippo.png",
   1 => nil,
   2 => nil,
   3 => nil,
@@ -35,15 +35,29 @@ user_num = 0
 while user_num < USER_NAMES.length
   user_pic = nil
   if USER_PIC_URLS[user_num]
-    user_pic = File.open(File.join(Rails.root, USER_PIC_URLS[user_num]))
+    user_pic = File.open(
+      File.join(
+        Rails.root, "/app/assets/images/seed/#{USER_PIC_URLS[user_num]}"
+      )
+    )
   end
 
-  user = User.create!({
-    name: USER_NAMES[user_num],
-    email: "#{USER_EMAILS[user_num]}@hippolyta.us",
-    password: P_WORDS,
-    picture: user_pic
-  })
+  user = User.find_by!(email: "#{USER_EMAILS[user_num]}@hippolyta.us")
+  if user
+    user.update_attributes!({
+      name: USER_NAMES[user_num],
+      email: "#{USER_EMAILS[user_num]}@hippolyta.us",
+      password: P_WORDS,
+      picture: user_pic
+    })
+  else
+    user = User.create!({
+      name: USER_NAMES[user_num],
+      email: "#{USER_EMAILS[user_num]}@hippolyta.us",
+      password: P_WORDS,
+      picture: user_pic
+    })
+  end
 
   user_num += 1
 end
@@ -56,6 +70,7 @@ PRODUCT_NAMES = {
   4 => 'Aurora World Aurora Plush 12" Hippo Tubbie Wubbie',
   5 => "FHC Children's Hippo Animal Chair",
   6 => "Design Toscano Huey The Hippo Garden Statue",
+  7 => "Hippo Door Mat",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -66,6 +81,7 @@ PRODUCT_SELLER_IDS = {
   4 => 1,
   5 => 2,
   6 => 2,
+  7 => 2,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -76,6 +92,7 @@ PRODUCT_ORIGINAL_PRICES = {
   4 => 11.99,
   5 => 129.99,
   6 => 50.90,
+  7 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -86,6 +103,7 @@ PRODUCT_SALE_PRICES = {
   4 => 10.27,
   5 => 39.99,
   6 => 43.90,
+  7 => 156.00,
 }
 
 PRODUCT_QUANTITIES = {
@@ -96,6 +114,7 @@ PRODUCT_QUANTITIES = {
   4 => 19,
   5 => 24,
   6 => 8,
+  7 => 100,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -106,16 +125,18 @@ PRODUCT_DESCRIPTIONS = {
   4 => "Realistic Styling. Wonderful Gift Item. Fine Plush Fabric. Premier manufacturer of gift plush. Soft and cuddly.",
   5 => "WOW! This adorable Hippo chair is the perfect gift for any baby to a young child. It's cute design and super soft material creates a multi-use piece. It is first and foremost a cozy chair, but it is also a giant stuffed animal, and it will certainly brighten the decor of any room. It is the perfect gift for your children, grandchildren, or any other adorable young one you know. It is irresistibly soft and designed to function as a chair, but it is durable enough for a childhood of unlimited HUGS and CUDDLES",
   6 => "Guests won’t know what to expect when they notice the Huey the Hippo Garden Sculpture popping his head up from your garden, patio, or yard. This whimsical sculpture will liven up any setting and is perfect indoors or out. It’s made of cast resin and hand painted in striking detail.",
+  7 => 'Provide a "hip" and hefty hello at the front door with the Droog Hippo Door Mat. Designed by Ed Annink, the Hippo Door Mat has an unmistakable and playful shape taken from a copyright-free Gerd Arntz pictogram and made out of a durable and natural-looking combination of coir and PVC.',
 }
 
 PRODUCT_PIC_URLS = {
-  0 => "/app/assets/images/seed/hungry_hippos_image.jpg",
-  1 => "/app/assets/images/seed/hiphopopotamus_board_game_image.jpg",
-  2 => "/app/assets/images/seed/fotc.jpg",
-  3 => "/app/assets/images/seed/keep_calm_thermos.jpg",
-  4 => "/app/assets/images/seed/aurora_world_aurora_plush_12in_hippo.jpg",
-  5 => "/app/assets/images/seed/childrens_hippo_animal_chair.jpg",
-  6 => "/app/assets/images/seed/design_toscano_huey_the_hippo_garden_statue.jpg",
+  0 => "hungry_hippos_image.jpg",
+  1 => "hiphopopotamus_board_game_image.jpg",
+  2 => "fotc.jpg",
+  3 => "keep_calm_thermos.jpg",
+  4 => "aurora_world_aurora_plush_12in_hippo.jpg",
+  5 => "childrens_hippo_animal_chair.jpg",
+  6 => "design_toscano_huey_the_hippo_garden_statue.jpg",
+  7 => "hippo_door_mat.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -187,6 +208,7 @@ PRODUCT_TAG_NAMES = {
   6 => [
     "hippo",
     "hippopotamus",
+    "animals",
     "furniture",
     "resin",
     "hand painted",
@@ -196,28 +218,62 @@ PRODUCT_TAG_NAMES = {
     "sculpture",
     "outdoor"
   ],
+  7 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "outdoor",
+    "coir",
+    "pvc",
+    "decoration",
+    "home deco",
+    "interior design",
+    "carpet",
+    "rugs"
+  ],
 }
 
 prod_num = 0
 while prod_num < PRODUCT_NAMES.length
   prod_pic = nil
   if PRODUCT_PIC_URLS[prod_num]
-    prod_pic = File.open(File.join(Rails.root, PRODUCT_PIC_URLS[prod_num]))
+    prod_pic = File.open(
+      File.join(
+        Rails.root, "/app/assets/images/seed/#{PRODUCT_PIC_URLS[prod_num]}"
+      )
+    )
   end
 
-  product = Product.create!({
+  product = Product.find_by!(
     name: PRODUCT_NAMES[prod_num],
     seller_id: PRODUCT_SELLER_IDS[prod_num],
-    original_price: PRODUCT_ORIGINAL_PRICES[prod_num],
-    sale_price: PRODUCT_SALE_PRICES[prod_num],
-    quantity: PRODUCT_QUANTITIES[prod_num],
-    description: PRODUCT_DESCRIPTIONS[prod_num],
-    picture: prod_pic
-  })
+    description: PRODUCT_DESCRIPTIONS[prod_num]
+  )
+  if product
+    product.update_attributes!({
+      name: PRODUCT_NAMES[prod_num],
+      seller_id: PRODUCT_SELLER_IDS[prod_num],
+      original_price: PRODUCT_ORIGINAL_PRICES[prod_num],
+      sale_price: PRODUCT_SALE_PRICES[prod_num],
+      quantity: PRODUCT_QUANTITIES[prod_num],
+      description: PRODUCT_DESCRIPTIONS[prod_num],
+      picture: prod_pic
+    })
+  else
+    product = Product.create!({
+      name: PRODUCT_NAMES[prod_num],
+      seller_id: PRODUCT_SELLER_IDS[prod_num],
+      original_price: PRODUCT_ORIGINAL_PRICES[prod_num],
+      sale_price: PRODUCT_SALE_PRICES[prod_num],
+      quantity: PRODUCT_QUANTITIES[prod_num],
+      description: PRODUCT_DESCRIPTIONS[prod_num],
+      picture: prod_pic
+    })
+  end
 
   PRODUCT_TAG_NAMES[prod_num].each do |tag_name|
     tag = Tag.find_by(name: tag_name)
-    if tag && product.tags.include?(tag)
+    if tag && !product.tags.include?(tag)
       product.tags << tag
     elsif tag.nil?
       product.tags.create!({name: tag_name})
