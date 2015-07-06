@@ -83,6 +83,8 @@ PRODUCT_NAMES = {
   17 => "Carter's Animals Collection Musical Mobile",
   18 => "The Hiccupotamus, Hardcover – September 1, 2009",
   19 => "Boston Warehouse Stainless Steel and Blue Hippo Mini Stapler",
+  20 => "Mobile Phone Green Plastic Cartoon Hippo Shape Stand Holder",
+  21 => "EMTEC M324 Animal Series 4 GB USB 2.0 Flash Drive, Hippo (EKMMD4GM324)",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -106,6 +108,8 @@ PRODUCT_SELLER_IDS = {
   17 => 4,
   18 => 4,
   19 => 4,
+  20 => 1,
+  21 => 2,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -129,6 +133,8 @@ PRODUCT_ORIGINAL_PRICES = {
   17 => 57.99,
   18 => nil,
   19 => nil,
+  20 => nil,
+  21 => 30.99,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -152,6 +158,8 @@ PRODUCT_SALE_PRICES = {
   17 => 49.99,
   18 => 7.79,
   19 => 11.44,
+  20 => 5.22,
+  21 => 10.99,
 }
 
 PRODUCT_QUANTITIES = {
@@ -175,6 +183,8 @@ PRODUCT_QUANTITIES = {
   17 => 12,
   18 => 100,
   19 => 3,
+  20 => 100,
+  21 => 14,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -198,6 +208,8 @@ PRODUCT_DESCRIPTIONS = {
   17 => "Carter's animals collection musical mobile. This musical mobile will help soothe your little one to sleep, gently spinning while playing brahms lullaby. Elegant elephants and adorable turtles spin beneath a ruffled canopy as a curious giraffe looks on. Coordinates with a full line of carter's animals collection nursery bedding and room decor.",
   18 => "A hippopotamus with a bad case of the hiccups. Age Range: 1 - 2 years. Hardcover: 32 pages. Language: English.",
   19 => "Blue Novelty Hippopotamus Stapler. Small enough to travel with.  Smooth round edges.  Make your office, workplace, or school more fun!",
+  20 => "Exquisite design with cartoon hippo shape, lovable and chic.This Plastic Stand Holder is ideal for displaying mobile phone, Mp4, Mp5, etc.Nice gift for your friends, also adorn your tabletop.With self-adhesive tape on the base, placing it on the desk firmly.",
+  21 => "In a world full of bland, boring flash drives, EMTEC stands out from the crowd. In today's digital world, consumers are creative and demand advanced technologies to express themselves. EMTEC answers the call by providing a wide range of USB flash drives, each one perfect for storing, transporting and sharing your presentations, documents, photos, music files and more. The EMTEC Animal USB Flash Drive series features a set of charming animal characters carefully crafted from quality rubber materials.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -221,6 +233,8 @@ PRODUCT_PIC_URLS = {
   17 => "Carters_Animals_Collection_Musical_Mobile.jpg",
   18 => "The_Hiccupotamus.jpg",
   19 => "Boston_Warehouse_Stainless_Steel_and_Blue_Hippo_Mini_Stapler.jpg",
+  20 => "Mobile_Phone_Green_Plastic_Cartoon_Hippo_Shape_Stand_Holder.jpg",
+  21 => "EMTEC_M324_Animal_Series_4_GB_USB_2_Flash_Drive_Hippo_EKMMD4GM324.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -494,6 +508,32 @@ PRODUCT_TAG_NAMES = {
     "staples",
     "novelty",
     "gifts"
+  ],
+  20 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "cell phone",
+    "mobile phone",
+    "gifts",
+    "toys",
+    "plastic",
+    "phone case",
+    "electronics",
+    "technology"
+  ],
+  21 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "electronics",
+    "technology",
+    "usb",
+    "memory stick",
+    "hardware",
+    "portable",
+    "flash drive",
+    "computers"
   ],
 }
 
