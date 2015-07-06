@@ -78,6 +78,9 @@ PRODUCT_NAMES = {
   12 => "Cartoon Hippo Vinyl Decal Sticker for wall or car (pink, 5 inch)",
   13 => "Race Car Bouncing Balls (1 dozen) - Bulk [Toy]",
   14 => "My Pillow Pets Hungry Hippo - Large (Lavender)",
+  15 => "Mini Bobble Head Hippo",
+  16 => "Carter's Animals Collection 4 Piece Crib Set",
+  17 => "Carter's Animals Collection Musical Mobile",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -96,6 +99,9 @@ PRODUCT_SELLER_IDS = {
   12 => 3,
   13 => 3,
   14 => 3,
+  15 => 4,
+  16 => 4,
+  17 => 4,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -114,6 +120,9 @@ PRODUCT_ORIGINAL_PRICES = {
   12 => 7.95,
   13 => nil,
   14 => nil,
+  15 => 14.99,
+  16 => 175.99,
+  17 => 57.99,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -132,6 +141,9 @@ PRODUCT_SALE_PRICES = {
   12 => 4.86,
   13 => 7.07,
   14 => 24.99,
+  15 => 10.99,
+  16 => 149.99,
+  17 => 49.99,
 }
 
 PRODUCT_QUANTITIES = {
@@ -150,6 +162,9 @@ PRODUCT_QUANTITIES = {
   12 => 6,
   13 => 100,
   14 => 24,
+  15 => 1,
+  16 => 100,
+  17 => 12,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -168,6 +183,9 @@ PRODUCT_DESCRIPTIONS = {
   12 => "Stickerslug 5 inch pink cartoon hippo vinyl decal sticker. This frustration-free cartoon hippo has an endless list of places you can use this decal to liven up your world. Whether you are new to decal stickers or a professional, it could not be simpler with our products. Included with your purchase of this cartoon hippo decal is our easy to follow Stickerslug instructional booklet to guide those who may be new to installing decals. If you are installing your pink cartoon hippo outdoors, select our high quality gloss finish material, and select our premium matte finish vinyl material for your indoor installations.",
   13 => 'Race Car Bouncing Balls. Assorted styles. Rubber. 1 1/4" (35mm)',
   14 => "From the original My Pillow Pets, this Extra Cuddly Hungery Hippo is made of soft Lavendar plush fabric. Open the velcro closure and use as a pillow. Close the velcro closure and you have the softest pet ever. This is part of the Original My Pillow Pets, as advertised on Nickelodeon, Discovery Kids, TV Land.",
+  15 => 'This unique hand crafted collectible?bobble head?is made with high quality resin. It is hand-painted.? You will be amazed by its fine details. This is a "must have" collectible for?animal lovers. So buy it now while supply last.??This cute bobble head can be placed in the car.? While the car is moving, so is this cute little bobble head.',
+  16 => "Carter's animals collection 4 piece crib set animals collection set includes: comforter, dust ruffle, sheet, and nursery organizer. Set the stage for sweet safari dreams, complete with happy hippos, elephants, turtles, and giraffes in a stylish combination of greys, greens, and yellows. Features an appliqued quilt trimmed in polka-dot edging, crib sheet adorned with adorable animals, darling green and white dust ruffle, and wild-animal print diaper stacker. Coordinates with a full line of carters animal collection nursery decor and bedding.",
+  17 => "Carter's animals collection musical mobile. This musical mobile will help soothe your little one to sleep, gently spinning while playing brahms lullaby. Elegant elephants and adorable turtles spin beneath a ruffled canopy as a curious giraffe looks on. Coordinates with a full line of carter's animals collection nursery bedding and room decor.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -186,6 +204,9 @@ PRODUCT_PIC_URLS = {
   12 => "Cartoon_Hippo_Vinyl_Decal_Sticker_for_wall_or_car_pink_5inch.jpg",
   13 => "Race_Car_Bouncing_Balls_1_dozen-Bulk_Toy.jpg",
   14 => "My_Pillow_Pets_Hungry_Hippo-Large_Lavender.jpg",
+  15 => "mini_bobble_head_hippo.jpg",
+  16 => "Carters_Animals_Collection_4_Piece_Crib_Set.jpg",
+  17 => "Carters_Animals_Collection_Musical_Mobile.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -389,6 +410,54 @@ PRODUCT_TAG_NAMES = {
     "plush",
     "stuffed",
     "toys"
+  ],
+  15 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "toys",
+    "novelty",
+    "bobblehead",
+    "decoration",
+    "collectible",
+    "resin",
+    "bobble",
+    "hand painted",
+    "art",
+    "trinkets",
+    "cars"
+  ],
+  16 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "sheets",
+    "bedding",
+    "bed",
+    "crib",
+    "baby",
+    "toddler",
+    "infant",
+    "cotton",
+    "machine wash",
+    "sets",
+    "comforter",
+    "mobile"
+  ],
+  17 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "crib",
+    "baby",
+    "toddler",
+    "infant",
+    "polyester",
+    "music",
+    "mobile",
+    "toys",
+    "gifts",
+    "sets"
   ],
 }
 
