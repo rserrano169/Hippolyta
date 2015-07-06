@@ -81,6 +81,8 @@ PRODUCT_NAMES = {
   15 => "Mini Bobble Head Hippo",
   16 => "Carter's Animals Collection 4 Piece Crib Set",
   17 => "Carter's Animals Collection Musical Mobile",
+  18 => "The Hiccupotamus, Hardcover – September 1, 2009",
+  19 => "Boston Warehouse Stainless Steel and Blue Hippo Mini Stapler",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -102,6 +104,8 @@ PRODUCT_SELLER_IDS = {
   15 => 4,
   16 => 4,
   17 => 4,
+  18 => 4,
+  19 => 4,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -123,6 +127,8 @@ PRODUCT_ORIGINAL_PRICES = {
   15 => 14.99,
   16 => 175.99,
   17 => 57.99,
+  18 => nil,
+  19 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -144,6 +150,8 @@ PRODUCT_SALE_PRICES = {
   15 => 10.99,
   16 => 149.99,
   17 => 49.99,
+  18 => 7.79,
+  19 => 11.44,
 }
 
 PRODUCT_QUANTITIES = {
@@ -165,6 +173,8 @@ PRODUCT_QUANTITIES = {
   15 => 1,
   16 => 100,
   17 => 12,
+  18 => 100,
+  19 => 3,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -186,6 +196,8 @@ PRODUCT_DESCRIPTIONS = {
   15 => 'This unique hand crafted collectible?bobble head?is made with high quality resin. It is hand-painted.? You will be amazed by its fine details. This is a "must have" collectible for?animal lovers. So buy it now while supply last.??This cute bobble head can be placed in the car.? While the car is moving, so is this cute little bobble head.',
   16 => "Carter's animals collection 4 piece crib set animals collection set includes: comforter, dust ruffle, sheet, and nursery organizer. Set the stage for sweet safari dreams, complete with happy hippos, elephants, turtles, and giraffes in a stylish combination of greys, greens, and yellows. Features an appliqued quilt trimmed in polka-dot edging, crib sheet adorned with adorable animals, darling green and white dust ruffle, and wild-animal print diaper stacker. Coordinates with a full line of carters animal collection nursery decor and bedding.",
   17 => "Carter's animals collection musical mobile. This musical mobile will help soothe your little one to sleep, gently spinning while playing brahms lullaby. Elegant elephants and adorable turtles spin beneath a ruffled canopy as a curious giraffe looks on. Coordinates with a full line of carter's animals collection nursery bedding and room decor.",
+  18 => "A hippopotamus with a bad case of the hiccups. Age Range: 1 - 2 years. Hardcover: 32 pages. Language: English.",
+  19 => "Blue Novelty Hippopotamus Stapler. Small enough to travel with.  Smooth round edges.  Make your office, workplace, or school more fun!",
 }
 
 PRODUCT_PIC_URLS = {
@@ -207,6 +219,8 @@ PRODUCT_PIC_URLS = {
   15 => "mini_bobble_head_hippo.jpg",
   16 => "Carters_Animals_Collection_4_Piece_Crib_Set.jpg",
   17 => "Carters_Animals_Collection_Musical_Mobile.jpg",
+  18 => "The_Hiccupotamus.jpg",
+  19 => "Boston_Warehouse_Stainless_Steel_and_Blue_Hippo_Mini_Stapler.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -458,6 +472,28 @@ PRODUCT_TAG_NAMES = {
     "toys",
     "gifts",
     "sets"
+  ],
+  18 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "books",
+    "hardcover",
+    "kids",
+    "children",
+    "reading",
+    "hiccups"
+  ],
+  19 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "office supplies",
+    "workplace",
+    "school supplies",
+    "staples",
+    "novelty",
+    "gifts"
   ],
 }
 
