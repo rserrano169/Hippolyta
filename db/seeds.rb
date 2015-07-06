@@ -77,6 +77,7 @@ PRODUCT_NAMES = {
   11 => "Baby Aspen, Hug-alot-amus Hooded Hippo Robe, Purple, 0-6 Months",
   12 => "Cartoon Hippo Vinyl Decal Sticker for wall or car (pink, 5 inch)",
   13 => "Race Car Bouncing Balls (1 dozen) - Bulk [Toy]",
+  14 => "My Pillow Pets Hungry Hippo - Large (Lavender)",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -94,6 +95,7 @@ PRODUCT_SELLER_IDS = {
   11 => 3,
   12 => 3,
   13 => 3,
+  14 => 3,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -111,6 +113,7 @@ PRODUCT_ORIGINAL_PRICES = {
   11 => 30.00,
   12 => 7.95,
   13 => nil,
+  14 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -128,6 +131,7 @@ PRODUCT_SALE_PRICES = {
   11 => 21.21,
   12 => 4.86,
   13 => 7.07,
+  14 => 24.99,
 }
 
 PRODUCT_QUANTITIES = {
@@ -145,6 +149,7 @@ PRODUCT_QUANTITIES = {
   11 => 100,
   12 => 6,
   13 => 100,
+  14 => 24,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -162,6 +167,7 @@ PRODUCT_DESCRIPTIONS = {
   11 => "Baby Aspen's \"Hug-alot-amus\" hooded robe embraces infants with terrycloth coziness and hippo-size cuteness. Features and facts: Lavender terry robe with white cuffs, two terry ties in front, a hood with two smiling, white hippo teeth, appliqued gray eyes and hippo ears. Bottom of robe has a hippo's tail. Sharks can be personalized with baby's inital for an additional cost. Machine-wash and dry (low). Size 0-6 months.",
   12 => "Stickerslug 5 inch pink cartoon hippo vinyl decal sticker. This frustration-free cartoon hippo has an endless list of places you can use this decal to liven up your world. Whether you are new to decal stickers or a professional, it could not be simpler with our products. Included with your purchase of this cartoon hippo decal is our easy to follow Stickerslug instructional booklet to guide those who may be new to installing decals. If you are installing your pink cartoon hippo outdoors, select our high quality gloss finish material, and select our premium matte finish vinyl material for your indoor installations.",
   13 => 'Race Car Bouncing Balls. Assorted styles. Rubber. 1 1/4" (35mm)',
+  14 => "From the original My Pillow Pets, this Extra Cuddly Hungery Hippo is made of soft Lavendar plush fabric. Open the velcro closure and use as a pillow. Close the velcro closure and you have the softest pet ever. This is part of the Original My Pillow Pets, as advertised on Nickelodeon, Discovery Kids, TV Land.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -179,6 +185,7 @@ PRODUCT_PIC_URLS = {
   11 => "Baby_Aspen_Hug-alot-amus_Hooded_Hippo_Robe_Purple_0-6_Months.jpg",
   12 => "Cartoon_Hippo_Vinyl_Decal_Sticker_for_wall_or_car_pink_5inch.jpg",
   13 => "Race_Car_Bouncing_Balls_1_dozen-Bulk_Toy.jpg",
+  14 => "My_Pillow_Pets_Hungry_Hippo-Large_Lavender.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -368,6 +375,20 @@ PRODUCT_TAG_NAMES = {
     "cars",
     "stocking stuffer",
     "gifts"
+  ],
+  14 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "bedware",
+    "bedding",
+    "bedroom",
+    "bed",
+    "pillows",
+    "machine wash",
+    "plush",
+    "stuffed",
+    "toys"
   ],
 }
 
