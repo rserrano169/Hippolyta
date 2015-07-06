@@ -42,7 +42,7 @@ while user_num < USER_NAMES.length
     )
   end
 
-  user = User.find_by!(email: "#{USER_EMAILS[user_num]}@hippolyta.us")
+  user = User.find_by(email: "#{USER_EMAILS[user_num]}@hippolyta.us")
   if user
     user.update_attributes!({
       name: USER_NAMES[user_num],
@@ -71,6 +71,12 @@ PRODUCT_NAMES = {
   5 => "FHC Children's Hippo Animal Chair",
   6 => "Design Toscano Huey The Hippo Garden Statue",
   7 => "Hippo Door Mat",
+  8 => 'R&M Hippo 4" Cookie Cutter in Durable, Economical, Tinplated Steel',
+  9 => "Hippos Attractives Salt Pepper Shaker Made of Ceramic",
+  10 => "Thomas And Friends Wooden Railway - Zoo Car",
+  11 => "Baby Aspen, Hug-alot-amus Hooded Hippo Robe, Purple, 0-6 Months",
+  12 => "Cartoon Hippo Vinyl Decal Sticker for wall or car (pink, 5 inch)",
+  13 => "Race Car Bouncing Balls (1 dozen) - Bulk [Toy]",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -82,6 +88,12 @@ PRODUCT_SELLER_IDS = {
   5 => 2,
   6 => 2,
   7 => 2,
+  8 => 2,
+  9 => 2,
+  10 => 3,
+  11 => 3,
+  12 => 3,
+  13 => 3,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -93,6 +105,12 @@ PRODUCT_ORIGINAL_PRICES = {
   5 => 129.99,
   6 => 50.90,
   7 => nil,
+  8 => nil,
+  9 => nil,
+  10 => 50.00,
+  11 => 30.00,
+  12 => 7.95,
+  13 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -104,6 +122,12 @@ PRODUCT_SALE_PRICES = {
   5 => 39.99,
   6 => 43.90,
   7 => 156.00,
+  8 => 4.32,
+  9 => 10.17,
+  10 => 33.82,
+  11 => 21.21,
+  12 => 4.86,
+  13 => 7.07,
 }
 
 PRODUCT_QUANTITIES = {
@@ -115,6 +139,12 @@ PRODUCT_QUANTITIES = {
   5 => 24,
   6 => 8,
   7 => 100,
+  8 => 8,
+  9 => 3,
+  10 => 100,
+  11 => 100,
+  12 => 6,
+  13 => 100,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -126,6 +156,12 @@ PRODUCT_DESCRIPTIONS = {
   5 => "WOW! This adorable Hippo chair is the perfect gift for any baby to a young child. It's cute design and super soft material creates a multi-use piece. It is first and foremost a cozy chair, but it is also a giant stuffed animal, and it will certainly brighten the decor of any room. It is the perfect gift for your children, grandchildren, or any other adorable young one you know. It is irresistibly soft and designed to function as a chair, but it is durable enough for a childhood of unlimited HUGS and CUDDLES",
   6 => "Guests won’t know what to expect when they notice the Huey the Hippo Garden Sculpture popping his head up from your garden, patio, or yard. This whimsical sculpture will liven up any setting and is perfect indoors or out. It’s made of cast resin and hand painted in striking detail.",
   7 => 'Provide a "hip" and hefty hello at the front door with the Droog Hippo Door Mat. Designed by Ed Annink, the Hippo Door Mat has an unmistakable and playful shape taken from a copyright-free Gerd Arntz pictogram and made out of a durable and natural-looking combination of coir and PVC.',
+  8 => "CybrTrayd-R&M heavy-duty tinplate steel cookie cutters are strong and built to hold their shapes. However, they are not dishwasher-safe and should be hand washed in warm, soapy water and towel dried.",
+  9 => 'Salt & Pepper Shakers Set. Size: ~3" - 4". Not Dishwasher or Microware Safe. Made of High Quaility Ceramic. Not Recommended For Children Under 12. 100% Licensed Product.',
+  10 => "The Island of Sodor is alive with jungle animals, as the Zoo Cars are transporting lions and hippos! The lion roars and the hippo chomps on the two-car Sodor Zoo Cars. Thomas Wooden Railway vehicles, track and destinations are not compatible with Take Along Thomas items.",
+  11 => "Baby Aspen's \"Hug-alot-amus\" hooded robe embraces infants with terrycloth coziness and hippo-size cuteness. Features and facts: Lavender terry robe with white cuffs, two terry ties in front, a hood with two smiling, white hippo teeth, appliqued gray eyes and hippo ears. Bottom of robe has a hippo's tail. Sharks can be personalized with baby's inital for an additional cost. Machine-wash and dry (low). Size 0-6 months.",
+  12 => "Stickerslug 5 inch pink cartoon hippo vinyl decal sticker. This frustration-free cartoon hippo has an endless list of places you can use this decal to liven up your world. Whether you are new to decal stickers or a professional, it could not be simpler with our products. Included with your purchase of this cartoon hippo decal is our easy to follow Stickerslug instructional booklet to guide those who may be new to installing decals. If you are installing your pink cartoon hippo outdoors, select our high quality gloss finish material, and select our premium matte finish vinyl material for your indoor installations.",
+  13 => 'Race Car Bouncing Balls. Assorted styles. Rubber. 1 1/4" (35mm)',
 }
 
 PRODUCT_PIC_URLS = {
@@ -137,6 +173,12 @@ PRODUCT_PIC_URLS = {
   5 => "childrens_hippo_animal_chair.jpg",
   6 => "design_toscano_huey_the_hippo_garden_statue.jpg",
   7 => "hippo_door_mat.jpg",
+  8 => "R&M_hippo_4in_cookie_cutter_in_durable_economical_tinplated_steel.jpg",
+  9 => "hippos_attractives_salt_pepper_shaker_made_of_ceramic.jpg",
+  10 => "thomas_and_friends_wooden_railway_zoo_car.jpg",
+  11 => "Baby_Aspen_Hug-alot-amus_Hooded_Hippo_Robe_Purple_0-6_Months.jpg",
+  12 => "Cartoon_Hippo_Vinyl_Decal_Sticker_for_wall_or_car_pink_5inch.jpg",
+  13 => "Race_Car_Bouncing_Balls_1_dozen-Bulk_Toy.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -231,6 +273,102 @@ PRODUCT_TAG_NAMES = {
     "carpet",
     "rugs"
   ],
+  8 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "steel",
+    "baking",
+    "baked goods",
+    "cooking",
+    "cookware",
+    "kitchen",
+    "dining",
+    "utensils",
+    "cookie"
+  ],
+  9 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "ceramic",
+    "dining",
+    "kitchen",
+    "utensils",
+    "seasonings",
+    "spices",
+    "novelty",
+    "home deco",
+    "decoration",
+    "cooking"
+  ],
+  10 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "trains",
+    "automobiles",
+    "locomotives",
+    "vehicles",
+    "zoo",
+    "wheels",
+    "lion",
+    "track",
+    "kids",
+    "children",
+    "toys",
+    "games",
+    "models",
+    "sets"
+  ],
+  11 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "baby",
+    "babies",
+    "toddlers",
+    "clothing",
+    "apparel",
+    "robe",
+    "bathrobe",
+    "novelty",
+    "nursery",
+    "hood",
+    "plush",
+    "terry",
+    "tail",
+    "machine wash",
+    "machine dry"
+  ],
+  12 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "automotive",
+    "automobiles",
+    "cars",
+    "vehicles",
+    "stickers",
+    "stationary",
+    "decals",
+    "decorations"
+  ],
+  13 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "balls",
+    "games",
+    "kids",
+    "children",
+    "toys",
+    "racecars",
+    "sportscars",
+    "cars",
+    "stocking stuffer",
+    "gifts"
+  ],
 }
 
 prod_num = 0
@@ -244,7 +382,7 @@ while prod_num < PRODUCT_NAMES.length
     )
   end
 
-  product = Product.find_by!(
+  product = Product.find_by(
     name: PRODUCT_NAMES[prod_num],
     seller_id: PRODUCT_SELLER_IDS[prod_num],
     description: PRODUCT_DESCRIPTIONS[prod_num]
