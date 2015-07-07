@@ -90,6 +90,8 @@ PRODUCT_NAMES = {
   24 => "Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag - Purple Hippo",
   25 => "Kidzuu Soft Sole Baby Infant Leather Crib Shoes Navy Red Hippo",
   26 => "Momo Baby Infant/Toddler Hip Hippo Navy Soft Sole Leather Shoes",
+  27 => "The Mountain Men's Hippo Head T-shirt",
+  28 => 'Kinder "Happy Hippo" Cocoa Cream Biscuits : Pack of 5 Biscuits',
 }
 
 PRODUCT_SELLER_IDS = {
@@ -120,6 +122,8 @@ PRODUCT_SELLER_IDS = {
   24 => 5,
   25 => 1,
   26 => 1,
+  27 => 1,
+  28 => 1,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -150,6 +154,8 @@ PRODUCT_ORIGINAL_PRICES = {
   24 => 11.99,
   25 => 14.99,
   26 => nil,
+  27 => 30.99,
+  28 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -180,6 +186,8 @@ PRODUCT_SALE_PRICES = {
   24 => 7.99,
   25 => 9.99,
   26 => 25.00,
+  27 => 9.30,
+  28 => 5.49,
 }
 
 PRODUCT_QUANTITIES = {
@@ -210,6 +218,8 @@ PRODUCT_QUANTITIES = {
   24 => 100,
   25 => 100,
   26 => 100,
+  27 => 100,
+  28 => 100,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -240,6 +250,8 @@ PRODUCT_DESCRIPTIONS = {
   24 => "Essential Design Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag.",
   25 => "Outfit your little one with these absolutely charming soft sole infant baby shoes. These comfortable leather shoes are great for the little ones, and convenient for the parents. Great for both indoors and outdoors. Machine washable. Leather conditioner works well on it.",
   26 => "Allowing your baby to go barefoot helps the foot to grow normally and to develop its musculature and strength. Momo Baby footwear is carefully handcrafted and designed to provide the protection from rough surfaces and dirty floors, while providing the health benefits of being barefoot. Momo Baby's entire line of footwear has been awarded the American Podiatric Medical Association's prestigious Seal of Acceptance which recognizes products which have been found beneficial and significant value to foot health.",
+  27 => "Hand dyed shirt featuring a screen print graphic of a hippo head on a preshrunk, 100 percent cotton shirt dyed and printed by the mountain which uses only inks and dyes to bring you a durable and comfortable t-shirt",
+  28 => "Kinder Chocolate is not complete without Kinder Happy Hippo which is a cookie-wafer bar with creamy milk and nut filling. Package contains 5 Kinder Happy Hippo Cacao bars.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -270,6 +282,8 @@ PRODUCT_PIC_URLS = {
   24 => "Bath_Accessory_Set-Pouf_Mitt_&_Mesh_Carry_Bag_Purple_Hippo.jpg",
   25 => "Kidzuu_Soft_Sole_Baby_Infant_Leather_Crib_Shoes_Navy_Red_Hippo.jpg",
   26 => "Momo_Baby_InfantToddler_Hip_Hippo_Navy_Soft_Sole_Leather_Shoes.jpg",
+  27 => "The_Mountain_Mens_Hippo_Head_T-shirt.jpg",
+  28 => "Kinder_Happy_Hippo_Cocoa_Cream_Biscuits_Pack_of_5_Biscuits.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -645,6 +659,36 @@ PRODUCT_TAG_NAMES = {
     "toddler",
     "leather",
     "suede"
+  ],
+  27 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "clothes",
+    "clothing",
+    "apparel",
+    "garments",
+    "shirt",
+    "t-shirt",
+    "dyed",
+    "cotton",
+    "machine wash",
+    "machine dry",
+    "preshrunk",
+    "art"
+  ],
+  28 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "chocolate",
+    "candy",
+    "cookies",
+    "snacks",
+    "German",
+    "food",
+    "perishables",
+    "edible"
   ],
 }
 
