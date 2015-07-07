@@ -101,7 +101,6 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   prependCsrfToken: function ($form) {
-    console.log($form);
     var csrfToken = $("meta[name='csrf-token']").attr('content');
     $form.prepend(
       '<input type="hidden" name="authenticity_token" value="' +
@@ -268,11 +267,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
         testExpMo = '01',
         testExpYr = '2020';
 
-    $("input[data-stripe='number']").prop("data-stripe", testNumber);
-    $("input[data-stripe='cvc']").prop("data-stripe", testCVC);
-    $("input[data-stripe='name']").prop("data-stripe", testName);
-    $("input[data-stripe='exp-month']").prop("data-stripe", testExpMo);
-    $("input[data-stripe='exp-year']").prop("data-stripe", testExpYr);
+    $("input[data-stripe='number']").prop("value", testNumber);
+    $("input[data-stripe='cvc']").prop("value", testCVC);
+    $("input[data-stripe='name']").prop("value", testName);
+    $("input[data-stripe='exp-month']").prop("value", testExpMo);
+    $("input[data-stripe='exp-year']").prop("value", testExpYr);
   },
 
   slideDownAddressOptions: function () {
