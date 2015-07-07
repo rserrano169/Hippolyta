@@ -42,9 +42,15 @@ class Api::CurrentUsersController < ApplicationController
   def cards
     if current_stripe_customer
       default_card_id = current_user.stripe_default_card_id
+      if default_card_id
+        @default_card = current_stripe_customer.sources.retrieve(default_card_id)
+      end
+
       current_card_id = current_stripe_customer.default_source
-      @default_card = current_stripe_customer.sources.retrieve(default_card_id)
-      @current_card = current_stripe_customer.sources.retrieve(current_card_id)
+      if current_card_id
+        @current_card = current_stripe_customer.sources.retrieve(current_card_id)
+      end
+      
       @cards = current_stripe_customer.sources.all(object: "card")
     else
       @cards = []
