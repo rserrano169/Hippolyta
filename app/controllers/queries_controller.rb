@@ -16,7 +16,8 @@ class QueriesController < ApplicationController
 
     if @query.save
       if current_user
-        current_user.queries.first.delete if current_user.queries.length > 10
+        first_query = current_user.queries.first
+        first_query.delete if current_user.queries.length > 10
       elsif Query.where(session_token: @session_token).length > 10
         Query.where(session_token: @session_token).first.delete
       end
