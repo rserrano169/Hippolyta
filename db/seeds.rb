@@ -85,6 +85,9 @@ PRODUCT_NAMES = {
   19 => "Boston Warehouse Stainless Steel and Blue Hippo Mini Stapler",
   20 => "Mobile Phone Green Plastic Cartoon Hippo Shape Stand Holder",
   21 => "EMTEC M324 Animal Series 4 GB USB 2.0 Flash Drive, Hippo (EKMMD4GM324)",
+  22 => "Deco Breeze Hippo Figurine Fan",
+  23 => "Jojo's Boutique Hippo Charm Antique Silver for Snake Charm Bracelet",
+  24 => "Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag - Purple Hippo",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -108,8 +111,11 @@ PRODUCT_SELLER_IDS = {
   17 => 4,
   18 => 4,
   19 => 4,
-  20 => 1,
-  21 => 2,
+  20 => 5,
+  21 => 5,
+  22 => 5,
+  23 => 5,
+  24 => 5,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -135,6 +141,9 @@ PRODUCT_ORIGINAL_PRICES = {
   19 => nil,
   20 => nil,
   21 => 30.99,
+  22 => 500.00,
+  23 => nil,
+  24 => 11.99,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -160,6 +169,9 @@ PRODUCT_SALE_PRICES = {
   19 => 11.44,
   20 => 5.22,
   21 => 10.99,
+  22 => 249.95,
+  23 => 5.70,
+  24 => 7.99,
 }
 
 PRODUCT_QUANTITIES = {
@@ -185,6 +197,9 @@ PRODUCT_QUANTITIES = {
   19 => 3,
   20 => 100,
   21 => 14,
+  22 => 1,
+  23 => 5,
+  24 => 100,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -210,6 +225,9 @@ PRODUCT_DESCRIPTIONS = {
   19 => "Blue Novelty Hippopotamus Stapler. Small enough to travel with.  Smooth round edges.  Make your office, workplace, or school more fun!",
   20 => "Exquisite design with cartoon hippo shape, lovable and chic.This Plastic Stand Holder is ideal for displaying mobile phone, Mp4, Mp5, etc.Nice gift for your friends, also adorn your tabletop.With self-adhesive tape on the base, placing it on the desk firmly.",
   21 => "In a world full of bland, boring flash drives, EMTEC stands out from the crowd. In today's digital world, consumers are creative and demand advanced technologies to express themselves. EMTEC answers the call by providing a wide range of USB flash drives, each one perfect for storing, transporting and sharing your presentations, documents, photos, music files and more. The EMTEC Animal USB Flash Drive series features a set of charming animal characters carefully crafted from quality rubber materials.",
+  22 => "Let this Hippo Shaped Decorative Figurine Fan brighten your day while it keeps you cool. With its decorative appeal, a Figurine Fan can easily become a permanent part of any desk, vanity, bedroom, kitchen, or bathroom decor.",
+  23 => "Fits snake bracelets or a neckalce you are making. Quantity: 1 Bead. Material: Base Metal Silver Plated Antique Finish.",
+  24 => "Essential Design Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -235,6 +253,9 @@ PRODUCT_PIC_URLS = {
   19 => "Boston_Warehouse_Stainless_Steel_and_Blue_Hippo_Mini_Stapler.jpg",
   20 => "Mobile_Phone_Green_Plastic_Cartoon_Hippo_Shape_Stand_Holder.jpg",
   21 => "EMTEC_M324_Animal_Series_4_GB_USB_2_Flash_Drive_Hippo_EKMMD4GM324.jpg",
+  22 => "Deco_Breeze_Hippo_Figurine_Fan.jpg",
+  23 => "Jojos_Boutique_Hippo_Charm_Antique_Silver_for_Snake_Charm_Bracelet.jpg",
+  24 => "Bath_Accessory_Set-Pouf_Mitt_&_Mesh_Carry_Bag_Purple_Hippo.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -534,6 +555,50 @@ PRODUCT_TAG_NAMES = {
     "portable",
     "flash drive",
     "computers"
+  ],
+  22 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "appliances",
+    "home deco",
+    "decoration",
+    "art",
+    "sculpture",
+    "statue",
+    "fan",
+    "cast metal",
+    "cooling",
+    "air conditioning",
+    "interior design"
+  ],
+  23 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "jewelry",
+    "silver plated",
+    "antique",
+    "bracelet",
+    "charm",
+    "gifts",
+    "crafts",
+    "crafting",
+    "craft",
+    "art",
+    "beading",
+    "sewing"
+  ],
+  24 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "bath",
+    "toiletries",
+    "loofah",
+    "makeup",
+    "cosmetics",
+    "skin care"
   ],
 }
 
