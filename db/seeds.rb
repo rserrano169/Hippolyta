@@ -88,6 +88,8 @@ PRODUCT_NAMES = {
   22 => "Deco Breeze Hippo Figurine Fan",
   23 => "Jojo's Boutique Hippo Charm Antique Silver for Snake Charm Bracelet",
   24 => "Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag - Purple Hippo",
+  25 => "Kidzuu Soft Sole Baby Infant Leather Crib Shoes Navy Red Hippo",
+  26 => "Momo Baby Infant/Toddler Hip Hippo Navy Soft Sole Leather Shoes",
 }
 
 PRODUCT_SELLER_IDS = {
@@ -116,6 +118,8 @@ PRODUCT_SELLER_IDS = {
   22 => 5,
   23 => 5,
   24 => 5,
+  25 => 1,
+  26 => 1,
 }
 
 PRODUCT_ORIGINAL_PRICES = {
@@ -144,6 +148,8 @@ PRODUCT_ORIGINAL_PRICES = {
   22 => 500.00,
   23 => nil,
   24 => 11.99,
+  25 => 14.99,
+  26 => nil,
 }
 
 PRODUCT_SALE_PRICES = {
@@ -172,6 +178,8 @@ PRODUCT_SALE_PRICES = {
   22 => 249.95,
   23 => 5.70,
   24 => 7.99,
+  25 => 9.99,
+  26 => 25.00,
 }
 
 PRODUCT_QUANTITIES = {
@@ -200,6 +208,8 @@ PRODUCT_QUANTITIES = {
   22 => 1,
   23 => 5,
   24 => 100,
+  25 => 100,
+  26 => 100,
 }
 
 PRODUCT_DESCRIPTIONS = {
@@ -228,6 +238,8 @@ PRODUCT_DESCRIPTIONS = {
   22 => "Let this Hippo Shaped Decorative Figurine Fan brighten your day while it keeps you cool. With its decorative appeal, a Figurine Fan can easily become a permanent part of any desk, vanity, bedroom, kitchen, or bathroom decor.",
   23 => "Fits snake bracelets or a neckalce you are making. Quantity: 1 Bead. Material: Base Metal Silver Plated Antique Finish.",
   24 => "Essential Design Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag.",
+  25 => "Outfit your little one with these absolutely charming soft sole infant baby shoes. These comfortable leather shoes are great for the little ones, and convenient for the parents. Great for both indoors and outdoors. Machine washable. Leather conditioner works well on it.",
+  26 => "Allowing your baby to go barefoot helps the foot to grow normally and to develop its musculature and strength. Momo Baby footwear is carefully handcrafted and designed to provide the protection from rough surfaces and dirty floors, while providing the health benefits of being barefoot. Momo Baby's entire line of footwear has been awarded the American Podiatric Medical Association's prestigious Seal of Acceptance which recognizes products which have been found beneficial and significant value to foot health.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -256,6 +268,8 @@ PRODUCT_PIC_URLS = {
   22 => "Deco_Breeze_Hippo_Figurine_Fan.jpg",
   23 => "Jojos_Boutique_Hippo_Charm_Antique_Silver_for_Snake_Charm_Bracelet.jpg",
   24 => "Bath_Accessory_Set-Pouf_Mitt_&_Mesh_Carry_Bag_Purple_Hippo.jpg",
+  25 => "Kidzuu_Soft_Sole_Baby_Infant_Leather_Crib_Shoes_Navy_Red_Hippo.jpg",
+  26 => "Momo_Baby_InfantToddler_Hip_Hippo_Navy_Soft_Sole_Leather_Shoes.jpg",
 }
 
 PRODUCT_TAG_NAMES = {
@@ -599,6 +613,38 @@ PRODUCT_TAG_NAMES = {
     "makeup",
     "cosmetics",
     "skin care"
+  ],
+  25 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "shoes",
+    "footware",
+    "clothes",
+    "clothing",
+    "apparel",
+    "garments",
+    "baby",
+    "infant",
+    "toddler",
+    "leather",
+    "suede"
+  ],
+  26 => [
+    "hippo",
+    "hippopotamus",
+    "animals",
+    "shoes",
+    "footware",
+    "clothes",
+    "clothing",
+    "apparel",
+    "garments",
+    "baby",
+    "infant",
+    "toddler",
+    "leather",
+    "suede"
   ],
 }
 
