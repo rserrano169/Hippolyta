@@ -199,6 +199,12 @@
   border-top: 1px solid #cccccc;
 }
 
+#product-show #reviews .review {
+  display: block;
+  margin: 0px 20px 20px 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
 #product-show #reviews #reviews-title {
   font-size: 16px;
   font-weight: bold;
@@ -206,8 +212,26 @@
   color: #cc6600;
 }
 
-#product-show #reviews #review-text {
+#product-show #reviews .reviewer-name {
+  display: block;
+  font-weight: bold;
+  margin: 0px 0px 5px 0px;
+}
+
+#product-show #reviews .review-rating {
+  margin: 0px 0px 10px 0px;
+}
+
+#product-show #reviews .full-star {
+  color: #e89607;
+}
+
+#product-show #reviews .empty-star {
+  color: #bfbfbf;
+}
+
+#product-show #reviews .review-text {
   display: block;
   padding-bottom: 20px;
-  margin: 0px 20px;
+  margin: 0px 0px 0px 20px;
 }

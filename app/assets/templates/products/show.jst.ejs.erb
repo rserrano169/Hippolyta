@@ -150,17 +150,40 @@
       Reviews:
     </div>
     <%% if (reviews.length > 0) { %>
-        <ul>
-          <%% reviews.each( function (review) { %>
+        <%% reviews.each( function (review) { %>
+          <%% var reviewer = users.get(review.escape("reviewer_id")) %>
+          <%% var numberOfStars = review.escape("rating") %>
+
+          <ul class="review">
             <li>
-              <span id="review-text">
+              <span class="reviewer-name">
+                <%%= reviewer.escape("name") %>
+              </span>
+            </li>
+            <li>
+              <div class="review-rating">
+                <%% for (var i = 0; i < numberOfStars; i++) { %>
+                  <span class="full-star">
+                    &#9733
+                  </span>
+                <%% } %>
+
+                <%% for (var i = 0; i < 5 - numberOfStars; i++) { %>
+                  <span class="empty-star">
+                    &#9733
+                  </span>
+                <%% } %>
+              </div>
+            </li>
+            <li>
+              <span class="review-text">
                 <%%= review.escape("text") %>
               </span>
             </li>
-          <%% }) %>
-        </ul>
+          </ul>
+        <%% }) %>
     <%% } else { %>
-        <span id="review-text">
+        <span class="review-text">
           There are no customer reviews for this item.
         </span>
     <%% } %>

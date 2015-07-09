@@ -3,7 +3,8 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
   template: JST["products/show"],
 
   initialize: function (options) {
-    this.seller = options.seller,
+    this.users = options.users;
+    this.seller = options.seller;
     this.product = options.product;
     this.reviews = options.reviews;
     this.listenTo(this.product, "sync", this.render);
@@ -11,6 +12,7 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
+      users: this.users,
       seller: this.seller,
       product: this.product,
       reviews: this.reviews,
