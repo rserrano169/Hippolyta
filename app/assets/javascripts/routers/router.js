@@ -69,9 +69,11 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     var seller = Hippolyta.Collections.users.getOrFetch(seller_id),
         collection = seller.products(),
         product = collection.getOrFetch(id),
+        reviews = product.reviews(),
         productShowView = new Hippolyta.Views.ProductShow({
           seller: seller,
           product: product,
+          reviews: reviews,
         });
 
     this._swapView(productShowView);

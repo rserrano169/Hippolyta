@@ -9,7 +9,7 @@
         "<span><%%= product.escape("last_query") %></span>"
       </a>
     </header>
-  <%% }; %>
+  <%% } %>
 
   <div id="product">
     <ul id="picture-cell">
@@ -69,7 +69,7 @@
                 $<%%= salePrice %>
               </li>
             </ul>
-        <%% }; %>
+        <%% } %>
       </li>
 
 
@@ -86,7 +86,7 @@
           <li id="left-in-stock">
             <%%= quantity %> left in stock.
           </li>
-      <%% }; %>
+      <%% } %>
 
       <li id="seller-name">
         Sold by <%%= product.escape("seller_name") %>
@@ -142,7 +142,27 @@
               No specific description was given by the seller.
             </span>
           </li>
-      <%% }; %>
+      <%% } %>
     </ul>
+  </div>
+  <div id="reviews">
+    <div id="review-title">
+      Reviews:
+    </div>
+    <%% if (reviews.length > 0) { %>
+        <ul>
+          <%% reviews.each( function (review) { %>
+            <li>
+              <span id="review-text">
+                <%%= review.escape("text") %>
+              </span>
+            </li>
+          <%% }) %>
+        </ul>
+    <%% } else { %>
+        <span id="review-text">
+          There are no customer reviews for this item.
+        </span>
+    <%% } %>
   </div>
 </main>

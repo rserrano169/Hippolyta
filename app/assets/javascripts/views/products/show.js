@@ -5,13 +5,17 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
   initialize: function (options) {
     this.seller = options.seller,
     this.product = options.product;
+    this.reviews = options.reviews;
     this.listenTo(this.product, "sync", this.render);
   },
 
   render: function () {
+    console.log(this.reviews.length);
+
     var content = this.template({
       seller: this.seller,
-      product: this.product
+      product: this.product,
+      reviews: this.reviews,
     });
     this.$el.html(content);
 
