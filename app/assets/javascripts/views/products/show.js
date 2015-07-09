@@ -10,8 +10,6 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
   },
 
   render: function () {
-    console.log(this.reviews.length);
-
     var content = this.template({
       seller: this.seller,
       product: this.product,
