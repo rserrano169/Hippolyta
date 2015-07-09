@@ -64,6 +64,16 @@ class Product < ActiveRecord::Base
 
   has_many :tags, through: :product_tags, source: :tag
 
+  has_many(
+    :reviews,
+    class_name: "Review",
+    foreign_key: :product_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
+  has_many :reviewers, through: :reviews, source: :reviewer
+
   def buyers
     buyers = []
 
