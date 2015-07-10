@@ -21,6 +21,10 @@ class Api::CurrentUsersController < ApplicationController
     render :products
   end
 
+  def purchased_products
+    @purchased_products = current_user.purchased_products
+  end
+
   def cart
     @cart = current_cart
 
@@ -50,7 +54,7 @@ class Api::CurrentUsersController < ApplicationController
       if current_card_id
         @current_card = current_stripe_customer.sources.retrieve(current_card_id)
       end
-      
+
       @cards = current_stripe_customer.sources.all(object: "card")
     else
       @cards = []

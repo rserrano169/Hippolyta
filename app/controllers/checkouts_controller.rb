@@ -11,10 +11,9 @@ class CheckoutsController < ApplicationController
   def add_purchased_products
     @cart_products = current_user.cart_products
     @cart_products.each do |cart_product|
-      PurchasedProduct.create!({
+      Purchases.create!({
         buyer_id: current_user.id,
-        product_id: cart_product.product_id,
-        quantity: cart_product.quantity
+        product_id: cart_product.product_id
       })
     end
 

@@ -53,12 +53,14 @@ class User < ActiveRecord::Base
   )
 
   has_many(
-    :purchased_products,
-    class_name: "PurchasedProduct",
+    :purchases,
+    class_name: "Purchase",
     foreign_key: :buyer_id,
     primary_key: :id,
     dependent: :destroy
   )
+
+  has_many :purchased_products, through: :purchases, source: :product
 
   has_many(
     :reviews,

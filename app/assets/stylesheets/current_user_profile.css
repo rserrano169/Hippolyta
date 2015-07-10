@@ -83,12 +83,12 @@
   /*text-align: center;*/
 }
 
-#user-private-profile #user-private-profile-products {
+#user-private-profile .user-private-profile-links {
   color: #0066c0;
   text-decoration: underline;
   margin-left: 40px;
 }
 
-#user-private-profile #user-private-profile-products:hover {
-  color: #c45500;  
+#user-private-profile .user-private-profile-links:hover {
+  color: #c45500;
 }

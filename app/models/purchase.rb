@@ -1,5 +1,5 @@
-class PurchasedProduct < ActiveRecord::Base
-  validates :buyer_id, :product_id, :quantity, null: false
+class Purchase < ActiveRecord::Base
+  validates :buyer_id, :product_id, null: false
 
   belongs_to(
     :buyer,
@@ -14,5 +14,4 @@ class PurchasedProduct < ActiveRecord::Base
     foreign_key: :product_id,
     primary_key: :id,
   )
-  
 end

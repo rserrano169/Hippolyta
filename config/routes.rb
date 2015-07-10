@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post "current_user/update", to: "current_users#update"
     get "current_user/cart", to: "current_users#cart"
     get "current_user/products", to: "current_users#products"
+    get "current_user/purchased_products", to: "current_users#purchased_products"
     get "current_user/addresses", to: "current_users#addresses"
     get "current_user/current_address", to: "current_users#current_address"
     get "current_user/cards", to: "current_users#cards"

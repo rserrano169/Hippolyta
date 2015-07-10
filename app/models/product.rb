@@ -47,12 +47,14 @@ class Product < ActiveRecord::Base
   has_many :carts, through: :cart_products, source: :cart
 
   has_many(
-    :purchased_products,
-    class_name: "PurchasedProduct",
+    :purchases,
+    class_name: "Purchase",
     foreign_key: :product_id,
     primary_key: :id,
     dependent: :destroy
   )
+
+  has_many :previous_purchasers, through: :purchases, source: :buyer
 
   has_many(
     :product_tags,
