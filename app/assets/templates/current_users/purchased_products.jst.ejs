@@ -1,17 +1,34 @@
 <main id="current-user-purchased-products">
   <div id="current-user-purchased-products-container">
     <% purchasedProducts.each( function (purchasedProduct) { %>
-      <table>
+      <% sellerId = purchasedProduct.escape("seller_id") %>
+      <% productId = purchasedProduct.escape("id") %>
+      <table class="current-user-purchased-product-table">
         <tr>
-          <td>
-            <a href="#sellers/<%= purchasedProduct.escape("seller_id") %>/products/<%= purchasedProduct.escape("id") %>">
-              <img src="<%= purchasedProduct.escape("large_picture_url") %>"
+          <td class="current-user-purchased-product-cell-one">
+            <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
+              <img class="current-user-purchased-product-picture"
+                   src="<%= purchasedProduct.escape("medium_picture_url") %>"
                    alt="product-image"/>
             </a>
           </td>
-          <td>
-            <%= purchasedProduct.escape("name") %>
-            <%= purchasedProduct.escape("description") %>
+          <td class="current-user-purchased-product-cell-two">
+            <ul>
+              <li>
+                <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
+                  <span class="current-user-purchased-product-name">
+                    <%= purchasedProduct.escape("name") %>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="current-user-purchased-product-leave-review">
+                    Leave a review of this product?
+                  </span>
+                </a>
+              </li>
+            </ul>
           </td>
         </tr>
       </table>

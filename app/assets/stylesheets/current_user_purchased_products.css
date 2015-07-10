@@ -5,3 +5,45 @@
 #current-user-purchased-products-container {
   padding: 20px;
 }
+
+.current-user-purchased-product-table {
+  padding: 20px 0px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.current-user-purchased-product-cell-one {
+  width: 200px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.current-user-purchased-product-picture {
+  height: 200px;
+  margin: 0px 20px 0px 0px;
+}
+
+.current-user-purchased-product-cell-two {
+  width: 100%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.current-user-purchased-product-name {
+  display: block;
+  font-size: 20px;
+  padding: 20px 0px 19px 0px;
+  margin: 0px 0px 40px 0px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.current-user-purchased-product-leave-review {
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(to bottom, #f8e1a7, #f8e1a7 10%, #eebb39);
+  border: 1px solid #c89411;
+  border-radius: 3px;
+}
+
+.current-user-purchased-product-leave-review:hover {
+  background: linear-gradient(to bottom, #f5d78b, #f5d78b 10%, #edb72c);
+}
