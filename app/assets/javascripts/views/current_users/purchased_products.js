@@ -5,6 +5,7 @@ Hippolyta.Views.CurrentUserPurchasedProducts = Backbone.View.extend({
 
   initialize: function (options) {
     this.purchasedProducts = options.purchasedProducts;
+    this.listenTo(this.purchasedProducts, "sync", this.render);
   },
 
   render: function () {

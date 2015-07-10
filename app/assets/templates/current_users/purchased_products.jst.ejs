@@ -1,1 +1,22 @@
-Hello
+<main id="current-user-purchased-products">
+  <div id="current-user-purchased-products-container">
+    <% purchasedProducts.each( function (purchasedProduct) { %>
+      <ul>
+        <li>
+          <img src="<%= purchasedProduct.escape("large_picture_url") %>"
+               alt="product-image"/>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <%= purchasedProduct.escape("name") %>
+            </li>
+            <li>
+              <%= purchasedProduct.escape("description") %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <% }) %>
+  </div>
+</main>
