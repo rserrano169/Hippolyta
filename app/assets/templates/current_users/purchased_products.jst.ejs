@@ -1,22 +1,20 @@
 <main id="current-user-purchased-products">
   <div id="current-user-purchased-products-container">
     <% purchasedProducts.each( function (purchasedProduct) { %>
-      <ul>
-        <li>
-          <img src="<%= purchasedProduct.escape("large_picture_url") %>"
-               alt="product-image"/>
-        </li>
-        <li>
-          <ul>
-            <li>
-              <%= purchasedProduct.escape("name") %>
-            </li>
-            <li>
-              <%= purchasedProduct.escape("description") %>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <table>
+        <tr>
+          <td>
+            <a href="#sellers/<%= purchasedProduct.escape("seller_id") %>/products/<%= purchasedProduct.escape("id") %>">
+              <img src="<%= purchasedProduct.escape("large_picture_url") %>"
+                   alt="product-image"/>
+            </a>
+          </td>
+          <td>
+            <%= purchasedProduct.escape("name") %>
+            <%= purchasedProduct.escape("description") %>
+          </td>
+        </tr>
+      </table>
     <% }) %>
   </div>
 </main>
