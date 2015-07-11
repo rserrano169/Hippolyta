@@ -19,19 +19,23 @@ class Api::ReviewsController < ApplicationController
       reviewer_id: @review.reviewer_id,
       product_id: @review.product_id
     )
-      redirect_to "/#new_review" +
-        "/current_user" +
-        "/purchased_products" +
-        "/#{review_params[:product_id]}"
+      redirect_to "/#new_review
+        /current_user
+        /purchased_products
+        /#{@review.product_id}"
     end
 
     if @review.save
-      redirect_to "/#review_created"
+      redirect_to "/#sellers
+        /#{@review.product.seller.id}
+        /products
+        /#{@review.product_id}
+        /review_created"
     else
-      redirect_to "/#new_review" +
-        "/current_user" +
-        "/purchased_products" +
-        "/#{review_params[:product_id]}"
+      redirect_to "/#new_review
+        /current_user
+        /purchased_products
+        /#{review_params[:product_id]}"
     end
   end
 

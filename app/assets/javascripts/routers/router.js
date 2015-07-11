@@ -17,7 +17,7 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "checkout_placed": "checkoutPlaced",
     "current_user/purchased_products": "currentUserPurchases",
     "new_review/current_user/purchased_products/:product_id": "addProductReview",
-    "review_created": "reviewCreated",
+    "sellers/:seller_id/products/:product_id/review_created": "reviewCreated",
   },
 
   currentUserProfile: function () {
@@ -157,8 +157,13 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     this._swapView(newReviewView);
   },
 
-  reviewCreated: function () {
-    var reviewCreatedView = new Hippolyta.Views.ReviewCreated();
+  reviewCreated: function (seller_id, product_id) {
+    var reviewedProductSellerId = seller_id,
+        reviewedProductId = product_id,
+        reviewCreatedView = new Hippolyta.Views.ReviewCreated({
+          reviewedProductSellerId: reviewedProductSellerId,
+          reviewedProductId: reviewedProductId,
+        });
 
     this._swapView(reviewCreatedView);
   },
