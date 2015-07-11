@@ -1,15 +1,44 @@
 <main id="new-review">
   <div id="new-review-container">
     <section id="new-review-header">
-      You are reviewing
-      <span id="new-review-purchased-product-name">
-        <%= purchasedProduct.escape("name") %>
+      <span id="new-review-header-title">
+        You are reviewing:
       </span>
+      <table id="new-review-purchased-product">
+        <td>
+          <span>
+            <img id="new-review-purchased-product-picture"
+                 src="<%= purchasedProduct.escape("small_picture_url") %>"
+                 alt="product-image" />
+          </span>
+        </td>
+        <td>
+          <span id="new-review-purchased-product-name">
+            <%= purchasedProduct.escape("name") %>
+          </span>
+        </td>
+      </table>
     </section>
 
     <section id="new-review-body">
       <form id="form_id" action="index.html" method="post">
-
+        <span id="new-review-star-rating-title">
+          Rate this product:
+        </span>
+        <div id="new-review-star-rating">
+          <span id="new-review-star-one">&#9733</span>
+          <span id="new-review-star-two">&#9733</span>
+          <span id="new-review-star-three">&#9733</span>
+          <span id="new-review-star-four">&#9733</span>
+          <span id="new-review-star-five">&#9733</span>
+        </div>
+        <input type="hidden" name="rating" value="">
+        <div id="new-review-write-review">
+          <span id="new-review-write-review-title">
+            Write a review for this product:
+          </span>
+          <textarea name="text" rows="25" cols="100"></textarea>
+        </div>
       </form>
     </section>
   </div>

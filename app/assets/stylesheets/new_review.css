@@ -1,5 +1,6 @@
 #new-review {
   min-width: 920px;
+  font-size: 16px;
 }
 
 #new-review-container {
@@ -11,4 +12,40 @@
   font-weight: bold;
   padding: 0px 0px 20px 0px;
   border-bottom: 1px solid #cccccc;
+}
+
+#new-review-header-title {
+  display: block;
+  padding: 0px 0px 20px 0px;
+}
+
+#new-review-purchased-product-picture {
+  margin: 0px 20px 0px 0px;
+}
+
+#new-review-purchased-product-name {
+  font-weight: normal;
+}
+
+#new-review-body {
+  padding: 20px;
+}
+
+#new-review-star-rating-title {
+  display: block;
+  padding: 0px 0px 5px 0px;
+}
+
+#new-review-star-rating {
+  font-size: 22px;
+  color: #bfbfbf;
+}
+
+#new-review-write-review {
+  padding: 20px 0px 0px 0px;
+}
+
+#new-review-write-review-title {
+  display: block;
+  padding: 0px 0px 10px 0px;
 }
