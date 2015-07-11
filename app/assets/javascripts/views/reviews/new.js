@@ -39,30 +39,35 @@ Hippolyta.Views.NewReview = Backbone.View.extend({
         $('#new-review-star-three').attr('class', 'new-review-empty-star');
         $('#new-review-star-four').attr('class', 'new-review-empty-star');
         $('#new-review-star-five').attr('class', 'new-review-empty-star');
+        $('#new-review-star-rating-input').val('1');
     } else if ($(event.target).attr('id') === 'new-review-star-two') {
         $('#new-review-star-one').attr('class', 'new-review-full-star');
         $('#new-review-star-two').attr('class', 'new-review-full-star');
         $('#new-review-star-three').attr('class', 'new-review-empty-star');
         $('#new-review-star-four').attr('class', 'new-review-empty-star');
         $('#new-review-star-five').attr('class', 'new-review-empty-star');
-    } else if ($(event.target).attr('id') === 'new-review-star-three') {
+        $('#new-review-star-rating-input').val('2');
+      } else if ($(event.target).attr('id') === 'new-review-star-three') {
         $('#new-review-star-one').attr('class', 'new-review-full-star');
         $('#new-review-star-two').attr('class', 'new-review-full-star');
         $('#new-review-star-three').attr('class', 'new-review-full-star');
         $('#new-review-star-four').attr('class', 'new-review-empty-star');
         $('#new-review-star-five').attr('class', 'new-review-empty-star');
-    } else if ($(event.target).attr('id') === 'new-review-star-four') {
+        $('#new-review-star-rating-input').val('3');
+      } else if ($(event.target).attr('id') === 'new-review-star-four') {
         $('#new-review-star-one').attr('class', 'new-review-full-star');
         $('#new-review-star-two').attr('class', 'new-review-full-star');
         $('#new-review-star-three').attr('class', 'new-review-full-star');
         $('#new-review-star-four').attr('class', 'new-review-full-star');
         $('#new-review-star-five').attr('class', 'new-review-empty-star');
-    } else if ($(event.target).attr('id') === 'new-review-star-five') {
+        $('#new-review-star-rating-input').val('4');
+      } else if ($(event.target).attr('id') === 'new-review-star-five') {
         $('#new-review-star-one').attr('class', 'new-review-full-star');
         $('#new-review-star-two').attr('class', 'new-review-full-star');
         $('#new-review-star-three').attr('class', 'new-review-full-star');
         $('#new-review-star-four').attr('class', 'new-review-full-star');
         $('#new-review-star-five').attr('class', 'new-review-full-star');
-    }
+        $('#new-review-star-rating-input').val('5');
+      }
   },
 });

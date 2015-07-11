@@ -14,11 +14,28 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.reviewer_id = current_user.id
-    fail
+
+    if Review.find_by(
+      reviewer_id: @review.reviewer_id,
+      product_id: @review.product_id
+    )
+      redirect_to "
+        /#new_review
+        /current_user
+        /purchased_products
+        /#{review_params[:product_id]}
+      "
+    end
+
     if @review.save
-
+      redirect_to "/#review_created"
     else
-
+      redirect_to "
+        /#new_review
+        /current_user
+        /purchased_products
+        /#{review_params[:product_id]}
+      "
     end
   end
 
