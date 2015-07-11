@@ -5,7 +5,8 @@ json.(
   :sale_price,
   :original_price,
   :quantity,
-  :description
+  :description,
+  :seller_id
 )
 
 json.seller_name(@product.seller.name)

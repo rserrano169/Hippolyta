@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
   def index
     @reviews = Review.find_by(product_id: params[:product_id])
   end
@@ -12,8 +12,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new({})
-
+    @review = Review.new(review_params)
+    @review.reviewer_id = current_user.id
+    fail
     if @review.save
 
     else
@@ -24,6 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    
+    params.require(:review).permit(:rating, :text, :product_id)
   end
 end

@@ -21,24 +21,38 @@
     </section>
 
     <section id="new-review-body">
-      <form id="form_id" action="index.html" method="post">
+      <% var sellerId = purchasedProduct.escape("seller_id") %>
+      <% var productId = purchasedProduct.escape("id") %>
+
+      <form id="new-review-form"
+            action="/api/users/<%= sellerId %>/products/<%= productId %>/reviews"
+            method="post">
+        <input type="hidden" name="review[product_id]" value="<%= productId %>">
         <span id="new-review-star-rating-title">
           Rate this product:
         </span>
         <div id="new-review-star-rating">
-          <span id="new-review-star-one">&#9733</span>
-          <span id="new-review-star-two">&#9733</span>
-          <span id="new-review-star-three">&#9733</span>
-          <span id="new-review-star-four">&#9733</span>
-          <span id="new-review-star-five">&#9733</span>
+          <span class="new-review-full-star"
+                id="new-review-star-one">&#9733</span>
+          <span class="new-review-full-star"
+                id="new-review-star-two">&#9733</span>
+          <span class="new-review-full-star"
+                id="new-review-star-three">&#9733</span>
+          <span class="new-review-full-star"
+                id="new-review-star-four">&#9733</span>
+          <span class="new-review-full-star"
+                id="new-review-star-five">&#9733</span>
         </div>
-        <input type="hidden" name="rating" value="">
+        <input type="hidden" name="review[rating]" value="">
         <div id="new-review-write-review">
           <span id="new-review-write-review-title">
             Write a review for this product:
           </span>
-          <textarea name="text" rows="25" cols="100"></textarea>
+          <textarea name="review[text]" rows="25" cols="100"></textarea>
         </div>
+        <button id="new-review-form-button">
+          Submit Review
+        </button>
       </form>
     </section>
   </div>
