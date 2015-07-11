@@ -3,6 +3,7 @@ Hippolyta.Views.NewReview = Backbone.View.extend({
 
   events: {
     "click .new-review-full-star": "selectStarRating",
+    "click .new-review-empty-star": "selectStarRating",
   },
 
   initialize: function (options) {
@@ -31,6 +32,37 @@ Hippolyta.Views.NewReview = Backbone.View.extend({
 
   selectStarRating: function (event) {
     event.preventDefault();
-    console.log('clicked');
+
+    if ($(event.target).attr('id') === 'new-review-star-one') {
+        $('#new-review-star-one').attr('class', 'new-review-full-star');
+        $('#new-review-star-two').attr('class', 'new-review-empty-star');
+        $('#new-review-star-three').attr('class', 'new-review-empty-star');
+        $('#new-review-star-four').attr('class', 'new-review-empty-star');
+        $('#new-review-star-five').attr('class', 'new-review-empty-star');
+    } else if ($(event.target).attr('id') === 'new-review-star-two') {
+        $('#new-review-star-one').attr('class', 'new-review-full-star');
+        $('#new-review-star-two').attr('class', 'new-review-full-star');
+        $('#new-review-star-three').attr('class', 'new-review-empty-star');
+        $('#new-review-star-four').attr('class', 'new-review-empty-star');
+        $('#new-review-star-five').attr('class', 'new-review-empty-star');
+    } else if ($(event.target).attr('id') === 'new-review-star-three') {
+        $('#new-review-star-one').attr('class', 'new-review-full-star');
+        $('#new-review-star-two').attr('class', 'new-review-full-star');
+        $('#new-review-star-three').attr('class', 'new-review-full-star');
+        $('#new-review-star-four').attr('class', 'new-review-empty-star');
+        $('#new-review-star-five').attr('class', 'new-review-empty-star');
+    } else if ($(event.target).attr('id') === 'new-review-star-four') {
+        $('#new-review-star-one').attr('class', 'new-review-full-star');
+        $('#new-review-star-two').attr('class', 'new-review-full-star');
+        $('#new-review-star-three').attr('class', 'new-review-full-star');
+        $('#new-review-star-four').attr('class', 'new-review-full-star');
+        $('#new-review-star-five').attr('class', 'new-review-empty-star');
+    } else if ($(event.target).attr('id') === 'new-review-star-five') {
+        $('#new-review-star-one').attr('class', 'new-review-full-star');
+        $('#new-review-star-two').attr('class', 'new-review-full-star');
+        $('#new-review-star-three').attr('class', 'new-review-full-star');
+        $('#new-review-star-four').attr('class', 'new-review-full-star');
+        $('#new-review-star-five').attr('class', 'new-review-full-star');
+    }
   },
 });
