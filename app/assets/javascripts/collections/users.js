@@ -5,7 +5,7 @@ Hippolyta.Collections.Users = Backbone.Collection.extend({
 
   getOrFetch: function (id) {
     var user = this.get(id),
-      users = this;
+        users = this;
 
     if (!user) {
       user = new Hippolyta.Models.User({ id: id });

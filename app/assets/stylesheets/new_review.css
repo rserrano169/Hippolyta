@@ -1,0 +1,14 @@
+#new-review {
+  min-width: 920px;
+}
+
+#new-review-container {
+  padding: 20px;
+}
+
+#new-review-header {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0px 0px 20px 0px;
+  border-bottom: 1px solid #cccccc;
+}

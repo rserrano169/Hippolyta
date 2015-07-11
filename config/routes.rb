@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get "current_user/cards", to: "current_users#cards"
     resources :users, only: [:index, :show] do
       resources :products, only: [:new, :create, :show] do
-        resources :reviews, only: [:index, :show]
+        resources :reviews, only: [:index, :show, :new, :create]
       end
     end
     resources :queries, only: [:index]

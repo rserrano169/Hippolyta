@@ -11,7 +11,7 @@ Hippolyta.Views.CurrentUserPurchasedProducts = Backbone.View.extend({
   render: function () {
     var content = this.template({
       purchasedProducts: this.purchasedProducts,
-    })
+    });
     this.$el.html(content);
 
     return this;

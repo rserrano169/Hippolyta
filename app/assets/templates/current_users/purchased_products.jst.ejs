@@ -15,14 +15,14 @@
           <td class="current-user-purchased-product-cell-two">
             <ul>
               <li>
-                <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
                   <span class="current-user-purchased-product-name">
-                    <%= purchasedProduct.escape("name") %>
+                    <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
+                      <%= purchasedProduct.escape("name") %>
+                    </a>
                   </span>
-                </a>
               </li>
               <li>
-                <a href="#">
+                <a href="#new_review/current_user/purchased_products/<%= productId %>">
                   <span class="current-user-purchased-product-leave-review">
                     Leave a review of this product?
                   </span>

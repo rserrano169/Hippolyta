@@ -15,7 +15,8 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
     "must_sign_in": "checkoutSignIn",
     "checkout": "checkout",
     "checkout_placed": "checkoutPlaced",
-    "current_user/purchase_products": "currentUserPurchases",
+    "current_user/purchased_products": "currentUserPurchases",
+    "new_review/current_user/purchased_products/:product_id": "addProductReview",
   },
 
   currentUserProfile: function () {
@@ -139,8 +140,21 @@ Hippolyta.Routers.Router = Backbone.Router.extend({
           purchasedProducts: purchasedProducts,
         });
 
-      this._swapView(purchasedProductsView);
-    },
+    this._swapView(purchasedProductsView);
+  },
+
+  addProductReview: function (product_id) {
+    Hippolyta.Collections.currentUserPurchasedProducts.fetch();
+    var purchasedProduct = Hippolyta
+                            .Collections
+                            .currentUserPurchasedProducts
+                            .getOrFetch(product_id),
+        newReviewView = new Hippolyta.Views.NewReview({
+          purchasedProduct: purchasedProduct,
+        });
+
+    this._swapView(newReviewView);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
