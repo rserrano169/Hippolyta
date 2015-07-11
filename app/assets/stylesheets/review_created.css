@@ -1,0 +1,23 @@
+#review-created {
+  min-width: 920px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#review-created-container {
+  padding: 40px;
+}
+
+#review-created-links {
+  padding: 10px 0px 0px 0px;
+}
+
+#review-created-links > a {
+  font-size: 22px;
+  color: #005bac;
+}
+
+#review-created-links > a:hover {
+  color: #e47911;
+  text-decoration: underline;
+}
