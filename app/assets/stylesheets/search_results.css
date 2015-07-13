@@ -85,7 +85,7 @@
 
 #search-results #successful-search .search-results-review-rating {
   display: inline-block;
-  margin: 0px 0px 10px 0px;
+  margin: 3px 0px 10px 0px;
   cursor: pointer;
 }
 #search-results #successful-search .search-results-review-rating:hover
@@ -94,11 +94,27 @@
 }
 
 #search-results #successful-search .search-results-review-rating-empty-stars {
-  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: 18px;
   color: #bfbfbf;
+  white-space: nowrap;
+}
+
+#search-results #successful-search .search-results-review-rating-full-stars {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  color: #e89607;
+  overflow: hidden;
 }
 
 #search-results #successful-search .search-results-number-of-reviews {
+  vertical-align: middle;
+  padding: 0px 0px 0px 5px;
   font-size: 13px;
   color: #0066c0;
 }

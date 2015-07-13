@@ -44,39 +44,58 @@
                     </li>
 
                     <% if (result.escape("review_rating_percentage")) { %>
-                        <li class="search-results-review-rating">
-                          <span class="search-results-rating-percentage">
-                            <%= result.escape("review_rating_percentage") %>
-                          </span>
-                          <span class="search-results-review-rating-empty-stars">
-                            <span class="search-results-star-rating-one">
-                              &#9733
-                            </span>
-                            <span class="search-results-star-rating-two">
-                              &#9733
-                            </span>
-                            <span class="search-results-star-rating-three">
-                              &#9733
-                            </span>
-                            <span class="search-results-star-rating-four">
-                              &#9733
-                            </span>
-                            <span class="search-results-star-rating-five">
-                              &#9733
-                            </span>
-                          </span>
-                          <% if (numOfReviews === '1') { %>
-                              <span class="search-results-number-of-reviews">
-                                <%= numOfReviews %>
-                                review
+                        <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
+                          <li class="search-results-review-rating">
+                            <span class="search-results-review-rating-empty-stars">
+                              <span class="search-results-empty-star-one">
+                                &#9733
                               </span>
-                          <% } else { %>
-                              <span class="search-results-number-of-reviews">
-                                <%= numOfReviews %>
-                                reviews
+                              <span class="search-results-empty-star-two">
+                                &#9733
                               </span>
-                          <% } %>
-                        </li>
+                              <span class="search-results-empty-star-three">
+                                &#9733
+                              </span>
+                              <span class="search-results-empty-star-four">
+                                &#9733
+                              </span>
+                              <span class="search-results-empty-star-five">
+                                &#9733
+                              </span>
+                              <span class="search-results-review-rating-full-stars">
+                                <input type="hidden"
+                                       name="reviewRatingPercentage"
+                                       value="<%= result.escape("review_rating_percentage") %>">
+                                <span class="search-results-full-star-one">
+                                  &#9733
+                                </span>
+                                <span class="search-results-full-star-two">
+                                  &#9733
+                                </span>
+                                <span class="search-results-full-star-three">
+                                  &#9733
+                                </span>
+                                <span class="search-results-full-star-four">
+                                  &#9733
+                                </span>
+                                <span class="search-results-full-star-five">
+                                  &#9733
+                                </span>
+                              </span>
+                            </span>
+                            <% if (numOfReviews === '1') { %>
+                                <span class="search-results-number-of-reviews">
+                                  <%= numOfReviews %>
+                                  review
+                                </span>
+                            <% } else { %>
+                                <span class="search-results-number-of-reviews">
+                                  <%= numOfReviews %>
+                                  reviews
+                                </span>
+                            <% } %>
+                          </li>
+                        </a>
                     <% } else { %>
                         <li class="search-results-no-reviews">
                           No customers reviews yet
