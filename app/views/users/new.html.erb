@@ -24,53 +24,61 @@
 
   <h2 class="auth-h2">Registration<h2>
 
-    <form class="create-user group"
-          action="<%= users_url %>"
-          method="post">
-      <%= authenticity_token %>
+  <form class="create-user group"
+        action="<%= users_url %>"
+        method="post">
+    <%= authenticity_token %>
 
-      <fieldset>
-        <div class="auth-input group">
-          <h3 class="auth-h3">New to Hippolyta.us? Register Below.</h3>
-          <ul>
-            <li>
-              <label>My name is:</label>
-              <input type="text"
-                     name="user[name]"
-                     value="<%= @user.name %>"
-                     autofocus="autofocus">
-            </li>
+    <fieldset>
+      <div class="auth-input group">
+        <h3 class="auth-h3">New to Hippolyta.us? Register Below.</h3>
+        <ul>
+          <li>
+            <label>My name is:</label>
+            <input type="text"
+                   name="user[name]"
+                   value="<%= @user.name %>"
+                   autofocus="autofocus">
+          </li>
 
-            <li>
-              <label>My e-mail address is:</label>
-              <input type="email" name="user[email]" value="<%= @user.email %>">
-            </li>
+          <li>
+            <label>My e-mail address is:</label>
+            <input type="email" name="user[email]" value="<%= @user.email %>">
+          </li>
 
-            <li>
-              <label>My mobile phone number is (optional):</label>
-              <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
-            </li>
-          </ul>
-        </div>
+          <li>
+            <label>My mobile phone number is (optional):</label>
+            <input type="text" name="user[phone_number]" value="<%= @user.phone_number %>">
+          </li>
+        </ul>
+      </div>
 
-        <div class="auth-input group">
-          <h3 class="auth-h3">Protect your information with a password</h3>
-          <ul>
-            <li>
-              <label>Enter a new password:</label>
-              <input type="password" name="user[password]" value="">
-            </li>
+      <div class="auth-input group">
+        <h3 class="auth-h3">Protect your information with a password</h3>
+        <ul>
+          <li>
+            <label>Enter a new password:</label>
+            <input type="password" name="user[password]" value="">
+          </li>
 
-            <!-- <li>
-              <label>Add profile picture or company logo (optional):</label>
-              <input type="file" name="user[picture]">
-            </li> -->
-          </ul>
-        </div>
+          <!-- <li>
+            <label>Add profile picture or company logo (optional):</label>
+            <input type="file" name="user[picture]">
+          </li> -->
+        </ul>
+      </div>
 
-        <button id="new-user-submit" class="sign-up">
-          Create account
-        </button>
-      </fieldset>
-    </form>
+      <button id="new-user-submit" class="sign-up">
+        Create account
+      </button>
+    </fieldset>
+  </form>
 </main>
+
+<% if !current_user %>
+  <section id="new-session-demo-button-section">
+    <a id="new-session-demo-button" href="/session/demo" data-method="post">
+      Sign in as Demo User to test site
+    </a>
+  </section>
+<% end %>
