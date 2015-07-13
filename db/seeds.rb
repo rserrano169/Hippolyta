@@ -1101,3 +1101,26 @@ REVIEW_PRODUCT_IDS = {
   85 => 6,
   86 => 8,
 }
+
+review_num = 0
+while review_num < REVIEW_TEXTS.length
+  review = Review.find(review_num)
+
+  if review
+    review.update_attributes!({
+      text: REVIEW_TEXTS[review_num],
+      rating: REVIEW_RATINGS[review_num],
+      reviewer_id: REVIEW_REVIEWER_IDS[review_num],
+      product_id: REVIEW_PRODUCT_IDS[review_num]
+    })
+  else
+    review = Review.create!({
+      text: REVIEW_TEXTS[review_num],
+      rating: REVIEW_RATINGS[review_num],
+      reviewer_id: REVIEW_REVIEWER_IDS[review_num],
+      product_id: REVIEW_PRODUCT_IDS[review_num]
+    })
+  end
+
+  review_num += 1
+end
