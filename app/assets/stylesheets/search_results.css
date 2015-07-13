@@ -75,7 +75,21 @@
 #search-results #successful-search .sold-by {
   font-size: 13px;
   color: #555555;
+}
+
+#search-results #successful-search .search-results-no-reviews {
+  font-size: 13px;
+  color: #555555;
+  margin: 5px 0px 10px 0px;
+}
+
+#search-results #successful-search .search-results-review-rating {
   margin: 0px 0px 10px 0px;
+}
+
+#search-results #successful-search .search-results-review-rating-empty-stars {
+  font-size: 16px;
+  color: #bfbfbf;
 }
 
 #search-results #successful-search .sale-price {

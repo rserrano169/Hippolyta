@@ -92,4 +92,17 @@ class Product < ActiveRecord::Base
     buyers
   end
 
+  def review_rating_percentage
+    return nil if self.reviews.empty?
+
+    review_rating = 0
+    review_count = 0
+
+    self.reviews.each do |review|
+      review_rating += review.rating
+      review_count += 1
+    end
+
+    ((review_rating / review_count.to_f) * 100) / 5
+  end
 end

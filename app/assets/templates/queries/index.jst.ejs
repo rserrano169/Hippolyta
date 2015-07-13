@@ -14,6 +14,7 @@
         <ul id="results">
           <% results.each( function(result) { %>
             <% var quantity = result.escape("quantity") %>
+            <% var numOfReviews = result.escape("number_of_reviews") %>
             <% var salePrice = (result.escape("sale_price") * 1).toFixed(2) %>
             <% if (result.escape("original_price")) { %>
               <% var originalPrice = (result.escape("original_price") * 1).toFixed(2); %>
@@ -41,6 +42,46 @@
                     <li class="sold-by">
                         Sold by <%= result.escape("seller_name") %>
                     </li>
+
+                    <% if (result.escape("review_rating_percentage")) { %>
+                        <li class="search-results-review-rating">
+                          <span class="search-results-rating-percentage">
+                            <%= result.escape("review_rating_percentage") %>
+                          </span>
+                          <span class="search-results-review-rating-empty-stars">
+                            <span class="search-results-star-rating-one">
+                              &#9733
+                            </span>
+                            <span class="search-results-star-rating-two">
+                              &#9733
+                            </span>
+                            <span class="search-results-star-rating-three">
+                              &#9733
+                            </span>
+                            <span class="search-results-star-rating-four">
+                              &#9733
+                            </span>
+                            <span class="search-results-star-rating-five">
+                              &#9733
+                            </span>
+                          </span>
+                          <% if (numOfReviews === '1') { %>
+                              <span class="search-results-number-of-reviews">
+                                <%= numOfReviews %>
+                                review
+                              </span>
+                          <% } else { %>
+                              <span class="search-results-number-of-reviews">
+                                <%= numOfReviews %>
+                                reviews
+                              </span>
+                          <% } %>
+                        </li>
+                    <% } else { %>
+                        <li class="search-results-no-reviews">
+                          No customers reviews yet
+                        </li>
+                    <% } %>
 
                     <li class="sale-price">
                       <a href='#sellers/<%= result.escape("seller_id") %>/products/<%= result.id %>'>
