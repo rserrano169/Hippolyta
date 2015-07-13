@@ -55,8 +55,39 @@
 #product-show #name {
   font-size: 20px;
   margin: 20px 0px 0px 0px;
-  padding: 0px 0px 14px 0px;
+  padding: 0px 0px 15px 0px;
+}
+
+#product-show #product-show-review-rating {
   border-bottom: 1px solid #e7e7e7;
+}
+
+#product-show #product-show-review-rating-empty-stars {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  font-size: 22px;
+  color: #bfbfbf;
+  padding: 0px 0px 14px 0px;
+  white-space: nowrap;
+}
+
+#product-show #product-show-review-rating-full-stars {
+  position: absolute;
+  vertical-align: middle;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: 22px;
+  color: #e89607;
+  overflow: hidden;
+}
+
+#product-show #product-show-number-of-reviews {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: middle;
+  padding: 0px 0px 14px 10px;
 }
 
 #product-show #price-tables {

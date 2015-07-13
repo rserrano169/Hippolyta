@@ -104,6 +104,7 @@
 
 #search-results #successful-search .search-results-review-rating-full-stars {
   position: absolute;
+  vertical-align: middle;
   width: 100%;
   top: 0;
   left: 0;

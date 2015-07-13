@@ -18,6 +18,7 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
       reviews: this.reviews,
     });
     this.$el.html(content);
+    this.renderStarRating();
 
     var csrfToken = $("meta[name='csrf-token']").attr('content');
     this.$("form").prepend(
@@ -27,6 +28,14 @@ Hippolyta.Views.ProductShow = Backbone.View.extend({
     );
 
     return this;
+  },
+
+  renderStarRating: function () {
+    var reviewRatingPercentage = this.product.escape("review_rating_percentage");
+    if (reviewRatingPercentage) {
+      $("#product-show-review-rating-full-stars")
+        .width(reviewRatingPercentage + '%');
+    }
   },
 
 });

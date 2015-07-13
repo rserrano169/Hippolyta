@@ -6,10 +6,12 @@ json.(
   :original_price,
   :quantity,
   :description,
-  :seller_id
+  :seller_id,
+  :review_rating_percentage
 )
 
 json.seller_name(@product.seller.name)
+json.number_of_reviews(@product.reviews.count)
 
 if last_query
   json.last_query(last_query.keywords)

@@ -23,6 +23,57 @@
         <%%= product.escape("name") %>
       </li>
 
+      <li id="product-show-review-rating">
+        <%% if (product.escape("review_rating_percentage")) { %>
+        <%% var numOfReviews = product.escape("number_of_reviews") %>
+          <span id="product-show-review-rating-empty-stars">
+            <span id="product-show-empty-star-one">
+              &#9733
+            </span>
+            <span id="product-show-empty-star-two">
+              &#9733
+            </span>
+            <span id="product-show-empty-star-three">
+              &#9733
+            </span>
+            <span id="product-show-empty-star-four">
+              &#9733
+            </span>
+            <span id="product-show-empty-star-five">
+              &#9733
+            </span>
+            <span id="product-show-review-rating-full-stars">
+              <span id="product-show-full-star-one">
+                &#9733
+              </span>
+              <span id="product-show-full-star-two">
+                &#9733
+              </span>
+              <span id="product-show-full-star-three">
+                &#9733
+              </span>
+              <span id="product-show-full-star-four">
+                &#9733
+              </span>
+              <span id="product-show-full-star-five">
+                &#9733
+              </span>
+            </span>
+          </span>
+          <%% if (numOfReviews === '1') { %>
+              <span id="product-show-number-of-reviews">
+                <%%= numOfReviews %>
+                customer review
+              </span>
+          <%% } else { %>
+              <span id="product-show-number-of-reviews">
+                <%%= numOfReviews %>
+                customer reviews
+              </span>
+          <%% } %>
+        <%% } %>
+      </li>
+
       <li id="price-tables">
         <%% var salePrice = (product.escape("sale_price") * 1).toFixed(2) %>
         <%% if (product.escape("original_price")) { %>
