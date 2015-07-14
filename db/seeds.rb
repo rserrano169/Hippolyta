@@ -871,8 +871,13 @@ REVIEW_TEXTS = {
   5 => "I got this for my 1 year old great grandson as the discretion said it
         was for age 1 to 4 years. This is to small for a 1 year old",
   6 => nil,
-  7 => nil,
-  8 => nil,
+  7 => "I purchased the purple hippo as a gift for my niece's birthday present.
+        Pillow Pets are all the rage in her elementary school. She is 7. She was
+        so happy to receive this gift. I was please with with product, I think
+        these are clever toys and I like the dual use. Very soft and cuddly. If
+        you are looking to please a young person in your life consider
+        purchasing one. A perfect gift.",
+  8 => "As pictured, fast delivery, happy with quality",
   9 => nil,
   10 => nil,
   11 => nil,
@@ -913,8 +918,11 @@ REVIEW_TEXTS = {
          quite bulky. I like hippo car more than lion car...but my son likes
          both. All in all, nice cars if you don't mind the plastic.",
   23 => nil,
-  24 => nil,
-  25 => nil,
+  24 => "I ordered this for Christmas and when it came (from Rosy Deals) I
+         discovered that it was a Pillow Pal and not an authentic Pillow Pet at
+         all. Very disappointed!!! I had to call Amazon and re-order a different
+         one.",
+  25 => "Cute for cutie on his way! I'm happy that I got one. Looks great!",
   26 => nil,
   27 => nil,
   28 => nil,
@@ -941,8 +949,11 @@ REVIEW_TEXTS = {
          and the hippo's mouth opens and closes. So cute. It matches perfectly
          to my niece's train set.",
   40 => nil,
-  41 => nil,
-  42 => nil,
+  41 => "My little one loves this thing so much! She kept saying 'so soft' and
+         hugging it lol, I will buy again after it tears up or washes apart. It
+         was expensive.",
+  42 => "Pictures do not do this set justice. The detail and the quality are
+         excellent.",
   43 => nil,
   44 => nil,
   45 => nil,
@@ -972,8 +983,23 @@ REVIEW_TEXTS = {
          on the side. The side says \"SODOR ZOO\" so it is associated w/
          Thomas.",
   57 => nil,
-  58 => nil,
-  59 => nil,
+  58 => "I had been looking for the Hippo pet for a while and couldn't find it
+         anywhere but Amazon. It was exactly what we wanted.",
+  59 => "The set is adorable. It looks great in our jungle themed nursery. The
+         quilt is pretty soft...the diaper stacker is also soft, stacks a good
+         amount of diapers, and is easy to use. The fitted sheet is a little bit
+         rough, but more than just the matching sheet is used anyway...I have
+         other sheets that the baby will be using as well.\n
+         I am very upset with the dust ruffle...I used the hand wash cycle (it
+         calls for gentle cycle) the whole bedding set and put everything in the
+         dryer on tumble dry low for a brief amount of time (like the directions
+         say). I would not recommend following the directions. I was very
+         disappointed that the top of the dust ruffle (part that goes under the
+         mattress) produced holes. If I would have just air-dryed the dust
+         ruffle everything would be fine. Just bummed about the quality that it
+         didn't make it though the first washing.\n\n
+         Again, overall an inexpensive adorable looking bedding set. Obviously,
+         if we want high quality you'll need to spend more.",
   60 => nil,
   61 => nil,
   62 => nil,
@@ -1005,8 +1031,52 @@ REVIEW_TEXTS = {
          his mouth up & down as the car rolls. The price on here is a little
          steep. We bought these at Marshalls for $12.99 for both.",
   74 => nil,
-  75 => nil,
-  76 => nil,
+  75 => "Different from any other, this pillow pet is no typical stuffed animal.
+         I have been through countless stuffed dogs, bears, cats and more; yet
+         none compare to my beloved hippo. Many Christmases ago, Hippy came into
+         my life wrapped clumsily beneath the lit tree. It was love at first
+         sight as I squeezed my fluffy friend close to my heart. From that
+         moment on we were inseparable - well, except for the time I spent with
+         other humans, homework and sports. Hippy was indeed my partner in
+         crime, or more like my partner in watching innumerable movies, studying
+         and sneaking food into my room. He was always there for me, the only
+         stuffed friend I'd ever need. Every night as I headed to bed, I knew
+         his soft, fuzzy self would await me. I can't even begin to think what I
+         would have done during a terrifying storm without my thunder buddy. I
+         could depend on Hippy to let me hide under his silky, purple belly for
+         the loudest cracks of thunder. After a while of owning my stuffed
+         friend, I refused to wash him for the mere chance that we wouldn't
+         return the same. I was mortified when my mother decided it was time for
+         a swim in the washing machine without telling me. I sighed of relief
+         when he returned just as cushiony as before.\n\n
+         When it was time to move on to college, you bet Hippy came along with
+         me, just as excited for our new surroundings. I was fortunate to have a
+         piece of home to get me through such a transition in my life. College
+         can be a lonely place, you know, but lucky for me I had my shaggy
+         friend to rely on. The few nights I struggled to get to sleep were
+         spent clung to my Hippy instead of counting sheep. Many may think that
+         continuing to sleep with a stuffed animal in college is considered
+         childish, but my response would be: Not only is this hippo my cuddle
+         buddy, but he's a pillow - how multifaceted my friend is! There is no
+         worse feeling than those long, cold nights when Hippy would fall from
+         my lofted bed onto the floor and I was faced with the difficult
+         decision to sleep solo or climb down from this zenith of a bed to
+         retrieve him. For the times I felt homesick, just seeing Hippy's
+         gigantic smile reminded me that home was still with me.\n\n
+         Since college has been such a busy period, I have had less time to
+         devote to my pillow friend. To prevent his loneliness, I bought him the
+         perfect surprise - his own pillow pet friend, Herky! These fluffy
+         creatures are best in multiples so buy as many as your heart desires.
+         Obviously from my experiences, these pets are perfect for any age and
+         can warm anyone's heart. I highly recommend my friend's counterparts to
+         anyone looking for a quiet, but loving companion.",
+  76 => "I bought it as a gift for my youngest nephew, and they are beautiful,
+         really good quality, the fabric is so soft and has 3D patches, it's
+         just so soft. I washed everything before giving it away, and everything
+         stayed intact and perfect. We didn't use the crib skirt, so I cut the
+         fabric pieces and sew 2 envelope pillow covers/shams, which we also
+         washed and they also stayed perfect. It's just a beautiful set, we also
+         got the wall decals.",
   77 => nil,
   78 => nil,
   79 => nil,
@@ -1027,7 +1097,7 @@ REVIEW_RATINGS = {
   4 => 5,
   5 => 1,
   6 => 5,
-  7 => 5,
+  7 => 3,
   8 => 5,
   9 => 5,
   10 => 5,
@@ -1044,7 +1114,7 @@ REVIEW_RATINGS = {
   21 => 4,
   22 => 5,
   23 => 5,
-  24 => 5,
+  24 => 1,
   25 => 5,
   26 => 5,
   27 => 5,
@@ -1061,7 +1131,7 @@ REVIEW_RATINGS = {
   38 => 4,
   39 => 5,
   40 => 5,
-  41 => 5,
+  41 => 4,
   42 => 5,
   43 => 5,
   44 => 5,
@@ -1078,8 +1148,8 @@ REVIEW_RATINGS = {
   55 => 2,
   56 => 5,
   57 => 5,
-  58 => 5,
-  59 => 5,
+  58 => 4,
+  59 => 3,
   60 => 5,
   61 => 5,
   62 => 5,
