@@ -878,8 +878,32 @@ REVIEW_TEXTS = {
         you are looking to please a young person in your life consider
         purchasing one. A perfect gift.",
   8 => "As pictured, fast delivery, happy with quality",
-  9 => nil,
-  10 => nil,
+  9 => "What happens when a purple rotund hippontimus has hiccups so fearce they
+        blast everything and everyone around him into flight? Humor, that's
+        what.\n\n
+        Author and illustrator Aaron Zenz presents a whimsical rhyme of epic
+        proportions in his first children's picture book \"The Hiccupontamus.\"
+        Beautifully illustrated, and in a Dr. Suess-like manner, the story
+        creates many words that would send Daniel Webster reeling.\n\n
+        \"There was a hippopotamus\n\n
+        Who hiccupped quite-a-lotamus\n\n
+        And every time he got'emus\n\n
+        He'd fall upon his bottomus.\"\n\n
+        Zenz rendered all of the humorous cartoon illustrations using colored
+        pencils, using 119 in all. The Spring Lake, Michigan resident holds an
+        art degree from Hillsdale College. \"The Hiccupotamus\" took eight years
+        to complete and is published by Chicago-based Dogs In Hats Children's
+        Publishing.\n\n
+        The printing quality of the book is ultra-professional and brings out
+        Zenz' pressure-applied pencils to vibrant life. It is often a
+        competitive page quandary for the reader which to love most; the story
+        or the drawings. The chemistry between text and pictures is remarkable,
+        and rivals the best children's books ever published.\n\n
+        Aaron Zenz enjoys communicating with kids of all ages through art
+        lessons to home schooled children and Sunday School classes. His
+        outreach to children can only grow with this jewel of a book.",
+  10 => "current phones are too large for this but we have found other uses for
+         it: temporarily holding gift cards, or business cards, etc.",
   11 => nil,
   12 => nil,
   13 => nil,
@@ -923,8 +947,12 @@ REVIEW_TEXTS = {
          all. Very disappointed!!! I had to call Amazon and re-order a different
          one.",
   25 => "Cute for cutie on his way! I'm happy that I got one. Looks great!",
-  26 => nil,
-  27 => nil,
+  26 => "We really enjoyed the sillyness of this story. It had great
+         illustrations. We thought the had lots of personality. Will look for
+         more stories like this one.",
+  27 => "Too light weight to hold my phone with out falling over... I wanted to
+         use with out actually sticking it to my desk but will have to glue it
+         down if I want to use it.",
   28 => nil,
   29 => nil,
   30 => nil,
@@ -954,8 +982,11 @@ REVIEW_TEXTS = {
          was expensive.",
   42 => "Pictures do not do this set justice. The detail and the quality are
          excellent.",
-  43 => nil,
-  44 => nil,
+  43 => "Short, sweet and funny. It makes you laugh just because it is so
+         simple. Great for kids learning to read, or to be read to kids.",
+  44 => "I should've paid closer attention to the product details. It's very
+         cute for a hippo collector like myself, but my phone doesn't fit in
+         this holder. It will hold an old fashioned flip phone.",
   45 => nil,
   46 => nil,
   47 => nil,
@@ -1000,8 +1031,24 @@ REVIEW_TEXTS = {
          didn't make it though the first washing.\n\n
          Again, overall an inexpensive adorable looking bedding set. Obviously,
          if we want high quality you'll need to spend more.",
-  60 => nil,
-  61 => nil,
+  60 => "The Hiccupotamus by Aaron Zenz is a vibrant picture book filled with a
+         sense of humor that bounces off of the pages along with the colors. A
+         hippo has a severe case of the hiccups and accidentally angers an
+           elephant by hiccuping nearby. She chases after him and on the way
+           they encounter a whole group of animals bothered by his hiccups. The
+           text is done in a rollicking rhyme that will appeal to toddlers and
+           preschoolers as well as the adults reading and listening. This book
+           is quite simply a lot of fun. I would save it to pull out and
+           brighten a rainy day.\n\n
+           For adults, Zenz's humor continues onto the final page of the book
+           with the Cast Bios. My favorite is that \"the part of the buffalo was
+           played by a groundsquirrel named Arlo.\" For librarians, check out
+           the subject headings, all rights reserved statement and other funny
+           bits on the copyright page. Laugh-out-loud funny!",
+  61 => "I needed a holder that I could sit my cellphone on next to me at the
+         computer and see when I was getting a call or other notice. My
+         cellphone cover is this same shade of green so it looks like it was
+         made for my phone - just so cute!!",
   62 => nil,
   63 => nil,
   64 => nil,
@@ -1077,8 +1124,16 @@ REVIEW_TEXTS = {
          fabric pieces and sew 2 envelope pillow covers/shams, which we also
          washed and they also stayed perfect. It's just a beautiful set, we also
          got the wall decals.",
-  77 => nil,
-  78 => nil,
+  77 => "Vibrant colors and fun rhymes make this a book I will be delighted to
+         have my kids bring me to read over and over. (As all parents know, it's
+         hard to find that kind of book!) It clips along at a nice pace, and has
+         plenty for children to explore visually on each page. Definitely a
+         5-star book!",
+  78 => "I purchased this for use on my desk at work, it's too small &
+         lightweight to hold a cell phone. It does come with double sided tape
+         to apply to the hippo & wherever you want it to sit but this means you
+         can't move it. I use it to hold a note pad instead & it works great for
+         that purpose.",
   79 => nil,
   80 => nil,
   81 => nil,
@@ -1100,7 +1155,7 @@ REVIEW_RATINGS = {
   7 => 3,
   8 => 5,
   9 => 5,
-  10 => 5,
+  10 => 3,
   11 => 5,
   12 => 5,
   13 => 5,
@@ -1116,8 +1171,8 @@ REVIEW_RATINGS = {
   23 => 5,
   24 => 1,
   25 => 5,
-  26 => 5,
-  27 => 5,
+  26 => 3,
+  27 => 4,
   28 => 5,
   29 => 5,
   30 => 5,
@@ -1133,8 +1188,8 @@ REVIEW_RATINGS = {
   40 => 5,
   41 => 4,
   42 => 5,
-  43 => 5,
-  44 => 5,
+  43 => 4,
+  44 => 2,
   45 => 5,
   46 => 5,
   47 => 5,
@@ -1168,7 +1223,7 @@ REVIEW_RATINGS = {
   75 => 5,
   76 => 5,
   77 => 5,
-  78 => 5,
+  78 => 1,
   79 => 5,
   80 => 5,
   81 => 5,
