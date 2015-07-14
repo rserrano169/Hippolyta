@@ -1483,7 +1483,7 @@ QUERY_KEYWORDS = {
 }
 
 QUERY_SESSION_TOKENS = {
-  0 => User.find(QUERY_QUERIER_IDS[0]).session_token
+  0 => User.find(QUERY_QUERIER_IDS[0]).session_token,
 }
 
 query_num = 0
