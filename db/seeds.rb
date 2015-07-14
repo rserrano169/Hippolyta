@@ -1479,7 +1479,7 @@ CART_BUYER_IDS = {
 }
 
 CART_SESSION_TOKENS = {
-  0: User.find(CART_BUYER_IDS[0]).session_token,
+  0 => User.find(CART_BUYER_IDS[0]).session_token,
 }
 
 cart_num = 0
@@ -1502,44 +1502,78 @@ while cart_num < CART_BUYER_IDS.length
 end
 
 
-CART_PRODUCTS_CART_IDS = {
+CART_PRODUCT_CART_IDS = {
   0 => 1,
   1 => 1,
   2 => 1,
 }
 
-CART_PRODUCTS_PRODUCT_IDS = {
+CART_PRODUCT_PRODUCT_IDS = {
   0 => 1,
-  0 => 3,
-  0 => 23,
+  1 => 3,
+  2 => 23,
 }
 
-CART_PRODUCTS_QUANTITIES = {
+CART_PRODUCT_QUANTITIES = {
   0 => 2,
-  0 => 5,
-  0 => 1,
+  1 => 5,
+  2 => 1,
 }
 
 cart_product_num = 0
-while cart_product_num < CART_PRODUCTS_CART_IDS.length
+while cart_product_num < CART_PRODUCT_CART_IDS.length
   cart_product = CartProduct.find_by(
-    cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
-    product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num]
+    cart_id: CART_PRODUCT_CART_IDS[cart_product_num],
+    product_id: CART_PRODUCT_PRODUCT_IDS[cart_product_num]
   )
 
   if cart_product
     cart_product.update_attributes!({
-      cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
-      product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num],
-      quantity: CART_PRODUCTS_QUANTITIES[cart_product_num]
+      cart_id: CART_PRODUCT_CART_IDS[cart_product_num],
+      product_id: CART_PRODUCT_PRODUCT_IDS[cart_product_num],
+      quantity: CART_PRODUCT_QUANTITIES[cart_product_num]
     })
   else
     cart_product = CartProduct.create!({
-      cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
-      product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num],
-      quantity: CART_PRODUCTS_QUANTITIES[cart_product_num]
+      cart_id: CART_PRODUCT_CART_IDS[cart_product_num],
+      product_id: CART_PRODUCT_PRODUCT_IDS[cart_product_num],
+      quantity: CART_PRODUCT_QUANTITIES[cart_product_num]
     })
   end
-  
+
   cart_product_num += 1
+end
+
+ADDRESS_NAMES = {
+  0 => "Test Address",
+}
+
+ADDRESS_STREETS = {
+  0 => "123 Test Street",
+}
+
+ADDRESS_APTS = {
+  0 => "1t",
+}
+
+ADDRESS_CITIES = {
+  0 => "New Test City",
+}
+
+ADDRESS_STATES = {
+  0 => "NY",
+}
+
+ADDRESS_ZIPS = {
+  0 => "10001",
+}
+
+ADDRESS_USER_IDS = {
+  0 => 1,
+}
+
+address_num = 0
+while address_num < ADDRESS_NAMES.length
+
+  address_num += 1
 end
