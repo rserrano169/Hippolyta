@@ -868,7 +868,8 @@ REVIEW_TEXTS = {
         5 STARS!",
   4 => "I love hippos, they're my favorite animal! So, to be able to make
         cookies in their shape is wonderful! Love this!",
-  5 => nil,
+  5 => "I got this for my 1 year old great grandson as the discretion said it
+        was for age 1 to 4 years. This is to small for a 1 year old",
   6 => nil,
   7 => nil,
   8 => nil,
@@ -903,7 +904,14 @@ REVIEW_TEXTS = {
   21 => "This was a gift for my mother who collects Hippos, she loved it, and I
          am sure we will now be getting Hippo shaped cookies all the time now
          :)",
-  22 => nil,
+  22 => "At current price (13$), these two cars is a good deal. I got this
+         because of hippo car and it is great. My son immediately started to
+         play with these cars...there is always a need for cool cars that
+         engines can pull. Note that hippo and the green part of the car is made
+         of plastic. The lion car is almost entirely plastic except from the
+         very bottom part to which wheels are attached. Also, the lion car is
+         quite bulky. I like hippo car more than lion car...but my son likes
+         both. All in all, nice cars if you don't mind the plastic.",
   23 => nil,
   24 => nil,
   25 => nil,
@@ -929,7 +937,9 @@ REVIEW_TEXTS = {
   38 => "It seems like it will be fairly durable. I have not tried it out yet
          since it was a gift for my little sister. Made in China for any who
          might be concerned.",
-  39 => nil,
+  39 => "This an very cute item. The sliding gate on the car roars like a lion
+         and the hippo's mouth opens and closes. So cute. It matches perfectly
+         to my niece's train set.",
   40 => nil,
   41 => nil,
   42 => nil,
@@ -956,7 +966,11 @@ REVIEW_TEXTS = {
   55 => "This was supposed to be a gift for my daughter's kindergarten teacher,
          but it broke as soon as we opened the package. It's very, very thin
          tinplated steel.",
-  56 => nil,
+  56 => "These are absolutely adorable. I like that they are not actually one of
+         the characters & offer something different. The hippo mouth chomps open
+         & shut as it rolls along & the lion roars when you move the little door
+         on the side. The side says \"SODOR ZOO\" so it is associated w/
+         Thomas.",
   57 => nil,
   58 => nil,
   59 => nil,
@@ -987,7 +1001,9 @@ REVIEW_TEXTS = {
          got a very skinny hippo that is not at all like the one pictured.
          Completely different face features and feet. Will be much harder to
          make but I'm on deadline for a project and have to use it.",
-  73 => nil,
+  73 => "We love these cars, the lion car opens & the lion roars. Hippo moves
+         his mouth up & down as the car rolls. The price on here is a little
+         steep. We bought these at Marshalls for $12.99 for both.",
   74 => nil,
   75 => nil,
   76 => nil,
@@ -1009,7 +1025,7 @@ REVIEW_RATINGS = {
   2 => 5,
   3 => 5,
   4 => 5,
-  5 => 5,
+  5 => 1,
   6 => 5,
   7 => 5,
   8 => 5,
