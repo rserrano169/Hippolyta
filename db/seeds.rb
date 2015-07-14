@@ -1545,7 +1545,7 @@ while cart_product_num < CART_PRODUCT_CART_IDS.length
 end
 
 ADDRESS_NAMES = {
-  0 => "Test Address",
+  0 => "Test Address 1",
 }
 
 ADDRESS_STREETS = {
@@ -1574,6 +1574,70 @@ ADDRESS_USER_IDS = {
 
 address_num = 0
 while address_num < ADDRESS_NAMES.length
+  address = Adress.find_by(
+    name: ADDRESS_NAMES[address_num],
+    street: ADDRESS_STREETS[address_num],
+    apt: ADDRESS_APTS[address_num],
+    city: ADDRESS_CITIES[address_num],
+    state: ADDRESS_STATES[address_num],
+    zip: ADDRESS_ZIPS[address_num],
+    user_id: ADDRESS_USER_IDS[address_num]
+  )
+
+  if address
+    address.update_attributes!({
+      name: ADDRESS_NAMES[address_num],
+      street: ADDRESS_STREETS[address_num],
+      apt: ADDRESS_APTS[address_num],
+      city: ADDRESS_CITIES[address_num],
+      state: ADDRESS_STATES[address_num],
+      zip: ADDRESS_ZIPS[address_num],
+      user_id: ADDRESS_USER_IDS[address_num]
+    })
+  else
+    address = Address.create!({
+      name: ADDRESS_NAMES[address_num],
+      street: ADDRESS_STREETS[address_num],
+      apt: ADDRESS_APTS[address_num],
+      city: ADDRESS_CITIES[address_num],
+      state: ADDRESS_STATES[address_num],
+      zip: ADDRESS_ZIPS[address_num],
+      user_id: ADDRESS_USER_IDS[address_num]
+    })
+  end
 
   address_num += 1
+end
+
+PURCHASE_BUYER_IDS = {
+  0 => 1,
+  1 => 1,
+  2 => 1,
+  3 => 1,
+  4 => 1,
+}
+
+PURCHASE_PRODUCT_IDS = {
+  0 => 6,
+  1 => 8,
+  2 => 10,
+  3 => 12,
+  4 => 14,
+}
+
+purchase_num = 0
+while purchase_num < PURCHASE_BUYER_IDS.length
+  purchase = Purchase.find_by(
+    buyer_id: PURCHASE_BUYER_IDS[purchase_num],
+    product_id: PURCHASE_PRODUCT_IDS[purchase_num]
+  )
+
+  if !purchase
+    purchase = Purchase.create!({
+      buyer_id: PURCHASE_BUYER_IDS[purchase_num],
+      product_id: PURCHASE_PRODUCT_IDS[purchase_num]
+    })
+  end
+  
+  purchase_num += 1
 end

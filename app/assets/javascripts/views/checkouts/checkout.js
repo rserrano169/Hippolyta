@@ -246,11 +246,11 @@ Hippolyta.Views.Checkout = Backbone.View.extend({
   },
 
   insertTestAddressInfo: function () {
-    var testName = 'Test Address',
-        testStreet = '123 Test Street',
-        testApt = '1t',
+    var testName = 'Test Address 2',
+        testStreet = '456 Test Street',
+        testApt = '2t',
         testCity = 'New Test City',
-        testZip = '10001';
+        testZip = '10002';
 
     $("input[name='address[name]']").prop("value", testName);
     $("input[name='address[street]']").prop("value", testStreet);
