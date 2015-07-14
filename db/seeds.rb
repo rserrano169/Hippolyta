@@ -1455,15 +1455,15 @@ while review_num < REVIEW_TEXTS.length
     product_id: REVIEW_PRODUCT_IDS[review_num]
   )
 
-  if review
-    review.update_attributes({
+  if review && REVIEW_TEXTS[review_num]
+    review.update_attributes!({
       text: REVIEW_TEXTS[review_num],
       rating: REVIEW_RATINGS[review_num],
       reviewer_id: REVIEW_REVIEWER_IDS[review_num],
       product_id: REVIEW_PRODUCT_IDS[review_num]
     })
-  else
-    review = Review.create({
+  elsif REVIEW_TEXTS[review_num]
+    review = Review.create!({
       text: REVIEW_TEXTS[review_num],
       rating: REVIEW_RATINGS[review_num],
       reviewer_id: REVIEW_REVIEWER_IDS[review_num],
