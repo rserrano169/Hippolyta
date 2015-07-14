@@ -65,8 +65,10 @@ end
 PRODUCT_NAMES = {
   0 => "Hungry Hungry Hippos",
   1 => "Hiphopopotamus Board Games",
-  2 => "Hiphopopotamus vs. Rhymenoceros [feat. Rhymenocerous and the Hiphopopotamus]",
-  3 => "Purple 16oz Insulated Stainless Steel Travel Mug Z431 Keep Calm and Love Hippos",
+  2 => "Hiphopopotamus vs. Rhymenoceros [feat. Rhymenocerous and the
+        Hiphopopotamus]",
+  3 => "Purple 16oz Insulated Stainless Steel Travel Mug Z431 Keep Calm and Love
+        Hippos",
   4 => 'Aurora World Aurora Plush 12" Hippo Tubbie Wubbie',
   5 => "FHC Children's Hippo Animal Chair",
   6 => "Design Toscano Huey The Hippo Garden Statue",
@@ -223,35 +225,131 @@ PRODUCT_QUANTITIES = {
 }
 
 PRODUCT_DESCRIPTIONS = {
-  0 => "You’ll have a chompin’ good time with Hungry Hippo and his pals. Be ready to join in the feeding frenzy when you release all the marbles onto the game base, because all the hippos will be chomping and your hippo will need to move fast. If it chomps the golden marble, you win.",
-  1 => "The early counting game. Hop and count your way across the river but don't get caught by the Hippopotamus. Teach counting from 1-20, simple addition, subtraction and number sequencing. Contains floor mat, inflatable die and game guide. For 1 to 4 players. For ages 4 to 6 years.",
+  0 => "You’ll have a chompin’ good time with Hungry Hippo and his pals. Be
+        ready to join in the feeding frenzy when you release all the marbles
+        onto the game base, because all the hippos will be chomping and your
+        hippo will need to move fast. If it chomps the golden marble, you win.",
+  1 => "The early counting game. Hop and count your way across the river but
+        don't get caught by the Hippopotamus. Teach counting from 1-20, simple
+        addition, subtraction and number sequencing. Contains floor mat,
+        inflatable die and game guide. For 1 to 4 players. For ages 4 to 6
+        years.",
   2 => "As heard on the HBO show, and from the album, Flight Of The Conchords.",
-  3 => "16 oz. travel mug with stainless steel outer wall, color accents, and matching insulated liner. Double wall plastic inner liner insulation. Smooth curved body for easy grab-N-go handling. Plastic lid with a spill prevention slide lock.",
-  4 => "Realistic Styling. Wonderful Gift Item. Fine Plush Fabric. Premier manufacturer of gift plush. Soft and cuddly.",
-  5 => "WOW! This adorable Hippo chair is the perfect gift for any baby to a young child. It's cute design and super soft material creates a multi-use piece. It is first and foremost a cozy chair, but it is also a giant stuffed animal, and it will certainly brighten the decor of any room. It is the perfect gift for your children, grandchildren, or any other adorable young one you know. It is irresistibly soft and designed to function as a chair, but it is durable enough for a childhood of unlimited HUGS and CUDDLES",
-  6 => "Guests won’t know what to expect when they notice the Huey the Hippo Garden Sculpture popping his head up from your garden, patio, or yard. This whimsical sculpture will liven up any setting and is perfect indoors or out. It’s made of cast resin and hand painted in striking detail.",
-  7 => 'Provide a "hip" and hefty hello at the front door with the Droog Hippo Door Mat. Designed by Ed Annink, the Hippo Door Mat has an unmistakable and playful shape taken from a copyright-free Gerd Arntz pictogram and made out of a durable and natural-looking combination of coir and PVC.',
-  8 => "CybrTrayd-R&M heavy-duty tinplate steel cookie cutters are strong and built to hold their shapes. However, they are not dishwasher-safe and should be hand washed in warm, soapy water and towel dried.",
-  9 => 'Salt & Pepper Shakers Set. Size: ~3" - 4". Not Dishwasher or Microware Safe. Made of High Quaility Ceramic. Not Recommended For Children Under 12. 100% Licensed Product.',
-  10 => "The Island of Sodor is alive with jungle animals, as the Zoo Cars are transporting lions and hippos! The lion roars and the hippo chomps on the two-car Sodor Zoo Cars. Thomas Wooden Railway vehicles, track and destinations are not compatible with Take Along Thomas items.",
-  11 => "Baby Aspen's \"Hug-alot-amus\" hooded robe embraces infants with terrycloth coziness and hippo-size cuteness. Features and facts: Lavender terry robe with white cuffs, two terry ties in front, a hood with two smiling, white hippo teeth, appliqued gray eyes and hippo ears. Bottom of robe has a hippo's tail. Sharks can be personalized with baby's inital for an additional cost. Machine-wash and dry (low). Size 0-6 months.",
-  12 => "Stickerslug 5 inch pink cartoon hippo vinyl decal sticker. This frustration-free cartoon hippo has an endless list of places you can use this decal to liven up your world. Whether you are new to decal stickers or a professional, it could not be simpler with our products. Included with your purchase of this cartoon hippo decal is our easy to follow Stickerslug instructional booklet to guide those who may be new to installing decals. If you are installing your pink cartoon hippo outdoors, select our high quality gloss finish material, and select our premium matte finish vinyl material for your indoor installations.",
+  3 => "16 oz. travel mug with stainless steel outer wall, color accents, and
+        matching insulated liner. Double wall plastic inner liner insulation.
+        Smooth curved body for easy grab-N-go handling. Plastic lid with a spill
+        prevention slide lock.",
+  4 => "Realistic Styling. Wonderful Gift Item. Fine Plush Fabric. Premier
+        manufacturer of gift plush. Soft and cuddly.",
+  5 => "WOW! This adorable Hippo chair is the perfect gift for any baby to a
+        young child. It's cute design and super soft material creates a
+        multi-use piece. It is first and foremost a cozy chair, but it is also a
+        giant stuffed animal, and it will certainly brighten the decor of any
+        room. It is the perfect gift for your children, grandchildren, or any
+        other adorable young one you know. It is irresistibly soft and designed
+        to function as a chair, but it is durable enough for a childhood of
+        unlimited HUGS and CUDDLES",
+  6 => "Guests won’t know what to expect when they notice the Huey the Hippo
+        Garden Sculpture popping his head up from your garden, patio, or yard.
+        This whimsical sculpture will liven up any setting and is perfect
+        indoors or out. It’s made of cast resin and hand painted in striking
+        detail.",
+  7 => 'Provide a "hip" and hefty hello at the front door with the Droog Hippo
+        Door Mat. Designed by Ed Annink, the Hippo Door Mat has an unmistakable
+        and playful shape taken from a copyright-free Gerd Arntz pictogram and
+        made out of a durable and natural-looking combination of coir and PVC.',
+  8 => "CybrTrayd-R&M heavy-duty tinplate steel cookie cutters are strong and
+        built to hold their shapes. However, they are not dishwasher-safe and
+        should be hand washed in warm, soapy water and towel dried.",
+  9 => 'Salt & Pepper Shakers Set. Size: ~3" - 4". Not Dishwasher or Microware
+        Safe. Made of High Quaility Ceramic. Not Recommended For Children Under
+        12. 100% Licensed Product.',
+  10 => "The Island of Sodor is alive with jungle animals, as the Zoo Cars are
+         transporting lions and hippos! The lion roars and the hippo chomps on
+         the two-car Sodor Zoo Cars. Thomas Wooden Railway vehicles, track and
+         destinations are not compatible with Take Along Thomas items.",
+  11 => "Baby Aspen's \"Hug-alot-amus\" hooded robe embraces infants with
+         terrycloth coziness and hippo-size cuteness. Features and facts:
+         Lavender terry robe with white cuffs, two terry ties in front, a hood
+         with two smiling, white hippo teeth, appliqued gray eyes and hippo
+         ears. Bottom of robe has a hippo's tail. Sharks can be personalized
+         with baby's inital for an additional cost. Machine-wash and dry (low).
+         Size 0-6 months.",
+  12 => "Stickerslug 5 inch pink cartoon hippo vinyl decal sticker. This
+         frustration-free cartoon hippo has an endless list of places you can
+         use this decal to liven up your world. Whether you are new to decal
+         stickers or a professional, it could not be simpler with our products.
+         Included with your purchase of this cartoon hippo decal is our easy to
+         follow Stickerslug instructional booklet to guide those who may be new
+         to installing decals. If you are installing your pink cartoon hippo
+         outdoors, select our high quality gloss finish material, and select our
+         premium matte finish vinyl material for your indoor installations.",
   13 => 'Race Car Bouncing Balls. Assorted styles. Rubber. 1 1/4" (35mm)',
-  14 => "From the original My Pillow Pets, this Extra Cuddly Hungery Hippo is made of soft Lavendar plush fabric. Open the velcro closure and use as a pillow. Close the velcro closure and you have the softest pet ever. This is part of the Original My Pillow Pets, as advertised on Nickelodeon, Discovery Kids, TV Land.",
-  15 => 'This unique hand crafted collectible?bobble head?is made with high quality resin. It is hand-painted.? You will be amazed by its fine details. This is a "must have" collectible for?animal lovers. So buy it now while supply last.??This cute bobble head can be placed in the car.? While the car is moving, so is this cute little bobble head.',
-  16 => "Carter's animals collection 4 piece crib set animals collection set includes: comforter, dust ruffle, sheet, and nursery organizer. Set the stage for sweet safari dreams, complete with happy hippos, elephants, turtles, and giraffes in a stylish combination of greys, greens, and yellows. Features an appliqued quilt trimmed in polka-dot edging, crib sheet adorned with adorable animals, darling green and white dust ruffle, and wild-animal print diaper stacker. Coordinates with a full line of carters animal collection nursery decor and bedding.",
-  17 => "Carter's animals collection musical mobile. This musical mobile will help soothe your little one to sleep, gently spinning while playing brahms lullaby. Elegant elephants and adorable turtles spin beneath a ruffled canopy as a curious giraffe looks on. Coordinates with a full line of carter's animals collection nursery bedding and room decor.",
-  18 => "A hippopotamus with a bad case of the hiccups. Age Range: 1 - 2 years. Hardcover: 32 pages. Language: English.",
-  19 => "Blue Novelty Hippopotamus Stapler. Small enough to travel with.  Smooth round edges.  Make your office, workplace, or school more fun!",
-  20 => "Exquisite design with cartoon hippo shape, lovable and chic.This Plastic Stand Holder is ideal for displaying mobile phone, Mp4, Mp5, etc.Nice gift for your friends, also adorn your tabletop.With self-adhesive tape on the base, placing it on the desk firmly.",
-  21 => "In a world full of bland, boring flash drives, EMTEC stands out from the crowd. In today's digital world, consumers are creative and demand advanced technologies to express themselves. EMTEC answers the call by providing a wide range of USB flash drives, each one perfect for storing, transporting and sharing your presentations, documents, photos, music files and more. The EMTEC Animal USB Flash Drive series features a set of charming animal characters carefully crafted from quality rubber materials.",
-  22 => "Let this Hippo Shaped Decorative Figurine Fan brighten your day while it keeps you cool. With its decorative appeal, a Figurine Fan can easily become a permanent part of any desk, vanity, bedroom, kitchen, or bathroom decor.",
-  23 => "Fits snake bracelets or a neckalce you are making. Quantity: 1 Bead. Material: Base Metal Silver Plated Antique Finish.",
+  14 => "From the original My Pillow Pets, this Extra Cuddly Hungery Hippo is
+         made of soft Lavendar plush fabric. Open the velcro closure and use as
+         a pillow. Close the velcro closure and you have the softest pet ever.
+         This is part of the Original My Pillow Pets, as advertised on
+         Nickelodeon, Discovery Kids, TV Land.",
+  15 => 'This unique hand crafted collectible?bobble head?is made with high
+         quality resin. It is hand-painted.? You will be amazed by its fine
+         details. This is a "must have" collectible for?animal lovers. So buy it
+         now while supply last.??This cute bobble head can be placed in the
+         car.? While the car is moving, so is this cute little bobble head.',
+  16 => "Carter's animals collection 4 piece crib set animals collection set
+         includes: comforter, dust ruffle, sheet, and nursery organizer. Set the
+         stage for sweet safari dreams, complete with happy hippos, elephants,
+         turtles, and giraffes in a stylish combination of greys, greens, and
+         yellows. Features an appliqued quilt trimmed in polka-dot edging, crib
+         sheet adorned with adorable animals, darling green and white dust
+         ruffle, and wild-animal print diaper stacker. Coordinates with a full
+         line of carters animal collection nursery decor and bedding.",
+  17 => "Carter's animals collection musical mobile. This musical mobile will
+         help soothe your little one to sleep, gently spinning while playing
+         brahms lullaby. Elegant elephants and adorable turtles spin beneath a
+         ruffled canopy as a curious giraffe looks on. Coordinates with a full
+         line of carter's animals collection nursery bedding and room decor.",
+  18 => "A hippopotamus with a bad case of the hiccups. Age Range: 1 - 2 years.
+         Hardcover: 32 pages. Language: English.",
+  19 => "Blue Novelty Hippopotamus Stapler. Small enough to travel with.
+         Smooth round edges.  Make your office, workplace, or school more fun!",
+  20 => "Exquisite design with cartoon hippo shape, lovable and chic.This
+         Plastic Stand Holder is ideal for displaying mobile phone, Mp4, Mp5,
+         etc.Nice gift for your friends, also adorn your tabletop.With
+         self-adhesive tape on the base, placing it on the desk firmly.",
+  21 => "In a world full of bland, boring flash drives, EMTEC stands out from
+         the crowd. In today's digital world, consumers are creative and demand
+         advanced technologies to express themselves. EMTEC answers the call by
+         providing a wide range of USB flash drives, each one perfect for
+         storing, transporting and sharing your presentations, documents,
+         photos, music files and more. The EMTEC Animal USB Flash Drive series
+         features a set of charming animal characters carefully crafted from
+         quality rubber materials.",
+  22 => "Let this Hippo Shaped Decorative Figurine Fan brighten your day while
+         it keeps you cool. With its decorative appeal, a Figurine Fan can
+         easily become a permanent part of any desk, vanity, bedroom, kitchen,
+         or bathroom decor.",
+  23 => "Fits snake bracelets or a neckalce you are making. Quantity: 1 Bead.
+         Material: Base Metal Silver Plated Antique Finish.",
   24 => "Essential Design Bath Accessory Set - Pouf, Mitt & Mesh Carry Bag.",
-  25 => "Outfit your little one with these absolutely charming soft sole infant baby shoes. These comfortable leather shoes are great for the little ones, and convenient for the parents. Great for both indoors and outdoors. Machine washable. Leather conditioner works well on it.",
-  26 => "Allowing your baby to go barefoot helps the foot to grow normally and to develop its musculature and strength. Momo Baby footwear is carefully handcrafted and designed to provide the protection from rough surfaces and dirty floors, while providing the health benefits of being barefoot. Momo Baby's entire line of footwear has been awarded the American Podiatric Medical Association's prestigious Seal of Acceptance which recognizes products which have been found beneficial and significant value to foot health.",
-  27 => "Hand dyed shirt featuring a screen print graphic of a hippo head on a preshrunk, 100 percent cotton shirt dyed and printed by the mountain which uses only inks and dyes to bring you a durable and comfortable t-shirt",
-  28 => "Kinder Chocolate is not complete without Kinder Happy Hippo which is a cookie-wafer bar with creamy milk and nut filling. Package contains 5 Kinder Happy Hippo Cacao bars.",
+  25 => "Outfit your little one with these absolutely charming soft sole infant
+         baby shoes. These comfortable leather shoes are great for the little
+         ones, and convenient for the parents. Great for both indoors and
+         outdoors. Machine washable. Leather conditioner works well on it.",
+  26 => "Allowing your baby to go barefoot helps the foot to grow normally and
+         to develop its musculature and strength. Momo Baby footwear is
+         carefully handcrafted and designed to provide the protection from
+         rough surfaces and dirty floors, while providing the health benefits of
+         being barefoot. Momo Baby's entire line of footwear has been awarded
+         the American Podiatric Medical Association's prestigious Seal of
+         Acceptance which recognizes products which have been found beneficial
+         and significant value to foot health.",
+  27 => "Hand dyed shirt featuring a screen print graphic of a hippo head on a
+         preshrunk, 100 percent cotton shirt dyed and printed by the mountain
+         which uses only inks and dyes to bring you a durable and comfortable
+         t-shirt",
+  28 => "Kinder Chocolate is not complete without Kinder Happy Hippo which is a
+         cookie-wafer bar with creamy milk and nut filling. Package contains 5
+         Kinder Happy Hippo Cacao bars.",
 }
 
 PRODUCT_PIC_URLS = {
@@ -743,7 +841,8 @@ while prod_num < PRODUCT_NAMES.length
 end
 
 REVIEW_TEXTS = {
-  0 => nil,
+  0 => "Perfect! 5 year old daughter loves this game. Wish it came with extra
+        marbles as of course we have already lost one.",
   1 => nil,
   2 => nil,
   3 => nil,
@@ -760,7 +859,12 @@ REVIEW_TEXTS = {
   14 => nil,
   15 => nil,
   16 => nil,
-  17 => nil,
+  17 => "Some on here have complained about it being cheap, or warped to not sit
+         flat. READ THE INSTRUCTIONS! The reason it may not sit flat is because
+         you have the cap on the bottom still where the balls are supposed to be
+         stored. if you remove that to get the balls out the thing sits perfectly
+         flat. Also having it a bit wobbly can be fun causing the balls to shift
+         around more.",
   18 => nil,
   19 => nil,
   20 => nil,
@@ -777,7 +881,9 @@ REVIEW_TEXTS = {
   31 => nil,
   32 => nil,
   33 => nil,
-  34 => nil,
+  34 => "One of the few games older kids (and men) seem to actually enjoy
+         playing with the little ones. Fairly sturdy, considering the rough
+         play it endures; it will be fun for as long as it lasts!",
   35 => nil,
   36 => nil,
   37 => nil,
@@ -794,7 +900,11 @@ REVIEW_TEXTS = {
   48 => nil,
   49 => nil,
   50 => nil,
-  51 => nil,
+  51 => "I remember having this game when I was a kid and it seemed to be much more durable back then. I ordered this for my nearly 4 year old daughter because I thought she'd have a fun time playing with it. The game itself is still fun but I found a few issues:\n
+         1) game doesn't sit flat on the table - plastic is thin and warped\n
+         2) you have to snap the hippos into the square board. I could see these getting broken easily and they don't exactly fit snugly anyway. The hippo mouths keep getting stuck open or pushed out (won't spring back after gobbling the marbles).\n
+         3) the \"marbles\" are very cheap, lightweight plastic. Back in the 'olden days,' the marbles may have been plastic but they were a more dense, heavy plastic at least!\n\n
+         So I'm kind of torn. I have good memories of the game and my daughter does still like this but I am disappointed in the quality and feel that it will end up broken / unusable sooner rather than later.",
   52 => nil,
   53 => nil,
   54 => nil,
@@ -811,7 +921,15 @@ REVIEW_TEXTS = {
   65 => nil,
   66 => nil,
   67 => nil,
-  68 => nil,
+  68 => "The two stars are for the game itself. Cute game to play with the kids
+         ages 6 and 4. I had this game as a kid so naturally I thought it would
+         be great! But I am disappointed that the game has to be disassemble
+         after each use. This is time consuming for a busy mother. To assemble
+         and disassemble each use is ludicrous. We own plenty of games and due
+         to this I don't think we will play this as often. It only takes a
+         couple of minutes to assemble but it's just not worth it. I'd stick to
+         my hi oh cherry! If time is on your side then I say it's a overall, ok
+         game.",
   69 => nil,
   70 => nil,
   71 => nil,
@@ -867,7 +985,7 @@ REVIEW_RATINGS = {
   31 => 5,
   32 => 5,
   33 => 5,
-  34 => 5,
+  34 => 4,
   35 => 5,
   36 => 5,
   37 => 5,
@@ -884,7 +1002,7 @@ REVIEW_RATINGS = {
   48 => 5,
   49 => 5,
   50 => 5,
-  51 => 5,
+  51 => 2,
   52 => 5,
   53 => 5,
   54 => 5,
@@ -901,7 +1019,7 @@ REVIEW_RATINGS = {
   65 => 5,
   66 => 5,
   67 => 5,
-  68 => 5,
+  68 => 2,
   69 => 5,
   70 => 5,
   71 => 5,
@@ -1104,17 +1222,20 @@ REVIEW_PRODUCT_IDS = {
 
 review_num = 0
 while review_num < REVIEW_TEXTS.length
-  review = Review.find(review_num)
+  review = Review.find_by(
+    reviewer_id: REVIEW_REVIEWER_IDS[review_num],
+    product_id: REVIEW_PRODUCT_IDS[review_num]
+  )
 
   if review
-    review.update_attributes!({
+    review.update_attributes({
       text: REVIEW_TEXTS[review_num],
       rating: REVIEW_RATINGS[review_num],
       reviewer_id: REVIEW_REVIEWER_IDS[review_num],
       product_id: REVIEW_PRODUCT_IDS[review_num]
     })
   else
-    review = Review.create!({
+    review = Review.create({
       text: REVIEW_TEXTS[review_num],
       rating: REVIEW_RATINGS[review_num],
       reviewer_id: REVIEW_REVIEWER_IDS[review_num],
