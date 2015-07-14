@@ -6,6 +6,12 @@
   padding: 20px;
 }
 
+#current-user-no-purchased-products {
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+}
+
 .current-user-purchased-product-table {
   padding: 20px 0px;
   border-bottom: 1px solid #cccccc;

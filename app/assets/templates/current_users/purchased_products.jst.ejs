@@ -1,37 +1,45 @@
 <main id="current-user-purchased-products">
-  <div id="current-user-purchased-products-container">
-    <% purchasedProducts.each( function (purchasedProduct) { %>
-      <% sellerId = purchasedProduct.escape("seller_id") %>
-      <% productId = purchasedProduct.escape("id") %>
-      <table class="current-user-purchased-product-table">
-        <tr>
-          <td class="current-user-purchased-product-cell-one">
-            <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
-              <img class="current-user-purchased-product-picture"
-                   src="<%= purchasedProduct.escape("medium_picture_url") %>"
-                   alt="product-image"/>
-            </a>
-          </td>
-          <td class="current-user-purchased-product-cell-two">
-            <ul>
-              <li>
-                  <span class="current-user-purchased-product-name">
-                    <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
-                      <%= purchasedProduct.escape("name") %>
-                    </a>
-                  </span>
-              </li>
-              <li>
-                <a href="#new_review/current_user/purchased_products/<%= productId %>">
-                  <span class="current-user-purchased-product-leave-review">
-                    Leave a review of this product?
-                  </span>
+  <% if (purchasedProducts.length < 1) { %>
+      <div id="current-user-purchased-products-container">
+        <div id="current-user-no-purchased-products">
+          You haven't purchased any products yet.
+        </div>
+      </div>
+  <% } else { %>
+      <div id="current-user-purchased-products-container">
+        <% purchasedProducts.each( function (purchasedProduct) { %>
+          <% sellerId = purchasedProduct.escape("seller_id") %>
+          <% productId = purchasedProduct.escape("id") %>
+          <table class="current-user-purchased-product-table">
+            <tr>
+              <td class="current-user-purchased-product-cell-one">
+                <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
+                  <img class="current-user-purchased-product-picture"
+                       src="<%= purchasedProduct.escape("medium_picture_url") %>"
+                       alt="product-image"/>
                 </a>
-              </li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-    <% }) %>
-  </div>
+              </td>
+              <td class="current-user-purchased-product-cell-two">
+                <ul>
+                  <li>
+                      <span class="current-user-purchased-product-name">
+                        <a href="#sellers/<%= sellerId %>/products/<%= productId %>">
+                          <%= purchasedProduct.escape("name") %>
+                        </a>
+                      </span>
+                  </li>
+                  <li>
+                    <a href="#new_review/current_user/purchased_products/<%= productId %>">
+                      <span class="current-user-purchased-product-leave-review">
+                        Leave a review of this product?
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        <% }) %>
+      </div>
+  <% } %>
 </main>
