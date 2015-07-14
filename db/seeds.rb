@@ -843,10 +843,31 @@ end
 REVIEW_TEXTS = {
   0 => "Perfect! 5 year old daughter loves this game. Wish it came with extra
         marbles as of course we have already lost one.",
-  1 => nil,
-  2 => nil,
-  3 => nil,
-  4 => nil,
+  1 => "Probably their best song recorded.\n
+        \"Be more constructive with your feedback.\"\n
+        Okay.\n
+        Nice rhymes, great video, the song is awesome. If you like parody
+        hip-hop, you'll like this.",
+  2 => "So, I'm not sure how to write a review on a stuffed animal. I ordered it
+        for my girlfriend for her birthday. She is a college student in a zoo
+        program and LOVES hippos. As far as a cute rating, I would give it 5
+        stars. Cuddly rating, another 5 stars. The smile it put on her face when
+        I presented it to her was deserving of 100 stars. She absolutely loved
+        it. It is very soft to the touch and seems to be of good quality. There
+        were no problems with it at all. Overall, whether for a child or a hippo
+        fanatic girlfriend, this is a great stuffed animal. :]",
+  3 => "My husband is the kind of guy who shakes the box and guesses the gift.
+        Well, he didn't guess THIS one! He wanted a hippopotamus for
+        Christmas... and only a hippopotamus would do. Maybe next year I can get
+        him the rest of the body... :-)\n
+        Huey is adorable as far as hippos go. Very nice quality. My husband has
+        him (or what's left of him... let me not get \"ahead\" of myself) on a
+        credenza near his desk. You can't help but smile when you look at this
+        jolly guy.\n
+        We were happy that floating dung was not included.\n
+        5 STARS!",
+  4 => "I love hippos, they're my favorite animal! So, to be able to make
+        cookies in their shape is wonderful! Love this!",
   5 => nil,
   6 => nil,
   7 => nil,
@@ -865,10 +886,23 @@ REVIEW_TEXTS = {
          stored. if you remove that to get the balls out the thing sits perfectly
          flat. Also having it a bit wobbly can be fun causing the balls to shift
          around more.",
-  18 => nil,
-  19 => nil,
-  20 => nil,
-  21 => nil,
+  18 => "Flight of the Conchords is a pretty good group. I love all of their
+         songs. This is one of my favorites.",
+  19 => "Got this for a friend who is in her sixties, and loves hippos. She
+         liked it, but gave it back as the fur was not like a real hippo's fur.
+         I don't believe hippos have fur, but whatever. I gave it to my two year
+         old grandson, and he could care less about the authenticity of the fur.
+         It is soft, and cute, and may I say cuddly ?? It seems well put
+         together, but I suspect any 2 year old boy worth his salt can
+         eventually destroy it. If treated with a minimum of care, I would guess
+         it would last an extended period. he is happy either way.",
+  20 => "Huey the Hippo is awesome! Very realistic & unique. I purchased him for
+         an officemate that is retiring who lived among the hippos in Africa for
+         a few years while conducting research. It is well made & will bring
+         many favorable comments for those that see it.",
+  21 => "This was a gift for my mother who collects Hippos, she loved it, and I
+         am sure we will now be getting Hippo shaped cookies all the time now
+         :)",
   22 => nil,
   23 => nil,
   24 => nil,
@@ -885,9 +919,16 @@ REVIEW_TEXTS = {
          playing with the little ones. Fairly sturdy, considering the rough
          play it endures; it will be fun for as long as it lasts!",
   35 => nil,
-  36 => nil,
-  37 => nil,
-  38 => nil,
+  36 => "I purchased this hippo for me because I love to collect stuffed
+         animals. I'm just a big baby. I love things that I can squeeze, hug,
+         and kiss! This is a magnificent product.",
+  37 => "Huey arrived in excellent condition. He now resides in the bushes next
+         to a swimming pool, ready to go for a dip. A few swimming guest jumped
+         in surprise and others just chuckled because he looks so real and cute.
+         I think Huey found a good home.",
+  38 => "It seems like it will be fairly durable. I have not tried it out yet
+         since it was a gift for my little sister. Made in China for any who
+         might be concerned.",
   39 => nil,
   40 => nil,
   41 => nil,
@@ -906,9 +947,15 @@ REVIEW_TEXTS = {
          3) the \"marbles\" are very cheap, lightweight plastic. Back in the 'olden days,' the marbles may have been plastic but they were a more dense, heavy plastic at least!\n\n
          So I'm kind of torn. I have good memories of the game and my daughter does still like this but I am disappointed in the quality and feel that it will end up broken / unusable sooner rather than later.",
   52 => nil,
-  53 => nil,
-  54 => nil,
-  55 => nil,
+  53 => "Somehow the picture on the computer looks cuter than the real thing but
+         still adorable. Wish the eyes were just a little bigger but still glad
+         I got it.",
+  54 => "Adorable. Gorgeous. One of the better looking hippos. Huey arrived
+         quickly and was reasonably priced. The only draw back is his \"skin\".
+         It chipped a bit already. But he's so cute it doesn't matter.",
+  55 => "This was supposed to be a gift for my daughter's kindergarten teacher,
+         but it broke as soon as we opened the package. It's very, very thin
+         tinplated steel.",
   56 => nil,
   57 => nil,
   58 => nil,
@@ -931,9 +978,15 @@ REVIEW_TEXTS = {
          my hi oh cherry! If time is on your side then I say it's a overall, ok
          game.",
   69 => nil,
-  70 => nil,
-  71 => nil,
-  72 => nil,
+  70 => "Very plush and cute. Shipping was free and fairly quick. Ordered
+         several to use as props in a dance one of our younger dance classes is
+         doing. They love the hippos!",
+  71 => "It's nice, one of the down sides is the color....same as dirt...I need
+         to work with it to make it more noticeable. But I like it.",
+  72 => "I ordered this particular one as it looked to have a nice big middle. I
+         got a very skinny hippo that is not at all like the one pictured.
+         Completely different face features and feet. Will be much harder to
+         make but I'm on deadline for a project and have to use it.",
   73 => nil,
   74 => nil,
   75 => nil,
@@ -972,7 +1025,7 @@ REVIEW_RATINGS = {
   18 => 5,
   19 => 5,
   20 => 5,
-  21 => 5,
+  21 => 4,
   22 => 5,
   23 => 5,
   24 => 5,
@@ -989,7 +1042,7 @@ REVIEW_RATINGS = {
   35 => 5,
   36 => 5,
   37 => 5,
-  38 => 5,
+  38 => 4,
   39 => 5,
   40 => 5,
   41 => 5,
@@ -1004,9 +1057,9 @@ REVIEW_RATINGS = {
   50 => 5,
   51 => 2,
   52 => 5,
-  53 => 5,
-  54 => 5,
-  55 => 5,
+  53 => 4,
+  54 => 4,
+  55 => 2,
   56 => 5,
   57 => 5,
   58 => 5,
@@ -1022,8 +1075,8 @@ REVIEW_RATINGS = {
   68 => 2,
   69 => 5,
   70 => 5,
-  71 => 5,
-  72 => 5,
+  71 => 4,
+  72 => 1,
   73 => 5,
   74 => 5,
   75 => 5,
@@ -1111,7 +1164,7 @@ REVIEW_REVIEWER_IDS = {
   67 => 4,
   68 => 5,
   69 => 5,
-  70 => 5,
+  70 => 4,
   71 => 5,
   72 => 5,
   73 => 5,
