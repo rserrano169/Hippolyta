@@ -1474,6 +1474,39 @@ while review_num < REVIEW_TEXTS.length
   review_num += 1
 end
 
+QUERY_QUERIER_IDS = {
+  0 => 1,
+}
+
+QUERY_KEYWORDS = {
+  0 => "clothing",
+}
+
+QUERY_SESSION_TOKENS = {
+  0 => User.find(QUERY_QUERIER_IDS[0]).session_token
+}
+
+query_num = 0
+while query_num < QUERY_QUERIER_IDS.length
+  query = Query.find_by(session_token: QUERY_SESSION_TOKENS[query_num])
+
+  if query
+    query.update_attributes!({
+      querier_id: QUERY_QUERIER_IDS[query_num],
+      keywords: QUERY_KEYWORDS[query_num],
+      session_token: QUERY_SESSION_TOKENS[query_num]
+    })
+  else
+    query = Query.create!({
+      querier_id: QUERY_QUERIER_IDS[query_num],
+      keywords: QUERY_KEYWORDS[query_num],
+      session_token: QUERY_SESSION_TOKENS[query_num]
+    })
+  end
+
+  query_num += 1
+end
+
 CART_BUYER_IDS = {
   0 => 1,
 }
@@ -1574,7 +1607,7 @@ ADDRESS_USER_IDS = {
 
 address_num = 0
 while address_num < ADDRESS_NAMES.length
-  address = Adress.find_by(
+  address = Address.find_by(
     name: ADDRESS_NAMES[address_num],
     street: ADDRESS_STREETS[address_num],
     apt: ADDRESS_APTS[address_num],
@@ -1594,6 +1627,11 @@ while address_num < ADDRESS_NAMES.length
       zip: ADDRESS_ZIPS[address_num],
       user_id: ADDRESS_USER_IDS[address_num]
     })
+
+    User.find(address.user_id).update_attributes!({
+      current_shipping_address_id: address.id,
+      default_shipping_address_id: address.id
+    })
   else
     address = Address.create!({
       name: ADDRESS_NAMES[address_num],
@@ -1603,6 +1641,11 @@ while address_num < ADDRESS_NAMES.length
       state: ADDRESS_STATES[address_num],
       zip: ADDRESS_ZIPS[address_num],
       user_id: ADDRESS_USER_IDS[address_num]
+    })
+
+    User.find(address.user_id).update_attributes!({
+      current_shipping_address_id: address.id,
+      default_shipping_address_id: address.id
     })
   end
 
@@ -1638,6 +1681,6 @@ while purchase_num < PURCHASE_BUYER_IDS.length
       product_id: PURCHASE_PRODUCT_IDS[purchase_num]
     })
   end
-  
+
   purchase_num += 1
 end

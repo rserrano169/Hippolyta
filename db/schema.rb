@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710014901) do
+ActiveRecord::Schema.define(version: 20150714035634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20150710014901) do
     t.string   "keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "session_token"
+    t.string   "session_token", null: false
   end
 
   add_index "queries", ["querier_id"], name: "index_queries_on_querier_id", using: :btree
