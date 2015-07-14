@@ -1473,3 +1473,73 @@ while review_num < REVIEW_TEXTS.length
 
   review_num += 1
 end
+
+CART_BUYER_IDS = {
+  0 => 1,
+}
+
+CART_SESSION_TOKENS = {
+  0: User.find(CART_BUYER_IDS[0]).session_token,
+}
+
+cart_num = 0
+while cart_num < CART_BUYER_IDS.length
+  cart = Cart.find_by(session_token: CART_SESSION_TOKENS[cart_num])
+
+  if cart
+    cart.update_attributes!({
+      buyer_id: CART_BUYER_IDS[cart_num],
+      session_token: CART_SESSION_TOKENS[cart_num]
+    })
+  else
+    cart = Cart.create!({
+      buyer_id: CART_BUYER_IDS[cart_num],
+      session_token: CART_SESSION_TOKENS[cart_num]
+    })
+  end
+
+  cart_num += 1
+end
+
+
+CART_PRODUCTS_CART_IDS = {
+  0 => 1,
+  1 => 1,
+  2 => 1,
+}
+
+CART_PRODUCTS_PRODUCT_IDS = {
+  0 => 1,
+  0 => 3,
+  0 => 23,
+}
+
+CART_PRODUCTS_QUANTITIES = {
+  0 => 2,
+  0 => 5,
+  0 => 1,
+}
+
+cart_product_num = 0
+while cart_product_num < CART_PRODUCTS_CART_IDS.length
+  cart_product = CartProduct.find_by(
+    cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
+    product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num]
+  )
+
+  if cart_product
+    cart_product.update_attributes!({
+      cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
+      product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num],
+      quantity: CART_PRODUCTS_QUANTITIES[cart_product_num]
+    })
+  else
+    cart_product = CartProduct.create!({
+      cart_id: CART_PRODUCTS_CART_IDS[cart_product_num],
+      product_id: CART_PRODUCTS_PRODUCT_IDS[cart_product_num],
+      quantity: CART_PRODUCTS_QUANTITIES[cart_product_num]
+    })
+  end
+  
+  cart_product_num += 1
+end
