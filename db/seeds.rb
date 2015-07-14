@@ -1517,15 +1517,15 @@ CART_SESSION_TOKENS = {
 
 cart_num = 0
 while cart_num < CART_BUYER_IDS.length
-  cart = Cart.find_by(session_token: CART_SESSION_TOKENS[cart_num])
+  @cart = Cart.find_by(buyer_id: CART_BUYER_IDS[cart_num])
 
-  if cart
-    cart.update_attributes!({
+  if @cart
+    @cart.update_attributes!({
       buyer_id: CART_BUYER_IDS[cart_num],
       session_token: CART_SESSION_TOKENS[cart_num]
     })
   else
-    cart = Cart.create!({
+    @cart = Cart.create!({
       buyer_id: CART_BUYER_IDS[cart_num],
       session_token: CART_SESSION_TOKENS[cart_num]
     })
@@ -1536,9 +1536,9 @@ end
 
 
 CART_PRODUCT_CART_IDS = {
-  0 => 1,
-  1 => 1,
-  2 => 1,
+  0 => @cart.id,
+  1 => @cart.id,
+  2 => @cart.id,
 }
 
 CART_PRODUCT_PRODUCT_IDS = {
