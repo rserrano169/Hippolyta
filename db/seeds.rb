@@ -906,8 +906,14 @@ REVIEW_TEXTS = {
          it: temporarily holding gift cards, or business cards, etc.",
   11 => nil,
   12 => nil,
-  13 => nil,
-  14 => nil,
+  13 => "Super cute and soft. Love them.",
+  14 => "Who has time to worry about world domination when there are Happy
+         Hippos to devour? Even the most hardened dictator among us cannot
+         withstand the delicate chocolate flakes that surround the light crisp
+         of the sugar wafer. The smooth chocolate filling is like a mind eraser;
+         gone are thoughts of insurgency planning, citizen mind control, and
+         world domination. Yesterday was the day to punish your enemies, today
+         is the day to eat more Happy Hippos.",
   15 => nil,
   16 => nil,
   17 => "Some on here have complained about it being cheap, or warped to not sit
@@ -955,8 +961,14 @@ REVIEW_TEXTS = {
          down if I want to use it.",
   28 => nil,
   29 => nil,
-  30 => nil,
-  31 => nil,
+  30 => "My 11 month old cruiser still has baby feet so regular shoes don't stay
+         on, but these stay on and he can't take them off. I use them at daycare
+         because they take him outside and there is dirt and grass.",
+  31 => "Happy hippos are one of the best cookie/candies I have ever had. They
+         are a tad expensive but they are well worth the price. With a nice
+         crunchy outside and a soft and a hazelnut chocolate inside you will be
+         in heaven of tasty food. If your looking for something for a friend or
+         just some kind of new snack food I highly recommend Happy Hippos.",
   32 => nil,
   33 => nil,
   34 => "One of the few games older kids (and men) seem to actually enjoy
@@ -989,8 +1001,14 @@ REVIEW_TEXTS = {
          this holder. It will hold an old fashioned flip phone.",
   45 => nil,
   46 => nil,
-  47 => nil,
-  48 => nil,
+  47 => "My little grandson is on the chubby side, so these are tight around his
+         little ankles. He can not wear socks with them. However, this does not
+         take away from these fantastic shoes. They are soft and protective.
+         They stay on and stay put. No more lost shoes in the mall, the
+         restaurant, etc, etc. Glad I purchased them.",
+  48 => "I love these little guys. They are highly addictive and one is just
+         never enough. It has a perfect blend of crispy wafer, cocoa, and milk.
+         It is like a party in your mouth. Yum....yum! Enjoy some!!!",
   49 => nil,
   50 => nil,
   51 => "I remember having this game when I was a kid and it seemed to be much more durable back then. I ordered this for my nearly 4 year old daughter because I thought she'd have a fun time playing with it. The game itself is still fun but I found a few issues:\n
@@ -1051,8 +1069,18 @@ REVIEW_TEXTS = {
          made for my phone - just so cute!!",
   62 => nil,
   63 => nil,
-  64 => nil,
-  65 => nil,
+  64 => "Fits well but the opening seems a little bit tight. My son has thick
+         ankles and feet the opening is cutting off his circulation and leaves
+         marks around his ankles. Not recommended if your baby has thicker
+         legs",
+  65 => "I just tried my first happy hippo a few days ago, and now I don't know
+         how I have gone this long without it. The name and shape got me to buy
+         one. I bought some of the cocoa ones at the Kris Kindle Mart in
+         Chicago. The outside is a perfect wafer crunch. The inside has a smooth
+         chocolate filling, but it is not completely filled. It has just enough
+         to balance the crunch. The shape, besides being a hippo, makes it a
+         three bite goodie. The wafer doesn't crumble when you bite into it, and
+         the filling isn't oozing out. The perfect candy.",
   66 => nil,
   67 => nil,
   68 => "The two stars are for the game itself. Cute game to play with the kids
@@ -1136,8 +1164,14 @@ REVIEW_TEXTS = {
          that purpose.",
   79 => nil,
   80 => nil,
-  81 => nil,
-  82 => nil,
+  81 => "\"Shoes\" is a poor label for this product. These are baby moccasins.
+         They have an elastic strap to keep them on their feet. They are soft
+         leather and I'm slightly jealous as they don’t make a men’s 11.",
+  82 => "I found these at a market during my first visit to Germany a few years
+         back. I loved them so much I brought a few boxes home and people would
+         always flip out over how great they taste. Being able to order them by
+         the case load is a must because they go so fast! I'm docking them a
+           star based on cost.",
   83 => nil,
   84 => nil,
   85 => nil,
@@ -1192,7 +1226,7 @@ REVIEW_RATINGS = {
   44 => 2,
   45 => 5,
   46 => 5,
-  47 => 5,
+  47 => 4,
   48 => 5,
   49 => 5,
   50 => 5,
@@ -1209,7 +1243,7 @@ REVIEW_RATINGS = {
   61 => 5,
   62 => 5,
   63 => 5,
-  64 => 5,
+  64 => 3,
   65 => 5,
   66 => 5,
   67 => 5,
@@ -1227,7 +1261,7 @@ REVIEW_RATINGS = {
   79 => 5,
   80 => 5,
   81 => 5,
-  82 => 5,
+  82 => 4,
   83 => 5,
   84 => 5,
   85 => 5,
