@@ -1589,7 +1589,7 @@ while cart_product_num < CART_PRODUCT_CART_IDS.length
 end
 
 ADDRESS_NAMES = {
-  0 => "Test Address 1",
+  0 => User.find(seed_user_id(0)).name,
 }
 
 ADDRESS_STREETS = {
@@ -1694,4 +1694,41 @@ while purchase_num < PURCHASE_BUYER_IDS.length
   end
 
   purchase_num += 1
+end
+
+STRIPE_CARD_USER_IDS = {
+  0 => seed_user_id(0),
+}
+
+STRIPE_CARD_DETAILS = {
+  0 => {
+    name: User.find(STRIPE_CARD_USER_IDS[0]).name,
+    number: 378282246310005,
+    cvc: 1234,
+    exp_month: 01,
+    exp_year: 2020,
+  },
+}
+
+stripe_num = 0
+while stripe_num < STRIPE_CARD_USER_IDS.length
+  user = User.find(STRIPE_CARD_USER_IDS[stripe_num])
+  # 
+  # if user.stripe_id
+  #
+  # end
+  stripe_token = Stripe::Token.create(
+    card: STRIPE_CARD_DETAILS[stripe_num]
+  )
+
+  stripe_cus = Stripe::Customer.create(
+    source: stripe_token.id,
+    email: user.email
+  )
+
+  user.stripe_id = stripe_cus.id
+  user.stripe_default_card_id = stripe_token.card.id
+  user.save!
+
+  stripe_num += 1
 end
