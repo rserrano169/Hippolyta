@@ -1710,6 +1710,25 @@ STRIPE_CARD_DETAILS = {
   },
 }
 
+def is_duplicate_card?(stripe_user_id, stripe_token)
+  stripe_cards = Stripe::Customer
+    .retrieve(stripe_user_id)
+    .sources
+    .all(object: "card")
+
+  stripe_cards.each do |card|
+    if card.name == stripe_token.card.name &&
+      card.brand == stripe_token.card.brand &&
+      card.last4 == stripe_token.card.last4 &&
+      card.exp_month == stripe_token.card.exp_month &&
+      card.exp_year == stripe_token.card.exp_year
+        return true
+    end
+  end
+
+  return false
+end
+
 stripe_num = 0
 while stripe_num < STRIPE_CARD_USER_IDS.length
   user = User.find(STRIPE_CARD_USER_IDS[stripe_num])
@@ -1732,36 +1751,15 @@ while stripe_num < STRIPE_CARD_USER_IDS.length
       card: STRIPE_CARD_DETAILS[stripe_num]
     )
 
-    p "HERE ONE"
-
     if !is_duplicate_card?(user.stripe_id, stripe_token)
       stripe_user = Stripe::Customer.retrieve(user.stripe_id)
       stripe_user.source = stripe_token.id
       stripe_user.save
-      p "HERE TWO"
+
       user.stripe_default_card_id = stripe_token.card.id
       user.save!
     end
   end
 
   stripe_num += 1
-end
-
-def is_duplicate_card?(stripe_user_id, stripe_token)
-  stripe_cards = Stripe::Customer
-    .retrieve(stripe_user_id)
-    .sources
-    .all(object: "card")
-
-  stripe_cards.each do |card|
-    if card.name == stripe_token.card.name &&
-      card.number == stripe_token.card.number &&
-      card.cvc == stripe_token.card.cvc &&
-      card.exp_month == stripe_token.card.exp_month &&
-      card.exp_year == stripe_token.card.exp_year
-        return true
-    end
-  end
-
-  return false
 end
